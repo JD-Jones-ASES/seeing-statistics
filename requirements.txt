@@ -1,0 +1,12 @@
+# Libraries this course uses. Install into the project's private toolbox with:
+#   ..\.venv\Scripts\python.exe -m pip install -r requirements.txt
+#
+# These are the boring, standard tools of statistics in Python.
+numpy          # fast arrays + the random-sampling engine behind every simulation
+pandas         # loads and handles the real datasets (tables / CSVs)
+matplotlib     # the core plotting library (histograms, boxplots, scatterplots, ...)
+seaborn        # nicer statistical charts built on matplotlib
+scipy          # trusted formulas for probability distributions and statistical tests
+statsmodels    # regression, ANOVA, and detailed model summaries (Semester 2)
+jupyterlab     # the notebook environment: words + math + code + charts on one page
+ipykernel      # lets the notebook run our project's Python toolbox

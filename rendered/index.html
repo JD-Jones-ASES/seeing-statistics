@@ -1,0 +1,295 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Statistics, by seeing it happen — course map</title>
+<style>:root{--ink:#1f2330;--muted:#5b6577;--line:#e3e7ef;--accent:#4c72b0;--bg:#f7f8fb;--card:#fff;}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);
+  font:16px/1.6 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;}
+.wrap{max-width:880px;margin:0 auto;padding:40px 22px 80px}
+header h1{font-size:30px;margin:.1em 0 .15em}
+header p.sub{color:var(--muted);margin:.2em 0 0;font-size:17px}
+.how{background:var(--card);border:1px solid var(--line);border-radius:12px;
+  padding:18px 22px;margin:26px 0 8px}
+.how h2{font-size:15px;text-transform:uppercase;letter-spacing:.04em;color:var(--muted);margin:0 0 10px}
+.how ul{margin:0;padding-left:20px}.how li{margin:.25em 0}
+.how code{background:#eef1f7;padding:1px 6px;border-radius:5px;font-size:14px}
+h2.sem{font-size:20px;margin:34px 0 6px;padding-top:10px;border-top:2px solid var(--line)}
+h2.sem span{color:var(--muted);font-weight:400;font-size:15px}
+.card{display:flex;gap:16px;align-items:flex-start;
+  background:var(--card);border:1px solid var(--line);border-radius:12px;
+  padding:16px 18px;margin:12px 0;transition:.12s}
+.card:hover{border-color:var(--accent);box-shadow:0 3px 14px rgba(76,114,176,.13);transform:translateY(-1px)}
+.card-main{display:flex;gap:16px;align-items:flex-start;text-decoration:none;color:inherit;flex:1}
+.num{flex:0 0 46px;height:46px;border-radius:10px;background:var(--accent);color:#fff;
+  display:grid;place-items:center;font-weight:700;font-size:18px}
+.num.flag{background:#c98a2b}
+.num.orient{background:#2ca02c}
+.body h3{margin:.1em 0 .25em;font-size:18px}
+.body p{margin:.15em 0;color:var(--muted);font-size:15px}
+.badge{display:inline-block;margin-top:8px;font-size:12.5px;color:var(--accent);
+  background:#eef2f9;border-radius:20px;padding:3px 11px}
+.variants{margin-top:9px;font-size:13.5px}
+.variants a{color:var(--accent);text-decoration:none;border:1px solid #d7deec;
+  border-radius:16px;padding:2px 10px;margin-right:7px;white-space:nowrap}
+.variants a:hover{background:#eef2f9}
+.soon{opacity:.6}
+footer{margin-top:40px;color:var(--muted);font-size:13.5px;text-align:center}</style></head><body><div class='wrap'>
+<header><h1>Statistics, by seeing it happen</h1><p class='sub'>A ground-up probability &amp; statistics course where almost every idea is <em>demonstrated on real data</em> — not just asserted.</p></header>
+<div class='how'><h2>Two ways to use this</h2><ul><li><b>Run it (recommended):</b> double-click <code>start-jupyter.bat</code>, open the <code>lessons/</code> folder, and run each cell with <b>Shift+Enter</b>. Change a number, re-run, watch it change.</li><li><b>Just read it:</b> click any lesson below to read the finished page — every chart already drawn, nothing to install.</li><li>Each lesson teaches on three levels: <b>the math</b>, <b>what the number means</b>, and <b>what the result says about the world</b>. Many lessons also offer the same idea <b>on another dataset</b> and a <b>code-focused</b> companion.</li></ul></div>
+<h2 class='sem'>New here? <span>· start with this — no statistics yet, just how to drive a notebook</span></h2>
+
+    <div class="card">
+      <a class="card-main" href="00-how-these-notebooks-work.html">
+        <div class="num orient">▶</div>
+        <div class="body">
+          <h3>How these notebooks work (start here)</h3>
+          <p>Never used a notebook? Five minutes here and you'll know how to run a lesson, re-run safely, and read the output. No statistics yet.</p>
+          <span class="badge">data: no data yet — just orientation</span>
+        </div>
+      </a>
+      
+    </div>
+<h2 class='sem'>Part 1 — Seeing data & the logic of chance <span>· lessons 1–10</span></h2>
+
+    <div class="card">
+      <a class="card-main" href="01-describing-data.html">
+        <div class="num ">1</div>
+        <div class="body">
+          <h3>Describing a real dataset</h3>
+          <p>Center, spread, shape, correlation and z-scores — the first questions to ask of any data.</p>
+          <span class="badge">data: Palmer Penguins</span>
+        </div>
+      </a>
+      <div class="variants"><a href="01-describing-data~another-dataset.html">Another dataset →</a><a href="01-describing-data~the-code.html">The code behind it →</a></div>
+    </div>
+
+    <div class="card">
+      <a class="card-main" href="02-distributions-shape-outliers.html">
+        <div class="num ">2</div>
+        <div class="body">
+          <h3>Distributions: shape, skew & outliers</h3>
+          <p>Frequency tables, histograms, skew, the IQR outlier rule, and z-scores — when a single number lies.</p>
+          <span class="badge">data: Old Faithful · Lending Club</span>
+        </div>
+      </a>
+      <div class="variants"><a href="02-distributions-shape-outliers~another-dataset.html">Another dataset →</a><a href="02-distributions-shape-outliers~the-code.html">The code behind it →</a></div>
+    </div>
+
+    <div class="card">
+      <a class="card-main" href="03-relationships-regression.html">
+        <div class="num ">3</div>
+        <div class="body">
+          <h3>Relationships: correlation & the regression line</h3>
+          <p>Scatterplots, the correlation r, the least-squares line, residuals & R² — and why correlation isn't causation.</p>
+          <span class="badge">data: Ames housing</span>
+        </div>
+      </a>
+      <div class="variants"><a href="03-relationships-regression~another-dataset.html">Another dataset →</a><a href="03-relationships-regression~the-code.html">The code behind it →</a></div>
+    </div>
+
+    <div class="card">
+      <a class="card-main" href="04-where-data-comes-from.html">
+        <div class="num ">4</div>
+        <div class="body">
+          <h3>Where data comes from: sampling & study design</h3>
+          <p>Sampling methods, bias, experiments vs. observation, random assignment & confounding — how trustworthy data is made.</p>
+          <span class="badge">data: simulation + a known population</span>
+        </div>
+      </a>
+      
+    </div>
+
+    <div class="card">
+      <a class="card-main" href="05-probability.html">
+        <div class="num ">5</div>
+        <div class="body">
+          <h3>Probability & conditional probability</h3>
+          <p>Marginal, joint and conditional probability, independence, and a first taste of Bayes — counted from real survivors.</p>
+          <span class="badge">data: Titanic</span>
+        </div>
+      </a>
+      <div class="variants"><a href="05-probability~another-dataset.html">Another dataset →</a><a href="05-probability~the-code.html">The code behind it →</a></div>
+    </div>
+
+    <div class="card">
+      <a class="card-main" href="06-counting.html">
+        <div class="num ">6</div>
+        <div class="body">
+          <h3>Counting: permutations & combinations</h3>
+          <p>Permutations, combinations and the choose function — the counting that powers the binomial.</p>
+          <span class="badge">data: dice & cards (simulation)</span>
+        </div>
+      </a>
+      
+    </div>
+
+    <div class="card">
+      <a class="card-main" href="07-random-variables.html">
+        <div class="num ">7</div>
+        <div class="body">
+          <h3>Random variables, expectation & variance</h3>
+          <p>Turn outcomes into numbers: probability distributions, expected value, variance, and the law of large numbers.</p>
+          <span class="badge">data: dice simulation · US Births 2014</span>
+        </div>
+      </a>
+      <div class="variants"><a href="07-random-variables~another-dataset.html">Another dataset →</a><a href="07-random-variables~the-code.html">The code behind it →</a></div>
+    </div>
+
+    <div class="card">
+      <a class="card-main" href="08-binomial-poisson.html">
+        <div class="num ">8</div>
+        <div class="body">
+          <h3>Binomial & Poisson — counting events</h3>
+          <p>Two workhorse models for counts: successes out of n (binomial) and rare events per interval (Poisson).</p>
+          <span class="badge">data: US Births 2014 · USGS earthquakes</span>
+        </div>
+      </a>
+      <div class="variants"><a href="08-binomial-poisson~another-dataset.html">Another dataset →</a><a href="08-binomial-poisson~the-code.html">The code behind it →</a></div>
+    </div>
+
+    <div class="card">
+      <a class="card-main" href="09-normal-distribution.html">
+        <div class="num ">9</div>
+        <div class="body">
+          <h3>The normal distribution & the empirical rule</h3>
+          <p>The bell curve, the 68–95–99.7 rule, and turning z-scores into probabilities — checked on real heights.</p>
+          <span class="badge">data: Galton family heights</span>
+        </div>
+      </a>
+      <div class="variants"><a href="09-normal-distribution~another-dataset.html">Another dataset →</a><a href="09-normal-distribution~the-code.html">The code behind it →</a></div>
+    </div>
+
+    <div class="card">
+      <a class="card-main" href="10-sampling-distributions-clt.html">
+        <div class="num ">10</div>
+        <div class="body">
+          <h3>Sampling distributions & the Central Limit Theorem</h3>
+          <p>The engine of the whole course: averages of samples become normal — even when the data is wildly skewed.</p>
+          <span class="badge">data: Lending Club · simulation</span>
+        </div>
+      </a>
+      <div class="variants"><a href="10-sampling-distributions-clt~another-dataset.html">Another dataset →</a><a href="10-sampling-distributions-clt~the-code.html">The code behind it →</a></div>
+    </div>
+<h2 class='sem'>Part 2 — Drawing conclusions from data <span>· lessons 11–20, the inference half</span></h2>
+
+    <div class="card">
+      <a class="card-main" href="11-estimation.html">
+        <div class="num ">11</div>
+        <div class="body">
+          <h3>Estimation & standard error</h3>
+          <p>Point estimates, bias vs. precision, and the standard error — how far a sample statistic typically lands from the truth, and the √n law that shrinks it.</p>
+          <span class="badge">data: Ames housing</span>
+        </div>
+      </a>
+      <div class="variants"><a href="11-estimation~another-dataset.html">Another dataset →</a><a href="11-estimation~the-code.html">The code behind it →</a></div>
+    </div>
+
+    <div class="card">
+      <a class="card-main" href="12-confidence-intervals.html">
+        <div class="num flag">★</div>
+        <div class="body">
+          <h3>What a 95% confidence interval really means</h3>
+          <p>The flagship simulation: build 100 confidence intervals from real data and watch ~95 capture the true mean.</p>
+          <span class="badge">data: Ames, Iowa housing</span>
+        </div>
+      </a>
+      <div class="variants"><a href="12-confidence-intervals~another-dataset.html">Another dataset →</a><a href="12-confidence-intervals~the-code.html">The code behind it →</a></div>
+    </div>
+
+    <div class="card">
+      <a class="card-main" href="13-hypothesis-testing.html">
+        <div class="num ">13</div>
+        <div class="body">
+          <h3>Hypothesis testing: p-values, errors & power</h3>
+          <p>Null vs. alternative, the p-value, significance, Type I/II errors, and the power of a test — built by simulating the null world.</p>
+          <span class="badge">data: simulation on a known population</span>
+        </div>
+      </a>
+      <div class="variants"><a href="13-hypothesis-testing~another-dataset.html">Another dataset →</a><a href="13-hypothesis-testing~the-code.html">The code behind it →</a></div>
+    </div>
+
+    <div class="card">
+      <a class="card-main" href="14-inference-proportions.html">
+        <div class="num ">14</div>
+        <div class="body">
+          <h3>Inference for proportions (one & two)</h3>
+          <p>Confidence intervals and tests for one proportion and for the difference of two — counted from real births.</p>
+          <span class="badge">data: US Births 2014</span>
+        </div>
+      </a>
+      <div class="variants"><a href="14-inference-proportions~another-dataset.html">Another dataset →</a><a href="14-inference-proportions~the-code.html">The code behind it →</a></div>
+    </div>
+
+    <div class="card">
+      <a class="card-main" href="15-t-tests.html">
+        <div class="num ">15</div>
+        <div class="body">
+          <h3>t-tests: one-sample, two-sample & paired</h3>
+          <p>Comparing means with the t-distribution: against a target, between two groups, and within matched pairs.</p>
+          <span class="badge">data: ToothGrowth · Swim (paired)</span>
+        </div>
+      </a>
+      <div class="variants"><a href="15-t-tests~another-dataset.html">Another dataset →</a><a href="15-t-tests~the-code.html">The code behind it →</a></div>
+    </div>
+
+    <div class="card">
+      <a class="card-main" href="16-anova.html">
+        <div class="num ">16</div>
+        <div class="body">
+          <h3>Comparing many groups: ANOVA</h3>
+          <p>One-way ANOVA and the F-test — is at least one group mean different, without inflating error by testing every pair?</p>
+          <span class="badge">data: Palmer Penguins</span>
+        </div>
+      </a>
+      <div class="variants"><a href="16-anova~another-dataset.html">Another dataset →</a><a href="16-anova~the-code.html">The code behind it →</a></div>
+    </div>
+
+    <div class="card">
+      <a class="card-main" href="17-chi-square.html">
+        <div class="num ">17</div>
+        <div class="body">
+          <h3>Chi-square: goodness-of-fit & independence</h3>
+          <p>Testing counts: does a distribution match what we expected, and are two categorical variables associated?</p>
+          <span class="badge">data: Titanic</span>
+        </div>
+      </a>
+      <div class="variants"><a href="17-chi-square~another-dataset.html">Another dataset →</a><a href="17-chi-square~the-code.html">The code behind it →</a></div>
+    </div>
+
+    <div class="card">
+      <a class="card-main" href="18-regression-inference.html">
+        <div class="num ">18</div>
+        <div class="body">
+          <h3>Correlation & regression: inference</h3>
+          <p>Is the slope real, or just luck? A confidence interval and test for a regression slope, with residual diagnostics.</p>
+          <span class="badge">data: Ames housing</span>
+        </div>
+      </a>
+      <div class="variants"><a href="18-regression-inference~another-dataset.html">Another dataset →</a><a href="18-regression-inference~the-code.html">The code behind it →</a></div>
+    </div>
+
+    <div class="card">
+      <a class="card-main" href="19-multiple-regression.html">
+        <div class="num ">19</div>
+        <div class="body">
+          <h3>Multiple regression (intro)</h3>
+          <p>Several predictors at once: adjusted ('holding others constant') effects, and how to read a regression table.</p>
+          <span class="badge">data: Ames housing</span>
+        </div>
+      </a>
+      <div class="variants"><a href="19-multiple-regression~another-dataset.html">Another dataset →</a><a href="19-multiple-regression~the-code.html">The code behind it →</a></div>
+    </div>
+
+    <div class="card">
+      <a class="card-main" href="20-bootstrap-permutation.html">
+        <div class="num ">20</div>
+        <div class="body">
+          <h3>The bootstrap & permutation tests</h3>
+          <p>Inference by resampling: a bootstrap confidence interval and a permutation test — honest answers when the textbook formula runs out.</p>
+          <span class="badge">data: Old Faithful · ToothGrowth</span>
+        </div>
+      </a>
+      <div class="variants"><a href="20-bootstrap-permutation~another-dataset.html">Another dataset →</a><a href="20-bootstrap-permutation~the-code.html">The code behind it →</a></div>
+    </div>
+<footer>Everything runs locally and free. (These read-online pages need an internet connection only to draw the math symbols; running the lessons in JupyterLab needs nothing.) Dataset sources and licenses are logged in <code>raw/SOURCES.md</code>. For study and understanding — not professional advice.</footer>
+</div></body></html>
