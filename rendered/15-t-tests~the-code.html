@@ -3,7 +3,7 @@
 <html lang="en">
 <head><meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Notebook</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
+<title>The code behind it: build the t-statistic from scratch · Statistics, by seeing it happen</title>
 <style type="text/css">
     pre { line-height: 125%; }
 td.linenos .normal { color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px; }
@@ -7292,7 +7292,7 @@ a.anchor-link {
 }
 </style>
 <!-- Load mathjax -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS_CHTML-full,Safe"> </script>
+
 <!-- MathJax configuration -->
 <script type="text/x-mathjax-config">
     init_mathjax = function() {
@@ -7793,10 +7793,32 @@ a.anchor-link {
     white-space: normal;
   }
 </style>
-<!-- End of mermaid configuration --></head>
+<!-- End of mermaid configuration -->
+<meta name="description" content="Build the t-statistic from scratch — one-sample, Welch two-sample, and the paired trick (reduce pairs to differences), each checked against scipy.stats.ttest_*, on ToothGrowth and the paired swim data."/>
+<meta name="sc-lesson" content="t-tests-code"/>
+<meta name="theme-color" content="#4c72b0"/>
+<meta property="og:type" content="article"/>
+<meta property="og:site_name" content="Statistics, by seeing it happen"/>
+<meta property="og:title" content="The code behind it: build the t-statistic from scratch"/>
+<meta property="og:description" content="Build the t-statistic from scratch — one-sample, Welch two-sample, and the paired trick (reduce pairs to differences), each checked against scipy.stats.ttest_*, on ToothGrowth and the paired swim data."/>
+<meta property="og:image" content="https://jd-jones-ases.github.io/seeing-statistics/assets/og-card.png"/>
+<meta property="og:url" content="https://jd-jones-ases.github.io/seeing-statistics/15-t-tests~the-code.html"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<link rel="icon" href="assets/favicon.svg"/>
+<link rel="stylesheet" href="assets/vendor/katex/katex.min.css"/>
+<link rel="stylesheet" href="assets/course.css"/>
+</head>
 <body class="jp-Notebook" data-jp-theme-light="true" data-jp-theme-name="JupyterLab Light">
+<div class="sc-topbar">
+  <a class="sc-home" href="index.html">Statistics, by seeing it happen <span>· course map</span></a>
+  <span class="sc-spacer"></span>
+  <span class="sc-pos" style="color:var(--sc-muted);font-size:12.5px">Part 2 · Lesson 15 · the code behind it</span>
+  <a class="sc-btn run" href="live/lab/index.html?path=15-t-tests~the-code.html" title="Run this lesson live in your browser — no install">Run live ▶</a>
+  <button class="sc-btn" type="button" onclick="scToggleTheme()" title="Toggle light / dark" aria-label="Toggle light or dark theme">◐</button>
+</div>
+
 <main>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=2eb01817">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=71cca3a1">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -7826,7 +7848,7 @@ each checked against <code>scipy.stats.ttest_*</code> (print <code>match? True</
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=6c06e7ec">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=645582d7">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -7838,7 +7860,7 @@ each checked against <code>scipy.stats.ttest_*</code> (print <code>match? True</
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=9765fcb1">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=9dc24456">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -7883,7 +7905,7 @@ NumPy/pandas. Get that wrong and your <code>t</code> won't match SciPy — so it
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=e401f110">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=6924f07c">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -7930,7 +7952,7 @@ Swim:        DataFrame with shape (12, 4)
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=e20dbe9a">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=579b1cba">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -7947,7 +7969,7 @@ pairing.</li>
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=a2754e54">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=5284a011">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -7994,7 +8016,7 @@ Swim: 12 swimmers   first 3 wetsuit speeds: [1.57 1.47 1.42]   swimsuit: [1.49 1
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=a48ea2c5">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=db3ffc5b">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8010,7 +8032,7 @@ the "survival function" (the area to the right). Build it, then check against <c
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=f28e0f80">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=f877c139">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8055,7 +8077,7 @@ match? True True
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=6a1ec5c0">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=767e5c2d">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8071,7 +8093,7 @@ which we build below. Then <code>p = 2 * stats.t.sf(|t|, df)</code> as before.</
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=48690f75">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=3cfacabc">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8124,7 +8146,7 @@ match? True True True
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=7a8db3cc">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=d47d4572">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8139,7 +8161,7 @@ Collapse the 12 pairs to 12 differences, then it's exactly the Section-3.1 recip
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=3079df81">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=b4462a93">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8185,7 +8207,7 @@ match? True True
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=f4cdae21">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=3dee169c">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8198,7 +8220,7 @@ on the same two columns, pretending the 12 wetsuit times and 12 swimsuit times a
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=6fad5b98">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=87e03bcf">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8238,7 +8260,7 @@ a fast swimmer is fast in BOTH suits, and pairing subtracts that swimmer-to-swim
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=d2ba2634">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=163f98d3">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8253,7 +8275,7 @@ and noisier to read. Compare them.</p>
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=7378f9d6">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=93abd44e">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8294,7 +8316,7 @@ The vectorized form is one line, reads as the math (after - before), and runs fa
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=a5d4f5d6">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=ee4dca63">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8309,7 +8331,7 @@ $n_1+n_2-2$.</p>
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=6aa77a31">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=2d00af7a">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8346,7 +8368,7 @@ Welch df sits between those bounds — it is the equal-variance df discounted fo
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=97ad41d9">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=b037b7e6">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8358,7 +8380,7 @@ differences, with no new code at all.</p>
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=562f08d7">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=1365ad50">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8411,7 +8433,7 @@ paired (one-sample on d): (np.float64(12.318151), 11, np.float64(0.0))
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=85d3f91c">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=f617a8a2">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8449,7 +8471,7 @@ paired     match?  True True
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=110b263a">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=93f8c422">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8462,7 +8484,7 @@ what it's doing.)</p>
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=614ccbbd">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=550e1d84">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8523,7 +8545,7 @@ come out a hair too big and stop matching SciPy.</li>
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=1a1d9836">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=be58f3de">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8535,5 +8557,24 @@ come out a hair too big and stop matching SciPy.</li>
 </div>
 </div>
 </main>
+
+<footer class="sc-footer">
+  <p class="sc-done"><label><input type="checkbox" id="sc-done-box"/> Mark this lesson complete
+    <span style="font-size:12px">(saved on this device only)</span></label></p>
+  <p><b>Run it yourself:</b>
+     <a href="live/lab/index.html?path=15-t-tests~the-code.html">in your browser (JupyterLite)</a> ·
+     <a href="https://mybinder.org/v2/gh/JD-Jones-ASES/seeing-statistics/HEAD?labpath=lessons/15-t-tests~the-code.html">on Binder</a> — no install, no account.</p>
+  <details class="sc-solution"><summary>How to cite this lesson</summary>
+    <div class="sc-cite">Jones, JD (2026). <em>The code behind it: build the t-statistic from scratch</em>. In <em>Statistics, by seeing it happen</em>. https://jd-jones-ases.github.io/seeing-statistics/15-t-tests~the-code.html</div></details>
+  <p>© JD Jones, 2026. Licensed <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>.
+     Bundled datasets keep their own licences — see <a href="data-credits.html">data sources &amp; credits</a>.
+     For study and understanding, not professional advice.</p>
+  <p><a href="index.html">↑ Course map</a> · <a href="glossary.html">Glossary</a> ·
+     <a href="formula-sheet.html">Formula sheet</a> · <a href="data-credits.html">Data sources</a></p>
+</footer>
+
+<script defer src="assets/vendor/katex/katex.min.js"></script>
+<script defer src="assets/vendor/katex/contrib/auto-render.min.js"></script>
+<script defer src="assets/course.js"></script>
 </body>
 </html>

@@ -3,7 +3,7 @@
 <html lang="en">
 <head><meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Notebook</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
+<title>The code behind it: proportion inference from counts · Statistics, by seeing it happen</title>
 <style type="text/css">
     pre { line-height: 125%; }
 td.linenos .normal { color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px; }
@@ -7292,7 +7292,7 @@ a.anchor-link {
 }
 </style>
 <!-- Load mathjax -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS_CHTML-full,Safe"> </script>
+
 <!-- MathJax configuration -->
 <script type="text/x-mathjax-config">
     init_mathjax = function() {
@@ -7793,10 +7793,32 @@ a.anchor-link {
     white-space: normal;
   }
 </style>
-<!-- End of mermaid configuration --></head>
+<!-- End of mermaid configuration -->
+<meta name="description" content="Lesson 14&#x27;s proportion inference from counts — build p̂, its standard error and one- and two-proportion z-tests &amp; CIs from the formulas, checked against statsmodels, with the mean-of-a-0/1-column = a proportion idiom."/>
+<meta name="sc-lesson" content="proportions-code"/>
+<meta name="theme-color" content="#4c72b0"/>
+<meta property="og:type" content="article"/>
+<meta property="og:site_name" content="Statistics, by seeing it happen"/>
+<meta property="og:title" content="The code behind it: proportion inference from counts"/>
+<meta property="og:description" content="Lesson 14&#x27;s proportion inference from counts — build p̂, its standard error and one- and two-proportion z-tests &amp; CIs from the formulas, checked against statsmodels, with the mean-of-a-0/1-column = a proportion idiom."/>
+<meta property="og:image" content="https://jd-jones-ases.github.io/seeing-statistics/assets/og-card.png"/>
+<meta property="og:url" content="https://jd-jones-ases.github.io/seeing-statistics/14-inference-proportions~the-code.html"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<link rel="icon" href="assets/favicon.svg"/>
+<link rel="stylesheet" href="assets/vendor/katex/katex.min.css"/>
+<link rel="stylesheet" href="assets/course.css"/>
+</head>
 <body class="jp-Notebook" data-jp-theme-light="true" data-jp-theme-name="JupyterLab Light">
+<div class="sc-topbar">
+  <a class="sc-home" href="index.html">Statistics, by seeing it happen <span>· course map</span></a>
+  <span class="sc-spacer"></span>
+  <span class="sc-pos" style="color:var(--sc-muted);font-size:12.5px">Part 2 · Lesson 14 · the code behind it</span>
+  <a class="sc-btn run" href="live/lab/index.html?path=14-inference-proportions~the-code.html" title="Run this lesson live in your browser — no install">Run live ▶</a>
+  <button class="sc-btn" type="button" onclick="scToggleTheme()" title="Toggle light / dark" aria-label="Toggle light or dark theme">◐</button>
+</div>
+
 <main>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=7d716e95">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=185697aa">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -7826,7 +7848,7 @@ programmer actually works:</p>
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=db6451a3">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=5ce7c01e">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -7838,7 +7860,7 @@ programmer actually works:</p>
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=99e588cb">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=0b4e340f">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -7886,7 +7908,7 @@ low-birth-weight baby), and once we turn that into a column of <strong>1s and 0s
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=d66cf352">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=c989e0dd">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -7929,7 +7951,7 @@ low-birth-weight baby), and once we turn that into a column of <strong>1s and 0s
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=39754a47">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=384ed056">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -7941,7 +7963,7 @@ matching them exactly.</p>
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=59ed5c2a">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=a2b28582">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8040,7 +8062,7 @@ habit labels         : ['nonsmoker', 'smoker']
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=cf1d5ff3">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=17c60fad">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8057,7 +8079,7 @@ of successes, $x$.</li>
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=dfd9ea23">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=89b3d99e">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8098,7 +8120,7 @@ So "count the successes" is .sum(), and "what fraction are successes" is .mean()
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=a79dcdc7">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=f73992ba">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8113,7 +8135,7 @@ simulating the sampling distribution; here we just take it and build on it.)</p>
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=d66c149a">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=995d7ded">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8144,7 +8166,7 @@ n*p-hat = 81  and  n*(1-p-hat) = 919  -&gt; both &gt;= 10, normal recipe is safe
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=80b693da">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=641944b5">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8156,7 +8178,7 @@ n*p-hat = 81  and  n*(1-p-hat) = 919  -&gt; both &gt;= 10, normal recipe is safe
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=fb4ccf81">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=cb145b91">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8196,7 +8218,7 @@ match? True
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=73487e68">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=026b9e1b">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8217,7 +8239,7 @@ test <strong>two-sided</strong>. Check against statsmodels — passing <code>pro
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=ddef1125">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=5d1d4f70">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8259,7 +8281,7 @@ match? True
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=ea55a70d">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=c0fda669">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8270,7 +8292,7 @@ in each group. We drop the few rows with unknown smoking status first, exactly a
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=a5e5ba7d">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=415423a1">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8312,7 +8334,7 @@ observed difference  p1 - p2 = 0.1482   (14.8 percentage points)
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=da44828e">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=6d86fa21">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8331,7 +8353,7 @@ $$\text{SE}_{\text{pooled}} = \sqrt{\hat{p}_{\text{pool}}(1-\hat{p}_{\text{pool}
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=3a88b331">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=42f00ba2">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8367,7 +8389,7 @@ The whole interval is ABOVE 0, so 0 (no difference) is not plausible: smokers ha
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=b8ded7eb">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=74468992">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8379,7 +8401,7 @@ decimals.</p>
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=35cd8e1e">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=a3b114d2">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8423,7 +8445,7 @@ match? True
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=aaf79009">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=3ee40057">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8438,7 +8460,7 @@ match? True
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=30ec5eca">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=8b77d85f">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8474,7 +8496,7 @@ That is the entire trick behind x, n and p-hat above.
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=e0c167f9">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=f9adffe6">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8492,7 +8514,7 @@ why the CI and the test, built on different SEs, are answering slightly differen
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=27b6b182">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=b07c5de6">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8527,7 +8549,7 @@ Same sqrt-of-a-variance shape every time; only the variance inside changes.
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=63fd5418">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=cf2b471e">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8539,7 +8561,7 @@ a different split, a different dataset entirely.</p>
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=7ea7d279">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=a058fd52">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8596,7 +8618,7 @@ two_prop_ztest(...)      = (z=5.5002, p=3.794e-08)   match statsmodels? True
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=0dd89665">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=b36dbd93">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8609,7 +8631,7 @@ already ships these; the point was to <em>build</em> them so you know what's ins
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=ada78da5">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=60439870">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8667,7 +8689,7 @@ for the <em>meaning</em> of these numbers, or read on through the course.</p>
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=651f5eb4">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=8b912f39">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8679,5 +8701,24 @@ for the <em>meaning</em> of these numbers, or read on through the course.</p>
 </div>
 </div>
 </main>
+
+<footer class="sc-footer">
+  <p class="sc-done"><label><input type="checkbox" id="sc-done-box"/> Mark this lesson complete
+    <span style="font-size:12px">(saved on this device only)</span></label></p>
+  <p><b>Run it yourself:</b>
+     <a href="live/lab/index.html?path=14-inference-proportions~the-code.html">in your browser (JupyterLite)</a> ·
+     <a href="https://mybinder.org/v2/gh/JD-Jones-ASES/seeing-statistics/HEAD?labpath=lessons/14-inference-proportions~the-code.html">on Binder</a> — no install, no account.</p>
+  <details class="sc-solution"><summary>How to cite this lesson</summary>
+    <div class="sc-cite">Jones, JD (2026). <em>The code behind it: proportion inference from counts</em>. In <em>Statistics, by seeing it happen</em>. https://jd-jones-ases.github.io/seeing-statistics/14-inference-proportions~the-code.html</div></details>
+  <p>© JD Jones, 2026. Licensed <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>.
+     Bundled datasets keep their own licences — see <a href="data-credits.html">data sources &amp; credits</a>.
+     For study and understanding, not professional advice.</p>
+  <p><a href="index.html">↑ Course map</a> · <a href="glossary.html">Glossary</a> ·
+     <a href="formula-sheet.html">Formula sheet</a> · <a href="data-credits.html">Data sources</a></p>
+</footer>
+
+<script defer src="assets/vendor/katex/katex.min.js"></script>
+<script defer src="assets/vendor/katex/contrib/auto-render.min.js"></script>
+<script defer src="assets/course.js"></script>
 </body>
 </html>

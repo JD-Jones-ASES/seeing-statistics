@@ -3,7 +3,7 @@
 <html lang="en">
 <head><meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Notebook</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
+<title>The code behind it: multiple regression with linear algebra · Statistics, by seeing it happen</title>
 <style type="text/css">
     pre { line-height: 125%; }
 td.linenos .normal { color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px; }
@@ -7292,7 +7292,7 @@ a.anchor-link {
 }
 </style>
 <!-- Load mathjax -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS_CHTML-full,Safe"> </script>
+
 <!-- MathJax configuration -->
 <script type="text/x-mathjax-config">
     init_mathjax = function() {
@@ -7793,10 +7793,32 @@ a.anchor-link {
     white-space: normal;
   }
 </style>
-<!-- End of mermaid configuration --></head>
+<!-- End of mermaid configuration -->
+<meta name="description" content="Build multiple regression with linear algebra — assemble the design matrix and solve for the coefficients (β via np.linalg.lstsq), compute R² and adjusted R², check against statsmodels, and watch a slope change as predictors are added."/>
+<meta name="sc-lesson" content="multiple-regression-code"/>
+<meta name="theme-color" content="#4c72b0"/>
+<meta property="og:type" content="article"/>
+<meta property="og:site_name" content="Statistics, by seeing it happen"/>
+<meta property="og:title" content="The code behind it: multiple regression with linear algebra"/>
+<meta property="og:description" content="Build multiple regression with linear algebra — assemble the design matrix and solve for the coefficients (β via np.linalg.lstsq), compute R² and adjusted R², check against statsmodels, and watch a slope change as predictors are added."/>
+<meta property="og:image" content="https://jd-jones-ases.github.io/seeing-statistics/assets/og-card.png"/>
+<meta property="og:url" content="https://jd-jones-ases.github.io/seeing-statistics/19-multiple-regression~the-code.html"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<link rel="icon" href="assets/favicon.svg"/>
+<link rel="stylesheet" href="assets/vendor/katex/katex.min.css"/>
+<link rel="stylesheet" href="assets/course.css"/>
+</head>
 <body class="jp-Notebook" data-jp-theme-light="true" data-jp-theme-name="JupyterLab Light">
+<div class="sc-topbar">
+  <a class="sc-home" href="index.html">Statistics, by seeing it happen <span>· course map</span></a>
+  <span class="sc-spacer"></span>
+  <span class="sc-pos" style="color:var(--sc-muted);font-size:12.5px">Part 2 · Lesson 19 · the code behind it</span>
+  <a class="sc-btn run" href="live/lab/index.html?path=19-multiple-regression~the-code.html" title="Run this lesson live in your browser — no install">Run live ▶</a>
+  <button class="sc-btn" type="button" onclick="scToggleTheme()" title="Toggle light / dark" aria-label="Toggle light or dark theme">◐</button>
+</div>
+
 <main>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=c73e5843">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=3672db38">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -7824,7 +7846,7 @@ coefficients mean</em> to <strong>how you compute them</strong>. We'll go in the
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=45ebf617">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=1316db91">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -7836,7 +7858,7 @@ coefficients mean</em> to <strong>how you compute them</strong>. We'll go in the
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=67f76293">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=07560c7e">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -7881,7 +7903,7 @@ with <code>np.linalg.lstsq</code>, which does the same least-squares fit <strong
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=f446a035">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=cc1793b0">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -7996,7 +8018,7 @@ with <code>np.linalg.lstsq</code>, which does the same least-squares fit <strong
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=1ebda390">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=b72f7d80">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8018,7 +8040,7 @@ on a pandas index. We force <code>float</code> too — least squares is arithmet
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=f6b76fec">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=b850f703">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8066,7 +8088,7 @@ first 3 rows of X (note the leading 1s = the intercept column):
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=b253b670">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=37acf685">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8080,7 +8102,7 @@ per predictor. Once you've built it, the regression table is no longer a mystery
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=eb25c63c">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=3cd99f62">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8123,7 +8145,7 @@ Reading it back as an equation:
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=8f1dd91c">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=76c6732e">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8138,7 +8160,7 @@ R^2_{\text{adj}} = 1 - (1-R^2)\,\frac{n-1}{\,n-p-1\,}.$$</p>
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=8769590a">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=9a6218e9">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8178,7 +8200,7 @@ adjusted R-squared : 0.753937
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=de6f1cef">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=c109e821">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8190,7 +8212,7 @@ $R^2$ with <code>np.allclose</code>.</p>
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=cbb3379d">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=f3508c2f">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8237,7 +8259,7 @@ match? (adjusted R^2) : True
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=a0b30621">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=3b0edb8a">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8250,7 +8272,7 @@ model from above.</p>
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=d853bc75">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=b1b6e021">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8294,7 +8316,7 @@ year_built claim their own share, what is left for area is its value among compa
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=203b9981">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=53a4e953">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8313,7 +8335,7 @@ the first entry of <code>X @ beta</code>.</p>
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=b481fd44">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=8f69f525">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8358,7 +8380,7 @@ lstsq vs. the explicit (X^T X)^{-1} X^T y formula match? True
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=457c87d2">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=e39a1d6a">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8373,7 +8395,7 @@ adjusted $R^2$.</p>
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=eb718135">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=c0f7148c">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8433,7 +8455,7 @@ match statsmodels? True and True and True
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=a67aa9b5">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=dd56c73f">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8446,7 +8468,7 @@ in code." (And yes, <code>smf.ols</code> exists; the point was to <em>build</em>
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=b72c9b08">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=6e972e89">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8502,7 +8524,7 @@ once quality and age entered the model. That change <em>is</em> <strong>confound
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=ae1f8aa2">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=5de3dd1d">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8514,5 +8536,24 @@ once quality and age entered the model. That change <em>is</em> <strong>confound
 </div>
 </div>
 </main>
+
+<footer class="sc-footer">
+  <p class="sc-done"><label><input type="checkbox" id="sc-done-box"/> Mark this lesson complete
+    <span style="font-size:12px">(saved on this device only)</span></label></p>
+  <p><b>Run it yourself:</b>
+     <a href="live/lab/index.html?path=19-multiple-regression~the-code.html">in your browser (JupyterLite)</a> ·
+     <a href="https://mybinder.org/v2/gh/JD-Jones-ASES/seeing-statistics/HEAD?labpath=lessons/19-multiple-regression~the-code.html">on Binder</a> — no install, no account.</p>
+  <details class="sc-solution"><summary>How to cite this lesson</summary>
+    <div class="sc-cite">Jones, JD (2026). <em>The code behind it: multiple regression with linear algebra</em>. In <em>Statistics, by seeing it happen</em>. https://jd-jones-ases.github.io/seeing-statistics/19-multiple-regression~the-code.html</div></details>
+  <p>© JD Jones, 2026. Licensed <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>.
+     Bundled datasets keep their own licences — see <a href="data-credits.html">data sources &amp; credits</a>.
+     For study and understanding, not professional advice.</p>
+  <p><a href="index.html">↑ Course map</a> · <a href="glossary.html">Glossary</a> ·
+     <a href="formula-sheet.html">Formula sheet</a> · <a href="data-credits.html">Data sources</a></p>
+</footer>
+
+<script defer src="assets/vendor/katex/katex.min.js"></script>
+<script defer src="assets/vendor/katex/contrib/auto-render.min.js"></script>
+<script defer src="assets/course.js"></script>
 </body>
 </html>

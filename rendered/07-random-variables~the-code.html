@@ -3,7 +3,7 @@
 <html lang="en">
 <head><meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Notebook</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
+<title>The code behind it: simulate a random variable · Statistics, by seeing it happen</title>
 <style type="text/css">
     pre { line-height: 125%; }
 td.linenos .normal { color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px; }
@@ -7292,7 +7292,7 @@ a.anchor-link {
 }
 </style>
 <!-- Load mathjax -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS_CHTML-full,Safe"> </script>
+
 <!-- MathJax configuration -->
 <script type="text/x-mathjax-config">
     init_mathjax = function() {
@@ -7793,10 +7793,32 @@ a.anchor-link {
     white-space: normal;
   }
 </style>
-<!-- End of mermaid configuration --></head>
+<!-- End of mermaid configuration -->
+<meta name="description" content="Lesson 7 as a simulation — use a NumPy random generator to roll dice, build a probability distribution and compute its expectation &amp; variance from arrays, and watch the law of large numbers converge as a running average settles down."/>
+<meta name="sc-lesson" content="04-code"/>
+<meta name="theme-color" content="#4c72b0"/>
+<meta property="og:type" content="article"/>
+<meta property="og:site_name" content="Statistics, by seeing it happen"/>
+<meta property="og:title" content="The code behind it: simulate a random variable"/>
+<meta property="og:description" content="Lesson 7 as a simulation — use a NumPy random generator to roll dice, build a probability distribution and compute its expectation &amp; variance from arrays, and watch the law of large numbers converge as a running average settles down."/>
+<meta property="og:image" content="https://jd-jones-ases.github.io/seeing-statistics/assets/og-card.png"/>
+<meta property="og:url" content="https://jd-jones-ases.github.io/seeing-statistics/07-random-variables~the-code.html"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<link rel="icon" href="assets/favicon.svg"/>
+<link rel="stylesheet" href="assets/vendor/katex/katex.min.css"/>
+<link rel="stylesheet" href="assets/course.css"/>
+</head>
 <body class="jp-Notebook" data-jp-theme-light="true" data-jp-theme-name="JupyterLab Light">
+<div class="sc-topbar">
+  <a class="sc-home" href="index.html">Statistics, by seeing it happen <span>· course map</span></a>
+  <span class="sc-spacer"></span>
+  <span class="sc-pos" style="color:var(--sc-muted);font-size:12.5px">Part 1 · Lesson 7 · the code behind it</span>
+  <a class="sc-btn run" href="live/lab/index.html?path=07-random-variables~the-code.html" title="Run this lesson live in your browser — no install">Run live ▶</a>
+  <button class="sc-btn" type="button" onclick="scToggleTheme()" title="Toggle light / dark" aria-label="Toggle light or dark theme">◐</button>
+</div>
+
 <main>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=fa3a17a3">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=ca825117">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -7825,7 +7847,7 @@ you make randomness happen (reproducibly) in Python</strong>. We'll go in the or
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=76ee0137">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=4895d843">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -7837,7 +7859,7 @@ you make randomness happen (reproducibly) in Python</strong>. We'll go in the or
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=cba630ef">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=95bfd7e6">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -7880,7 +7902,7 @@ a lesson whose numbers must be reproducible. Change the seed and you get a diffe
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=89e4a6ba">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=85573166">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -7919,7 +7941,7 @@ a lesson whose numbers must be reproducible. Change the seed and you get a diffe
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=1b7fa18d">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=bded580b">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -7933,7 +7955,7 @@ distinct values.</p>
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=a0ce30da">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=7a3565d0">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -7973,7 +7995,7 @@ rolls.mean() = 3.4980   (we expect something near 3.5)
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=90c8fad5">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=3318ec58">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -7989,7 +8011,7 @@ probabilities. This is the empirical (data-driven) PMF:</p>
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=a29891cc">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=788d81dc">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8033,7 +8055,7 @@ close to a flat 1/6 each? True
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=d22a86de">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=e9ce7e8c">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8046,7 +8068,7 @@ plain <code>rolls.mean()</code> on the raw rolls.</p>
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=a9ae10c5">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=6e68176a">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8085,7 +8107,7 @@ close to theory 3.5?   True
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=055bf6dd">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=8541facf">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8103,7 +8125,7 @@ formula computes.)</p>
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=99966ab3">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=9628886e">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8146,7 +8168,7 @@ SD[X] from the PMF : 1.7060   (theoretical sqrt(35/12) = 1.7078)
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=6e270941">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=7b2be96e">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8158,7 +8180,7 @@ running <em>mean</em> — the whole curve in two vectorized lines, no loop.</p>
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=f13e92e7">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=4f747d12">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8202,7 +8224,7 @@ Average of all 100,000 rolls : 3.498   (target 3.5)
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=faf994dc">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=4d5c18a5">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8213,7 +8235,7 @@ slower and noisier to read. The idiom is to ask the generator for the whole batc
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=5170b77f">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=e621bd5a">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8251,10 +8273,10 @@ slower and noisier to read. The idiom is to ask the generator for the whole batc
 <div class="jp-OutputArea jp-Cell-outputArea">
 <div class="jp-OutputArea-child">
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>loop      mean of 100,000 rolls: 3.4980   in   111.1 ms
+<pre>loop      mean of 100,000 rolls: 3.4980   in   122.1 ms
 vectorized mean of 100,000 rolls: 3.4980   in     0.3 ms
 
-Same kind of answer (both near 3.5), but vectorized is ~358x faster
+Same kind of answer (both near 3.5), but vectorized is ~349x faster
 and it is one short line. On big simulations this is the difference between seconds and minutes.
 </pre>
 </div>
@@ -8262,7 +8284,7 @@ and it is one short line. On big simulations this is the difference between seco
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=f135a630">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=eae512b7">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8274,7 +8296,7 @@ die, the sum of two dice, a real dataset.</p>
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=1eb35aba">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=1dce3350">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8318,7 +8340,7 @@ match Section 3? True True
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=0c25b0f5">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=e053a57c">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8331,7 +8353,7 @@ functions. Theory says $E[S] = 7$ (two dice, $2 \times 3.5$) and $\operatorname{
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=f36c54dc">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=21669c14">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8388,7 +8410,7 @@ close to theory (7 and 5.833)?  True True
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=307444c3">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=75d6e47b">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8401,7 +8423,7 @@ counting (dropping the missing values first), then hand it to the <em>exact same
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=4d881d25">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=c4f9c909">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8448,7 +8470,7 @@ A typical 2014 birth had about 11 prenatal visits, give or take ~4 (SD).
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=1fa3a298">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=fb42ce76">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8504,7 +8526,7 @@ for the <em>meaning</em> of these numbers, or read on through the course.</p>
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=caa0812e">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=accecfa3">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8516,5 +8538,24 @@ for the <em>meaning</em> of these numbers, or read on through the course.</p>
 </div>
 </div>
 </main>
+
+<footer class="sc-footer">
+  <p class="sc-done"><label><input type="checkbox" id="sc-done-box"/> Mark this lesson complete
+    <span style="font-size:12px">(saved on this device only)</span></label></p>
+  <p><b>Run it yourself:</b>
+     <a href="live/lab/index.html?path=07-random-variables~the-code.html">in your browser (JupyterLite)</a> ·
+     <a href="https://mybinder.org/v2/gh/JD-Jones-ASES/seeing-statistics/HEAD?labpath=lessons/07-random-variables~the-code.html">on Binder</a> — no install, no account.</p>
+  <details class="sc-solution"><summary>How to cite this lesson</summary>
+    <div class="sc-cite">Jones, JD (2026). <em>The code behind it: simulate a random variable</em>. In <em>Statistics, by seeing it happen</em>. https://jd-jones-ases.github.io/seeing-statistics/07-random-variables~the-code.html</div></details>
+  <p>© JD Jones, 2026. Licensed <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>.
+     Bundled datasets keep their own licences — see <a href="data-credits.html">data sources &amp; credits</a>.
+     For study and understanding, not professional advice.</p>
+  <p><a href="index.html">↑ Course map</a> · <a href="glossary.html">Glossary</a> ·
+     <a href="formula-sheet.html">Formula sheet</a> · <a href="data-credits.html">Data sources</a></p>
+</footer>
+
+<script defer src="assets/vendor/katex/katex.min.js"></script>
+<script defer src="assets/vendor/katex/contrib/auto-render.min.js"></script>
+<script defer src="assets/course.js"></script>
 </body>
 </html>

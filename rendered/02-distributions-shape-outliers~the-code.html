@@ -3,7 +3,7 @@
 <html lang="en">
 <head><meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Notebook</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
+<title>The code behind it: histograms, skew &amp; the IQR rule in code · Statistics, by seeing it happen</title>
 <style type="text/css">
     pre { line-height: 125%; }
 td.linenos .normal { color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px; }
@@ -7292,7 +7292,7 @@ a.anchor-link {
 }
 </style>
 <!-- Load mathjax -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS_CHTML-full,Safe"> </script>
+
 <!-- MathJax configuration -->
 <script type="text/x-mathjax-config">
     init_mathjax = function() {
@@ -7793,10 +7793,32 @@ a.anchor-link {
     white-space: normal;
   }
 </style>
-<!-- End of mermaid configuration --></head>
+<!-- End of mermaid configuration -->
+<meta name="description" content="Lesson 2&#x27;s shape tools in code — build a frequency table and a histogram from scratch, compute skew and the 1.5×IQR outlier fence yourself, then wrap the fence as a reusable outlier-flagging function."/>
+<meta name="sc-lesson" content="02-code"/>
+<meta name="theme-color" content="#4c72b0"/>
+<meta property="og:type" content="article"/>
+<meta property="og:site_name" content="Statistics, by seeing it happen"/>
+<meta property="og:title" content="The code behind it: histograms, skew &amp; the IQR rule in code"/>
+<meta property="og:description" content="Lesson 2&#x27;s shape tools in code — build a frequency table and a histogram from scratch, compute skew and the 1.5×IQR outlier fence yourself, then wrap the fence as a reusable outlier-flagging function."/>
+<meta property="og:image" content="https://jd-jones-ases.github.io/seeing-statistics/assets/og-card.png"/>
+<meta property="og:url" content="https://jd-jones-ases.github.io/seeing-statistics/02-distributions-shape-outliers~the-code.html"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<link rel="icon" href="assets/favicon.svg"/>
+<link rel="stylesheet" href="assets/vendor/katex/katex.min.css"/>
+<link rel="stylesheet" href="assets/course.css"/>
+</head>
 <body class="jp-Notebook" data-jp-theme-light="true" data-jp-theme-name="JupyterLab Light">
+<div class="sc-topbar">
+  <a class="sc-home" href="index.html">Statistics, by seeing it happen <span>· course map</span></a>
+  <span class="sc-spacer"></span>
+  <span class="sc-pos" style="color:var(--sc-muted);font-size:12.5px">Part 1 · Lesson 2 · the code behind it</span>
+  <a class="sc-btn run" href="live/lab/index.html?path=02-distributions-shape-outliers~the-code.html" title="Run this lesson live in your browser — no install">Run live ▶</a>
+  <button class="sc-btn" type="button" onclick="scToggleTheme()" title="Toggle light / dark" aria-label="Toggle light or dark theme">◐</button>
+</div>
+
 <main>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=787b4b53">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=ab609536">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -7825,7 +7847,7 @@ compute it in Python</strong>. We'll go in the order a programmer actually works
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=e6ab69cb">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=44fe59ec">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -7837,7 +7859,7 @@ compute it in Python</strong>. We'll go in the order a programmer actually works
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=51888f13">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=f7da2a4c">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -7883,7 +7905,7 @@ an array of values with an index. Almost everything below is "do some arithmetic
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=add11638">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=56d3118d">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -7930,7 +7952,7 @@ Lending Club: shape (10000, 55)
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=de86d31f">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=4d50f0e2">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -7946,7 +7968,7 @@ columns, what do the first rows look like? Four habits worth keeping:</p>
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=606db2a9">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=d571a55d">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8044,7 +8066,7 @@ dtype: object
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=056b6f37">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=dec53e4e">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8058,7 +8080,7 @@ useful idiom in pandas, and we'll lean on it for outliers later.</li>
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=7194bb35">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=a888e919">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8095,7 +8117,7 @@ eruptions longer than 3 min: 175 of 272  (64%)
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=19432052">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=5804dde6">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8108,7 +8130,7 @@ for us — and it's worth seeing it return exactly the same tallies as pandas' <
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=4ccf1b09">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=526987a3">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8162,7 +8184,7 @@ eruptions
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=ff936aaf">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=41b26c06">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8176,7 +8198,7 @@ ones near 4 to 4.5, separated by a near-empty valley around 3. A distribution wi
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=c48fae4c">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=772507f1">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8218,7 +8240,7 @@ count-then-bar for you in one call — there is no magic underneath.
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=6b389f84">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=8a0e94a0">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8233,7 +8255,7 @@ definition, so the two should match to many decimals.</p>
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=da185129">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=4fa353ba">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8280,7 +8302,7 @@ pandas income.skew(): 9.034492  (bias-corrected, so it differs slightly — that
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=d63837b3">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=0f100df4">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8293,7 +8315,7 @@ plain arithmetic, and a <strong>boolean mask</strong> flags anything past them.<
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=615f1fac">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=c6722c63">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8341,7 +8363,7 @@ outliers flagged: 508 of 10,000  (5.1%)
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=b7fea623">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=865797a8">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8353,7 +8375,7 @@ money data the rule fires only on the long high side.</p>
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=af453649">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=bb3afe5c">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8363,7 +8385,7 @@ read. Compare the two — the vectorized boolean mask is the idiom you want.</p>
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=5b9adfa7">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=b1fbf559">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8402,7 +8424,7 @@ match? True
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=2810041f">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=82ac2f5e">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8413,7 +8435,7 @@ math). Picking the right one is the idiom.</p>
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=495e405f">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=78829c0e">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8449,7 +8471,7 @@ same tallies as the frequency table? True
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=3cdfa4f9">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=ac1bce8a">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8460,7 +8482,7 @@ can reuse on <em>any</em> numeric column — and the <code>k=1.5</code> is a par
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=e17489a1">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=3a9224bb">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8512,7 +8534,7 @@ income (k=3.0) : fence ($-105,000, $245,000)  -&gt;  187 outliers
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=282c86d2">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=6c42bb4f">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8524,7 +8546,7 @@ exactly the leap from "writing statistics" to "doing statistics in code."</p>
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=49d1ab43">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=d9b46160">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8576,7 +8598,7 @@ for the <em>meaning</em> of these numbers, or read on through the course.</p>
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=7ab853c2">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=cb42f391">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8588,5 +8610,24 @@ for the <em>meaning</em> of these numbers, or read on through the course.</p>
 </div>
 </div>
 </main>
+
+<footer class="sc-footer">
+  <p class="sc-done"><label><input type="checkbox" id="sc-done-box"/> Mark this lesson complete
+    <span style="font-size:12px">(saved on this device only)</span></label></p>
+  <p><b>Run it yourself:</b>
+     <a href="live/lab/index.html?path=02-distributions-shape-outliers~the-code.html">in your browser (JupyterLite)</a> ·
+     <a href="https://mybinder.org/v2/gh/JD-Jones-ASES/seeing-statistics/HEAD?labpath=lessons/02-distributions-shape-outliers~the-code.html">on Binder</a> — no install, no account.</p>
+  <details class="sc-solution"><summary>How to cite this lesson</summary>
+    <div class="sc-cite">Jones, JD (2026). <em>The code behind it: histograms, skew &amp; the IQR rule in code</em>. In <em>Statistics, by seeing it happen</em>. https://jd-jones-ases.github.io/seeing-statistics/02-distributions-shape-outliers~the-code.html</div></details>
+  <p>© JD Jones, 2026. Licensed <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>.
+     Bundled datasets keep their own licences — see <a href="data-credits.html">data sources &amp; credits</a>.
+     For study and understanding, not professional advice.</p>
+  <p><a href="index.html">↑ Course map</a> · <a href="glossary.html">Glossary</a> ·
+     <a href="formula-sheet.html">Formula sheet</a> · <a href="data-credits.html">Data sources</a></p>
+</footer>
+
+<script defer src="assets/vendor/katex/katex.min.js"></script>
+<script defer src="assets/vendor/katex/contrib/auto-render.min.js"></script>
+<script defer src="assets/course.js"></script>
 </body>
 </html>

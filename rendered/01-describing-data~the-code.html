@@ -3,7 +3,7 @@
 <html lang="en">
 <head><meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Notebook</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
+<title>The code behind it: build describe() from scratch · Statistics, by seeing it happen</title>
 <style type="text/css">
     pre { line-height: 125%; }
 td.linenos .normal { color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px; }
@@ -7292,7 +7292,7 @@ a.anchor-link {
 }
 </style>
 <!-- Load mathjax -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS_CHTML-full,Safe"> </script>
+
 <!-- MathJax configuration -->
 <script type="text/x-mathjax-config">
     init_mathjax = function() {
@@ -7793,10 +7793,32 @@ a.anchor-link {
     white-space: normal;
   }
 </style>
-<!-- End of mermaid configuration --></head>
+<!-- End of mermaid configuration -->
+<meta name="description" content="Open the hood on Lesson 1 — compute the mean, SD, z-scores and correlation yourself in NumPy, meet split-apply-combine with groupby, then wrap it all in your own describe() function."/>
+<meta name="sc-lesson" content="01-code"/>
+<meta name="theme-color" content="#4c72b0"/>
+<meta property="og:type" content="article"/>
+<meta property="og:site_name" content="Statistics, by seeing it happen"/>
+<meta property="og:title" content="The code behind it: build describe() from scratch"/>
+<meta property="og:description" content="Open the hood on Lesson 1 — compute the mean, SD, z-scores and correlation yourself in NumPy, meet split-apply-combine with groupby, then wrap it all in your own describe() function."/>
+<meta property="og:image" content="https://jd-jones-ases.github.io/seeing-statistics/assets/og-card.png"/>
+<meta property="og:url" content="https://jd-jones-ases.github.io/seeing-statistics/01-describing-data~the-code.html"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<link rel="icon" href="assets/favicon.svg"/>
+<link rel="stylesheet" href="assets/vendor/katex/katex.min.css"/>
+<link rel="stylesheet" href="assets/course.css"/>
+</head>
 <body class="jp-Notebook" data-jp-theme-light="true" data-jp-theme-name="JupyterLab Light">
+<div class="sc-topbar">
+  <a class="sc-home" href="index.html">Statistics, by seeing it happen <span>· course map</span></a>
+  <span class="sc-spacer"></span>
+  <span class="sc-pos" style="color:var(--sc-muted);font-size:12.5px">Part 1 · Lesson 1 · the code behind it</span>
+  <a class="sc-btn run" href="live/lab/index.html?path=01-describing-data~the-code.html" title="Run this lesson live in your browser — no install">Run live ▶</a>
+  <button class="sc-btn" type="button" onclick="scToggleTheme()" title="Toggle light / dark" aria-label="Toggle light or dark theme">◐</button>
+</div>
+
 <main>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=6e478a3a">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=276e6b02">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -7824,7 +7846,7 @@ compute it in Python</strong>. We'll go in the order a programmer actually works
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=b2ec69ff">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=328db932">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -7836,7 +7858,7 @@ compute it in Python</strong>. We'll go in the order a programmer actually works
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=ba697cba">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=d2d8d919">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -7877,7 +7899,7 @@ an array of values with an index. Almost everything below is "do some arithmetic
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=670945bc">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=f62e2931">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -7917,7 +7939,7 @@ an array of values with an index. Almost everything below is "do some arithmetic
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=d43da697">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=622f604c">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -7933,7 +7955,7 @@ columns, what do the first rows look like? Four habits worth keeping:</p>
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=6b321d5a">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=3dd3b21d">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8066,7 +8088,7 @@ dtype: object
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=d15d9fe4">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=0ca721cf">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8082,7 +8104,7 @@ This makes a <strong>new, smaller table</strong> — it never edits the file on 
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=fd0e8039">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=b0fa38ec">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8126,7 +8148,7 @@ Gentoo penguins: 119 of 333
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=1e6fa162">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=dac3a247">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8139,7 +8161,7 @@ a mystery box.</p>
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=f94e33c8">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=29b09ea3">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8173,7 +8195,7 @@ match? True
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=77ae44e9">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=0748a5cc">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8186,7 +8208,7 @@ whole array of deviations. <code>** 2</code> squares each. <code>.sum()</code> a
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=237dd039">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=58a239e8">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8230,7 +8252,7 @@ match? True True
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=ff6d0ec0">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=3f044bbf">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8240,7 +8262,7 @@ work element-by-element, the entire column of z-scores is <em>one expression</em
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=7e57781a">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=5a9e3b39">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8279,7 +8301,7 @@ and the mean of True/False is just the proportion that are True.
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=3af048ce">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=6fd56a46">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8291,7 +8313,7 @@ deviations of $x$ and $y$ move together?", scaled to land between $-1$ and $+1$:
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=5ce56b8b">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=505cd5c7">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8332,7 +8354,7 @@ match? True
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=bb7ea5d2">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=c7ca1422">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8342,7 +8364,7 @@ read. Compare the two — the vectorized one-liner is the idiom you want.</p>
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=aa8ba919">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=8545c82a">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8395,16 +8417,16 @@ read. Compare the two — the vectorized one-liner is the idiom you want.</p>
 vectorized result: 4207.0571   &lt;- same number, one line, and far faster on big data
 
 Mean of 1,000,000 numbers:
-  Python loop :    94.1 ms
+  Python loop :    87.9 ms
   NumPy .mean():     0.7 ms
-  NumPy is roughly 138x faster — and it is one short line.
+  NumPy is roughly 132x faster — and it is one short line.
 </pre>
 </div>
 </div>
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=d83cb00f">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=bec285cf">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8415,7 +8437,7 @@ Mean of 1,000,000 numbers:
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=d69334b3">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=8cc14d0a">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8462,7 +8484,7 @@ combine into one tidy DataFrame. The same idea powers pivot tables and SQL's GRO
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=ce7844d4">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=f9b8684e">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8473,7 +8495,7 @@ is one call you can reuse on <em>any</em> numeric column — flipper length, bil
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=07651189">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=c2ead613">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8521,7 +8543,7 @@ bill_length_mm       {'n': 333, 'mean': np.float64(43.99), 'sd': np.float64(5.47
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=d28e1e46">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=3668faaf">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8534,7 +8556,7 @@ so you know what it's doing.)</p>
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=fe4a4d8c">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=49764d92">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8583,7 +8605,7 @@ just a short formula; you reproduced every pandas number to the decimal.</li>
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=c8d2a773">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=4d3cd3db">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8595,5 +8617,24 @@ just a short formula; you reproduced every pandas number to the decimal.</li>
 </div>
 </div>
 </main>
+
+<footer class="sc-footer">
+  <p class="sc-done"><label><input type="checkbox" id="sc-done-box"/> Mark this lesson complete
+    <span style="font-size:12px">(saved on this device only)</span></label></p>
+  <p><b>Run it yourself:</b>
+     <a href="live/lab/index.html?path=01-describing-data~the-code.html">in your browser (JupyterLite)</a> ·
+     <a href="https://mybinder.org/v2/gh/JD-Jones-ASES/seeing-statistics/HEAD?labpath=lessons/01-describing-data~the-code.html">on Binder</a> — no install, no account.</p>
+  <details class="sc-solution"><summary>How to cite this lesson</summary>
+    <div class="sc-cite">Jones, JD (2026). <em>The code behind it: build describe() from scratch</em>. In <em>Statistics, by seeing it happen</em>. https://jd-jones-ases.github.io/seeing-statistics/01-describing-data~the-code.html</div></details>
+  <p>© JD Jones, 2026. Licensed <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>.
+     Bundled datasets keep their own licences — see <a href="data-credits.html">data sources &amp; credits</a>.
+     For study and understanding, not professional advice.</p>
+  <p><a href="index.html">↑ Course map</a> · <a href="glossary.html">Glossary</a> ·
+     <a href="formula-sheet.html">Formula sheet</a> · <a href="data-credits.html">Data sources</a></p>
+</footer>
+
+<script defer src="assets/vendor/katex/katex.min.js"></script>
+<script defer src="assets/vendor/katex/contrib/auto-render.min.js"></script>
+<script defer src="assets/course.js"></script>
 </body>
 </html>

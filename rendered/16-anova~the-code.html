@@ -3,7 +3,7 @@
 <html lang="en">
 <head><meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Notebook</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
+<title>The code behind it: ANOVA from the variance decomposition · Statistics, by seeing it happen</title>
 <style type="text/css">
     pre { line-height: 125%; }
 td.linenos .normal { color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px; }
@@ -7292,7 +7292,7 @@ a.anchor-link {
 }
 </style>
 <!-- Load mathjax -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS_CHTML-full,Safe"> </script>
+
 <!-- MathJax configuration -->
 <script type="text/x-mathjax-config">
     init_mathjax = function() {
@@ -7793,10 +7793,32 @@ a.anchor-link {
     white-space: normal;
   }
 </style>
-<!-- End of mermaid configuration --></head>
+<!-- End of mermaid configuration -->
+<meta name="description" content="Build one-way ANOVA from the variance decomposition — split total into between- and within-group sums of squares (they add up), form the mean squares and the F-ratio, get the p-value, all checked against scipy.stats.f_oneway."/>
+<meta name="sc-lesson" content="anova-code"/>
+<meta name="theme-color" content="#4c72b0"/>
+<meta property="og:type" content="article"/>
+<meta property="og:site_name" content="Statistics, by seeing it happen"/>
+<meta property="og:title" content="The code behind it: ANOVA from the variance decomposition"/>
+<meta property="og:description" content="Build one-way ANOVA from the variance decomposition — split total into between- and within-group sums of squares (they add up), form the mean squares and the F-ratio, get the p-value, all checked against scipy.stats.f_oneway."/>
+<meta property="og:image" content="https://jd-jones-ases.github.io/seeing-statistics/assets/og-card.png"/>
+<meta property="og:url" content="https://jd-jones-ases.github.io/seeing-statistics/16-anova~the-code.html"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<link rel="icon" href="assets/favicon.svg"/>
+<link rel="stylesheet" href="assets/vendor/katex/katex.min.css"/>
+<link rel="stylesheet" href="assets/course.css"/>
+</head>
 <body class="jp-Notebook" data-jp-theme-light="true" data-jp-theme-name="JupyterLab Light">
+<div class="sc-topbar">
+  <a class="sc-home" href="index.html">Statistics, by seeing it happen <span>· course map</span></a>
+  <span class="sc-spacer"></span>
+  <span class="sc-pos" style="color:var(--sc-muted);font-size:12.5px">Part 2 · Lesson 16 · the code behind it</span>
+  <a class="sc-btn run" href="live/lab/index.html?path=16-anova~the-code.html" title="Run this lesson live in your browser — no install">Run live ▶</a>
+  <button class="sc-btn" type="button" onclick="scToggleTheme()" title="Toggle light / dark" aria-label="Toggle light or dark theme">◐</button>
+</div>
+
 <main>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=ee66697e">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=5675351e">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -7824,7 +7846,7 @@ hands you and becomes a few lines of NumPy you could write from memory.</p>
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=bc96aa13">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=48944836">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -7836,7 +7858,7 @@ hands you and becomes a few lines of NumPy you could write from memory.</p>
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=ced5022c">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=31473c15">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -7885,7 +7907,7 @@ below is "do some arithmetic to a whole array at once."</p>
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=08842565">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=52f0979b">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -7925,7 +7947,7 @@ below is "do some arithmetic to a whole array at once."</p>
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=055309ca">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=20ad587f">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -7940,7 +7962,7 @@ combine into a table.</p>
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=e40209d9">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=fb6211a6">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -7986,7 +8008,7 @@ first 5 Adelie masses: [3750. 3800. 3250. 3450. 3650.]
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=dc25839e">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=5ce29888">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8004,7 +8026,7 @@ whole column.</p>
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=4444ca8a">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=5dbe3773">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8046,7 +8068,7 @@ per-group mean and size (the n_j and x-bar_j the formulas need):
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=04c8a952">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=e92f4a12">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8061,7 +8083,7 @@ at once; <code>** 2</code> squares each; <code>.sum()</code> adds them. No loop 
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=33da140b">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=14aefb27">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8100,7 +8122,7 @@ SS_within  =    72,443,483.21
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=cb6fb2e0">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=af166263">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8111,7 +8133,7 @@ part and a noise part. Let's check it numerically.</p>
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=5633cb6b">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=6922afad">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8148,7 +8170,7 @@ SST = SSB + SSW  match? True
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=0cb3a423">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=9cb69408">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8165,7 +8187,7 @@ alone produce an $F$ this big or bigger if every species truly had the same mean
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=7f60496a">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=18f71f77">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8209,7 +8231,7 @@ p = f.sf(F, 2, 339)    = 2.8924e-82
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=57639ba7">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=f8ad0433">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8219,7 +8241,7 @@ to the last decimal — and the p-value too.</p>
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=372cc4d8">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=e02e1580">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8257,7 +8279,7 @@ match? True True
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=612bda12">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=d1a9fdeb">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8270,7 +8292,7 @@ count how often <em>at least one</em> fires by accident.</p>
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=ec600402">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=b47a48e1">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8331,7 +8353,7 @@ count how often <em>at least one</em> fires by accident.</p>
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=e5200503">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=69224d80">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8357,7 +8379,7 @@ the <strong>degrees of freedom</strong> ($k-1$ and $N-k$), <em>not</em> by $n$ o
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=f692a1b8">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=e6e80fe2">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8396,7 +8418,7 @@ and groupby (above) did the splitting. That is the idiom.
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=0ab6dd9e">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=91ca5b7e">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8408,7 +8430,7 @@ groups — flipper lengths, a different dataset entirely.</p>
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=e9ecb275">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=b8debbab">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8466,7 +8488,7 @@ match? True True
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=825f8ccc">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=06e7f7b5">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8478,7 +8500,7 @@ formulas.</p>
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=6234629b">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=73aaa83d">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8517,7 +8539,7 @@ strongly than body mass did (F = 595 vs 344).
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=961df24a">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=402ddd7a">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8576,7 +8598,7 @@ assumptions.</p>
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=d0e08b3e">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=2d5ec448">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8588,5 +8610,24 @@ assumptions.</p>
 </div>
 </div>
 </main>
+
+<footer class="sc-footer">
+  <p class="sc-done"><label><input type="checkbox" id="sc-done-box"/> Mark this lesson complete
+    <span style="font-size:12px">(saved on this device only)</span></label></p>
+  <p><b>Run it yourself:</b>
+     <a href="live/lab/index.html?path=16-anova~the-code.html">in your browser (JupyterLite)</a> ·
+     <a href="https://mybinder.org/v2/gh/JD-Jones-ASES/seeing-statistics/HEAD?labpath=lessons/16-anova~the-code.html">on Binder</a> — no install, no account.</p>
+  <details class="sc-solution"><summary>How to cite this lesson</summary>
+    <div class="sc-cite">Jones, JD (2026). <em>The code behind it: ANOVA from the variance decomposition</em>. In <em>Statistics, by seeing it happen</em>. https://jd-jones-ases.github.io/seeing-statistics/16-anova~the-code.html</div></details>
+  <p>© JD Jones, 2026. Licensed <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>.
+     Bundled datasets keep their own licences — see <a href="data-credits.html">data sources &amp; credits</a>.
+     For study and understanding, not professional advice.</p>
+  <p><a href="index.html">↑ Course map</a> · <a href="glossary.html">Glossary</a> ·
+     <a href="formula-sheet.html">Formula sheet</a> · <a href="data-credits.html">Data sources</a></p>
+</footer>
+
+<script defer src="assets/vendor/katex/katex.min.js"></script>
+<script defer src="assets/vendor/katex/contrib/auto-render.min.js"></script>
+<script defer src="assets/course.js"></script>
 </body>
 </html>

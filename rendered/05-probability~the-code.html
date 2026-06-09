@@ -3,7 +3,7 @@
 <html lang="en">
 <head><meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Notebook</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
+<title>The code behind it: probabilities from a crosstab · Statistics, by seeing it happen</title>
 <style type="text/css">
     pre { line-height: 125%; }
 td.linenos .normal { color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px; }
@@ -7292,7 +7292,7 @@ a.anchor-link {
 }
 </style>
 <!-- Load mathjax -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS_CHTML-full,Safe"> </script>
+
 <!-- MathJax configuration -->
 <script type="text/x-mathjax-config">
     init_mathjax = function() {
@@ -7793,10 +7793,32 @@ a.anchor-link {
     white-space: normal;
   }
 </style>
-<!-- End of mermaid configuration --></head>
+<!-- End of mermaid configuration -->
+<meta name="description" content="Lesson 5&#x27;s probabilities straight from the data — build a two-way table with pd.crosstab, read marginal, joint and conditional probabilities off it with boolean masks, and write your own conditional-probability function."/>
+<meta name="sc-lesson" content="03-code"/>
+<meta name="theme-color" content="#4c72b0"/>
+<meta property="og:type" content="article"/>
+<meta property="og:site_name" content="Statistics, by seeing it happen"/>
+<meta property="og:title" content="The code behind it: probabilities from a crosstab"/>
+<meta property="og:description" content="Lesson 5&#x27;s probabilities straight from the data — build a two-way table with pd.crosstab, read marginal, joint and conditional probabilities off it with boolean masks, and write your own conditional-probability function."/>
+<meta property="og:image" content="https://jd-jones-ases.github.io/seeing-statistics/assets/og-card.png"/>
+<meta property="og:url" content="https://jd-jones-ases.github.io/seeing-statistics/05-probability~the-code.html"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<link rel="icon" href="assets/favicon.svg"/>
+<link rel="stylesheet" href="assets/vendor/katex/katex.min.css"/>
+<link rel="stylesheet" href="assets/course.css"/>
+</head>
 <body class="jp-Notebook" data-jp-theme-light="true" data-jp-theme-name="JupyterLab Light">
+<div class="sc-topbar">
+  <a class="sc-home" href="index.html">Statistics, by seeing it happen <span>· course map</span></a>
+  <span class="sc-spacer"></span>
+  <span class="sc-pos" style="color:var(--sc-muted);font-size:12.5px">Part 1 · Lesson 5 · the code behind it</span>
+  <a class="sc-btn run" href="live/lab/index.html?path=05-probability~the-code.html" title="Run this lesson live in your browser — no install">Run live ▶</a>
+  <button class="sc-btn" type="button" onclick="scToggleTheme()" title="Toggle light / dark" aria-label="Toggle light or dark theme">◐</button>
+</div>
+
 <main>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=f8ece2ff">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=852442e3">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -7825,7 +7847,7 @@ compute it in Python</strong>. We'll go in the order a programmer actually works
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=0cf79822">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=c16c7e79">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -7837,7 +7859,7 @@ compute it in Python</strong>. We'll go in the order a programmer actually works
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=91f90563">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=ddb496d9">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -7878,7 +7900,7 @@ number in that grid divided by another (a grand total, a row total, or a column 
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=3bc00927">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=e415d680">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -7917,7 +7939,7 @@ number in that grid divided by another (a grand total, a row total, or a column 
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=4325166a">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=900685ec">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -7932,7 +7954,7 @@ the first rows look like, how are the key columns coded? Same habits as always:<
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=a5005b14">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=57c23ada">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8052,7 +8074,7 @@ columns: ['Survived', 'Pclass', 'Name', 'Sex', 'Age', 'Siblings/Spouses Aboard',
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=c9178b47">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=38d4ca33">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8069,7 +8091,7 @@ edit it.</p>
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=5733a362">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=39276d78">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8099,7 +8121,7 @@ missing in Survived/Sex: 0
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=628455f4">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=f9c54d2d">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8109,7 +8131,7 @@ probability. We'll lean on three masks (and the <code>Survived</code> column, wh
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=ac259e94">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=760c09a5">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8148,7 +8170,7 @@ survivors         : 342 of 887
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=e63b8c82">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=a5fa0eda">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8161,7 +8183,7 @@ rows and <code>Sex</code> across the columns. Each inner cell is a count of peop
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=7ee6ccd1">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=8509651d">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8211,7 +8233,7 @@ survived &amp; female (cell) : 233
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=709b26cb">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=affa4354">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8223,7 +8245,7 @@ the direct route, which is just the mean of the 0/1 <code>Survived</code> column
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=76191356">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=34397531">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8259,7 +8281,7 @@ match? True
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=c17235b9">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=89fc68e4">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8271,7 +8293,7 @@ of the <strong>combined</strong> mask <code>survived &amp; female</code>.</p>
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=92a4a5bc">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=d47585e3">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8304,7 +8326,7 @@ match? True
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=731a2adb">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=60914c73">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8318,7 +8340,7 @@ re-scales the cell to the world of women only. The direct route restricts to wom
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=3c98e6e6">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=eadf8e45">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8362,7 +8384,7 @@ match? True
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=28ae1a64">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=4e82839f">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8374,7 +8396,7 @@ divisions on a grid of counts.</p>
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=636a2dd0">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=1d5191e8">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8386,7 +8408,7 @@ gets.</p>
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=0313eff1">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=151f6b2f">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8426,7 +8448,7 @@ Knowing a passenger is female swings the survival bet up by +36 percentage point
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=157df9f3">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=3ceb34c1">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8438,7 +8460,7 @@ total. Verify against the direct route: restrict to survivors, then take the fem
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=83e36836">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=edd716df">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8479,7 +8501,7 @@ P(survived | female) != P(female | survived): order matters. That is Bayes in on
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=465bd609">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=46341acf">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8490,7 +8512,7 @@ column by <code>Sex</code> and take the mean of each group. Because the mean of 
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=11ec20ec">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=2dd1e696">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8531,7 +8553,7 @@ match? True True
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=0710da26">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=d3f4f3fd">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8547,7 +8569,7 @@ row-conditional table — each row sums to 1, this is the Bayes-flip table).</li
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=96e2ee15">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=c8613dee">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8610,7 +8632,7 @@ Survived
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=cfb38478">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=f2b36abc">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8621,7 +8643,7 @@ Survived
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=aaf7c486">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=d2fe17dc">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8633,7 +8655,7 @@ on any two columns.</p>
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=05a4d293">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=81dc3098">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8674,7 +8696,7 @@ cond_prob(female   | survived=1) = 0.681287   (matches §3? True)
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=0e82486e">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=ea82e785">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8686,7 +8708,7 @@ it's correct you stop thinking about which total to divide by and start thinking
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=a56e9a18">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=fd695e90">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8737,7 +8759,7 @@ $P(A \mid B) \ne P(B \mid A)$ in general.</li>
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=6edc5cbe">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=825e995a">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8749,5 +8771,24 @@ $P(A \mid B) \ne P(B \mid A)$ in general.</li>
 </div>
 </div>
 </main>
+
+<footer class="sc-footer">
+  <p class="sc-done"><label><input type="checkbox" id="sc-done-box"/> Mark this lesson complete
+    <span style="font-size:12px">(saved on this device only)</span></label></p>
+  <p><b>Run it yourself:</b>
+     <a href="live/lab/index.html?path=05-probability~the-code.html">in your browser (JupyterLite)</a> ·
+     <a href="https://mybinder.org/v2/gh/JD-Jones-ASES/seeing-statistics/HEAD?labpath=lessons/05-probability~the-code.html">on Binder</a> — no install, no account.</p>
+  <details class="sc-solution"><summary>How to cite this lesson</summary>
+    <div class="sc-cite">Jones, JD (2026). <em>The code behind it: probabilities from a crosstab</em>. In <em>Statistics, by seeing it happen</em>. https://jd-jones-ases.github.io/seeing-statistics/05-probability~the-code.html</div></details>
+  <p>© JD Jones, 2026. Licensed <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>.
+     Bundled datasets keep their own licences — see <a href="data-credits.html">data sources &amp; credits</a>.
+     For study and understanding, not professional advice.</p>
+  <p><a href="index.html">↑ Course map</a> · <a href="glossary.html">Glossary</a> ·
+     <a href="formula-sheet.html">Formula sheet</a> · <a href="data-credits.html">Data sources</a></p>
+</footer>
+
+<script defer src="assets/vendor/katex/katex.min.js"></script>
+<script defer src="assets/vendor/katex/contrib/auto-render.min.js"></script>
+<script defer src="assets/course.js"></script>
 </body>
 </html>

@@ -3,7 +3,7 @@
 <html lang="en">
 <head><meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Notebook</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
+<title>The code behind it: chi-square from a crosstab · Statistics, by seeing it happen</title>
 <style type="text/css">
     pre { line-height: 125%; }
 td.linenos .normal { color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px; }
@@ -7292,7 +7292,7 @@ a.anchor-link {
 }
 </style>
 <!-- Load mathjax -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS_CHTML-full,Safe"> </script>
+
 <!-- MathJax configuration -->
 <script type="text/x-mathjax-config">
     init_mathjax = function() {
@@ -7793,10 +7793,32 @@ a.anchor-link {
     white-space: normal;
   }
 </style>
-<!-- End of mermaid configuration --></head>
+<!-- End of mermaid configuration -->
+<meta name="description" content="Build the chi-square test from a crosstab — expected counts under independence by an outer product, χ² = Σ(O−E)²/E vectorized over the table, the df and p-value, checked against scipy.stats.chi2_contingency."/>
+<meta name="sc-lesson" content="chi-square-code"/>
+<meta name="theme-color" content="#4c72b0"/>
+<meta property="og:type" content="article"/>
+<meta property="og:site_name" content="Statistics, by seeing it happen"/>
+<meta property="og:title" content="The code behind it: chi-square from a crosstab"/>
+<meta property="og:description" content="Build the chi-square test from a crosstab — expected counts under independence by an outer product, χ² = Σ(O−E)²/E vectorized over the table, the df and p-value, checked against scipy.stats.chi2_contingency."/>
+<meta property="og:image" content="https://jd-jones-ases.github.io/seeing-statistics/assets/og-card.png"/>
+<meta property="og:url" content="https://jd-jones-ases.github.io/seeing-statistics/17-chi-square~the-code.html"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<link rel="icon" href="assets/favicon.svg"/>
+<link rel="stylesheet" href="assets/vendor/katex/katex.min.css"/>
+<link rel="stylesheet" href="assets/course.css"/>
+</head>
 <body class="jp-Notebook" data-jp-theme-light="true" data-jp-theme-name="JupyterLab Light">
+<div class="sc-topbar">
+  <a class="sc-home" href="index.html">Statistics, by seeing it happen <span>· course map</span></a>
+  <span class="sc-spacer"></span>
+  <span class="sc-pos" style="color:var(--sc-muted);font-size:12.5px">Part 2 · Lesson 17 · the code behind it</span>
+  <a class="sc-btn run" href="live/lab/index.html?path=17-chi-square~the-code.html" title="Run this lesson live in your browser — no install">Run live ▶</a>
+  <button class="sc-btn" type="button" onclick="scToggleTheme()" title="Toggle light / dark" aria-label="Toggle light or dark theme">◐</button>
+</div>
+
 <main>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=0b666c36">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=68eca158">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -7824,7 +7846,7 @@ compute it in Python</strong>. We'll go in the order a programmer actually works
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=c6b9a088">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=deb5277f">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -7836,7 +7858,7 @@ compute it in Python</strong>. We'll go in the order a programmer actually works
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=1110ca57">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=06422b5d">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -7879,7 +7901,7 @@ Python <em>underneath</em> the one-liner you already ran.</p>
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=f89ec817">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=ecb9fb62">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -7919,7 +7941,7 @@ Python <em>underneath</em> the one-liner you already ran.</p>
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=b66e7414">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=bc17daad">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -7936,7 +7958,7 @@ are both <strong>categorical</strong> (text, or a 0/1 label), and both are compl
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=2848c9f6">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=05425303">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8036,7 +8058,7 @@ Pclass values  : [np.int64(1), np.int64(2), np.int64(3)]   (1 = first, 2 = secon
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=cb960b82">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=dfb90570">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8050,7 +8072,7 @@ along each axis, and they're the only ingredients the expected counts need.</p>
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=02e5157b">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=9a1e94e6">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8096,7 +8118,7 @@ Grand total             : 887
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=56ea4622">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=b8ee12e1">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8112,7 +8134,7 @@ expected count in each cell is</p>
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=7e1f801f">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=54bc0651">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8165,7 +8187,7 @@ males survived FAR less (109 vs ~221). That gap is what chi^2 will measure.
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=c58a193a">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=fc5a5873">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8177,7 +8199,7 @@ your $E$ is wrong.</p>
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=4fd0b6ea">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=9240a11e">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8210,7 +8232,7 @@ Same margins -&gt; our expected table is consistent with the observed one.
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=bad3d72d">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=1fafe000">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8226,7 +8248,7 @@ loop over cells. Then:</p>
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=41c5aacb">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=54581a42">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8260,7 +8282,7 @@ p-value (right tail) = 1.1984e-58
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=94f4f85f">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=740c962f">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8274,7 +8296,7 @@ match either way — we'll see that in Section 5.)</p>
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=f7bc42cf">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=153cec57">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8318,7 +8340,7 @@ match? True
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=9a7dd46f">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=5383ec89">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8331,7 +8353,7 @@ class mix was <strong>25% first, 20% second, 55% third</strong>. Does the passen
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=537b1748">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=68ebb242">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8374,7 +8396,7 @@ p-value = 0.820  -&gt; large p: NO evidence the data departs from the 25/20/55 c
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=e9df2913">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=46642950">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8385,7 +8407,7 @@ call: cell $(i, j)$ is <code>a[i] * b[j]</code>. Divide the result by the grand 
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=82f31063">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=ee219913">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8428,7 +8450,7 @@ is row_totals[i] * col_totals[j] -- precisely the numerator of every expected co
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=25698ea2">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=31d18b73">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8440,7 +8462,7 @@ shows you <em>which</em> cells drove the surprise.</p>
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=f5d3ad01">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=1ecc652f">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8482,7 +8504,7 @@ No loop over cells -- the whole computation is three array operations and a sum.
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=24177f56">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=379fb400">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8494,7 +8516,7 @@ input, <code>return</code> the result. Then "run a chi-square test of independen
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=7fdc0da3">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=4d372228">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8545,7 +8567,7 @@ input, <code>return</code> the result. Then "run a chi-square test of independen
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=1a3d162f">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=27b1ded3">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8591,7 +8613,7 @@ Class x Survived (3x2):
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=bfc20ce5">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=17f1474f">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8605,7 +8627,7 @@ the <code>correction=False</code> footnote stops being mysterious.)</p>
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=0945416f">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=7bdf7739">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8664,7 +8686,7 @@ match the textbook formula. Larger tables have no correction, so they match eith
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=68d7e4a9">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=1c1797f8">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8676,5 +8698,24 @@ match the textbook formula. Larger tables have no correction, so they match eith
 </div>
 </div>
 </main>
+
+<footer class="sc-footer">
+  <p class="sc-done"><label><input type="checkbox" id="sc-done-box"/> Mark this lesson complete
+    <span style="font-size:12px">(saved on this device only)</span></label></p>
+  <p><b>Run it yourself:</b>
+     <a href="live/lab/index.html?path=17-chi-square~the-code.html">in your browser (JupyterLite)</a> ·
+     <a href="https://mybinder.org/v2/gh/JD-Jones-ASES/seeing-statistics/HEAD?labpath=lessons/17-chi-square~the-code.html">on Binder</a> — no install, no account.</p>
+  <details class="sc-solution"><summary>How to cite this lesson</summary>
+    <div class="sc-cite">Jones, JD (2026). <em>The code behind it: chi-square from a crosstab</em>. In <em>Statistics, by seeing it happen</em>. https://jd-jones-ases.github.io/seeing-statistics/17-chi-square~the-code.html</div></details>
+  <p>© JD Jones, 2026. Licensed <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>.
+     Bundled datasets keep their own licences — see <a href="data-credits.html">data sources &amp; credits</a>.
+     For study and understanding, not professional advice.</p>
+  <p><a href="index.html">↑ Course map</a> · <a href="glossary.html">Glossary</a> ·
+     <a href="formula-sheet.html">Formula sheet</a> · <a href="data-credits.html">Data sources</a></p>
+</footer>
+
+<script defer src="assets/vendor/katex/katex.min.js"></script>
+<script defer src="assets/vendor/katex/contrib/auto-render.min.js"></script>
+<script defer src="assets/course.js"></script>
 </body>
 </html>

@@ -1,0 +1,111 @@
+/* course.css — shared chrome injected into every rendered lesson page.
+   Wraps nbconvert's own output; we only add a top bar, a footer, and styling for
+   the interactive extras (copy buttons, quizzes, progress, solution reveals).
+   Dark mode adapts the *chrome and text*; matplotlib chart PNGs can't recolour,
+   so in dark mode we frame them on a light card so they stay legible. */
+
+:root{
+  --sc-ink:#1f2330; --sc-muted:#5b6577; --sc-line:#e3e7ef;
+  --sc-accent:#4c72b0; --sc-accent-ink:#fff;
+  --sc-bg:#f7f8fb; --sc-card:#fff;
+  --sc-capture:#009E73; --sc-miss:#D55E00;   /* match statslab Okabe-Ito roles */
+  --sc-maxw:920px;
+}
+:root[data-theme="dark"]{
+  --sc-ink:#e7eaf0; --sc-muted:#9aa3b2; --sc-line:#2b3142;
+  --sc-accent:#7aa2dd; --sc-accent-ink:#0c0f16;
+  --sc-bg:#11141b; --sc-card:#171b24;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --sc-ink:#e7eaf0; --sc-muted:#9aa3b2; --sc-line:#2b3142;
+    --sc-accent:#7aa2dd; --sc-accent-ink:#0c0f16; --sc-bg:#11141b; --sc-card:#171b24;
+  }
+}
+
+html, body{ background:var(--sc-bg) !important; color:var(--sc-ink) !important; }
+
+/* ---- top bar -------------------------------------------------------------- */
+.sc-topbar{
+  position:sticky; top:0; z-index:50;
+  display:flex; gap:14px; align-items:center;
+  padding:8px 16px; background:var(--sc-card); border-bottom:1px solid var(--sc-line);
+  font:14px/1.4 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  box-shadow:0 1px 6px rgba(0,0,0,.05);
+}
+.sc-topbar a{ color:var(--sc-accent); text-decoration:none; }
+.sc-topbar .sc-home{ font-weight:700; color:var(--sc-ink); white-space:nowrap; }
+.sc-topbar .sc-home span{ color:var(--sc-muted); font-weight:400; }
+.sc-spacer{ flex:1; }
+.sc-btn{
+  border:1px solid var(--sc-line); border-radius:8px; padding:5px 10px;
+  background:transparent; color:var(--sc-accent); cursor:pointer; font-size:13px; white-space:nowrap;
+}
+.sc-btn:hover{ background:var(--sc-bg); border-color:var(--sc-accent); }
+.sc-btn.run{ background:var(--sc-accent); color:var(--sc-accent-ink); border-color:var(--sc-accent); font-weight:600; }
+.sc-search{ position:relative; }
+.sc-search input{
+  border:1px solid var(--sc-line); border-radius:8px; padding:5px 10px; width:160px;
+  background:var(--sc-bg); color:var(--sc-ink); font-size:13px;
+}
+@media (max-width:640px){ .sc-search input{ width:104px; } .sc-topbar .sc-home span{ display:none; } }
+
+/* ---- keep nbconvert's body readable & centred ----------------------------- */
+.jp-Notebook, .jp-RenderedHTMLCommon{ max-width:var(--sc-maxw); margin:0 auto; }
+body > .jp-Notebook{ padding:24px 18px 0; }
+
+/* charts: in dark mode, sit them on a light card so they stay legible */
+:root[data-theme="dark"] .jp-OutputArea-output img,
+:root[data-theme="dark"] .jp-RenderedImage img{
+  background:#fff; padding:8px; border-radius:8px;
+}
+
+/* ---- copy-code button ----------------------------------------------------- */
+.jp-CodeCell .jp-InputArea{ position:relative; }
+.sc-copy{
+  position:absolute; top:6px; right:6px; z-index:5;
+  border:1px solid var(--sc-line); border-radius:6px; background:var(--sc-card);
+  color:var(--sc-muted); font-size:11px; padding:3px 8px; cursor:pointer; opacity:0; transition:.12s;
+}
+.jp-CodeCell .jp-InputArea:hover .sc-copy{ opacity:1; }
+.sc-copy.ok{ color:var(--sc-capture); border-color:var(--sc-capture); }
+
+/* ---- solution reveal (native <details>) ----------------------------------- */
+details.sc-solution{
+  border:1px solid var(--sc-line); border-left:4px solid var(--sc-accent);
+  border-radius:8px; padding:6px 14px; margin:14px 0; background:var(--sc-card);
+}
+details.sc-solution > summary{ cursor:pointer; font-weight:600; color:var(--sc-accent); }
+details.sc-solution[open] > summary{ margin-bottom:8px; }
+
+/* ---- quizzes -------------------------------------------------------------- */
+.sc-quiz{ border:1px solid var(--sc-line); border-radius:12px; padding:16px 18px; margin:18px 0;
+  background:var(--sc-card); }
+.sc-quiz h4{ margin:.1em 0 .6em; font-size:15px; }
+.sc-q{ margin:14px 0; }
+.sc-q .stem{ font-weight:600; margin-bottom:8px; }
+.sc-opt{ display:block; border:1px solid var(--sc-line); border-radius:8px; padding:8px 12px;
+  margin:6px 0; cursor:pointer; background:var(--sc-bg); transition:.1s; }
+.sc-opt:hover{ border-color:var(--sc-accent); }
+.sc-opt.correct{ border-color:var(--sc-capture); background:rgba(0,158,115,.12); }
+.sc-opt.wrong{ border-color:var(--sc-miss); background:rgba(213,94,0,.10); }
+.sc-q .num input{ border:1px solid var(--sc-line); border-radius:8px; padding:6px 10px; width:130px;
+  background:var(--sc-bg); color:var(--sc-ink); }
+.sc-q .fb{ margin-top:8px; font-size:14px; color:var(--sc-muted); }
+.sc-q .fb.correct{ color:var(--sc-capture); }
+.sc-q .fb.wrong{ color:var(--sc-miss); }
+
+/* ---- footer --------------------------------------------------------------- */
+.sc-footer{
+  max-width:var(--sc-maxw); margin:40px auto 0; padding:22px 18px 60px;
+  border-top:1px solid var(--sc-line); color:var(--sc-muted); font-size:13.5px; line-height:1.6;
+}
+.sc-footer a{ color:var(--sc-accent); }
+.sc-footer .sc-cite{ background:var(--sc-card); border:1px solid var(--sc-line); border-radius:8px;
+  padding:10px 14px; margin:10px 0; font-size:12.5px; }
+.sc-footer code{ background:var(--sc-bg); padding:1px 5px; border-radius:5px; }
+.sc-done{ display:inline-flex; align-items:center; gap:8px; }
+.sc-done input{ width:17px; height:17px; accent-color:var(--sc-capture); }
+
+/* respect reduced-motion for any animation we add */
+@media (prefers-reduced-motion: reduce){ *{ animation-duration:.001ms !important; transition:none !important; } }
