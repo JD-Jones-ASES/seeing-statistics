@@ -79,6 +79,16 @@ body > .jp-Notebook{ padding:24px 18px 0; }
 @media (prefers-color-scheme:dark){
   :root:not([data-theme="light"]) .jp-RenderedHTMLCommon :not(pre) > code{ background:rgba(255,255,255,.12); color:#f1f3f8; }
 }
+/* output tables (pandas dataframes, markdown tables) keep a light background from
+   Jupyter, so in dark mode give them a light card + dark text — like the charts. */
+:root[data-theme="dark"] .jp-RenderedHTMLCommon table,
+:root[data-theme="dark"] .jp-RenderedHTMLCommon table th,
+:root[data-theme="dark"] .jp-RenderedHTMLCommon table td{ background:#fff !important; color:#1f2330 !important; border-color:#e3e7ef !important; }
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]) .jp-RenderedHTMLCommon table,
+  :root:not([data-theme="light"]) .jp-RenderedHTMLCommon table th,
+  :root:not([data-theme="light"]) .jp-RenderedHTMLCommon table td{ background:#fff !important; color:#1f2330 !important; border-color:#e3e7ef !important; }
+}
 
 /* ---- copy-code button ----------------------------------------------------- */
 .jp-CodeCell .jp-InputArea{ position:relative; }
