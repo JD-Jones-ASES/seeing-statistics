@@ -35,10 +35,14 @@ def run(desc, args, optional=False):
 def pagefind():
     print("\n=== Pagefind search index ===")
     site = str(ROOT / "rendered")
-    # Prefer a pip-installed pagefind; otherwise fall back to npx.
-    for cmd in ([PY, "-m", "pagefind", "--site", site],
-                ["npx", "-y", "pagefind@latest", "--site", site],
-                ["pagefind", "--site", site]):
+    cmds = [[PY, "-m", "pagefind", "--site", site]]   # pip-installed, if present
+    npx = shutil.which("npx")                         # resolves npx.cmd on Windows
+    if npx:
+        cmds.append([npx, "-y", "pagefind@latest", "--site", site])
+    pf = shutil.which("pagefind")
+    if pf:
+        cmds.append([pf, "--site", site])
+    for cmd in cmds:
         try:
             subprocess.run(cmd, cwd=str(ROOT), check=True)
             return True
@@ -58,8 +62,13 @@ def main():
         print("\n=== Reference content === (skipped — tools/_reference.json absent)")
     run("Interactive explorables", [PY, "tools/build_explorables.py"])
     run("Social card", [PY, "tools/make_og.py"], optional=True)   # needs matplotlib
-    run("JupyterLite app", [PY, "tools/build_jupyterlite.py"])
+    # Index search BEFORE building the JupyterLite app, and clear any stale copy,
+    # so Pagefind only indexes course pages — not the Lite app's own HTML shells.
+    live = ROOT / "rendered" / "live"
+    if live.exists():
+        shutil.rmtree(live)
     pagefind()
+    run("JupyterLite app", [PY, "tools/build_jupyterlite.py"])
     print(f"\nSite assembled in {(ROOT / 'rendered')}")
 
 
