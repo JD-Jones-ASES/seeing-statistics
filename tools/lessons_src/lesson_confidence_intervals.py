@@ -113,14 +113,16 @@ print(f'That is {hits}% coverage - the theory predicts about 95%.')
         md(r"""
 ### Picture it — the "caterpillar" plot
 
-Each horizontal line is one sample's 95% CI. **Green** intervals caught the true mean; **red** ones missed. The dashed vertical line is the true mean μ.
+Each horizontal line is one sample's 95% CI. Intervals that **caught** the true mean are **teal and solid (●)**; the ones that **missed** are **orange-red and dashed (✕)** — encoded by shape *and* colour, so they stay distinct in grayscale and for colourblind readers. The dashed vertical line is the true mean μ.
 """),
         code(r"""
 fig, ax = plt.subplots(figsize=(7, 10))
 for i, res in enumerate(results):
-    color = '#2ca02c' if res['hit'] else '#d62728'
-    ax.plot([res['lo'], res['hi']], [i, i], color=color, lw=1.4)
-    ax.plot(res['xbar'], i, 'o', color=color, ms=2.5)
+    hit = res['hit']
+    style = sl.hit_miss_style(hit)          # solid circle = a hit, dashed cross = a miss
+    color = sl.CAPTURE if hit else sl.MISS  # colourblind-safe teal vs. vermillion
+    ax.plot([res['lo'], res['hi']], [i, i], color=color, lw=1.4, ls=style['linestyle'])
+    ax.plot(res['xbar'], i, color=color, ms=3.5, marker=style['marker'], ls='none')
 ax.axvline(MU, color='black', ls='--', lw=2, label=f'true mean = {MU:.0f} sq ft')
 ax.set_xlabel('living area (sq ft)'); ax.set_ylabel('interval number (1-100)')
 ax.set_title(f'100 confidence intervals: {hits} caught the true mean, {n_intervals - hits} missed')
@@ -171,7 +173,7 @@ print(summary.to_string(index=False))
 fig, (a1, a2) = plt.subplots(1, 2, figsize=(11, 4))
 a1.bar(summary['level'], summary['coverage_%'], color='#4c72b0'); a1.axhline(95, color='grey', ls=':')
 a1.set_title('Actual coverage'); a1.set_ylabel('% of intervals catching the mean'); a1.set_ylim(70, 100)
-a2.bar(summary['level'], summary['avg_width_sqft'], color='#dd8452')
+a2.bar(summary['level'], summary['avg_width_sqft'], color='#E69F00')
 a2.set_title('Average interval width'); a2.set_ylabel('sq ft (smaller = more precise)')
 plt.tight_layout(); plt.show()
 """),

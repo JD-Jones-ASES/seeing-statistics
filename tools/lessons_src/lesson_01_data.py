@@ -149,8 +149,8 @@ print('Contrast Lesson 1: real, messy data is often clearly lopsided; here it is
         code(r"""
 fig, ax = plt.subplots()
 ax.hist(petal_len, bins=25, color='#4c72b0', edgecolor='white')
-ax.axvline(petal_len.mean(), color='#d62728', lw=2, label=f'mean = {petal_len.mean():.2f} cm')
-ax.axvline(petal_len.median(), color='#2ca02c', lw=2, ls='--', label=f'median = {petal_len.median():.2f} cm')
+ax.axvline(petal_len.mean(), color='#D55E00', lw=2, label=f'mean = {petal_len.mean():.2f} cm')
+ax.axvline(petal_len.median(), color='#009E73', lw=2, ls='--', label=f'median = {petal_len.median():.2f} cm')
 ax.set_xlabel('petal length (cm)'); ax.set_ylabel('number of flowers')
 ax.set_title('Distribution of petal length — notice the GAP')
 ax.legend(); plt.show()
@@ -197,7 +197,7 @@ line.
 """),
         code(r"""
 r = iris['Petal.Length'].corr(iris['Petal.Width'])
-colors = {'setosa': '#4c72b0', 'versicolor': '#dd8452', 'virginica': '#2ca02c'}
+colors = {'setosa': '#4c72b0', 'versicolor': '#E69F00', 'virginica': '#009E73'}
 fig, ax = plt.subplots()
 for s in species_order:
     sub = iris[iris['Species'] == s]

@@ -120,7 +120,7 @@ pmf = stats.binom.pmf(k, n, p)                # exact Binomial probabilities
 fig, ax = plt.subplots()
 ax.hist(counts, bins=np.arange(-0.5, n + 1.5, 1), density=True,
         color='#4c72b0', edgecolor='white', label='simulated groups')
-ax.plot(k, pmf, 'o-', color='#d62728', lw=2, label='exact Binomial PMF')
+ax.plot(k, pmf, 'o-', color='#D55E00', lw=2, label='exact Binomial PMF')
 ax.axvline(n * p, color='black', ls='--', lw=1.5, label=f'mean = {n*p:.2f}')
 ax.set_xlabel('survivors in a random group of 20')
 ax.set_ylabel('probability')
@@ -144,7 +144,7 @@ k = np.arange(0, n_coins + 1)
 pmf_coin = stats.binom.pmf(k, n_coins, p_coin)
 
 fig, ax = plt.subplots()
-ax.bar(k, pmf_coin, color='#dd8452', edgecolor='white')
+ax.bar(k, pmf_coin, color='#E69F00', edgecolor='white')
 ax.axvline(n_coins * p_coin, color='black', ls='--', lw=1.5,
            label=f'mean = {n_coins*p_coin:.0f} heads')
 ax.set_xlabel('number of heads in 20 flips')
@@ -200,9 +200,9 @@ pmf = stats.poisson.pmf(k, mu=lam)            # exact Poisson probabilities
 
 fig, ax = plt.subplots()
 ax.hist(daily, bins=np.arange(-0.5, daily.max() + 1.5, 1),
-        density=True, color='#2ca02c', edgecolor='white',
+        density=True, color='#009E73', edgecolor='white',
         label='observed daily counts')
-ax.plot(k, pmf, 'o-', color='#d62728', lw=2,
+ax.plot(k, pmf, 'o-', color='#D55E00', lw=2,
         label=f'Poisson PMF (lambda = {lam:.2f})')
 ax.axvline(lam, color='black', ls='--', lw=1.5, label=f'mean = {lam:.2f}/day')
 ax.set_xlabel('M5.0+ earthquakes in one day')
@@ -234,7 +234,7 @@ k = np.arange(0, 13)
 fig, ax = plt.subplots()
 ax.bar(k, stats.binom.pmf(k, n_big, p_small), color='#9aa7c7',
        edgecolor='white', label=f'Binomial(n={n_big}, p={p_small})')
-ax.plot(k, stats.poisson.pmf(k, mu=lam_bridge), 'o-', color='#d62728', lw=2,
+ax.plot(k, stats.poisson.pmf(k, mu=lam_bridge), 'o-', color='#D55E00', lw=2,
         label=f'Poisson(lambda = {lam_bridge:.1f})')
 ax.set_xlabel('number of events')
 ax.set_ylabel('probability')

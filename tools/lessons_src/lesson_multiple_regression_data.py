@@ -136,7 +136,7 @@ print('That double-membership is exactly what makes species a confounder of the 
 """),
         code(r"""
 # Picture the confounder: longer flippers travel with the heaviest species (Gentoo).
-species_colors = {'Adelie': '#4c72b0', 'Chinstrap': '#dd8452', 'Gentoo': '#2ca02c'}
+species_colors = {'Adelie': '#4c72b0', 'Chinstrap': '#E69F00', 'Gentoo': '#009E73'}
 fig, ax = plt.subplots()
 for sp, color in species_colors.items():
     sub = pen[pen['species'] == sp]
@@ -173,7 +173,7 @@ for sp, color in species_colors.items():
 
 # The single naive line through everything, for contrast.
 naive = model_flip.predict(pd.DataFrame({'flipper_length_mm': flip_grid}))
-ax.plot(flip_grid, naive, color='#d62728', lw=2.5, ls='--',
+ax.plot(flip_grid, naive, color='#D55E00', lw=2.5, ls='--',
         label='one line, ignoring species (slope 49.7)')
 
 ax.set_xlabel('flipper length (mm)'); ax.set_ylabel('body mass (g)')

@@ -226,8 +226,9 @@ print(f'Coverage (vectorized) = {coverage_vec * 100:.1f}%   <- matches the loop,
 ### Picture it — the iconic "caterpillar" plot
 
 Numbers are convincing; the picture is unforgettable. We draw a fresh batch of **100** intervals as horizontal
-lines with `ax.hlines`, put a vertical line at the true mean μ, and color in **red** the ones that *miss*. The
-red lines are the ~5% that fail — not bugs, just the expected price of sampling.
+lines with `ax.hlines` — **solid teal** when they catch μ, **dashed orange-red (✕)** when they miss — plus a
+vertical line at the true mean μ. Encoding the misses by shape *and* colour keeps them visible in grayscale and
+for colourblind readers; those ~5% that fail aren't bugs, just the expected price of sampling.
 """),
         code(r"""
 k_show = 100
@@ -239,15 +240,19 @@ hi100 = xb100 + tstar * se100
 caught100 = (lo100 <= MU) & (MU <= hi100)
 k_caught = int(caught100.sum())
 
-colors = np.where(caught100, '#2ca02c', '#d62728')   # green if caught, red if it missed
+# Encode caught/missed by COLOUR and by LINESTYLE + MARKER, so the picture
+# survives grayscale printing and red-green colour-vision deficiency.
+colors = np.where(caught100, sl.CAPTURE, sl.MISS)      # teal if caught, vermillion if missed
+lstyles = np.where(caught100, '-', '--')               # solid if caught, dashed if missed
 ys = np.arange(k_show)
 
 fig, ax = plt.subplots(figsize=(7, 10))
-ax.hlines(ys, lo100, hi100, colors=colors, lw=1.4)     # one horizontal line per interval
-ax.plot(xb100, ys, 'o', color='black', ms=2)           # the sample mean at each interval's center
+ax.hlines(ys, lo100, hi100, colors=colors, linestyles=lstyles, lw=1.4)   # one line per interval
+ax.plot(xb100[caught100], ys[caught100], 'o', color='black', ms=2.5, ls='none', label='caught')
+ax.plot(xb100[~caught100], ys[~caught100], 'X', color='black', ms=6, ls='none', label='missed')
 ax.axvline(MU, color='black', ls='--', lw=2, label=f'true mean = {MU:.0f} sq ft')
 ax.set_xlabel('living area (sq ft)'); ax.set_ylabel('interval number (1-100)')
-ax.set_title(f'100 confidence intervals: {k_caught} caught the true mean, {k_show - k_caught} missed (red)')
+ax.set_title(f'100 confidence intervals: {k_caught} caught the true mean, {k_show - k_caught} missed')
 ax.legend(loc='lower right'); plt.show()
 
 print(f'{k_caught} of {k_show} captured the true mean.')
@@ -284,7 +289,7 @@ a1.bar(sweep_table['conf'], sweep_table['coverage_%'], color='#4c72b0')
 a1.plot(range(4), nominal, 'k--o', label='nominal level')
 a1.set_title('Actual coverage tracks the promise'); a1.set_ylabel('% of intervals catching the mean')
 a1.set_ylim(70, 102); a1.legend()
-a2.bar(sweep_table['conf'], sweep_table['avg_width_sqft'], color='#dd8452')
+a2.bar(sweep_table['conf'], sweep_table['avg_width_sqft'], color='#E69F00')
 a2.set_title('...but the interval gets wider'); a2.set_ylabel('average width (sq ft)')
 plt.tight_layout(); plt.show()
 """),
@@ -402,7 +407,8 @@ before you run it.**
 - A whole **simulation** is "draw, build, check, repeat, count." Written first as an explicit `for` loop, then
   as the NumPy **idiom**: draw a `(reps, n)` array, reduce with `.mean(axis=1)` / `.std(axis=1, ddof=1)`, and
   let the **mean of a True/False array** be the coverage fraction.
-- `ax.hlines(ys, lo, hi, colors=...)` draws the caterpillar plot; a boolean array picks the red "miss" color.
+- `ax.hlines(ys, lo, hi, colors=..., linestyles=...)` draws the caterpillar plot; a boolean array picks both the
+  colour (teal vs. vermillion) and the linestyle/marker, so "miss" reads without relying on colour alone.
 - **Refactor repeated work into functions** (`ci`, `coverage`) with clear inputs and a `return`, then reuse them.
 - **Seed every random draw** (`rng = np.random.default_rng(0)`) so results are reproducible.
 

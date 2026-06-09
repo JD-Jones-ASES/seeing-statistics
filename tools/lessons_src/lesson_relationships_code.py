@@ -269,7 +269,7 @@ fig, (axL, axR) = plt.subplots(1, 2, figsize=(13, 5.0))
 line_x = np.array([xn.min(), xn.max()])
 line_y = a + b1 * line_x                  # our own intercept & slope
 axL.scatter(xn, yn, s=10, alpha=0.35, color='#4c72b0', label='homes')
-axL.plot(line_x, line_y, color='#d62728', lw=2.5,
+axL.plot(line_x, line_y, color='#D55E00', lw=2.5,
          label=f'our fit: price = {a:,.0f} + {b1:.0f} x area')
 axL.set_xlabel('living area (sq ft)'); axL.set_ylabel('sale price (dollars)')
 axL.set_title('Our least-squares line through the Ames homes')
@@ -277,7 +277,7 @@ axL.legend(loc='upper left')
 
 # RIGHT: residuals vs x, with a zero line.
 axR.scatter(xn, e.to_numpy(), s=10, alpha=0.35, color='#4c72b0')
-axR.axhline(0, color='#d62728', lw=2, ls='--', label='residual = 0 (a perfect prediction)')
+axR.axhline(0, color='#D55E00', lw=2, ls='--', label='residual = 0 (a perfect prediction)')
 axR.set_xlabel('living area (sq ft)'); axR.set_ylabel('residual = actual − predicted (dollars)')
 axR.set_title('Residual plot: a flat band that fans out for big homes')
 axR.legend(loc='upper left')

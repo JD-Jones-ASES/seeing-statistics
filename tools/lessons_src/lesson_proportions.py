@@ -118,7 +118,7 @@ ax.hist(sim_phats, bins=40, density=True, color='#9aa7c7', edgecolor='white',
         label='20,000 simulated sample proportions')
 # Overlay the normal-approximation curve the formula predicts:
 xs = np.linspace(sim_phats.min(), sim_phats.max(), 300)
-ax.plot(xs, stats.norm.pdf(xs, phat, se_formula), color='#d62728', lw=2.5,
+ax.plot(xs, stats.norm.pdf(xs, phat, se_formula), color='#D55E00', lw=2.5,
         label='normal approx.  N(p-hat, SE)')
 ax.axvline(phat, color='black', ls='--', lw=2, label=f'p-hat = {phat:.3f}')
 ax.set_xlabel('sample proportion of low-birth-weight babies')
@@ -220,10 +220,10 @@ fig, ax = plt.subplots()
 ax.hist(null_phats, bins=40, density=True, color='#9aa7c7', edgecolor='white',
         label=f'null world: true rate = {p0}')
 xs = np.linspace(null_phats.min(), null_phats.max(), 300)
-ax.plot(xs, stats.norm.pdf(xs, p0, se0), color='#2ca02c', lw=2, label='normal approx. under H0')
+ax.plot(xs, stats.norm.pdf(xs, p0, se0), color='#009E73', lw=2, label='normal approx. under H0')
 ax.axvline(p0, color='black', ls='--', lw=2, label=f'benchmark p0 = {p0}')
-ax.axvline(phat, color='#d62728', lw=2.5, label=f'our p-hat = {phat:.3f}')
-ax.axvline(p0 - obs_dist, color='#d62728', lw=1.2, ls=':')   # the mirror-image cutoff
+ax.axvline(phat, color='#D55E00', lw=2.5, label=f'our p-hat = {phat:.3f}')
+ax.axvline(p0 - obs_dist, color='#D55E00', lw=1.2, ls=':')   # the mirror-image cutoff
 ax.set_xlabel('sample proportion (in the null world)'); ax.set_ylabel('density')
 ax.set_title('p-value = share of the null world at least as far out as our p-hat')
 ax.legend(); plt.show()
@@ -292,7 +292,7 @@ print(f'\nobserved difference  p1 - p2 = {diff:.4f}   ({diff*100:.1f} percentage
 fig, ax = plt.subplots()
 groups = ['nonsmoker', 'smoker']
 rates = [p2 * 100, p1 * 100]
-bars = ax.bar(groups, rates, color=['#4c72b0', '#dd8452'], edgecolor='white')
+bars = ax.bar(groups, rates, color=['#4c72b0', '#E69F00'], edgecolor='white')
 ax.bar_label(bars, fmt='%.1f%%', padding=3)
 ax.set_ylabel('low-birth-weight rate (%)')
 ax.set_title('Low-birth-weight rate: smokers vs nonsmokers')
@@ -358,7 +358,7 @@ fig, ax = plt.subplots()
 ax.hist(null_diffs, bins=40, color='#9aa7c7', edgecolor='white',
         label='gaps when smoking is shuffled (H0 world)')
 ax.axvline(0, color='black', ls='--', lw=1.5)
-ax.axvline(diff, color='#d62728', lw=2.5, label=f'our observed gap = {diff:.3f}')
+ax.axvline(diff, color='#D55E00', lw=2.5, label=f'our observed gap = {diff:.3f}')
 ax.set_xlabel('low-birth-weight rate gap (smoker - nonsmoker)')
 ax.set_ylabel('number of shuffles')
 ax.set_title('The real gap is far outside anything chance produces')

@@ -76,7 +76,7 @@ print(f'correlation       r = {r:.3f}    (R^2 = {r**2:.3f})')
 line_x = np.array([x.min(), x.max()])
 fig, ax = plt.subplots()
 ax.scatter(x, y, s=10, alpha=0.30, color='#4c72b0', label='homes')
-ax.plot(line_x, b0 + b1 * line_x, color='#d62728', lw=2.5,
+ax.plot(line_x, b0 + b1 * line_x, color='#D55E00', lw=2.5,
         label=f'fit: price = {b0:,.0f} + {b1:.0f} x area')
 ax.set_xlabel('living area (sq ft)'); ax.set_ylabel('sale price (dollars)')
 ax.set_title('One sample, one slope — but how much would it move?')
@@ -116,7 +116,7 @@ print(f'  std of the slopes (SE) = {boot_se:.2f} dollars/sq ft   <- the bootstra
 fig, ax = plt.subplots()
 ax.hist(boot_slopes, bins=40, color='#9aa7c7', edgecolor='white', density=True)
 ax.axvline(b1, color='black', ls='--', lw=2, label=f'our sample slope = {b1:.0f}')
-ax.axvline(0, color='#d62728', lw=2, label='slope = 0 (no relationship)')
+ax.axvline(0, color='#D55E00', lw=2, label='slope = 0 (no relationship)')
 ax.set_xlabel('slope b1 from a resampled dataset (dollars per sq ft)')
 ax.set_ylabel('density')
 ax.set_title('Sampling distribution of the slope (bootstrap): roughly normal, far from 0')
@@ -246,7 +246,7 @@ resid = model.resid
 
 fig, ax = plt.subplots()
 ax.scatter(fitted, resid, s=10, alpha=0.30, color='#4c72b0')
-ax.axhline(0, color='#d62728', lw=2, ls='--', label='residual = 0')
+ax.axhline(0, color='#D55E00', lw=2, ls='--', label='residual = 0')
 ax.set_xlabel('fitted (predicted) price (dollars)')
 ax.set_ylabel('residual = actual - predicted (dollars)')
 ax.set_title('Residuals vs fitted: the Ames funnel (scatter grows for pricey homes)')
@@ -294,7 +294,7 @@ homes that sold for far more than any line would predict.
 fig, ax = plt.subplots()
 stats.probplot(resid, dist='norm', plot=ax)     # builds the Q-Q plot
 ax.get_lines()[0].set(marker='o', markersize=4, alpha=0.4, color='#4c72b0')   # the points
-ax.get_lines()[1].set(color='#d62728', lw=2)                                  # the ideal line
+ax.get_lines()[1].set(color='#D55E00', lw=2)                                  # the ideal line
 ax.set_title('Normal Q-Q plot of residuals: straight in the middle, tails bend up')
 ax.set_xlabel('theoretical normal quantiles'); ax.set_ylabel('ordered residuals (dollars)')
 plt.show()
@@ -341,11 +341,11 @@ pf = model.get_prediction(grid).summary_frame(alpha=0.05)
 
 fig, ax = plt.subplots()
 ax.scatter(x, y, s=8, alpha=0.20, color='#4c72b0', label='homes')
-ax.plot(grid['area'], pf['mean'], color='#d62728', lw=2, label='regression line')
+ax.plot(grid['area'], pf['mean'], color='#D55E00', lw=2, label='regression line')
 ax.fill_between(grid['area'], pf['obs_ci_lower'], pf['obs_ci_upper'],
-                color='#dd8452', alpha=0.25, label='95% prediction interval (one home)')
+                color='#E69F00', alpha=0.25, label='95% prediction interval (one home)')
 ax.fill_between(grid['area'], pf['mean_ci_lower'], pf['mean_ci_upper'],
-                color='#2ca02c', alpha=0.55, label='95% CI for the mean (the line)')
+                color='#009E73', alpha=0.55, label='95% CI for the mean (the line)')
 ax.set_xlabel('living area (sq ft)'); ax.set_ylabel('sale price (dollars)')
 ax.set_title('Narrow CI for the mean (green) vs wide prediction interval (orange)')
 ax.legend(loc='upper left'); plt.show()

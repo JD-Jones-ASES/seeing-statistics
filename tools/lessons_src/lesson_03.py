@@ -177,7 +177,7 @@ for c, r in class_rates.items():
 
 fig, ax = plt.subplots()
 bars = ax.bar(['1st class', '2nd class', '3rd class'], class_rates.values,
-              color=['#4c72b0', '#dd8452', '#d62728'], edgecolor='white')
+              color=['#4c72b0', '#E69F00', '#D55E00'], edgecolor='white')
 ax.axhline(p_survived, color='black', ls='--', lw=1.5,
            label=f'overall P(survived) = {p_survived:.3f}')
 for b, r in zip(bars, class_rates.values):
@@ -243,7 +243,7 @@ print(f"True (whole-group) P(survived)           = {p_survived:.4f}")
 
 fig, ax = plt.subplots()
 ax.plot(np.arange(1, n_draws + 1), running_freq, color='#4c72b0', lw=1)
-ax.axhline(p_survived, color='#d62728', ls='--', lw=2,
+ax.axhline(p_survived, color='#D55E00', ls='--', lw=2,
            label=f'true P(survived) = {p_survived:.3f}')
 ax.set_xscale('log')   # log x-axis so the early lurching and late settling both show
 ax.set_xlabel('number of random passengers drawn (log scale)')

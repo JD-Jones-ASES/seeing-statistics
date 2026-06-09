@@ -291,7 +291,7 @@ sample = rng.choice(visits.to_numpy(), size=n_draws, replace=True)
 running = np.cumsum(sample) / np.arange(1, n_draws + 1)
 
 fig, ax = plt.subplots()
-ax.plot(np.arange(1, n_draws + 1), running, color='#2ca02c', lw=1.2,
+ax.plot(np.arange(1, n_draws + 1), running, color='#009E73', lw=1.2,
         label='running average of sampled births')
 ax.axhline(E_visits, color='black', lw=2, ls='--', label=f'E[X] = {E_visits:.2f}')
 ax.set_xscale('log')

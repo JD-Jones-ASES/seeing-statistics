@@ -268,7 +268,7 @@ which makes the textbook $\text{SE}(b)$ too small. The Ames data has a famous fu
         code(r"""
 fig, ax = plt.subplots()
 ax.scatter(yhat, resid, s=10, alpha=0.30, color='#4c72b0')
-ax.axhline(0, color='#d62728', lw=2, ls='--', label='residual = 0')
+ax.axhline(0, color='#D55E00', lw=2, ls='--', label='residual = 0')
 ax.set_xlabel('fitted (predicted) price (dollars)')
 ax.set_ylabel('residual = actual - predicted (dollars)')
 ax.set_title('Residuals vs fitted: the Ames funnel (scatter grows for pricey homes)')

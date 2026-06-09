@@ -71,9 +71,9 @@ symbol, because the dollar sign has a special math meaning in these notebooks.)*
 """),
         code(r"""
 fig, ax = plt.subplots()
-ax.hist(population, bins=50, color='#dd8452', edgecolor='white')
+ax.hist(population, bins=50, color='#E69F00', edgecolor='white')
 ax.axvline(MU, color='black', lw=2, ls='--', label=f'mean = ${MU:,.0f}')
-ax.axvline(np.median(population), color='#2ca02c', lw=2,
+ax.axvline(np.median(population), color='#009E73', lw=2,
            label=f'median = ${np.median(population):,.0f}')
 ax.set_xlabel('sale price (dollars)')
 ax.set_ylabel('number of homes')
@@ -137,7 +137,7 @@ ax.hist(sample_means, bins=45, density=True, color='#4c72b0', edgecolor='white',
 # Overlay the Central Limit Theorem's prediction: a normal bell curve.
 xs = np.linspace(sample_means.min(), sample_means.max(), 300)
 ax.plot(xs, stats.norm.pdf(xs, MU, SIGMA / np.sqrt(n)),
-        color='#d62728', lw=2.5, label=r'CLT normal $N(\mu,\ \sigma/\sqrt{n})$')
+        color='#D55E00', lw=2.5, label=r'CLT normal $N(\mu,\ \sigma/\sqrt{n})$')
 ax.axvline(MU, color='black', lw=2, ls='--', label=f'true mean = ${MU:,.0f}')
 ax.set_xlabel('sample mean price (dollars)'); ax.set_ylabel('density')
 ax.set_title('Averaging tamed the skew: the means lean toward a bell')
@@ -187,7 +187,7 @@ for ax, n in zip(axes.ravel(), sizes):
                       for _ in range(n_reps)])
     ax.hist(means, bins=45, density=True, color='#4c72b0', edgecolor='white')
     xs = np.linspace(means.min(), means.max(), 300)
-    ax.plot(xs, stats.norm.pdf(xs, MU, SIGMA / np.sqrt(n)), color='#d62728', lw=2)
+    ax.plot(xs, stats.norm.pdf(xs, MU, SIGMA / np.sqrt(n)), color='#D55E00', lw=2)
     ax.axvline(MU, color='black', lw=1.5, ls='--')
     ax.set_title(f'n = {n}   (skew of means = {stats.skew(means):.2f},  SE = ${SIGMA/np.sqrt(n):,.0f})')
     ax.set_xlabel('sample mean price (dollars)'); ax.set_ylabel('density')
@@ -253,7 +253,7 @@ print(f'  SE at n=200 = ${se200:,.0f}   (about half - 4x the data halved the err
 # Picture the sqrt(n) law: dots = simulation, smooth curve = sigma/sqrt(n).
 nn_grid = np.linspace(5, 200, 200)
 fig, ax = plt.subplots()
-ax.plot(nn_grid, SIGMA / np.sqrt(nn_grid), color='#d62728', lw=2.5,
+ax.plot(nn_grid, SIGMA / np.sqrt(nn_grid), color='#D55E00', lw=2.5,
         label=r'formula  SE = sigma / sqrt(n)')
 ax.scatter(se_table['n'], se_table['empirical_SE'], s=60, color='#4c72b0', zorder=5,
            label='simulated spread of x-bar')

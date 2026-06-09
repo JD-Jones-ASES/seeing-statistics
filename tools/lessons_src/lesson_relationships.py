@@ -150,7 +150,7 @@ line_y = b0 + b1 * line_x
 
 fig, ax = plt.subplots()
 ax.scatter(x, y, s=10, alpha=0.35, color='#4c72b0', label='homes')
-ax.plot(line_x, line_y, color='#d62728', lw=2.5,
+ax.plot(line_x, line_y, color='#D55E00', lw=2.5,
         label=f'fit: price = {b0:,.0f} + {b1:.0f} x area')
 ax.set_xlabel('living area (sq ft)'); ax.set_ylabel('sale price (dollars)')
 ax.set_title('Least-squares regression line through the Ames homes')
@@ -187,7 +187,7 @@ residuals = y - predicted
 
 fig, ax = plt.subplots()
 ax.scatter(predicted, residuals, s=10, alpha=0.35, color='#4c72b0')
-ax.axhline(0, color='#d62728', lw=2, ls='--', label='residual = 0 (a perfect prediction)')
+ax.axhline(0, color='#D55E00', lw=2, ls='--', label='residual = 0 (a perfect prediction)')
 ax.set_xlabel('predicted price (dollars)'); ax.set_ylabel('residual = actual − predicted (dollars)')
 ax.set_title('Residual plot: mostly a flat band, but it fans out for pricey homes')
 ax.legend(); plt.show()
@@ -306,7 +306,7 @@ on whether you look at the groups or the lump. That reversal is **Simpson's para
 believe it is to *see* it.
 """),
         code(r"""
-colors = {'Adelie': '#4c72b0', 'Chinstrap': '#dd8452', 'Gentoo': '#2ca02c'}
+colors = {'Adelie': '#4c72b0', 'Chinstrap': '#E69F00', 'Gentoo': '#009E73'}
 
 fig, (axL, axR) = plt.subplots(1, 2, figsize=(13, 5.2), sharex=True, sharey=True)
 

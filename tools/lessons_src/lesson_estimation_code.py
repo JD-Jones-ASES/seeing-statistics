@@ -207,7 +207,7 @@ print('all rows match the formula within 5%?',
 # Picture the sqrt(n) law: dots = simulation, smooth curve = sigma/sqrt(n).
 nn_grid = np.linspace(10, 640, 200)
 fig, ax = plt.subplots()
-ax.plot(nn_grid, sigma / np.sqrt(nn_grid), color='#d62728', lw=2.5,
+ax.plot(nn_grid, sigma / np.sqrt(nn_grid), color='#D55E00', lw=2.5,
         label=r'formula  SE = sigma / sqrt(n)')
 ax.scatter(se_table['n'], se_table['empirical_SE'], s=70, color='#4c72b0', zorder=5,
            label='simulated spread of x-bar')

@@ -174,11 +174,11 @@ fig, ax = plt.subplots()
 ax.hist(null_ts, bins=60, color='#9aa7c7', edgecolor='white', density=True,
         label='null distribution of t (simulated)')
 for sign in (-1, 1):
-    ax.axvline(sign * abs(t_obs), color='#d62728', lw=2,
+    ax.axvline(sign * abs(t_obs), color='#D55E00', lw=2,
                label='observed |t|' if sign == 1 else None)
 xs = np.linspace(null_ts.min(), null_ts.max(), 300)
 tail = xs[np.abs(xs) >= abs(t_obs)]
-ax.fill_between(tail, stats.t.pdf(tail, df=n - 1), color='#d62728', alpha=0.30)
+ax.fill_between(tail, stats.t.pdf(tail, df=n - 1), color='#D55E00', alpha=0.30)
 ax.set_xlabel('t statistic in the null world'); ax.set_ylabel('density')
 ax.set_title(f'Null distribution of t — shaded tails (the p-value) = {p_sim:.3f}')
 ax.legend(); plt.show()

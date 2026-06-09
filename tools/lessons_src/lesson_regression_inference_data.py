@@ -89,7 +89,7 @@ print(f'correlation       r = {r:.3f}    (R^2 = {r**2:.3f})')
 line_x = np.array([x.min(), x.max()])
 fig, ax = plt.subplots()
 ax.scatter(x, y, s=28, alpha=0.55, color='#4c72b0', edgecolor='white', lw=0.4, label='countries')
-ax.plot(line_x, b0 + b1 * line_x, color='#d62728', lw=2.5,
+ax.plot(line_x, b0 + b1 * line_x, color='#D55E00', lw=2.5,
         label=f'fit: lifeExp = {b0:.1f} + {b1:.1f} x log10(GDP)')
 ax.set_xlabel('log10(GDP per capita)   [3 = 1,000 dollars, 4 = 10,000 dollars]')
 ax.set_ylabel('life expectancy (years)')
@@ -130,7 +130,7 @@ print(f'  std of the slopes (SE) = {boot_se:.2f} years/tenfold   <- the bootstra
 fig, ax = plt.subplots()
 ax.hist(boot_slopes, bins=40, color='#9aa7c7', edgecolor='white', density=True)
 ax.axvline(b1, color='black', ls='--', lw=2, label=f'our sample slope = {b1:.1f}')
-ax.axvline(0, color='#d62728', lw=2, label='slope = 0 (no relationship)')
+ax.axvline(0, color='#D55E00', lw=2, label='slope = 0 (no relationship)')
 ax.set_xlabel('slope b1 from a resampled dataset (years per tenfold increase)')
 ax.set_ylabel('density')
 ax.set_title('Sampling distribution of the slope (bootstrap): roughly normal, nowhere near 0')
@@ -275,7 +275,7 @@ resid = model.resid
 
 fig, ax = plt.subplots()
 ax.scatter(fitted, resid, s=28, alpha=0.55, color='#4c72b0', edgecolor='white', lw=0.4)
-ax.axhline(0, color='#d62728', lw=2, ls='--', label='residual = 0')
+ax.axhline(0, color='#D55E00', lw=2, ls='--', label='residual = 0')
 ax.set_xlabel('fitted (predicted) life expectancy (years)')
 ax.set_ylabel('residual = actual - predicted (years)')
 ax.set_title('Residuals vs fitted (log model): a shapeless band -- the conditions hold')
@@ -306,7 +306,7 @@ than a normal model expects.
 fig, ax = plt.subplots()
 stats.probplot(resid, dist='norm', plot=ax)     # builds the Q-Q plot
 ax.get_lines()[0].set(marker='o', markersize=5, alpha=0.5, color='#4c72b0')   # the points
-ax.get_lines()[1].set(color='#d62728', lw=2)                                  # the ideal line
+ax.get_lines()[1].set(color='#D55E00', lw=2)                                  # the ideal line
 ax.set_title('Normal Q-Q plot of residuals: close to the line, a mild low-end dip')
 ax.set_xlabel('theoretical normal quantiles'); ax.set_ylabel('ordered residuals (years)')
 plt.show()
@@ -343,9 +343,9 @@ pf = model.get_prediction(grid).summary_frame(alpha=0.05)
 
 fig, ax = plt.subplots()
 ax.scatter(x, y, s=26, alpha=0.45, color='#4c72b0', edgecolor='white', lw=0.4, label='countries')
-ax.plot(grid['logwealth'], pf['mean'], color='#d62728', lw=2.5, label='fitted line')
+ax.plot(grid['logwealth'], pf['mean'], color='#D55E00', lw=2.5, label='fitted line')
 ax.fill_between(grid['logwealth'], pf['mean_ci_lower'], pf['mean_ci_upper'],
-                color='#2ca02c', alpha=0.45, label='95% CI for the mean (the line)')
+                color='#009E73', alpha=0.45, label='95% CI for the mean (the line)')
 ax.set_xlabel('log10(GDP per capita)   [3 = 1,000 dollars, 4 = 10,000 dollars]')
 ax.set_ylabel('life expectancy (years)')
 ax.set_title('The fitted line with its 95% confidence band -- a tight, well-pinned slope')

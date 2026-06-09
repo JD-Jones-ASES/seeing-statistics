@@ -115,7 +115,7 @@ w = 0.38
 
 fig, ax = plt.subplots()
 ax.bar(x - w/2, observed, width=w, color='#4c72b0', label='observed')
-ax.bar(x + w/2, expected_uniform, width=w, color='#dd8452', label='expected (uniform)')
+ax.bar(x + w/2, expected_uniform, width=w, color='#E69F00', label='expected (uniform)')
 ax.set_xticks(x); ax.set_xticklabels(labels)
 ax.set_ylabel('number of passengers')
 ax.set_title('Observed vs expected passenger counts by class (uniform hypothesis)')
@@ -162,7 +162,7 @@ ax.hist(null_stats, bins=60, color='#9aa7c7', edgecolor='white', density=True,
 # Overlay the textbook chi-square curve with df = 2 (= categories - 1).
 df_gof = len(observed) - 1
 xs = np.linspace(0, max(null_stats.max(), 18), 300)
-ax.plot(xs, stats.chi2.pdf(xs, df_gof), color='#d62728', lw=2.5,
+ax.plot(xs, stats.chi2.pdf(xs, df_gof), color='#D55E00', lw=2.5,
         label=f'chi-square curve, df = {df_gof}')
 ax.set_xlabel('$\\chi^2$ value'); ax.set_ylabel('density')
 ax.set_title(f'The null distribution of $\\chi^2$ — our observed {gof_stat:.0f} is off the chart')
@@ -318,9 +318,9 @@ fig, ax = plt.subplots()
 ax.hist(null_ind, bins=50, color='#9aa7c7', edgecolor='white', density=True,
         label='shuffled null $\\chi^2$ (no sex/survival link)')
 xs = np.linspace(0, max(null_ind.max(), 16), 300)
-ax.plot(xs, stats.chi2.pdf(xs, df_ind), color='#d62728', lw=2.5,
+ax.plot(xs, stats.chi2.pdf(xs, df_ind), color='#D55E00', lw=2.5,
         label=f'chi-square curve, df = {df_ind}')
-ax.axvline(null_ind.max(), color='#2ca02c', ls=':', lw=2,
+ax.axvline(null_ind.max(), color='#009E73', ls=':', lw=2,
            label=f'biggest shuffle = {null_ind.max():.1f}')
 ax.set_xlabel('$\\chi^2$ value'); ax.set_ylabel('density')
 ax.set_title('Null $\\chi^2$ from shuffling — observed 260.7 is unreachably far right')
@@ -396,9 +396,9 @@ print(f"Cramer's V = {cramers_v(class_table.values):.3f}  (a medium-to-large eff
 # Survival RATE by class makes the association tangible.
 rates = titanic.groupby('Pclass')['Survived'].mean() * 100
 fig, ax = plt.subplots()
-ax.bar(['1st', '2nd', '3rd'], rates.to_numpy(), color=['#4c72b0', '#dd8452', '#9aa7c7'])
+ax.bar(['1st', '2nd', '3rd'], rates.to_numpy(), color=['#4c72b0', '#E69F00', '#9aa7c7'])
 overall = titanic['Survived'].mean() * 100
-ax.axhline(overall, color='#d62728', ls='--', lw=2, label=f'overall rate = {overall:.0f}%')
+ax.axhline(overall, color='#D55E00', ls='--', lw=2, label=f'overall rate = {overall:.0f}%')
 for i, v in enumerate(rates.to_numpy()):
     ax.text(i, v + 1.5, f'{v:.0f}%', ha='center', fontweight='bold')
 ax.set_ylabel('survival rate (%)'); ax.set_ylim(0, 75)

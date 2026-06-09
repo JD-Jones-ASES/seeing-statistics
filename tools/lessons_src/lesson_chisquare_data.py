@@ -153,7 +153,7 @@ exp_flat = expected.flatten()
 x = np.arange(len(labels)); w = 0.4
 fig, ax = plt.subplots(figsize=(11, 5))
 ax.bar(x - w/2, obs_flat, width=w, color='#4c72b0', label='observed')
-ax.bar(x + w/2, exp_flat, width=w, color='#dd8452', label='expected (if independent)')
+ax.bar(x + w/2, exp_flat, width=w, color='#E69F00', label='expected (if independent)')
 ax.set_xticks(x); ax.set_xticklabels(labels, fontsize=8)
 ax.set_ylabel('number of penguins')
 ax.set_title('Observed vs expected counts — expected predicts birds where we saw zero')
@@ -201,9 +201,9 @@ absurd that is by drawing the reference curve with our observed value on it.
         code(r"""
 fig, ax = plt.subplots()
 xs = np.linspace(0, max(ind_stat * 1.05, 20), 400)
-ax.plot(xs, stats.chi2.pdf(xs, df_ind), color='#d62728', lw=2.5,
+ax.plot(xs, stats.chi2.pdf(xs, df_ind), color='#D55E00', lw=2.5,
         label=f'chi-square curve, df = {df_ind}')
-ax.axvline(ind_stat, color='#2ca02c', lw=2.5, ls='--',
+ax.axvline(ind_stat, color='#009E73', lw=2.5, ls='--',
            label=f'our observed chi^2 = {ind_stat:.0f}')
 # Mark the usual 0.05 critical value so the scale is clear.
 crit = stats.chi2.ppf(0.95, df_ind)
@@ -284,7 +284,7 @@ is simply far more lopsided.
 prop = (contingency / contingency.sum(axis=0)).T   # columns -> rows so islands are the bars
 fig, ax = plt.subplots()
 bottom = np.zeros(len(prop))
-colors = {'Adelie': '#4c72b0', 'Chinstrap': '#dd8452', 'Gentoo': '#2ca02c'}
+colors = {'Adelie': '#4c72b0', 'Chinstrap': '#E69F00', 'Gentoo': '#009E73'}
 for sp in contingency.index:
     ax.bar(prop.index, prop[sp].to_numpy(), bottom=bottom,
            color=colors.get(sp, '#9aa7c7'), label=sp)

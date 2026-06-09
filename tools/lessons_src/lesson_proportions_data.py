@@ -123,7 +123,7 @@ ax.hist(sim_phats, bins=40, density=True, color='#9aa7c7', edgecolor='white',
         label='20,000 simulated survival rates')
 # Overlay the normal-approximation curve the formula predicts:
 xs = np.linspace(sim_phats.min(), sim_phats.max(), 300)
-ax.plot(xs, stats.norm.pdf(xs, phat, se_formula), color='#d62728', lw=2.5,
+ax.plot(xs, stats.norm.pdf(xs, phat, se_formula), color='#D55E00', lw=2.5,
         label='normal approx.  N(p-hat, SE)')
 ax.axvline(phat, color='black', ls='--', lw=2, label=f'p-hat = {phat:.3f}')
 ax.set_xlabel('sample proportion who survived')
@@ -224,9 +224,9 @@ fig, ax = plt.subplots()
 ax.hist(null_phats, bins=40, density=True, color='#9aa7c7', edgecolor='white',
         label=f'null world: survival is a coin flip ({p0})')
 xs = np.linspace(null_phats.min(), null_phats.max(), 300)
-ax.plot(xs, stats.norm.pdf(xs, p0, se0), color='#2ca02c', lw=2, label='normal approx. under H0')
+ax.plot(xs, stats.norm.pdf(xs, p0, se0), color='#009E73', lw=2, label='normal approx. under H0')
 ax.axvline(p0, color='black', ls='--', lw=2, label=f'benchmark p0 = {p0}')
-ax.axvline(phat, color='#d62728', lw=2.5, label=f'our p-hat = {phat:.3f}')
+ax.axvline(phat, color='#D55E00', lw=2.5, label=f'our p-hat = {phat:.3f}')
 ax.set_xlabel('sample survival rate (in the null world)'); ax.set_ylabel('density')
 ax.set_title('p-value = share of the null world at least as far out as our p-hat')
 ax.legend(); plt.show()
@@ -285,7 +285,7 @@ rates = [p1 * 100, p2 * 100]
 # error bars = +/- 1.96 * each group's own SE (a 95% margin)
 errs = [100 * zstar * np.sqrt(pp * (1 - pp) / nn) for pp, nn in [(p1, n1), (p2, n2)]]
 bars = ax.bar(groups, rates, yerr=errs, capsize=8,
-              color=['#dd8452', '#4c72b0'], edgecolor='white')
+              color=['#E69F00', '#4c72b0'], edgecolor='white')
 ax.bar_label(bars, fmt='%.1f%%', padding=10)
 ax.set_ylabel('survival rate (%)')
 ax.set_title('Titanic survival rate: women vs. men (95% error bars)')
@@ -357,7 +357,7 @@ fig, ax = plt.subplots()
 ax.hist(null_diffs, bins=40, color='#9aa7c7', edgecolor='white',
         label='gaps when sex is shuffled (H0 world)')
 ax.axvline(0, color='black', ls='--', lw=1.5)
-ax.axvline(diff, color='#d62728', lw=2.5, label=f'our observed gap = {diff:.3f}')
+ax.axvline(diff, color='#D55E00', lw=2.5, label=f'our observed gap = {diff:.3f}')
 ax.set_xlabel('survival rate gap (female - male)')
 ax.set_ylabel('number of shuffles')
 ax.set_title('The real gap is wildly outside anything chance produces')

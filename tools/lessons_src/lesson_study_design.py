@@ -156,7 +156,7 @@ time, on average*. Let's see both sampling distributions side by side.
 fig, ax = plt.subplots()
 ax.hist(srs_means,    bins=40, alpha=0.75, color='#4c72b0', edgecolor='white',
         label=f'SRS means (center {srs_means.mean():.0f})')
-ax.hist(biased_means, bins=40, alpha=0.75, color='#dd8452', edgecolor='white',
+ax.hist(biased_means, bins=40, alpha=0.75, color='#E69F00', edgecolor='white',
         label=f'biased means (center {biased_means.mean():.0f})')
 ax.axvline(MU, color='black', lw=2.5, ls='--', label=f'true mean MU = {MU:.0f}')
 ax.set_xlabel('sample mean of living area (sq ft)'); ax.set_ylabel('how often (out of 3,000)')
@@ -203,7 +203,7 @@ print(table.to_string(index=False, float_format=lambda v: f'{v:.1f}'))
         code(r"""
 fig, ax = plt.subplots()
 ax.plot(table['n'], table['SRS center'],    'o-', color='#4c72b0', label='SRS center')
-ax.plot(table['n'], table['BIASED center'], 's-', color='#dd8452', label='biased center')
+ax.plot(table['n'], table['BIASED center'], 's-', color='#E69F00', label='biased center')
 ax.axhline(MU, color='black', lw=2, ls='--', label=f'true mean MU = {MU:.0f}')
 ax.set_xlabel('sample size n'); ax.set_ylabel('center of the sampling distribution (sq ft)')
 ax.set_title('More data tightens the wobble but never closes the bias gap')
@@ -308,7 +308,7 @@ print(f'Typical single-study gap (std): {gapA_minus_B.std():.3f} quality points 
 """),
         code(r"""
 fig, ax = plt.subplots()
-ax.hist(gapA_minus_B, bins=40, color='#2ca02c', edgecolor='white')
+ax.hist(gapA_minus_B, bins=40, color='#009E73', edgecolor='white')
 ax.axvline(0, color='black', lw=2, ls='--', label='perfect balance (gap = 0)')
 ax.set_xlabel('group A quality - group B quality (per random assignment)')
 ax.set_ylabel('how often (out of 2,000)')

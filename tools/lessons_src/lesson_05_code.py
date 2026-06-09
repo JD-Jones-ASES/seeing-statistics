@@ -183,7 +183,7 @@ print(f'\nP(exactly 2) — simulated {emp_pmf[2]:.4f}  vs formula {binom_pmf(2, 
 
 fig, ax = plt.subplots()
 ax.bar(ks, emp_pmf, color='#4c72b0', edgecolor='white', label='simulated (np.bincount)')
-ax.plot(ks, mine, 'o-', color='#d62728', lw=2, label='our binom_pmf formula')
+ax.plot(ks, mine, 'o-', color='#D55E00', lw=2, label='our binom_pmf formula')
 ax.axvline(n * p, color='black', ls='--', lw=1.5, label=f'mean = n*p = {n*p:.2f}')
 ax.set_xlabel('low-birthweight babies in a group of 30')
 ax.set_ylabel('probability')
@@ -223,8 +223,8 @@ print(f'\nsimulated mean     = {sims_p.mean():.2f}   (theory lambda   = {lam:.2f
 print(f'simulated variance = {sims_p.var():.2f}   (theory lambda   = {lam:.2f})')
 
 fig, ax = plt.subplots()
-ax.bar(ks_p, emp_p, color='#2ca02c', edgecolor='white', label='simulated (np.bincount)')
-ax.plot(ks_p, mine_p, 'o-', color='#d62728', lw=2, label='our pois_pmf formula')
+ax.bar(ks_p, emp_p, color='#009E73', edgecolor='white', label='simulated (np.bincount)')
+ax.plot(ks_p, mine_p, 'o-', color='#D55E00', lw=2, label='our pois_pmf formula')
 ax.axvline(lam, color='black', ls='--', lw=1.5, label=f'mean = lambda = {lam:.1f}')
 ax.set_xlabel('earthquakes (M4.5+) in one day')
 ax.set_ylabel('probability')
@@ -312,7 +312,7 @@ print(f'largest |binom_pmf - pois_pmf| across all counts = {max_gap:.6f}  (tiny 
 fig, ax = plt.subplots()
 ax.bar(ks_b, binom_side, color='#9aa7c7', edgecolor='white',
        label=f'our binom_pmf(n={n_big}, p={p_small:.4f})')
-ax.plot(ks_b, pois_side, 'o-', color='#d62728', lw=2,
+ax.plot(ks_b, pois_side, 'o-', color='#D55E00', lw=2,
         label=f'our pois_pmf(lambda = {lam_chk:.1f})')
 ax.set_xlabel('number of events')
 ax.set_ylabel('probability')

@@ -208,7 +208,7 @@ draws = rng.choice(relatives.to_numpy(), size=n_draws, replace=True)
 running = np.cumsum(draws) / np.arange(1, n_draws + 1)
 
 fig, ax = plt.subplots()
-ax.plot(np.arange(1, n_draws + 1), running, color='#dd8452', lw=1.2,
+ax.plot(np.arange(1, n_draws + 1), running, color='#E69F00', lw=1.2,
         label='running average of sampled passengers')
 ax.axhline(E, color='black', lw=2, ls='--', label=f'E[X] = {E:.3f}')
 ax.set_xscale('log')                              # log x-axis spreads out the early, jumpy part

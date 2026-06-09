@@ -71,7 +71,7 @@ governs every test below.
 xs = np.linspace(-4.5, 4.5, 400)
 fig, ax = plt.subplots()
 ax.plot(xs, stats.norm.pdf(xs), color='black', lw=2.5, ls='--', label='normal (z)')
-for df, col in [(3, '#d62728'), (9, '#dd8452'), (40, '#4c72b0')]:
+for df, col in [(3, '#D55E00'), (9, '#E69F00'), (40, '#4c72b0')]:
     ax.plot(xs, stats.t.pdf(xs, df), color=col, lw=2, label=f't, df = {df}')
 ax.set_xlabel('value of the test statistic'); ax.set_ylabel('density')
 ax.set_title('The t-distribution: fat tails when df is small, normal when df is large')
@@ -142,8 +142,8 @@ ax.hist(sim_t, bins=60, density=True, color='#9aa7c7', edgecolor='white',
 grid = np.linspace(-5, 5, 300)
 ax.plot(grid, stats.t.pdf(grid, df=n - 1), color='#4c72b0', lw=2.5,
         label=f'textbook t-curve (df = {n-1})')
-ax.axvline(t_obs, color='#d62728', lw=2.5, label=f'our t = {t_obs:.2f}')
-ax.axvline(-t_obs, color='#d62728', lw=1.5, ls=':')
+ax.axvline(t_obs, color='#D55E00', lw=2.5, label=f'our t = {t_obs:.2f}')
+ax.axvline(-t_obs, color='#D55E00', lw=1.5, ls=':')
 ax.set_xlabel('t-statistic under the null'); ax.set_ylabel('density')
 ax.set_title('One-sample test: the simulated null matches the t-curve')
 ax.legend(); plt.show()
@@ -223,8 +223,8 @@ print(f'permutation two-sided p-value = {p_perm:.5f}   (0 means: never that extr
 fig, ax = plt.subplots()
 ax.hist(perm_diffs, bins=60, color='#9aa7c7', edgecolor='white',
         label='differences when labels are shuffled (null)')
-ax.axvline(obs_diff, color='#d62728', lw=2.5, label=f'observed diff = {obs_diff:.0f} g')
-ax.axvline(-obs_diff, color='#d62728', lw=1.5, ls=':')
+ax.axvline(obs_diff, color='#D55E00', lw=2.5, label=f'observed diff = {obs_diff:.0f} g')
+ax.axvline(-obs_diff, color='#D55E00', lw=1.5, ls=':')
 ax.axvline(0, color='black', lw=1, ls='--')
 ax.set_xlabel('casein mean - horsebean mean (g)'); ax.set_ylabel('count')
 ax.set_title('Two-sample test: the real gap dwarfs anything random shuffling makes')
@@ -352,7 +352,7 @@ fig, (axL, axR) = plt.subplots(1, 2, figsize=(12, 5))
 
 for i in range(n_d):
     axL.plot([0, 1], [ucla[i], amaz[i]], color='#9aa7c7', lw=0.8, marker='o', ms=3)
-axL.plot([0, 1], [ucla.mean(), amaz.mean()], color='#d62728', lw=3, marker='o',
+axL.plot([0, 1], [ucla.mean(), amaz.mean()], color='#D55E00', lw=3, marker='o',
          ms=8, label='group means')
 axL.set_xticks([0, 1]); axL.set_xticklabels(['campus store', 'Amazon'])
 axL.set_ylabel('price (dollars)')
@@ -361,7 +361,7 @@ axL.legend()
 
 axR.hist(d, bins=20, color='#4c72b0', edgecolor='white')
 axR.axvline(0, color='black', lw=2, ls='--', label='no difference')
-axR.axvline(d.mean(), color='#d62728', lw=2.5, label=f'mean gap = {d.mean():.2f} dollars')
+axR.axvline(d.mean(), color='#D55E00', lw=2.5, label=f'mean gap = {d.mean():.2f} dollars')
 axR.set_xlabel('within-book price gap, campus minus Amazon (dollars)'); axR.set_ylabel('number of books')
 axR.set_title('The 73 differences cluster\nclearly above zero')
 axR.legend()
@@ -402,7 +402,7 @@ normal-quantile (Q-Q) plot — if the points hug the line, normality is a fair a
 fig, ax = plt.subplots()
 stats.probplot(d, dist='norm', plot=ax)
 ax.get_lines()[0].set_color('#4c72b0'); ax.get_lines()[0].set_markersize(6)
-ax.get_lines()[1].set_color('#d62728'); ax.get_lines()[1].set_linewidth(2)
+ax.get_lines()[1].set_color('#D55E00'); ax.get_lines()[1].set_linewidth(2)
 ax.set_title('Q-Q plot of the 73 textbook price differences (points near the line = roughly normal)')
 ax.set_xlabel('theoretical normal quantiles'); ax.set_ylabel('observed difference (dollars)')
 plt.show()

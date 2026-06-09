@@ -138,7 +138,7 @@ fig, ax = plt.subplots()
 ax.hist(null_AC, bins=60, color='#4c72b0', edgecolor='white', density=True,
         label='null distribution (label-shuffle)')
 for sign in (-1, 1):
-    ax.axvline(sign * abs(diff_AC), color='#d62728', lw=2,
+    ax.axvline(sign * abs(diff_AC), color='#D55E00', lw=2,
                label='observed |gap| = 32 g' if sign == 1 else None)
 ax.set_xlabel('Adelie - Chinstrap mean difference under the null (g)')
 ax.set_ylabel('density')
@@ -184,11 +184,11 @@ print(f'Welch t statistic            : {welch_AG.statistic:.1f}   (about 23 stan
 fig, ax = plt.subplots()
 ax.hist(null_AG, bins=60, color='#4c72b0', edgecolor='white', density=True,
         label='null distribution (label-shuffle)')
-ax.axvline(diff_AG, color='#d62728', lw=2.5, label=f'observed gap = {diff_AG:.0f} g')
+ax.axvline(diff_AG, color='#D55E00', lw=2.5, label=f'observed gap = {diff_AG:.0f} g')
 ax.annotate('observed gap is\nway off to the left,\nfar outside the null world',
             xy=(diff_AG, 0), xytext=(diff_AG * 0.62, ax.get_ylim()[1] * 0.6),
-            color='#d62728', ha='center',
-            arrowprops=dict(arrowstyle='->', color='#d62728', lw=1.5))
+            color='#D55E00', ha='center',
+            arrowprops=dict(arrowstyle='->', color='#D55E00', lw=1.5))
 ax.set_xlabel('Adelie - Gentoo mean difference under the null (g)')
 ax.set_ylabel('density')
 ax.set_title('Glaring effect: the observed gap is off in the extreme tail  (p = 0)')
@@ -280,9 +280,9 @@ for _ in range(3000):
 pvals_null = np.array(pvals_null)
 
 fig, ax = plt.subplots()
-ax.hist(pvals_null, bins=20, range=(0, 1), color='#dd8452', edgecolor='white', density=True)
+ax.hist(pvals_null, bins=20, range=(0, 1), color='#E69F00', edgecolor='white', density=True)
 ax.axhline(1.0, color='black', lw=1.5, ls='--', label='flat (uniform) -- what a true null gives')
-ax.axvspan(0, 0.05, color='#d62728', alpha=0.25, label='p <= 0.05  (the ~5% false alarms)')
+ax.axvspan(0, 0.05, color='#D55E00', alpha=0.25, label='p <= 0.05  (the ~5% false alarms)')
 ax.set_xlabel('p-value when H0 is TRUE (random Adelie split)')
 ax.set_ylabel('density')
 ax.set_title(f'Under a true null, p-values are flat -- {np.mean(pvals_null <= 0.05) * 100:.1f}% fall below 0.05')
@@ -336,8 +336,8 @@ power_by_n = [power_estimate(adelie, chinstrap, nn, seed=10 + i) for i, nn in en
 
 fig, ax = plt.subplots()
 ax.plot(sizes, power_by_n, 's-', color='#4c72b0', lw=2, label='power for the 32 g Chinstrap gap')
-ax.axhline(power_AG, color='#2ca02c', ls='-', lw=2, label=f'Gentoo gap power ~ {power_AG:.2f} (huge effect)')
-ax.axhline(0.05, color='#d62728', ls='--', lw=2, label='alpha = 0.05 (no real effect)')
+ax.axhline(power_AG, color='#009E73', ls='-', lw=2, label=f'Gentoo gap power ~ {power_AG:.2f} (huge effect)')
+ax.axhline(0.05, color='#D55E00', ls='--', lw=2, label='alpha = 0.05 (no real effect)')
 ax.axhline(0.80, color='black', ls=':', lw=1.5, label='0.80 -- the usual target')
 ax.set_xlabel('sample size n per group')
 ax.set_ylabel('power = P(reject H0)')

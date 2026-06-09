@@ -109,8 +109,8 @@ Numbers summarize; a **histogram** shows the full story — where values cluster
         code(r"""
 fig, ax = plt.subplots()
 ax.hist(mass, bins=25, color='#4c72b0', edgecolor='white')
-ax.axvline(mass.mean(), color='#d62728', lw=2, label=f'mean = {mass.mean():.0f} g')
-ax.axvline(mass.median(), color='#2ca02c', lw=2, ls='--', label=f'median = {mass.median():.0f} g')
+ax.axvline(mass.mean(), color='#D55E00', lw=2, label=f'mean = {mass.mean():.0f} g')
+ax.axvline(mass.median(), color='#009E73', lw=2, ls='--', label=f'median = {mass.median():.0f} g')
 ax.set_xlabel('body mass (g)'); ax.set_ylabel('number of penguins')
 ax.set_title('Distribution of penguin body mass')
 ax.legend(); plt.show()
@@ -135,7 +135,7 @@ A **scatterplot** plots two numbers against each other. **Correlation** ($r$, be
 """),
         code(r"""
 r = penguins['flipper_length_mm'].corr(penguins['body_mass_g'])
-colors = {'Adelie': '#4c72b0', 'Chinstrap': '#dd8452', 'Gentoo': '#55a868'}
+colors = {'Adelie': '#4c72b0', 'Chinstrap': '#E69F00', 'Gentoo': '#55a868'}
 fig, ax = plt.subplots()
 for s in species_order:
     sub = penguins[penguins['species'] == s]

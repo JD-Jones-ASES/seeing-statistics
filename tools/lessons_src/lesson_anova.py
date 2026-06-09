@@ -117,9 +117,9 @@ formula = 1 - (1 - 0.05) ** n_pairs
 
 fig, ax = plt.subplots()
 ax.plot(ks, sim * 100, 'o-', color='#4c72b0', lw=2, label='simulated FWER (correlated pairwise tests)')
-ax.plot(ks, formula * 100, 's--', color='#dd8452', lw=2,
+ax.plot(ks, formula * 100, 's--', color='#E69F00', lw=2,
         label=r'$1-(1-\alpha)^{m}$ upper bound (independent tests)')
-ax.axhline(5, color='#d62728', ls=':', lw=2, label='the 5% we hoped for')
+ax.axhline(5, color='#D55E00', ls=':', lw=2, label='the 5% we hoped for')
 ax.set_xlabel('number of groups (all truly identical)')
 ax.set_ylabel('chance of at least one false alarm (%)')
 ax.set_title('Many t-tests inflate false positives — true FWER stays below the bound')
@@ -257,7 +257,7 @@ fig, ax = plt.subplots()
 ax.hist(null_F, bins=40, density=True, color='#9aa7c7', edgecolor='white',
         label='shuffled-label F values (simulated null)')
 xs = np.linspace(0, max(6, null_F.max()), 300)
-ax.plot(xs, stats.f.pdf(xs, df_between, df_within), color='#d62728', lw=2.5,
+ax.plot(xs, stats.f.pdf(xs, df_between, df_within), color='#D55E00', lw=2.5,
         label=f'F-distribution, df=({df_between}, {df_within})')
 ax.set_xlabel('F statistic under H0 (no real difference)')
 ax.set_ylabel('density')
@@ -278,14 +278,14 @@ between-group signal) is huge compared with the *height of each box* (the within
 """),
         code(r"""
 fig, (axL, axR) = plt.subplots(1, 2, figsize=(12, 5))
-colors = {'Adelie': '#4c72b0', 'Chinstrap': '#dd8452', 'Gentoo': '#2ca02c'}
+colors = {'Adelie': '#4c72b0', 'Chinstrap': '#E69F00', 'Gentoo': '#009E73'}
 
 # LEFT: each group's mean (the between-group spread), against the grand mean.
 means = [g.mean() for g in groups]
 sems  = [g.std(ddof=1) / np.sqrt(len(g)) for g in groups]   # std error of each mean
 axL.errorbar(species_order, means, yerr=[1.96 * s for s in sems], fmt='o', ms=9,
              capsize=6, lw=2, color='#4c72b0')
-axL.axhline(grand_mean, color='#d62728', ls='--', lw=2, label=f'grand mean = {grand_mean:.0f} g')
+axL.axhline(grand_mean, color='#D55E00', ls='--', lw=2, label=f'grand mean = {grand_mean:.0f} g')
 axL.set_ylabel('body mass (g)'); axL.set_title('Group means (with 95% error bars)')
 axL.legend()
 
@@ -392,7 +392,7 @@ residuals = np.concatenate([g - g.mean() for g in groups])
 fig, ax = plt.subplots()
 ax.hist(residuals, bins=30, color='#4c72b0', edgecolor='white', density=True)
 xs = np.linspace(residuals.min(), residuals.max(), 200)
-ax.plot(xs, stats.norm.pdf(xs, 0, residuals.std(ddof=1)), color='#d62728', lw=2.5,
+ax.plot(xs, stats.norm.pdf(xs, 0, residuals.std(ddof=1)), color='#D55E00', lw=2.5,
         label='normal curve')
 ax.set_xlabel('within-group residual (g)'); ax.set_ylabel('density')
 ax.set_title('Residuals look roughly bell-shaped (ANOVA assumption OK)')

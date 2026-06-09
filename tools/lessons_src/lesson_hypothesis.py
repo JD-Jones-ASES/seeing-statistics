@@ -153,11 +153,11 @@ xs = np.linspace(null_ts.min(), null_ts.max(), 300)
 ax.plot(xs, stats.t.pdf(xs, df=n - 1), color='black', lw=2, label=f't-curve, df={n-1}')
 
 for sign in (-1, 1):
-    ax.axvline(sign * abs(t_obs), color='#d62728', lw=2,
+    ax.axvline(sign * abs(t_obs), color='#D55E00', lw=2,
                label='observed |t|' if sign == 1 else None)
 # shade the two tails (the p-value) on the simulated curve
 tail = xs[np.abs(xs) >= abs(t_obs)]
-ax.fill_between(tail, stats.t.pdf(tail, df=n - 1), color='#d62728', alpha=0.30)
+ax.fill_between(tail, stats.t.pdf(tail, df=n - 1), color='#D55E00', alpha=0.30)
 
 ax.set_xlabel('t statistic in the null world'); ax.set_ylabel('density')
 ax.set_title(f'Null distribution of t — shaded tails (the p-value) = {p_sim:.3f}')
@@ -260,8 +260,8 @@ power_by_effect = [reject_rate(population, h0=MU - e, n=50, alpha=0.05) for e in
 
 fig, ax = plt.subplots()
 ax.plot(effects, power_by_effect, 'o-', color='#4c72b0', lw=2, label='power (n = 50)')
-ax.axhline(0.05, color='#d62728', ls='--', lw=2, label='alpha = 0.05 (no real effect)')
-ax.axhline(0.80, color='#2ca02c', ls=':', lw=2, label='0.80 — the usual target')
+ax.axhline(0.05, color='#D55E00', ls='--', lw=2, label='alpha = 0.05 (no real effect)')
+ax.axhline(0.80, color='#009E73', ls=':', lw=2, label='0.80 — the usual target')
 ax.set_xlabel('true effect size (sq ft away from the tested value)')
 ax.set_ylabel('power = P(reject H0)')
 ax.set_title('Bigger real effects are easier to detect')
@@ -286,8 +286,8 @@ fixed_effect = 75
 power_by_n = [reject_rate(population, h0=MU - fixed_effect, n=nn, alpha=0.05) for nn in sizes]
 
 fig, ax = plt.subplots()
-ax.plot(sizes, power_by_n, 's-', color='#dd8452', lw=2, label=f'power for a {fixed_effect} sq ft effect')
-ax.axhline(0.80, color='#2ca02c', ls=':', lw=2, label='0.80 target')
+ax.plot(sizes, power_by_n, 's-', color='#E69F00', lw=2, label=f'power for a {fixed_effect} sq ft effect')
+ax.axhline(0.80, color='#009E73', ls=':', lw=2, label='0.80 target')
 ax.set_xlabel('sample size n'); ax.set_ylabel('power = P(reject H0)')
 ax.set_title('More data = more power (same true effect)')
 ax.set_ylim(0, 1.02); ax.legend(); plt.show()

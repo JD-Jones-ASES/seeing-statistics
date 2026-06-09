@@ -198,7 +198,7 @@ print("Knowing the species tells you almost nothing about the chance of female."
 # Picture it: bars = P(female | species), dashed line = overall P(female).
 fig, ax = plt.subplots()
 bars = ax.bar(species_order, female_by_species.values,
-              color=['#4c72b0', '#dd8452', '#2ca02c'], edgecolor='white')
+              color=['#4c72b0', '#E69F00', '#009E73'], edgecolor='white')
 ax.axhline(p_female, color='black', ls='--', lw=1.8,
            label=f'overall P(female) = {p_female:.3f}')
 for b, r in zip(bars, female_by_species.values):
@@ -257,7 +257,7 @@ because here the condition can make an outcome *certain* or *impossible*, not me
 fig, ax = plt.subplots()
 islands = list(p_species_given_island.index)
 x = np.arange(len(islands)); w = 0.25
-colors = {'Adelie': '#4c72b0', 'Chinstrap': '#dd8452', 'Gentoo': '#2ca02c'}
+colors = {'Adelie': '#4c72b0', 'Chinstrap': '#E69F00', 'Gentoo': '#009E73'}
 for k, sp in enumerate(species_order):
     vals = p_species_given_island[sp].values
     ax.bar(x + (k - 1) * w, vals, w, label=sp, color=colors[sp], edgecolor='white')

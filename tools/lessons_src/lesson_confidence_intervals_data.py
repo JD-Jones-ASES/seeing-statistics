@@ -68,7 +68,7 @@ skew_price = stats.skew(population)
 fig, ax = plt.subplots()
 ax.hist(population, bins=40, color='#9aa7c7', edgecolor='white')
 ax.axvline(MU, color='black', lw=2, ls='--', label=f'true mean = {MU:,.0f} dollars')
-ax.axvline(np.median(population), color='#dd8452', lw=2, ls=':',
+ax.axvline(np.median(population), color='#E69F00', lw=2, ls=':',
            label=f'median = {np.median(population):,.0f} dollars')
 ax.set_xlabel('sale price (dollars)'); ax.set_ylabel('number of homes')
 ax.set_title(f'The population: all {N_POP:,} sale prices (skew = {skew_price:+.2f}, strongly right-skewed)')
@@ -89,7 +89,7 @@ print(f'Skew of sale price  (this lesson)           = {skew_price:+.2f}   <- mor
 
 fig, ax = plt.subplots()
 ax.bar(['living area\n(flagship)', 'sale price\n(this lesson)'], [skew_area, skew_price],
-       color=['#4c72b0', '#dd8452'])
+       color=['#4c72b0', '#E69F00'])
 ax.axhline(0, color='grey', lw=1)
 ax.set_ylabel('skewness (0 = symmetric, higher = more right-skewed)')
 ax.set_title('Sale price is the more lopsided of the two')
@@ -161,16 +161,19 @@ print(f'That is {hits}% coverage - the theory predicts about 95%.')
         md(r"""
 ### Picture it — the "caterpillar" plot
 
-Each horizontal line is one sample's 95% CI. **Green** intervals caught the true mean; **red** ones missed.
-The dashed vertical line is the true mean μ. The red ones are the ~5% that miss — not mistakes, just the
-expected price of sampling.
+Each horizontal line is one sample's 95% CI. Intervals that **caught** the true mean are **teal and solid (●)**;
+the ones that **missed** are **orange-red and dashed (✕)** — shape *and* colour, so they read in grayscale and
+for colourblind viewers. The dashed vertical line is the true mean μ. The dashed orange-red ones are the ~5% that
+miss — not mistakes, just the expected price of sampling.
 """),
         code(r"""
 fig, ax = plt.subplots(figsize=(7, 10))
 for i, res in enumerate(results):
-    color = '#2ca02c' if res['hit'] else '#d62728'
-    ax.plot([res['lo'], res['hi']], [i, i], color=color, lw=1.4)
-    ax.plot(res['xbar'], i, 'o', color=color, ms=2.5)
+    hit = res['hit']
+    style = sl.hit_miss_style(hit)          # solid circle = a hit, dashed cross = a miss
+    color = sl.CAPTURE if hit else sl.MISS  # colourblind-safe teal vs. vermillion
+    ax.plot([res['lo'], res['hi']], [i, i], color=color, lw=1.4, ls=style['linestyle'])
+    ax.plot(res['xbar'], i, color=color, ms=3.5, marker=style['marker'], ls='none')
 ax.axvline(MU, color='black', ls='--', lw=2, label=f'true mean = {MU:,.0f} dollars')
 ax.set_xlabel('sale price (dollars)'); ax.set_ylabel('interval number (1-100)')
 ax.set_title(f'100 confidence intervals: {hits} caught the true mean, {n_intervals - hits} missed')
@@ -233,7 +236,7 @@ print(f'By n=50 most of the dip is gone: coverage = {cov50:.1f}% (close to 95%, 
         code(r"""
 fig, ax = plt.subplots()
 ax.plot(cov_table['n'], cov_table['coverage_%'], 'o-', color='#4c72b0', lw=2, ms=8)
-ax.axhline(95, color='#d62728', ls='--', lw=2, label='promised 95%')
+ax.axhline(95, color='#D55E00', ls='--', lw=2, label='promised 95%')
 for _, r in cov_table.iterrows():
     ax.text(r['n'], r['coverage_%'] + 0.15, f"{r['coverage_%']:.1f}%", ha='center', fontweight='bold')
 ax.set_xlabel('sample size n'); ax.set_ylabel('actual coverage (%)')
@@ -265,7 +268,7 @@ print(summary.to_string(index=False, float_format=lambda v: f'{v:,.0f}'))
 fig, (a1, a2) = plt.subplots(1, 2, figsize=(11, 4))
 a1.bar(summary['level'], summary['coverage_%'], color='#4c72b0'); a1.axhline(95, color='grey', ls=':')
 a1.set_title('Actual coverage'); a1.set_ylabel('% of intervals catching the mean'); a1.set_ylim(70, 100)
-a2.bar(summary['level'], summary['avg_width_dollars'], color='#dd8452')
+a2.bar(summary['level'], summary['avg_width_dollars'], color='#E69F00')
 a2.set_title('Average interval width'); a2.set_ylabel('dollars (smaller = more precise)')
 plt.tight_layout(); plt.show()
 """),
@@ -287,7 +290,7 @@ many_means = np.array([rng.choice(population, size=50, replace=False).mean() for
 fig, ax = plt.subplots()
 ax.hist(many_means, bins=40, density=True, color='#9aa7c7', edgecolor='white', label='sample means (n=50)')
 xs = np.linspace(many_means.min(), many_means.max(), 200)
-ax.plot(xs, stats.norm.pdf(xs, MU, SIGMA / np.sqrt(50)), color='#d62728', lw=2, label='CLT normal curve')
+ax.plot(xs, stats.norm.pdf(xs, MU, SIGMA / np.sqrt(50)), color='#D55E00', lw=2, label='CLT normal curve')
 ax.axvline(MU, color='black', ls='--', label=f'true mean = {MU:,.0f}')
 ax.set_xlabel('sample mean of sale price (dollars)'); ax.set_ylabel('density')
 ax.set_title('Strongly skewed population, but the sample means are near-normal (CLT)')

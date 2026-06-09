@@ -77,7 +77,7 @@ ax.hist(height_cm, bins=35, density=True, color='#4c72b0',
 
 # The smooth normal curve built from the data's own mu and sd
 x = np.linspace(height_cm.min(), height_cm.max(), 300)
-ax.plot(x, stats.norm.pdf(x, mu, sd), color='#d62728', lw=2.5,
+ax.plot(x, stats.norm.pdf(x, mu, sd), color='#D55E00', lw=2.5,
         label=f'normal model  (mu={mu:.1f}, sigma={sd:.1f})')
 
 ax.set_xlabel('adult-male height (cm)'); ax.set_ylabel('density')
@@ -120,7 +120,7 @@ fig, ax = plt.subplots()
 ax.hist(height_cm, bins=35, color='#4c72b0', edgecolor='white', alpha=0.85)
 
 # Shade the 1/2/3 SD bands from widest (faintest) to narrowest (boldest)
-band_colors = ['#9aa7c7', '#dd8452', '#2ca02c']
+band_colors = ['#9aa7c7', '#E69F00', '#009E73']
 for k, c in zip((3, 2, 1), band_colors):
     ax.axvspan(mu - k * sd, mu + k * sd, color=c, alpha=0.18,
                label=f'within {k} SD')
@@ -159,9 +159,9 @@ print(f"  difference             = {abs(normal_pct - empirical_pct):5.2f} percen
 fig, ax = plt.subplots()
 x = np.linspace(height_cm.min(), height_cm.max(), 400)
 y = stats.norm.pdf(x, mu, sd)
-ax.plot(x, y, color='#d62728', lw=2.5, label='normal model')
+ax.plot(x, y, color='#D55E00', lw=2.5, label='normal model')
 tail = x >= cutoff
-ax.fill_between(x[tail], y[tail], color='#d62728', alpha=0.30,
+ax.fill_between(x[tail], y[tail], color='#D55E00', alpha=0.30,
                 label=f'taller than {cutoff:.0f} cm')
 ax.axvline(cutoff, color='black', lw=1.5, ls='--')
 ax.set_xlabel('adult-male height (cm)'); ax.set_ylabel('density')
@@ -215,7 +215,7 @@ fig, ax = plt.subplots()
 stats.probplot(height_cm, plot=ax)             # builds the Q-Q plot for us
 ax.get_lines()[0].set_color('#4c72b0')         # the data points
 ax.get_lines()[0].set_markersize(3)
-ax.get_lines()[1].set_color('#d62728')         # the 'perfectly normal' reference line
+ax.get_lines()[1].set_color('#D55E00')         # the 'perfectly normal' reference line
 ax.set_title('Q-Q plot: NHANES adult-male heights (hugs the line -> ~normal)')
 plt.show()
 """),
@@ -233,7 +233,7 @@ stats.probplot(income, plot=axes[1])
 axes[1].set_title(f'Incomes  (skew = {income.skew():.2f})  -> bent')
 for axx in axes:
     axx.get_lines()[0].set_color('#4c72b0'); axx.get_lines()[0].set_markersize(3)
-    axx.get_lines()[1].set_color('#d62728')
+    axx.get_lines()[1].set_color('#D55E00')
 plt.tight_layout(); plt.show()
 print('Heights: points on the line (normal).  Income: a sharp upward bend (right-skewed, NOT normal).')
 """),

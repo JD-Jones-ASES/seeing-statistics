@@ -172,7 +172,7 @@ print(f'Difference (the bias)           : {xbars.mean() - MU:+.3f} cm   <- essen
 # The dartboard, drawn as a histogram of where x-bar lands.
 fig, ax = plt.subplots()
 ax.hist(xbars, bins=40, color='#4c72b0', edgecolor='white')
-ax.axvline(MU, color='#d62728', lw=2.5, ls='--', label=f'true mean mu = {MU:.1f}')
+ax.axvline(MU, color='#D55E00', lw=2.5, ls='--', label=f'true mean mu = {MU:.1f}')
 ax.axvline(xbars.mean(), color='black', lw=2, label=f'avg of estimates = {xbars.mean():.1f}')
 ax.set_xlabel('sample mean x-bar (cm)'); ax.set_ylabel('number of samples')
 ax.set_title(f'{n_samples:,} estimates of the mean — centered on the truth (unbiased)')
@@ -300,7 +300,7 @@ print(f'  SE at n=200 = {se200:.2f} cm   (about half — quadrupling n halved th
 # Picture the sqrt(n) law: dots = simulation, smooth curve = sigma/sqrt(n).
 nn_grid = np.linspace(10, 800, 200)
 fig, ax = plt.subplots()
-ax.plot(nn_grid, SIGMA / np.sqrt(nn_grid), color='#d62728', lw=2.5,
+ax.plot(nn_grid, SIGMA / np.sqrt(nn_grid), color='#D55E00', lw=2.5,
         label=r'formula  SE = sigma / sqrt(n)')
 ax.scatter(se_table['n'], se_table['empirical_SE'], s=60, color='#4c72b0', zorder=5,
            label='simulated spread of x-bar')

@@ -130,7 +130,7 @@ line_y = b0 + b1 * line_x
 
 fig, ax = plt.subplots()
 ax.scatter(x, y, s=28, alpha=0.6, color='#4c72b0', edgecolor='white', lw=0.4, label='countries')
-ax.plot(line_x, line_y, color='#d62728', lw=2.5, label='least-squares straight line')
+ax.plot(line_x, line_y, color='#D55E00', lw=2.5, label='least-squares straight line')
 ax.set_xlabel('GDP per capita (USD per person)')
 ax.set_ylabel('life expectancy (years)')
 ax.set_title('The best STRAIGHT line cuts straight through a curved truth')
@@ -163,7 +163,7 @@ residuals_raw = y - predicted_raw
 
 fig, ax = plt.subplots()
 ax.scatter(predicted_raw, residuals_raw, s=28, alpha=0.6, color='#4c72b0', edgecolor='white', lw=0.4)
-ax.axhline(0, color='#d62728', lw=2, ls='--', label='residual = 0 (a perfect prediction)')
+ax.axhline(0, color='#D55E00', lw=2, ls='--', label='residual = 0 (a perfect prediction)')
 ax.set_xlabel('predicted life expectancy (years)')
 ax.set_ylabel('residual = actual − predicted (years)')
 ax.set_title('Residual plot for the straight line: a clear arch (∩-shape), not random scatter')
@@ -215,7 +215,7 @@ print(f'skew of log10(gdpPercap) = {skew_log:+.2f}   <- nearly symmetric: the lo
 # Same data, same y, but wealth now on a log10 ruler.
 gl = np.log10(x)
 fig, ax = plt.subplots()
-ax.scatter(gl, y, s=28, alpha=0.6, color='#2ca02c', edgecolor='white', lw=0.4)
+ax.scatter(gl, y, s=28, alpha=0.6, color='#009E73', edgecolor='white', lw=0.4)
 ax.set_xlabel('log10(GDP per capita)   [3 = 1,000 USD,  4 = 10,000 USD]')
 ax.set_ylabel('life expectancy (years)')
 ax.set_title('Switch wealth to a log ruler and the curve STRAIGHTENS into a line')
@@ -241,8 +241,8 @@ logline_x = np.linspace(gl.min(), gl.max(), 200)
 logline_y = b0L + b1L * logline_x
 
 fig, ax = plt.subplots()
-ax.scatter(gl, y, s=28, alpha=0.6, color='#2ca02c', edgecolor='white', lw=0.4, label='countries')
-ax.plot(logline_x, logline_y, color='#dd8452', lw=2.5, label='least-squares line (log wealth)')
+ax.scatter(gl, y, s=28, alpha=0.6, color='#009E73', edgecolor='white', lw=0.4, label='countries')
+ax.plot(logline_x, logline_y, color='#E69F00', lw=2.5, label='least-squares line (log wealth)')
 ax.set_xlabel('log10(GDP per capita)')
 ax.set_ylabel('life expectancy (years)')
 ax.set_title('After the log transform: the straight line fits well')
@@ -264,13 +264,13 @@ residuals_log = y - predicted_log
 fig, (axL, axR) = plt.subplots(1, 2, figsize=(13, 5.0), sharey=True)
 
 axL.scatter(predicted_raw, residuals_raw, s=24, alpha=0.6, color='#4c72b0', edgecolor='white', lw=0.4)
-axL.axhline(0, color='#d62728', lw=2, ls='--')
+axL.axhline(0, color='#D55E00', lw=2, ls='--')
 axL.set_title('BEFORE: straight line on raw GDP\n(residuals trace an arch ∩ — misfit)')
 axL.set_xlabel('predicted life expectancy (years)')
 axL.set_ylabel('residual (years)')
 
-axR.scatter(predicted_log, residuals_log, s=24, alpha=0.6, color='#2ca02c', edgecolor='white', lw=0.4)
-axR.axhline(0, color='#d62728', lw=2, ls='--')
+axR.scatter(predicted_log, residuals_log, s=24, alpha=0.6, color='#009E73', edgecolor='white', lw=0.4)
+axR.axhline(0, color='#D55E00', lw=2, ls='--')
 axR.set_title('AFTER: line on log10(GDP)\n(residuals look like a shapeless band — good)')
 axR.set_xlabel('predicted life expectancy (years)')
 

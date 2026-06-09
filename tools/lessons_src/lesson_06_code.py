@@ -183,7 +183,7 @@ scale. If the red curve hugs the blue bars, these heights really are close to no
 fig, ax = plt.subplots()
 ax.hist(heights, bins=25, density=True, color='#4c72b0',
         edgecolor='white', alpha=0.8, label='real heights (density)')
-ax.plot(xs, normal_pdf(xs, mu, sd), color='#d62728', lw=2.5,
+ax.plot(xs, normal_pdf(xs, mu, sd), color='#D55E00', lw=2.5,
         label=f'our normal_pdf  (mu={mu:.1f}, sigma={sd:.1f})')
 ax.set_xlabel('child height (inches)'); ax.set_ylabel('density')
 ax.set_title('Galton child heights vs. the curve we built by hand')

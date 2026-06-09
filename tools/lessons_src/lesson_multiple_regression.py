@@ -130,7 +130,7 @@ print(f'correlation(area, quality) = {r_area_quality:.2f}  ->  bigger homes do t
 fig, ax = plt.subplots()
 ax.scatter(ames['quality'], ames['area'], s=10, alpha=0.3, color='#4c72b0')
 group_means = ames.groupby('quality')['area'].mean()
-ax.plot(group_means.index, group_means.values, color='#d62728', lw=2.5, marker='o',
+ax.plot(group_means.index, group_means.values, color='#D55E00', lw=2.5, marker='o',
         label='mean area at each quality')
 ax.set_xlabel('overall quality (1-10)'); ax.set_ylabel('living area (sq ft)')
 ax.set_title(f'Quality and size travel together (r = {r_area_quality:.2f}) — the source of confounding')
@@ -240,7 +240,7 @@ same slope (`area`), shifted up by each grade's coefficient.
 """),
         code(r"""
 fig, ax = plt.subplots()
-grade_colors = {'Basic': '#9aa7c7', 'Standard': '#4c72b0', 'Premium': '#2ca02c'}
+grade_colors = {'Basic': '#9aa7c7', 'Standard': '#4c72b0', 'Premium': '#009E73'}
 area_grid = np.linspace(ames['area'].min(), ames['area'].max(), 50)
 for grade, color in grade_colors.items():
     sub = ames[ames['quality_grade'] == grade]
