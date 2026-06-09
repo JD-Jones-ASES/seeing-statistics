@@ -1,0 +1,49 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="A scroll-driven story: watch 100 confidence intervals form and ~95 capture the true mean.">
+<meta property="og:title" content="What 95% confidence really means"><meta property="og:description" content="A scroll-driven story: watch 100 confidence intervals form and ~95 capture the true mean.">
+<meta property="og:image" content="https://jd-jones-ases.github.io/seeing-statistics/assets/og-card.png">
+<meta name="theme-color" content="#4c72b0">
+<link rel="icon" href="assets/favicon.svg">
+
+<link rel="stylesheet" href="assets/course.css">
+<link rel="stylesheet" href="assets/explorables.css">
+<title>What 95% confidence really means · Statistics, by seeing it happen</title>
+<script>(function(){var t;try{t=localStorage.getItem('sc-theme')}catch(e){}if(t)document.documentElement.setAttribute('data-theme',t);})();</script>
+</head><body>
+<div class="sc-topbar">
+  <a class="sc-home" href="index.html">Statistics, by seeing it happen <span>· course map</span></a>
+  <span class="sc-spacer"></span>
+  <span class="sc-pos" style="color:var(--sc-muted);font-size:12.5px">scrollytelling story</span>
+  
+  <button class="sc-btn" type="button" onclick="scToggleTheme()" aria-label="Toggle light or dark theme">◐</button>
+</div>
+<main class="explore-wrap">
+
+<h1>What “95% confidence” really means</h1>
+<p>Scroll through the story — the picture on the left rebuilds itself as you go. (Prefer to drive it yourself?
+Open the <a href="explore-confidence-intervals.html">interactive version</a>.)</p>
+<div class="scrolly">
+  <div class="scrolly-graphic">
+    <canvas id="scrolly-canvas" role="img"
+      aria-label="The Ames house-size population with its true mean, then 100 confidence intervals of which about 95 capture that mean."></canvas>
+  </div>
+  <div class="scrolly-steps"><div class="scrolly-step" data-step="0"><div class="box">Here is a whole real <b>population</b> — the living areas of <b>2,930 houses</b> in Ames, Iowa. Because we have all of them, we know the one thing you almost never know in real life: the <b>true mean μ</b> (the dashed line).</div></div><div class="scrolly-step" data-step="1"><div class="box">In real life you can't measure everyone. So you take a <b>sample</b> — here, 50 houses (the ticks) — and from it you build a <b>95% confidence interval</b>: a range that says “the true mean is plausibly in here.” This one <b>caught μ</b>.</div></div><div class="scrolly-step" data-step="2"><div class="box">One interval is luck. The real claim of “95% confidence” is about the <b>long run</b>. So we repeat the whole process <b>100 times</b> — 100 samples, 100 intervals.</div></div><div class="scrolly-step" data-step="3"><div class="box">Count them: about <b>95 of 100</b> intervals contain the true mean (teal, solid). The rest <b>miss</b> (orange-red, dashed).</div></div><div class="scrolly-step" data-step="4"><div class="box">Those misses aren't mistakes — they're the <b>~5% the method is allowed</b>. That is what “95% confidence” means: the <b>method's</b> long-run capture rate across many samples — <em>not</em> a 95% probability about any one interval you've already drawn.</div></div></div>
+</div>
+<p class="explore-note">The same simulation, in editable Python, is the flagship lesson:
+<a href="12-confidence-intervals.html">What a 95% confidence interval really means →</a> — or
+<a href="explore-confidence-intervals.html">drag the sliders yourself</a>.</p>
+
+</main>
+<footer class="sc-footer">
+  <p>© JD Jones, 2026 · <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>
+  (bundled datasets keep their own licences — see <a href="data-credits.html">data sources</a>).
+  For study and understanding, not professional advice.</p>
+  <p><a href="index.html">↑ Course map</a> · <a href="glossary.html">Glossary</a> ·
+  <a href="formula-sheet.html">Formula sheet</a> · <a href="data-credits.html">Data sources</a> ·
+  <a href="https://github.com/JD-Jones-ASES/seeing-statistics">Source on GitHub</a></p>
+</footer>
+<script defer src="assets/course.js"></script>
+
+<script defer src="assets/explorables-data.js"></script><script defer src="assets/scrolly.js"></script>
+</body></html>

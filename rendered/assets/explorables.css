@@ -31,3 +31,13 @@
 .xp-legend span{display:inline-flex;align-items:center;gap:6px}
 .xp-swatch{width:22px;height:0;border-top-width:3px;border-top-style:solid;display:inline-block}
 .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);border:0}
+
+/* scrollytelling */
+.scrolly-graphic{position:sticky;top:54px;background:var(--sc-card);border:1px solid var(--sc-line);
+  border-radius:14px;padding:10px;margin:8px 0;z-index:1;box-shadow:0 2px 12px rgba(0,0,0,.05)}
+.scrolly-graphic canvas{width:100%;height:auto;display:block;border-radius:8px}
+.scrolly-step{min-height:72vh;display:flex;align-items:center}
+.scrolly-step .box{background:var(--sc-card);border:1px solid var(--sc-line);border-left:4px solid var(--sc-accent);
+  border-radius:12px;padding:16px 20px;font-size:17px;line-height:1.65;box-shadow:0 2px 14px rgba(0,0,0,.06)}
+.scrolly-step .box b{color:var(--sc-ink)}
+@media (prefers-reduced-motion:reduce){.scrolly-graphic{position:static}}

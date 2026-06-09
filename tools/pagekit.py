@@ -7,7 +7,7 @@ SITE_URL = "https://jd-jones-ases.github.io/seeing-statistics"
 REPO = "https://github.com/JD-Jones-ASES/seeing-statistics"
 
 
-def page(title, desc, body, label="", math=False, print_btn=False):
+def page(title, desc, body, label="", math=False, print_btn=False, extra_head="", extra_scripts=""):
     katex_head = ('<link rel="stylesheet" href="assets/vendor/katex/katex.min.css">' if math else "")
     katex_js = ('<script defer src="assets/vendor/katex/katex.min.js"></script>'
                 '<script defer src="assets/vendor/katex/contrib/auto-render.min.js"></script>' if math else "")
@@ -22,6 +22,7 @@ def page(title, desc, body, label="", math=False, print_btn=False):
 <link rel="icon" href="assets/favicon.svg">
 {katex_head}
 <link rel="stylesheet" href="assets/course.css">
+{extra_head}
 <title>{title} · {SITE}</title>
 <script>(function(){{var t;try{{t=localStorage.getItem('sc-theme')}}catch(e){{}}if(t)document.documentElement.setAttribute('data-theme',t);}})();</script>
 </head><body>
@@ -45,5 +46,6 @@ def page(title, desc, body, label="", math=False, print_btn=False):
 </footer>
 <script defer src="assets/course.js"></script>
 {katex_js}
+{extra_scripts}
 </body></html>
 """

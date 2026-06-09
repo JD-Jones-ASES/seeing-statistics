@@ -61,6 +61,7 @@ def main():
     else:
         print("\n=== Reference content === (skipped — tools/_reference.json absent)")
     run("Interactive explorables", [PY, "tools/build_explorables.py"])
+    run("Scrollytelling story", [PY, "tools/make_scrolly.py"])
     run("Social card", [PY, "tools/make_og.py"], optional=True)   # needs matplotlib
     # Index search BEFORE building the JupyterLite app, and clear any stale copy,
     # so Pagefind only indexes course pages — not the Lite app's own HTML shells.
