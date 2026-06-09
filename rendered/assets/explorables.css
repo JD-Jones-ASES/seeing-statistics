@@ -1,0 +1,33 @@
+/* explorables.css — styling for the interactive explorable pages. */
+.explore-wrap{max-width:900px;margin:0 auto;padding:26px 20px 10px;
+  font:16px/1.6 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  color:var(--sc-ink);}
+.explore-wrap h1{font-size:28px;margin:.2em 0 .4em}
+.explore-wrap p{color:var(--sc-ink)}
+.explore-note{color:var(--sc-muted);font-size:14.5px;border-left:3px solid var(--sc-accent);
+  padding:6px 0 6px 14px;margin:18px 0}
+
+.xp{background:var(--sc-card);border:1px solid var(--sc-line);border-radius:14px;
+  padding:18px 18px 8px;margin:18px 0;box-shadow:0 2px 12px rgba(0,0,0,.05)}
+.xp-controls{display:flex;flex-wrap:wrap;gap:18px 26px;align-items:flex-end;margin-bottom:8px}
+.xp-ctl{display:flex;flex-direction:column;gap:4px;font-size:13px;color:var(--sc-muted)}
+.xp-ctl label{font-weight:600;color:var(--sc-ink)}
+.xp-ctl .val{color:var(--sc-accent);font-variant-numeric:tabular-nums}
+.xp-ctl input[type=range]{width:200px;accent-color:var(--sc-accent);height:22px}
+.xp-seg{display:inline-flex;border:1px solid var(--sc-line);border-radius:9px;overflow:hidden}
+.xp-seg button{border:none;background:transparent;color:var(--sc-ink);padding:6px 11px;cursor:pointer;font-size:13px}
+.xp-seg button.on{background:var(--sc-accent);color:#fff}
+.xp-seg button:not(.on):hover{background:var(--sc-bg)}
+.xp select{border:1px solid var(--sc-line);border-radius:8px;padding:6px 9px;background:var(--sc-bg);
+  color:var(--sc-ink);font-size:14px}
+.xp-btn{border:1px solid var(--sc-accent);border-radius:9px;background:var(--sc-accent);color:#fff;
+  padding:7px 14px;cursor:pointer;font-size:14px;font-weight:600}
+.xp-btn.secondary{background:transparent;color:var(--sc-accent)}
+.xp-btn:hover{filter:brightness(1.05)}
+.xp canvas{width:100%;height:auto;display:block;margin:6px 0 2px;border-radius:8px}
+.xp-readout{font-size:14.5px;margin:8px 2px 6px;min-height:1.4em}
+.xp-readout b{font-variant-numeric:tabular-nums}
+.xp-legend{display:flex;gap:18px;flex-wrap:wrap;font-size:13px;color:var(--sc-muted);margin:2px}
+.xp-legend span{display:inline-flex;align-items:center;gap:6px}
+.xp-swatch{width:22px;height:0;border-top-width:3px;border-top-style:solid;display:inline-block}
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);border:0}

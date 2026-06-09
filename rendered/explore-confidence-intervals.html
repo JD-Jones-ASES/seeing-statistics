@@ -1,0 +1,47 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Drag the sample size and confidence level and watch ~95 of 100 intervals capture the true mean — live, on real data.">
+<meta property="og:title" content="Watch 100 confidence intervals">
+<meta property="og:description" content="Drag the sample size and confidence level and watch ~95 of 100 intervals capture the true mean — live, on real data.">
+<meta property="og:image" content="https://jd-jones-ases.github.io/seeing-statistics/assets/og-card.png">
+<meta name="theme-color" content="#4c72b0">
+<link rel="icon" href="assets/favicon.svg">
+<link rel="stylesheet" href="assets/vendor/katex/katex.min.css">
+<link rel="stylesheet" href="assets/course.css">
+<link rel="stylesheet" href="assets/explorables.css">
+<title>Watch 100 confidence intervals · Statistics, by seeing it happen</title>
+<script>(function(){var t;try{t=localStorage.getItem('sc-theme')}catch(e){}if(t)document.documentElement.setAttribute('data-theme',t);})();</script>
+</head><body>
+<div class="sc-topbar">
+  <a class="sc-home" href="index.html">Statistics, by seeing it happen <span>· course map</span></a>
+  <span class="sc-spacer"></span>
+  <span class="sc-pos" style="color:var(--sc-muted);font-size:12.5px">interactive explorable</span>
+  <button class="sc-btn" type="button" onclick="scToggleTheme()" aria-label="Toggle light or dark theme">◐</button>
+</div>
+<main class="explore-wrap">
+  <h1>Watch 100 confidence intervals</h1>
+  <p>A 95% confidence interval doesn't promise that <em>this</em> interval contains the
+truth — it promises that the <strong>recipe</strong> catches the true mean about 95% of the time. Here you can
+<strong>watch that happen</strong>. We treat a whole real dataset as the population (so we know the true mean
+\(\mu\)), draw 100 samples, and build an interval from each:</p>
+<p style="text-align:center">\[ \bar{x} \;\pm\; t^{*}\,\frac{s}{\sqrt{n}} \]</p>
+<p>Teal solid intervals (●) caught \(\mu\); orange-red dashed ones (✕) missed. Drag the sliders and draw fresh
+samples — does the hit rate track the confidence level?</p>
+  <div id="explorable" data-kind="ci" data-pagefind-ignore></div>
+  <p class="explore-note">Try it: shrink <b>n</b> toward 5 — intervals get wider (and a touch
+less reliable on skewed data). Raise the <b>confidence level</b> — the net widens to catch more. The miss rate
+should hover near <em>(100 − level)%</em>, no matter the sample.</p>
+</main>
+<footer class="sc-footer">
+  <p><b>How this works:</b> everything above is computed live in your browser in plain
+  JavaScript over the real dataset — no server, no Python, nothing uploaded. The
+  companion lesson runs the same simulation in Python you can edit.</p>
+  <p>© JD Jones, 2026 · <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a> ·
+  <a href="index.html">↑ Course map</a> · <a href="12-confidence-intervals.html">Open the companion lesson →</a></p>
+</footer>
+<script defer src="assets/vendor/katex/katex.min.js"></script>
+<script defer src="assets/vendor/katex/contrib/auto-render.min.js"></script>
+<script defer src="assets/course.js"></script>
+<script defer src="assets/explorables-data.js"></script>
+<script defer src="assets/explorables.js"></script>
+</body></html>

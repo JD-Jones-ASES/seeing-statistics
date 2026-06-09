@@ -1,0 +1,44 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Drag the true effect size and the significance level to see Type I and Type II error and the power of a test trade off in real time.">
+<meta property="og:title" content="p-values, errors & power">
+<meta property="og:description" content="Drag the true effect size and the significance level to see Type I and Type II error and the power of a test trade off in real time.">
+<meta property="og:image" content="https://jd-jones-ases.github.io/seeing-statistics/assets/og-card.png">
+<meta name="theme-color" content="#4c72b0">
+<link rel="icon" href="assets/favicon.svg">
+<link rel="stylesheet" href="assets/vendor/katex/katex.min.css">
+<link rel="stylesheet" href="assets/course.css">
+<link rel="stylesheet" href="assets/explorables.css">
+<title>p-values, errors & power · Statistics, by seeing it happen</title>
+<script>(function(){var t;try{t=localStorage.getItem('sc-theme')}catch(e){}if(t)document.documentElement.setAttribute('data-theme',t);})();</script>
+</head><body>
+<div class="sc-topbar">
+  <a class="sc-home" href="index.html">Statistics, by seeing it happen <span>· course map</span></a>
+  <span class="sc-spacer"></span>
+  <span class="sc-pos" style="color:var(--sc-muted);font-size:12.5px">interactive explorable</span>
+  <button class="sc-btn" type="button" onclick="scToggleTheme()" aria-label="Toggle light or dark theme">◐</button>
+</div>
+<main class="explore-wrap">
+  <h1>p-values, errors & power</h1>
+  <p>A hypothesis test draws a line in the sand. The <strong>null</strong> world (no effect)
+is the blue curve; the <strong>true</strong> world (a real effect of size \(\delta\), in standard-error units)
+is the orange curve. We reject the null when the test statistic lands past the critical value set by
+\(\alpha\). Drag the pieces and watch the four outcomes trade off.</p>
+  <div id="explorable" data-kind="power" data-pagefind-ignore></div>
+  <p class="explore-note">Try it: with \(\delta = 0\) (no real effect), the reject rate is
+exactly \(\alpha\) — that's the Type I error rate. Slide \(\delta\) up, or lower \(\alpha\): power
+(catching a real effect) rises with effect size and sample size, and falls as you demand stricter evidence.</p>
+</main>
+<footer class="sc-footer">
+  <p><b>How this works:</b> everything above is computed live in your browser in plain
+  JavaScript over the real dataset — no server, no Python, nothing uploaded. The
+  companion lesson runs the same simulation in Python you can edit.</p>
+  <p>© JD Jones, 2026 · <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a> ·
+  <a href="index.html">↑ Course map</a> · <a href="13-hypothesis-testing.html">Open the companion lesson →</a></p>
+</footer>
+<script defer src="assets/vendor/katex/katex.min.js"></script>
+<script defer src="assets/vendor/katex/contrib/auto-render.min.js"></script>
+<script defer src="assets/course.js"></script>
+<script defer src="assets/explorables-data.js"></script>
+<script defer src="assets/explorables.js"></script>
+</body></html>

@@ -1,0 +1,43 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Pick a wildly non-normal population, drag the sample size, and watch the distribution of the sample mean turn into a bell curve.">
+<meta property="og:title" content="The Central Limit Theorem, by hand">
+<meta property="og:description" content="Pick a wildly non-normal population, drag the sample size, and watch the distribution of the sample mean turn into a bell curve.">
+<meta property="og:image" content="https://jd-jones-ases.github.io/seeing-statistics/assets/og-card.png">
+<meta name="theme-color" content="#4c72b0">
+<link rel="icon" href="assets/favicon.svg">
+<link rel="stylesheet" href="assets/vendor/katex/katex.min.css">
+<link rel="stylesheet" href="assets/course.css">
+<link rel="stylesheet" href="assets/explorables.css">
+<title>The Central Limit Theorem, by hand · Statistics, by seeing it happen</title>
+<script>(function(){var t;try{t=localStorage.getItem('sc-theme')}catch(e){}if(t)document.documentElement.setAttribute('data-theme',t);})();</script>
+</head><body>
+<div class="sc-topbar">
+  <a class="sc-home" href="index.html">Statistics, by seeing it happen <span>· course map</span></a>
+  <span class="sc-spacer"></span>
+  <span class="sc-pos" style="color:var(--sc-muted);font-size:12.5px">interactive explorable</span>
+  <button class="sc-btn" type="button" onclick="scToggleTheme()" aria-label="Toggle light or dark theme">◐</button>
+</div>
+<main class="explore-wrap">
+  <h1>The Central Limit Theorem, by hand</h1>
+  <p>The engine under the whole second half of the course: no matter how lopsided the
+population, the <strong>average of a sample</strong> piles up into a tidy bell curve centred on the true mean,
+with spread \(\sigma/\sqrt{n}\). Pick a population, drag the sample size \(n\), and watch it happen.</p>
+  <div id="explorable" data-kind="clt" data-pagefind-ignore></div>
+  <p class="explore-note">Try it: start at <b>n = 1</b> (the sampling distribution is just the
+population — as skewed as ever), then climb. By <b>n = 30</b> even the most lopsided population averages into a
+near-perfect bell, and the spread shrinks by the \(\sqrt{n}\) law.</p>
+</main>
+<footer class="sc-footer">
+  <p><b>How this works:</b> everything above is computed live in your browser in plain
+  JavaScript over the real dataset — no server, no Python, nothing uploaded. The
+  companion lesson runs the same simulation in Python you can edit.</p>
+  <p>© JD Jones, 2026 · <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a> ·
+  <a href="index.html">↑ Course map</a> · <a href="10-sampling-distributions-clt.html">Open the companion lesson →</a></p>
+</footer>
+<script defer src="assets/vendor/katex/katex.min.js"></script>
+<script defer src="assets/vendor/katex/contrib/auto-render.min.js"></script>
+<script defer src="assets/course.js"></script>
+<script defer src="assets/explorables-data.js"></script>
+<script defer src="assets/explorables.js"></script>
+</body></html>

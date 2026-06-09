@@ -90,11 +90,16 @@ def _head_block(entry):
 
 def _topbar(entry):
     pos = html.escape(_position_label(entry))
+    explore = ""
+    if entry.get("explorable"):
+        explore = (f'<a class="sc-btn" href="{entry["explorable"]}" '
+                   f'title="Play with this idea — drag sliders, watch it change">🎮 Play with it</a>')
     return f"""
 <div class="sc-topbar">
   <a class="sc-home" href="index.html">{html.escape(COURSE_NAME)} <span>· course map</span></a>
   <span class="sc-spacer"></span>
   <span class="sc-pos" style="color:var(--sc-muted);font-size:12.5px">{pos}</span>
+  {explore}
   <a class="sc-btn run" href="{_live_url(entry)}" title="Run this lesson live in your browser — no install">Run live ▶</a>
   <button class="sc-btn" type="button" onclick="scToggleTheme()" title="Toggle light / dark" aria-label="Toggle light or dark theme">◐</button>
 </div>

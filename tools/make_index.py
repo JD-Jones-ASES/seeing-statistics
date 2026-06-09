@@ -196,6 +196,25 @@ def main():
         "<b>what the result says about the world</b>. Most lessons also offer the same idea "
         "<b>on another dataset</b> and a <b>code-focused</b> companion.</li></ul></div>")
 
+    parts.append(
+        "<h2 class='sem'>Play with it <span>· interactive explorables — drag a slider, watch the "
+        "statistics change, live in your browser</span></h2>"
+        "<div class='card'><a class='card-main' href='explore-confidence-intervals.html'>"
+        "<div class='num' style='background:#c98a2b'>🎮</div><div class='body'>"
+        "<h3>Watch 100 confidence intervals</h3><p>Drag the sample size and confidence level and watch ~95 of "
+        "100 intervals capture the true mean — on real data.</p>"
+        "<span class='badge'>flagship demo, made draggable</span></div></a></div>"
+        "<div class='card'><a class='card-main' href='explore-clt.html'>"
+        "<div class='num' style='background:#c98a2b'>🎮</div><div class='body'>"
+        "<h3>The Central Limit Theorem, by hand</h3><p>Pick a wildly non-normal population, drag the sample "
+        "size, and watch the average turn into a bell curve.</p>"
+        "<span class='badge'>the engine of inference</span></div></a></div>"
+        "<div class='card'><a class='card-main' href='explore-p-value.html'>"
+        "<div class='num' style='background:#c98a2b'>🎮</div><div class='body'>"
+        "<h3>p-values, errors &amp; power</h3><p>Slide the true effect size and significance level and see "
+        "Type I error, Type II error, and power trade off in real time.</p>"
+        "<span class='badge'>hypothesis testing, visualized</span></div></a></div>")
+
     if orientation:
         parts.append("<h2 class='sem'>New here? <span>· start with this — no statistics yet, "
                      "just how to drive a notebook</span></h2>")
