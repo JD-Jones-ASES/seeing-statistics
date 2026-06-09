@@ -1,0 +1,1473 @@
+{
+ "glossary": {
+  "terms": [
+   {
+    "term": "Population",
+    "definition": "The entire collection of individuals, objects, or measurements you want to draw conclusions about. Its characteristics are fixed but usually unknown.",
+    "see": "Descriptive statistics & data basics"
+   },
+   {
+    "term": "Sample",
+    "definition": "A subset of the population that you actually observe and measure, used to make inferences about the larger population.",
+    "see": "Descriptive statistics & data basics"
+   },
+   {
+    "term": "Parameter vs. statistic",
+    "definition": "A parameter is a fixed numerical summary of a population (e.g. the true mean μ); a statistic is a computed summary of a sample (e.g. the sample mean x̄) used to estimate it.",
+    "see": "Descriptive statistics & data basics"
+   },
+   {
+    "term": "Variable types",
+    "definition": "Categorical variables record group membership (nominal or ordinal), while quantitative variables record numeric amounts (discrete counts or continuous measurements).",
+    "see": "Descriptive statistics & data basics"
+   },
+   {
+    "term": "Mean",
+    "definition": "The arithmetic average of a set of values, found by summing them and dividing by the count. It is sensitive to extreme values.",
+    "see": "Measures of center"
+   },
+   {
+    "term": "Median",
+    "definition": "The middle value when data are sorted (or the average of the two middle values). It is robust to outliers and skew.",
+    "see": "Measures of center"
+   },
+   {
+    "term": "Standard deviation & variance",
+    "definition": "Variance is the average squared deviation of values from their mean; standard deviation is its square root, expressing spread in the original units.",
+    "see": "Measures of spread"
+   },
+   {
+    "term": "Quartiles & IQR",
+    "definition": "Quartiles split sorted data into four equal parts; the interquartile range (IQR = Q3 − Q1) measures the spread of the middle 50% and is robust to outliers.",
+    "see": "Measures of spread"
+   },
+   {
+    "term": "Skewness",
+    "definition": "A measure of asymmetry in a distribution; a right- (positive) skew has a long upper tail, a left- (negative) skew a long lower tail.",
+    "see": "Shape of distributions"
+   },
+   {
+    "term": "Outlier",
+    "definition": "An observation that lies unusually far from the rest of the data, often flagged when it falls beyond 1.5 × IQR from the nearest quartile.",
+    "see": "Exploring data & boxplots"
+   },
+   {
+    "term": "Z-score",
+    "definition": "The number of standard deviations a value lies above or below its mean, computed as (x − mean) / standard deviation. It standardizes values onto a common scale.",
+    "see": "Standardization"
+   },
+   {
+    "term": "Probability",
+    "definition": "A number between 0 and 1 quantifying how likely an event is, interpreted as its long-run relative frequency over many repetitions.",
+    "see": "Introduction to probability"
+   },
+   {
+    "term": "Sample space & event",
+    "definition": "The sample space is the set of all possible outcomes of a random process; an event is any subset of those outcomes whose probability we assess.",
+    "see": "Introduction to probability"
+   },
+   {
+    "term": "Conditional probability",
+    "definition": "The probability of event A given that event B has occurred, written P(A | B) = P(A and B) / P(B). It updates likelihood in light of new information.",
+    "see": "Conditional probability & independence"
+   },
+   {
+    "term": "Independence",
+    "definition": "Two events are independent if knowing one occurred does not change the probability of the other, i.e. P(A | B) = P(A).",
+    "see": "Conditional probability & independence"
+   },
+   {
+    "term": "Bayes' theorem",
+    "definition": "A rule for reversing conditional probabilities: P(A | B) = P(B | A) P(A) / P(B). It updates a prior belief into a posterior using observed evidence.",
+    "see": "Bayes' theorem"
+   },
+   {
+    "term": "Random variable",
+    "definition": "A variable whose value is a numerical outcome of a random process; it can be discrete (countable values) or continuous (values over an interval).",
+    "see": "Random variables"
+   },
+   {
+    "term": "Expected value",
+    "definition": "The long-run average value of a random variable, computed as the probability-weighted sum (or integral) of its possible values.",
+    "see": "Random variables"
+   },
+   {
+    "term": "Probability distribution",
+    "definition": "A description of how probability is allocated across the possible values of a random variable, via a mass function (discrete) or density function (continuous).",
+    "see": "Random variables"
+   },
+   {
+    "term": "Binomial distribution",
+    "definition": "The distribution of the number of successes in a fixed number of independent trials, each with the same success probability p.",
+    "see": "Discrete distributions"
+   },
+   {
+    "term": "Poisson distribution",
+    "definition": "The distribution of the count of events occurring in a fixed interval of time or space when events happen independently at a constant average rate.",
+    "see": "Discrete distributions"
+   },
+   {
+    "term": "Normal distribution",
+    "definition": "A symmetric, bell-shaped continuous distribution fully described by its mean and standard deviation; many statistics are approximately normal.",
+    "see": "The normal distribution"
+   },
+   {
+    "term": "Empirical (68-95-99.7) rule",
+    "definition": "For a normal distribution, about 68%, 95%, and 99.7% of values fall within one, two, and three standard deviations of the mean, respectively.",
+    "see": "The normal distribution"
+   },
+   {
+    "term": "Sampling distribution",
+    "definition": "The distribution of a statistic (such as x̄) across all possible samples of a given size; it describes how the estimate varies from sample to sample.",
+    "see": "Sampling distributions"
+   },
+   {
+    "term": "Standard error",
+    "definition": "The standard deviation of a statistic's sampling distribution, measuring the typical sampling variability of the estimate (e.g. SE of the mean = σ/√n).",
+    "see": "Sampling distributions"
+   },
+   {
+    "term": "Central Limit Theorem",
+    "definition": "For a large enough sample size, the sampling distribution of the sample mean is approximately normal regardless of the population's shape, centered at the population mean.",
+    "see": "The Central Limit Theorem"
+   },
+   {
+    "term": "Point estimate",
+    "definition": "A single best-guess value for an unknown parameter computed from sample data, such as using x̄ to estimate the population mean.",
+    "see": "Estimation"
+   },
+   {
+    "term": "Bias of an estimator",
+    "definition": "The difference between an estimator's expected value and the true parameter; an unbiased estimator is correct on average over repeated sampling.",
+    "see": "Estimation"
+   },
+   {
+    "term": "Confidence interval",
+    "definition": "A range computed from data by a procedure that, in repeated sampling, captures the true parameter in a stated percentage (e.g. 95%) of intervals; that percentage describes the method's long-run capture rate, not the probability for any one interval.",
+    "see": "Confidence intervals"
+   },
+   {
+    "term": "Confidence level",
+    "definition": "The long-run proportion of intervals produced by the procedure that contain the true parameter; a 95% level means 95% of such intervals would capture it over many repetitions.",
+    "see": "Confidence intervals"
+   },
+   {
+    "term": "Margin of error",
+    "definition": "The half-width of a confidence interval, equal to a critical value times the standard error; it sets how far the estimate may plausibly lie from the parameter.",
+    "see": "Confidence intervals"
+   },
+   {
+    "term": "Null & alternative hypotheses",
+    "definition": "The null hypothesis (H₀) is a default claim of no effect or no difference; the alternative (Hₐ) is the competing claim the test seeks evidence for.",
+    "see": "Hypothesis testing"
+   },
+   {
+    "term": "Test statistic",
+    "definition": "A standardized number computed from the data (e.g. a t or z value) that measures how far the sample result is from what the null hypothesis predicts.",
+    "see": "Hypothesis testing"
+   },
+   {
+    "term": "P-value",
+    "definition": "The probability, assuming the null hypothesis is true, of observing a test statistic at least as extreme as the one obtained. It is not the probability that the null hypothesis is true.",
+    "see": "P-values"
+   },
+   {
+    "term": "Significance level (alpha)",
+    "definition": "A pre-chosen threshold (commonly 0.05) for the p-value; if the p-value is below it, the result is declared statistically significant and H₀ is rejected.",
+    "see": "Hypothesis testing"
+   },
+   {
+    "term": "Statistical significance",
+    "definition": "A result is statistically significant when the data are unlikely under the null hypothesis (p < alpha); it indicates an effect is detectable, not that it is large or important.",
+    "see": "Hypothesis testing"
+   },
+   {
+    "term": "Type I & Type II errors",
+    "definition": "A Type I error is rejecting a true null hypothesis (false positive, rate alpha); a Type II error is failing to reject a false null hypothesis (false negative, rate beta).",
+    "see": "Errors & power"
+   },
+   {
+    "term": "Statistical power",
+    "definition": "The probability that a test correctly rejects a false null hypothesis (1 − beta); it rises with larger effect size, larger sample size, and higher alpha.",
+    "see": "Errors & power"
+   },
+   {
+    "term": "Effect size",
+    "definition": "A measure of the magnitude of a difference or relationship (e.g. Cohen's d) that is independent of sample size, complementing significance testing.",
+    "see": "Errors & power"
+   },
+   {
+    "term": "One- vs. two-tailed test",
+    "definition": "A two-tailed test looks for a difference in either direction; a one-tailed test looks only in a single pre-specified direction, concentrating alpha in one tail.",
+    "see": "Hypothesis testing"
+   },
+   {
+    "term": "Inference for a proportion",
+    "definition": "Procedures (z-based intervals and tests) for estimating or testing a population proportion p using the sample proportion p̂ and its standard error.",
+    "see": "Inference for proportions"
+   },
+   {
+    "term": "Student's t-distribution",
+    "definition": "A bell-shaped distribution with heavier tails than the normal, used for inference about a mean when the population standard deviation is unknown and estimated from the sample.",
+    "see": "t-tests"
+   },
+   {
+    "term": "Degrees of freedom",
+    "definition": "The number of values free to vary when computing a statistic; it indexes the t and chi-square distributions and typically equals sample size minus the number of estimated parameters.",
+    "see": "t-tests"
+   },
+   {
+    "term": "One-sample t-test",
+    "definition": "A test comparing a single sample mean to a hypothesized value when the population standard deviation is unknown, using a t test statistic.",
+    "see": "t-tests"
+   },
+   {
+    "term": "Two-sample & paired t-tests",
+    "definition": "A two-sample t-test compares means of two independent groups; a paired t-test compares two related measurements per subject by analyzing their differences.",
+    "see": "t-tests"
+   },
+   {
+    "term": "ANOVA",
+    "definition": "Analysis of variance tests whether three or more group means differ by comparing variation between groups to variation within groups via an F-statistic.",
+    "see": "ANOVA"
+   },
+   {
+    "term": "F-statistic",
+    "definition": "A ratio of two variances (e.g. between-group to within-group variability); large values give evidence against equal group means in ANOVA.",
+    "see": "ANOVA"
+   },
+   {
+    "term": "Chi-square test",
+    "definition": "A test comparing observed counts to expected counts under a null hypothesis, used for goodness-of-fit and for independence between two categorical variables.",
+    "see": "Chi-square tests"
+   },
+   {
+    "term": "Correlation coefficient",
+    "definition": "A number between −1 and 1 (Pearson's r) measuring the strength and direction of the linear association between two quantitative variables.",
+    "see": "Correlation"
+   },
+   {
+    "term": "Simple linear regression",
+    "definition": "A model fitting a straight line ŷ = b₀ + b₁x to predict a response from one predictor, with the slope giving the predicted change in y per unit change in x.",
+    "see": "Linear regression"
+   },
+   {
+    "term": "Least squares",
+    "definition": "The fitting method that chooses regression coefficients to minimize the sum of squared residuals (vertical distances between observed and predicted values).",
+    "see": "Linear regression"
+   },
+   {
+    "term": "Residual",
+    "definition": "The difference between an observed value and its value predicted by the model; residual patterns are used to check model assumptions.",
+    "see": "Linear regression"
+   },
+   {
+    "term": "R-squared",
+    "definition": "The proportion of variance in the response explained by the regression model, ranging from 0 to 1, with higher values indicating better fit.",
+    "see": "Linear regression"
+   },
+   {
+    "term": "Multiple regression",
+    "definition": "A regression model with two or more predictors, where each coefficient estimates the effect of its predictor while holding the others constant.",
+    "see": "Multiple regression"
+   },
+   {
+    "term": "Confounding variable",
+    "definition": "An outside variable associated with both the predictor and the response that can distort or fake an apparent relationship between them.",
+    "see": "Multiple regression & causation"
+   },
+   {
+    "term": "Bootstrap",
+    "definition": "A resampling method that draws many samples with replacement from the observed data to approximate a statistic's sampling distribution and build confidence intervals.",
+    "see": "Bootstrap & resampling"
+   },
+   {
+    "term": "Permutation test",
+    "definition": "A test that builds a null distribution by repeatedly shuffling group labels, then compares the observed statistic to that distribution to obtain a p-value without distributional assumptions.",
+    "see": "Permutation tests"
+   }
+  ]
+ },
+ "formulas": {
+  "groups": [
+   {
+    "title": "Describing data",
+    "items": [
+     {
+      "name": "Sample mean",
+      "latex": "\\bar{x} = \\frac{1}{n}\\sum_{i=1}^{n} x_i",
+      "note": "Center / balance point of a numeric column; sensitive to outliers."
+     },
+     {
+      "name": "Sample variance",
+      "latex": "s^2 = \\frac{1}{n-1}\\sum_{i=1}^{n}(x_i-\\bar{x})^2",
+      "note": "Average squared distance from the mean; divide by n-1 for a sample."
+     },
+     {
+      "name": "Sample standard deviation",
+      "latex": "s = \\sqrt{s^2}",
+      "note": "Spread back in the original units, so it is directly readable."
+     },
+     {
+      "name": "z-score (standardize)",
+      "latex": "z = \\frac{x - \\bar{x}}{s}",
+      "note": "How many SDs a value sits from the mean; makes values comparable."
+     },
+     {
+      "name": "Interquartile range",
+      "latex": "\\text{IQR} = Q_3 - Q_1",
+      "note": "Spread of the middle 50%; robust to outliers (basis of boxplots)."
+     },
+     {
+      "name": "Outlier fences",
+      "latex": "[\\,Q_1 - 1.5\\,\\text{IQR},\\; Q_3 + 1.5\\,\\text{IQR}\\,]",
+      "note": "Points outside these whiskers are flagged as potential outliers."
+     },
+     {
+      "name": "Skewness",
+      "latex": "\\text{skew} = \\frac{1}{n}\\sum_{i=1}^{n}\\left(\\frac{x_i - \\bar{x}}{\\sigma}\\right)^3",
+      "note": "Sign tells direction of the longer tail (uses population SD, divide by n)."
+     }
+    ]
+   },
+   {
+    "title": "Probability",
+    "items": [
+     {
+      "name": "Empirical probability",
+      "latex": "P(A) = \\frac{\\text{number of times } A \\text{ happens}}{\\text{total number of trials}}",
+      "note": "Estimate a probability as a long-run fraction (the mean of a 0/1 mask)."
+     },
+     {
+      "name": "Complement rule",
+      "latex": "P(A^{c}) = 1 - P(A)",
+      "note": "Chance an event does NOT happen; often easier than P(A) directly."
+     },
+     {
+      "name": "Addition rule",
+      "latex": "P(A \\cup B) = P(A) + P(B) - P(A \\cap B)",
+      "note": "Probability of A or B; subtract the overlap so it is not double-counted."
+     },
+     {
+      "name": "Conditional probability",
+      "latex": "P(A \\mid B) = \\frac{P(A \\cap B)}{P(B)}",
+      "note": "Probability of A given B occurred; restricts attention to the B world."
+     },
+     {
+      "name": "Multiplication rule",
+      "latex": "P(A \\cap B) = P(A \\mid B)\\,P(B)",
+      "note": "Chain rule for joint probability; for independent events P(A)P(B)."
+     },
+     {
+      "name": "Bayes' theorem",
+      "latex": "P(A \\mid B) = \\frac{P(B \\mid A)\\,P(A)}{P(B)}",
+      "note": "Flip a conditional probability around when you know the reverse direction."
+     },
+     {
+      "name": "Combinations (n choose k)",
+      "latex": "\\binom{n}{k} = \\frac{n!}{k!\\,(n-k)!}",
+      "note": "Number of ways to choose k items from n when order does not matter."
+     }
+    ]
+   },
+   {
+    "title": "Random variables",
+    "items": [
+     {
+      "name": "Expected value (discrete)",
+      "latex": "E(X) = \\mu = \\sum_{x} x\\,P(X = x)",
+      "note": "Long-run average outcome, weighting each value by its probability."
+     },
+     {
+      "name": "Variance of X",
+      "latex": "\\operatorname{Var}(X) = \\sigma^2 = \\sum_{x}(x-\\mu)^2\\,P(X = x)",
+      "note": "Spread of a random variable around its mean; SD is the square root."
+     },
+     {
+      "name": "Linear transform",
+      "latex": "E(aX + b) = a\\,E(X) + b, \\qquad \\operatorname{Var}(aX + b) = a^2\\,\\operatorname{Var}(X)",
+      "note": "Rescaling rules; the constant b shifts the mean but not the spread."
+     }
+    ]
+   },
+   {
+    "title": "Distributions",
+    "items": [
+     {
+      "name": "Binomial PMF",
+      "latex": "P(X = k) = \\binom{n}{k}\\,p^{k}\\,(1-p)^{\\,n-k}",
+      "note": "Chance of k successes in n independent trials each with probability p."
+     },
+     {
+      "name": "Binomial mean & variance",
+      "latex": "\\text{mean} = np, \\qquad \\text{variance} = np(1-p)",
+      "note": "Quick summary numbers for a count of successes."
+     },
+     {
+      "name": "Poisson PMF",
+      "latex": "P(X = k) = \\frac{e^{-\\lambda}\\,\\lambda^{k}}{k!}",
+      "note": "Counts of rare events in a fixed window; one parameter lambda."
+     },
+     {
+      "name": "Poisson mean & variance",
+      "latex": "\\text{mean} = \\lambda = \\text{variance}",
+      "note": "Defining feature: mean equals variance (a Poisson diagnostic)."
+     },
+     {
+      "name": "Normal PDF",
+      "latex": "f(x) = \\frac{1}{\\sigma\\sqrt{2\\pi}}\\; e^{-\\frac{1}{2}\\left(\\frac{x-\\mu}{\\sigma}\\right)^2}",
+      "note": "Bell curve fully described by mu and sigma; basis of the empirical rule."
+     },
+     {
+      "name": "Empirical (68-95-99.7) rule",
+      "latex": "P(\\mu - k\\sigma \\le X \\le \\mu + k\\sigma) \\approx 68\\%,\\,95\\%,\\,99.7\\% \\;\\text{for } k=1,2,3",
+      "note": "Fast mental check of how much normal data lies within k SDs."
+     }
+    ]
+   },
+   {
+    "title": "Sampling & the CLT",
+    "items": [
+     {
+      "name": "Standard error of the mean",
+      "latex": "\\text{SE}(\\bar{x}) = \\frac{\\sigma}{\\sqrt{n}}",
+      "note": "Spread of the sample mean from sample to sample (true sigma version)."
+     },
+     {
+      "name": "Estimated standard error",
+      "latex": "\\widehat{\\text{SE}}(\\bar{x}) = \\frac{s}{\\sqrt{n}}",
+      "note": "What you use in practice when sigma is unknown (plug in s)."
+     },
+     {
+      "name": "Central Limit Theorem",
+      "latex": "\\bar{x} \\;\\approx\\; N\\!\\left(\\mu,\\ \\frac{\\sigma}{\\sqrt{n}}\\right)",
+      "note": "Sample means become normal as n grows, even from a skewed population."
+     },
+     {
+      "name": "SE of a proportion",
+      "latex": "\\text{SE}(\\hat{p}) = \\sqrt{\\dfrac{\\hat{p}\\,(1-\\hat{p})}{n}}",
+      "note": "Wobble of a sample proportion; largest at p-hat = 0.5."
+     }
+    ]
+   },
+   {
+    "title": "Confidence intervals",
+    "items": [
+     {
+      "name": "CI for a mean (t)",
+      "latex": "\\bar{x} \\;\\pm\\; t^{*}\\,\\frac{s}{\\sqrt{n}}",
+      "note": "Plausible range for mu when sigma is unknown; df = n-1."
+     },
+     {
+      "name": "CI for a mean (z)",
+      "latex": "\\bar{x} \\;\\pm\\; z^{*}\\,\\frac{\\sigma}{\\sqrt{n}}",
+      "note": "Use when sigma is known or n is large; z* = 1.96 for 95%."
+     },
+     {
+      "name": "CI for a proportion",
+      "latex": "\\hat{p} \\;\\pm\\; z^{*}\\sqrt{\\dfrac{\\hat{p}\\,(1-\\hat{p})}{n}}",
+      "note": "Range for the true proportion p from a single sample."
+     },
+     {
+      "name": "Margin of error",
+      "latex": "\\text{ME} = z^{*}\\cdot \\text{SE}",
+      "note": "Half-width of the interval; shrinks like 1/sqrt(n)."
+     }
+    ]
+   },
+   {
+    "title": "Hypothesis tests",
+    "items": [
+     {
+      "name": "One-sample t-test",
+      "latex": "t = \\frac{\\bar{x} - \\mu_0}{s/\\sqrt{n}}, \\qquad df = n-1",
+      "note": "Compare one group's mean to a target value mu_0."
+     },
+     {
+      "name": "Welch two-sample t",
+      "latex": "t = \\frac{\\bar{x}_1 - \\bar{x}_2}{\\sqrt{\\dfrac{s_1^2}{n_1} + \\dfrac{s_2^2}{n_2}}}",
+      "note": "Compare two independent group means without assuming equal variance."
+     },
+     {
+      "name": "Paired t-test",
+      "latex": "t = \\frac{\\bar{d}}{s_d/\\sqrt{n}}",
+      "note": "Test the mean of within-pair differences; use when data are matched."
+     },
+     {
+      "name": "One-proportion z-test",
+      "latex": "z = \\frac{\\hat{p} - p_0}{\\sqrt{p_0(1-p_0)/n}}",
+      "note": "Test a sample proportion against a hypothesized value p_0."
+     },
+     {
+      "name": "Chi-square statistic",
+      "latex": "\\chi^2 = \\sum_{\\text{categories}} \\frac{(O - E)^2}{E}",
+      "note": "Total 'surprise' comparing observed counts O to expected counts E."
+     },
+     {
+      "name": "ANOVA F-statistic",
+      "latex": "F = \\frac{MS_{\\text{between}}}{MS_{\\text{within}}}",
+      "note": "Compare 3+ group means; F well above 1 signals real differences."
+     },
+     {
+      "name": "ANOVA mean squares",
+      "latex": "MS_{\\text{between}} = \\frac{SS_{\\text{between}}}{k-1}, \\qquad MS_{\\text{within}} = \\frac{SS_{\\text{within}}}{N-k}",
+      "note": "Sums of squares divided by their degrees of freedom feed the F ratio."
+     }
+    ]
+   },
+   {
+    "title": "Regression",
+    "items": [
+     {
+      "name": "Correlation coefficient",
+      "latex": "r = \\frac{1}{n-1}\\sum_{i=1}^{n} \\left(\\frac{x_i-\\bar{x}}{s_x}\\right)\\left(\\frac{y_i-\\bar{y}}{s_y}\\right)",
+      "note": "Strength/direction of a linear relationship, between -1 and +1."
+     },
+     {
+      "name": "Least-squares line",
+      "latex": "\\hat{y} = b_0 + b_1 x",
+      "note": "Predicted y; the line minimizing the sum of squared vertical misses."
+     },
+     {
+      "name": "Slope & intercept",
+      "latex": "b_1 = r\\,\\frac{s_y}{s_x}, \\qquad b_0 = \\bar{y} - b_1\\,\\bar{x}",
+      "note": "Slope is correlation rescaled to real units; line passes through (x-bar, y-bar)."
+     },
+     {
+      "name": "Residual",
+      "latex": "e_i = y_i - \\hat{y}_i",
+      "note": "Actual minus predicted; inspect residual plots to check assumptions."
+     },
+     {
+      "name": "Coefficient of determination",
+      "latex": "R^2 = r^2",
+      "note": "Share of y's variation explained by the line (simple regression)."
+     },
+     {
+      "name": "SE & test of the slope",
+      "latex": "\\text{SE}(b_1) = \\frac{s_e}{\\sqrt{\\sum (x_i-\\bar{x})^2}}, \\qquad t = \\frac{b_1 - 0}{\\text{SE}(b_1)},\\; df = n-2",
+      "note": "Tests H0: beta_1 = 0, i.e. whether x has any linear effect on y."
+     }
+    ]
+   }
+  ]
+ },
+ "quizzes": [
+  {
+   "id": "01",
+   "questions": [
+    {
+     "type": "mc",
+     "stem": "The lesson classifies `body_mass_g` as ratio data because 0 grams means \"no mass.\" What does this true zero make meaningful that would NOT be meaningful for interval data like `year`?",
+     "options": [
+      "Saying one penguin is twice as heavy as another",
+      "Sorting the penguins from lightest to heaviest",
+      "Computing the difference between two penguins' masses",
+      "Identifying the most common (modal) value"
+     ],
+     "answer_index": 0,
+     "explain": "A true zero is what lets ratios make sense, so 'twice as heavy' is meaningful for ratio data like body mass. The other three (ordering, differences, and the mode) work for interval data such as year too, so only the ratio statement requires a true zero."
+    },
+    {
+     "type": "mc",
+     "stem": "The lesson says the mean uses every value while the median just asks 'who's in the middle?' When the mean and median land far apart, what does the lesson say this signals?",
+     "options": [
+      "A calculation error in one of the measures",
+      "The data is lopsided (skewed) and the mean becomes misleading",
+      "The standard deviation must equal zero",
+      "The variable is nominal rather than ratio"
+     ],
+     "answer_index": 1,
+     "explain": "The lesson states that when the mean and median drift apart the data is lopsided (skewed) and the mean becomes misleading, whereas close values make 'typical' a trustworthy summary. A gap is not a calculation error, says nothing about the SD, and does not change the variable's measurement level."
+    },
+    {
+     "type": "mc",
+     "stem": "The lesson computes a correlation of r = 0.87 for flipper length vs body mass. Given the lesson's description of r (between -1 and +1, where +1 is a perfect upward straight-line trend and 0 is no linear trend), what does this value mean?",
+     "options": [
+      "Longer flippers cause heavier body mass",
+      "There is almost no linear trend between the two",
+      "Longer flippers strongly tend to go with heavier penguins",
+      "Body mass and flipper length move in opposite directions"
+     ],
+     "answer_index": 2,
+     "explain": "An r near +0.87 indicates a strong positive linear trend, so longer flippers strongly tend to go with heavier penguins. The lesson stresses correlation summarizes the straight-line trend, not causation; r near 0 would mean no linear trend, and a negative r would mean the two move in opposite directions."
+    }
+   ]
+  },
+  {
+   "id": "02",
+   "questions": [
+    {
+     "type": "mc",
+     "stem": "Old Faithful's eruption lengths are bimodal (one cluster near 2 minutes, another near 4-4.5 minutes). The lesson shows the mean lands at about 3.49 minutes. What does this illustrate?",
+     "options": [
+      "The mean can describe a value that barely occurs in the data, because a single center-number assumes there is one center when here there are two crowds",
+      "The mean is always the most common eruption length",
+      "The data has a long right tail that pulls the mean upward",
+      "The mean and median must be equal in a bimodal distribution"
+     ],
+     "answer_index": 0,
+     "explain": "The mean (~3.49 min) is stranded in the near-empty valley between the two clusters (only ~20 of 272 eruptions fall within +/-0.3 min of it, and the true 2.5-3.4 valley holds just 10). A single summary number assumes one center, but here there are two crowds, so it describes a value that barely occurs. The 'long right tail' option is wrong because the shape is bimodal, not right-skewed; 'most common' and 'mean=median' are simply false."
+    },
+    {
+     "type": "mc",
+     "stem": "For Lending Club's annual_income, the mean (~$79,222) sits well above the median ($65,000) and the skewness is about 9.0. By the lesson's rule of thumb, what does mean > median indicate?",
+     "options": [
+      "The data is symmetric",
+      "The data is right-skewed, with a long right tail dragging the mean above the median",
+      "The data is left-skewed, with a long left tail",
+      "There are no outliers in the data"
+     ],
+     "answer_index": 1,
+     "explain": "mean > median signals right skew: the long tail of high earners drags the mean up while the median (the middle person) barely moves. This matches the lesson's rule of thumb (mean > median => right-skewed) and the measured skewness of about 9.0."
+    },
+    {
+     "type": "mc",
+     "stem": "The lesson finds the top earner ($2.3M) has a z-score of about 34. What is the correct interpretation of this large z-score on this income data?",
+     "options": [
+      "It means the value is essentially impossible and is likely a data-entry error",
+      "It directly converts to a tiny probability, since z-scores always give the odds",
+      "It is a distance (how many SDs from the mean), but does NOT convert to a probability because the data is not normal",
+      "It proves the income distribution is bell-shaped"
+     ],
+     "answer_index": 2,
+     "explain": "A z-score is just a ruler: (x - mean)/SD, the distance from the mean in SDs. Turning that distance into a probability requires roughly normal data. This income is wildly right-skewed (skew ~9), so z ~34 is a distance, not a p-value. The lesson explicitly says it does NOT mean 'impossible' or a data error (it is a real, ordinary-to-flag value), and z-scores convert to probabilities only for the normal curve (Lesson 9)."
+    },
+    {
+     "type": "num",
+     "stem": "In Section 4 the lesson uses the 1.5 x IQR rule on annual_income, with Q1 = $45,000 and Q3 = $95,000. Compute the upper fence Q3 + 1.5 x IQR (in dollars), above which incomes are flagged as high outliers.",
+     "answer": 170000,
+     "tolerance": 0,
+     "unit": "USD",
+     "explain": "IQR = Q3 - Q1 = 95,000 - 45,000 = 50,000. Upper fence = Q3 + 1.5 x IQR = 95,000 + 1.5 x 50,000 = 95,000 + 75,000 = 170,000. The lesson reports this $170,000 fence, above which 508 borrowers (~5.1%) are flagged as high-income outliers."
+    }
+   ]
+  },
+  {
+   "id": "relationships",
+   "questions": [
+    {
+     "type": "mc",
+     "stem": "In the Ames housing regression, the fitted slope is about $112 (dollars per square foot). What is the best interpretation of this slope?",
+     "options": [
+      "Each extra square foot of living area is associated with about $112 more in sale price, on average",
+      "Each extra square foot of living area causes the sale price to rise by exactly $112",
+      "A home with zero square feet is predicted to cost $112",
+      "About 112% of the variation in price is explained by living area"
+     ],
+     "answer_index": 0,
+     "explain": "The slope is the change in y per one-unit change in x, so each extra square foot is associated with about $112 more in price on average (the lesson stresses 'associated with,' not 'causes'). 'Causes exactly $112' overstates both certainty and causation. The zero-square-foot prediction is the intercept (about $13,300), not the slope. And $R^2$, not the slope, measures the fraction of variation explained."
+    },
+    {
+     "type": "mc",
+     "stem": "Pooling all penguins, the correlation between bill length and bill depth is negative, yet within each species it is positive. This reversal of the trend when groups are combined is known as:",
+     "options": [
+      "Simpson's paradox",
+      "Extrapolation",
+      "The least-squares principle",
+      "A residual funnel"
+     ],
+     "answer_index": 0,
+     "explain": "When an aggregate trend reverses direction inside every subgroup because of a lurking group variable (here, species), it is Simpson's paradox. Extrapolation is predicting outside the observed x-range; the least-squares principle is the rule for fitting the line; a residual funnel describes fanning variance in a residual plot."
+    },
+    {
+     "type": "mc",
+     "stem": "A study finds that ice-cream sales and drowning deaths are strongly positively correlated across summer days. According to the lesson, what is the correct conclusion?",
+     "options": [
+      "A hidden confounder (hot weather) likely drives both, so the correlation does not prove ice cream causes drownings",
+      "Ice cream consumption causes drowning because the correlation is strong",
+      "The strong correlation proves drowning causes more ice-cream sales",
+      "Because r is large, no confounding variable can be present"
+     ],
+     "answer_index": 0,
+     "explain": "Correlation is not causation: a lurking confounder such as hot weather raises both ice-cream sales and swimming (hence drownings), so the correlation does not establish a causal link. A large r does not rule out a confounder; in fact this example has one. Neither causal direction between the two visible variables is supported by the correlation alone."
+    }
+   ]
+  },
+  {
+   "id": "study-design",
+   "questions": [
+    {
+     "type": "mc",
+     "stem": "A market research firm uses a heavily biased sampling method that overestimates the average home size. They decide to fix the problem by dramatically increasing their sample size from 50 homes to 5,000 homes. According to the lesson, what will this larger sample accomplish?",
+     "options": [
+      "It will eliminate the bias, so the sample mean will now land on the true population mean",
+      "It will reduce the random wobble (spread) but leave the bias essentially unchanged, making them confidently wrong",
+      "It will increase both the bias and the random wobble",
+      "It will have no effect on either the spread or the bias of the estimates"
+     ],
+     "answer_index": 1,
+     "explain": "The lesson's punchline (Section 4 and 'What you learned'): bias is a location problem, not a size problem. A bigger sample shrinks the random wobble (the width of the sampling distribution) but does nothing to close the bias gap (its location), so you just get a tighter cluster of wrong answers -- the 1936 Literary Digest poll was wrong with 2.4 million responses."
+    },
+    {
+     "type": "mc",
+     "stem": "A researcher wants to claim that drinking coffee CAUSES a change in a health outcome, and wants the result to apply to the whole adult population. Which combination of design features does the lesson say is needed?",
+     "options": [
+      "Random selection for both generalization and causation",
+      "Random assignment for generalization, and random selection for causation",
+      "Random selection to generalize to the population, plus random assignment to support the causal claim",
+      "A large convenience sample, since size alone establishes causation"
+     ],
+     "answer_index": 2,
+     "explain": "Section 7 separates the two jobs for chance: random selection (how you get into the sample) buys generalization to the population, while random assignment (which treatment you get) balances confounders across groups and buys the ability to claim causation. Option 1 (index 1) deliberately swaps the two roles."
+    },
+    {
+     "type": "mc",
+     "stem": "The lesson notes that ice-cream sales are strongly correlated with drownings, but ice cream does not cause drownings because hot weather drives both up. In this example, hot weather is best described as a:",
+     "options": [
+      "Confounder (lurking variable)",
+      "Response variable",
+      "Explanatory variable",
+      "Statistic"
+     ],
+     "answer_index": 0,
+     "explain": "Per Section 6, hot weather is a confounder (lurking variable): a third variable tangled up with both the explanatory variable (ice-cream sales) and the response variable (drownings), which is why correlation here does not imply causation. Drownings is the response, ice-cream sales the explanatory, and a statistic is just a number computed from a sample."
+    }
+   ]
+  },
+  {
+   "id": "03",
+   "questions": [
+    {
+     "type": "mc",
+     "stem": "The lesson finds P(survived | female) = 0.742 but P(female | survived) = 0.681. What does this illustrate?",
+     "options": [
+      "A conditional probability and its reverse, P(A | B) and P(B | A), are generally different questions with different answers",
+      "One of the two numbers must be a calculation error, since they should be equal",
+      "Survival and sex are independent events",
+      "The multiplication rule has failed for this dataset"
+     ],
+     "answer_index": 0,
+     "explain": "These are two different conditional questions, each computed inside a different subgroup (one inside the world of women, the other inside the world of survivors). In general P(A | B) != P(B | A), which is exactly why Bayes' theorem is needed to flip one into the other. They are not equal, so it is not an error; sex clearly is not independent of survival; and the multiplication rule still holds."
+    },
+    {
+     "type": "mc",
+     "stem": "In the lesson, P(survived | coin=heads) lands very close to the overall P(survived), while P(survived | female) is far from it. What does the coin result demonstrate?",
+     "options": [
+      "The coin flip is independent of survival, so conditioning on it barely changes the survival probability",
+      "The coin flip causes passengers to survive",
+      "Conditioning always leaves a probability unchanged",
+      "Women and the coin flip are equally informative about survival"
+     ],
+     "answer_index": 0,
+     "explain": "A coin flip is generated independently of the Titanic, so it carries no information about survival; therefore P(survived | heads) is approximately P(survived), and the tiny leftover gap is just sampling wiggle from a finite group. The coin does not cause survival; conditioning on an informative variable like sex changes the probability a lot, so conditioning does not 'always' leave it unchanged; and sex is far more informative than the coin."
+    },
+    {
+     "type": "num",
+     "stem": "The lesson states that of the 887 passengers, 342 survived. Computed as favorable / total, what is P(survived)? Give it as a proportion rounded to 2 decimal places.",
+     "options": [],
+     "answer": 0.39,
+     "tolerance": 0.01,
+     "unit": "probability",
+     "explain": "Probability is favorable divided by total: 342 / 887 = 0.3856, which rounds to 0.39 (the ~39% overall survival rate the lesson prints)."
+    }
+   ]
+  },
+  {
+   "id": "counting",
+   "questions": [
+    {
+     "type": "mc",
+     "stem": "What is the key difference between a permutation ($_nP_r$) and a combination ($_nC_r$) when picking $r$ items from $n$?",
+     "options": [
+      "Permutations count ordered picks (order matters), while combinations count unordered groups (order is ignored)",
+      "Permutations always give a smaller count than combinations for the same $n$ and $r$",
+      "Combinations require the items to be identical, while permutations require them to be distinct",
+      "Combinations allow repeated items, while permutations forbid repetition"
+     ],
+     "answer_index": 0,
+     "explain": "Permutations count ordered selections, so ('A','B') differs from ('B','A'), while combinations count unordered groups where {A,B}={B,A}. They differ by exactly the $r!$ internal orderings of each group, giving $_nP_r = r! \\cdot \\binom{n}{r}$ -- so for $r\\ge 2$ permutations are LARGER, not smaller (option B is backwards). Both use distinct items with no repetition (C and D are false)."
+    },
+    {
+     "type": "mc",
+     "stem": "In the binomial formula $P(X=k)=\\binom{n}{k}p^k(1-p)^{n-k}$, what does the $\\binom{n}{k}$ factor actually represent?",
+     "options": [
+      "The probability of a single specific success/failure sequence",
+      "The number of distinct ways (orderings) to arrange exactly $k$ successes among the $n$ trials",
+      "A correction factor that makes the probabilities sum to one regardless of $p$",
+      "The number of trials that must succeed before the experiment stops"
+     ],
+     "answer_index": 1,
+     "explain": "Every sequence with $k$ successes has probability $p^k(1-p)^{n-k}$ (that is option A, the per-sequence probability, not the coefficient). The $\\binom{n}{k}$ simply counts how many such orderings exist -- which positions among the $n$ slots hold the $k$ successes -- so it is the count of arrangements, not a normalizing fudge factor (C) or a stopping rule (D)."
+    },
+    {
+     "type": "num",
+     "stem": "Using the fundamental counting principle from the lesson, how many equally-likely outcomes are there when rolling two fair six-sided dice?",
+     "options": [],
+     "answer": 36,
+     "answer_index": 0,
+     "tolerance": 0,
+     "unit": "outcomes",
+     "explain": "The first die can land 6 ways and the second 6 ways, so by the multiplication principle there are 6 x 6 = 36 outcomes. The lesson confirms this by enumerating all (die1, die2) pairs with itertools.product, which yields exactly 36."
+    }
+   ]
+  },
+  {
+   "id": "04",
+   "questions": [
+    {
+     "type": "mc",
+     "stem": "The lesson computes a fair die's expected value as E[X] = 3.5. What does this value mean?",
+     "options": [
+      "It is the single most likely face to come up on any one roll",
+      "It is the long-run average of the rolls, even though 3.5 can never be rolled",
+      "It is the value you should expect on your very next roll",
+      "It is the most common (modal) outcome of the distribution"
+     ],
+     "answer_index": 1,
+     "explain": "The lesson stresses that E[X] is the long-run average / balance point you converge to over many trials and need not be a value X can ever take ('you can never roll a 3.5... It's the average you converge to, not a prediction of one roll'). All faces are equally likely, so there is no single most likely or modal outcome, and E[X] is not a forecast of the next roll."
+    },
+    {
+     "type": "num",
+     "stem": "Consider the lesson's bet: win $10 if the die shows a 6 (probability 1/6) and otherwise lose $2 (probability 5/6). Using E[payoff] = (1/6)(10) + (5/6)(-2), what is the expected payoff in dollars?",
+     "answer": 0,
+     "tolerance": 0.01,
+     "unit": "dollars",
+     "explain": "(1/6)(10) + (5/6)(-2) = 10/6 - 10/6 = 0, so the game is fair: over the long run you neither gain nor lose on average. Note this does NOT mean any single play breaks even (each play you win $10 or lose $2); it means the average of many plays drifts toward $0 per play."
+    },
+    {
+     "type": "mc",
+     "stem": "According to the lesson, what does the law of large numbers tell us about the running (sample) average as the number of trials grows?",
+     "options": [
+      "It eventually equals E[X] exactly after a fixed number of trials",
+      "It settles down toward the true expected value E[X] as trials pile up",
+      "It guarantees each individual trial lands near E[X]",
+      "It causes the variance of the data to shrink to zero"
+     ],
+     "answer_index": 1,
+     "explain": "The lesson shows the running average for both the die (toward 3.5) and real births (toward about 11.35) settling toward the true E[X] as the number of trials increases. Convergence is asymptotic, not exact after a fixed count; it concerns the average, not each individual trial; and the variance of the data converges to the true Var[X] (about 2.9167 for the die), not to zero."
+    },
+    {
+     "type": "mc",
+     "stem": "For the fair die the lesson reports Var[X] is about 2.9167 and SD[X] is about 1.7078 pips. What is the role of the standard deviation here?",
+     "options": [
+      "It is the probability-weighted average value of the die faces",
+      "It is the typical 'give or take' spread, in the original units, of outcomes around E[X]",
+      "It is the squared distance of every outcome from E[X], added up",
+      "It guarantees that outcomes are evenly spread above and below the mean"
+     ],
+     "answer_index": 1,
+     "explain": "The lesson defines SD as the square root of the variance, bringing the spread 'back to the original units' (die pips), and calls it the everyday 'give or take' around E[X]: small SD means outcomes huddle near E[X], large SD means they scatter. The weighted average of the values is E[X] (3.5), not the SD; the sum of squared distances weighted by probability is the variance, not the SD; and SD does not promise symmetry (the prenatal-visits distribution is right-skewed)."
+    }
+   ]
+  },
+  {
+   "id": "05",
+   "questions": [
+    {
+     "type": "mc",
+     "stem": "The lesson highlights the Poisson distribution's defining \"fingerprint.\" For a Poisson(λ) random variable, what is the relationship between its mean and its variance?",
+     "options": [
+      "The variance is always larger than the mean",
+      "The mean and the variance are both equal to λ",
+      "The mean equals λ but the variance equals λ(1−λ)",
+      "The mean equals λ and the variance equals √λ"
+     ],
+     "answer_index": 1,
+     "explain": "The lesson states the Poisson fingerprint is mean = λ = variance. This is why the near-equal daily-earthquake mean (~16.9) and variance (~17.2) hint that a Poisson fits."
+    },
+    {
+     "type": "mc",
+     "stem": "In the lesson, \"success\" for the Binomial model is defined as a low-birthweight baby. What does the lesson say this statistical use of the word \"success\" means?",
+     "options": [
+      "It is the happy or desirable outcome of the trial",
+      "It is just jargon for the event being counted, not necessarily a good thing",
+      "It is the outcome with probability greater than 0.5",
+      "It is whichever outcome occurs more often in the data"
+     ],
+     "answer_index": 1,
+     "explain": "The lesson explicitly notes that a low-birthweight baby is not a happy event — \"success\" is simply statistics jargon for \"the thing we're counting.\""
+    },
+    {
+     "type": "mc",
+     "stem": "The lesson shows the Binomial distribution turning into the Poisson distribution. Under which conditions does Binomial(n, p) approach Poisson(λ)?",
+     "options": [
+      "As n → ∞ and p → 1, with n − p held fixed",
+      "As both n and p grow large together",
+      "As n → ∞ and p → 0, with the product np = λ held fixed and moderate",
+      "Whenever n is small and p is close to 0.5"
+     ],
+     "answer_index": 2,
+     "explain": "The lesson states Binomial(n, p) → Poisson(λ) as n → ∞ and p → 0 while np = λ stays fixed and moderate — the \"many trials, each rare\" limit."
+    },
+    {
+     "type": "num",
+     "stem": "In the lesson's \"bridge\" demo, the Binomial(1000, 0.017) distribution is overlaid on a Poisson whose rate λ is set to np. What value of λ does the lesson use for that Poisson?",
+     "answer": 17,
+     "tolerance": 0.01,
+     "unit": "events per interval",
+     "explain": "The lesson sets λ = n·p = 1000 × 0.017 = 17, then shows Binomial(1000, 0.017) and Poisson(17) nearly coincide because n is large and p is small with np held fixed and moderate."
+    }
+   ]
+  },
+  {
+   "id": "06",
+   "questions": [
+    {
+     "type": "mc",
+     "stem": "According to the empirical rule for a normal distribution, approximately what percentage of values fall within 2 standard deviations of the mean (μ ± 2σ)?",
+     "options": [
+      "About 68%",
+      "About 95%",
+      "About 99.7%",
+      "About 50%"
+     ],
+     "answer_index": 1,
+     "explain": "The empirical rule states that about 95% of a normal distribution lies within 2 SDs of the mean (68% within 1 SD, 99.7% within 3 SDs)."
+    },
+    {
+     "type": "mc",
+     "stem": "In a Q-Q (quantile-quantile) plot used to check normality, what pattern indicates that the data is close to normal?",
+     "options": [
+      "The points form a sharp upward bend",
+      "The points fall along a straight line",
+      "The points form an S-curve",
+      "The points scatter randomly with no pattern"
+     ],
+     "answer_index": 1,
+     "explain": "If the data is close to normal the points fall along a straight reference line; bends or S-curves reveal skew or fat tails, as the right-skewed income data shows."
+    },
+    {
+     "type": "mc",
+     "stem": "The lesson highlights that the central 95% of a standard normal distribution lies between which two z-scores?",
+     "options": [
+      "z = -1 and z = +1",
+      "z = -2.58 and z = +2.58",
+      "z = -1.96 and z = +1.96",
+      "z = -3 and z = +3"
+     ],
+     "answer_index": 2,
+     "explain": "P(-1.96 ≤ z ≤ 1.96) = 0.95, so the central 95% of a standard normal sits between z = -1.96 and z = +1.96, the value that later seeds the 95% confidence interval (z = ±2.58 corresponds to 99%)."
+    },
+    {
+     "type": "num",
+     "stem": "If you set the cutoff exactly equal to the mean (cutoff = μ), what percentage of children does the symmetric normal model predict are TALLER than that cutoff?",
+     "answer": 50,
+     "tolerance": 1,
+     "unit": "%",
+     "explain": "At x = μ the z-score is 0, and sf(0) = 1 - CDF(0) = 0.5; the symmetric bell curve has exactly half its area above the mean, so the model predicts ~50% are taller."
+    }
+   ]
+  },
+  {
+   "id": "07",
+   "questions": [
+    {
+     "type": "mc",
+     "stem": "The lesson takes a wildly right-skewed population (annual incomes, skewness about 9) and repeatedly histograms the means of samples of size 30. According to the Central Limit Theorem, what does that sampling distribution of the mean look like?",
+     "options": [
+      "It stays just as right-skewed as the raw income data, because averaging cannot change the shape",
+      "It becomes approximately a normal (bell) curve centered on the true population mean, even though the raw data is not bell-shaped",
+      "It becomes uniform (flat) between the minimum and maximum incomes",
+      "It collapses to a single spike exactly at the population mean with no spread"
+     ],
+     "answer_index": 1,
+     "explain": "The CLT says that for large enough n the sampling distribution of the mean is approximately normal and centered on the true mean mu, regardless of the population's shape. The lesson shows the skew drop from about 9 toward roughly symmetric (a little right-skew lingers at n=30, but the shape is clearly bell-like)."
+    },
+    {
+     "type": "mc",
+     "stem": "The lesson stresses a common myth about the Central Limit Theorem. Which statement is the MYTH (i.e., NOT true)?",
+     "options": [
+      "The CLT requires the underlying population data to already be bell-shaped/normal",
+      "Averaging itself creates the bell shape regardless of the starting distribution",
+      "The CLT works even on a lumpy bimodal population",
+      "For large enough n, the sample mean is approximately normal no matter the population shape"
+     ],
+     "answer_index": 0,
+     "explain": "The myth is that the data must already be normal. Section 6 disproves it by getting a bell curve from a deliberately bimodal (two-hump) population, showing the averaging itself creates the bell."
+    },
+    {
+     "type": "num",
+     "stem": "The standard error of the mean is SE = sigma / sqrt(n). Per the lesson's sqrt(n) law, if you quadruple the sample size (e.g., from n=25 to n=100), by what factor does the standard error decrease (i.e., what is the ratio SE_small / SE_big)?",
+     "answer": 2,
+     "tolerance": 0.05,
+     "unit": "",
+     "explain": "Because SE shrinks with sqrt(n), multiplying n by 4 divides SE by sqrt(4) = 2, so the ratio is about 2.00. The lesson labels this the sqrt(n) law: quadruple n to halve the error (it prints 'theory = 2.00' for each 4x jump)."
+    },
+    {
+     "type": "mc",
+     "stem": "In Section 7 the lesson builds the 95% confidence interval xbar +/- about 2*SE. Which statement most precisely captures what '95% confidence' means there?",
+     "options": [
+      "There is a 95% probability that the true mean mu lies inside this one particular interval",
+      "Over many repeated samples, about 95% of the intervals constructed this way will contain the true mean mu",
+      "95% of the individual incomes in the population fall inside the interval",
+      "If we resampled, 95% of future sample means would equal this interval's center"
+     ],
+     "answer_index": 1,
+     "explain": "A confidence level is a property of the procedure across repeated sampling: about 95% of sample means land within ~2 SE of mu (the 68-95-99.7 rule), so about 95% of intervals built as xbar +/- ~2*SE capture mu. Any single interval either contains mu or not; the 95% is not a probability about one fixed interval, nor a statement about where individual data values or future means fall."
+    }
+   ]
+  },
+  {
+   "id": "estimation",
+   "questions": [
+    {
+     "type": "mc",
+     "stem": "In this lesson's setup the population mean of Ames home living area is μ ≈ 1500 sq ft. Which statement correctly distinguishes a parameter from a statistic?",
+     "options": [
+      "A parameter (like μ) is fixed but usually unknown, while a statistic (like the sample mean x-bar) is known but random",
+      "A parameter is random and known, while a statistic is fixed and unknown",
+      "Both parameters and statistics change every time you draw a new sample",
+      "A parameter is computed from a sample, while a statistic describes the whole population"
+     ],
+     "answer_index": 0,
+     "explain": "The lesson's mantra is 'parameters are fixed and unknown; statistics are random and known.' μ is the fixed population truth (here ≈ 1500 sq ft); x-bar is computable from the data you have but varies from sample to sample."
+    },
+    {
+     "type": "mc",
+     "stem": "The lesson contrasts standard deviation with standard error. As the sample size n grows larger, what happens to each?",
+     "options": [
+      "Both the standard deviation and the standard error shrink toward zero",
+      "The standard deviation (s) stays roughly the same, but the standard error (s/√n) shrinks",
+      "The standard error stays the same, but the standard deviation shrinks",
+      "Both stay exactly the same regardless of n"
+     ],
+     "answer_index": 1,
+     "explain": "Standard deviation describes the spread of individual homes, which does not shrink as you collect more data. The standard error s/√n describes the spread of the estimate and shrinks like 1/√n as n grows, because averaging more homes steadies the average."
+    },
+    {
+     "type": "num",
+     "stem": "The lesson's standard error of the mean follows the √n law: SE = σ/√n. The simulated SE at n = 50 is about 70 sq ft. Using the formula, what is the SE at n = 800? (n is 16 times larger, so divide the n=50 value by √16 = 4.)",
+     "answer": 17.5,
+     "tolerance": 1,
+     "unit": "sq ft",
+     "explain": "Because SE = σ/√n, multiplying n by 16 divides the SE by √16 = 4, so 70/4 = 17.5 sq ft. Using the lesson's actual σ ≈ 505 gives SE = 505/√800 ≈ 17.9 sq ft, consistent within rounding. This is the √n law: quadruple the sample to halve the error."
+    },
+    {
+     "type": "mc",
+     "stem": "In the dartboard section, the lesson draws 3,000 samples and finds the average of all the sample means sits essentially on μ. What property of the sample mean does this demonstrate?",
+     "options": [
+      "It is unbiased: averaged over many samples, x-bar centers on the true μ (its long-run average equals the parameter)",
+      "It is biased: x-bar is systematically pulled above μ",
+      "It is precise but biased: tightly clustered yet off-center",
+      "It proves any single sample mean equals μ exactly"
+     ],
+     "answer_index": 0,
+     "explain": "Bias is about whether estimates center on the truth. The simulation shows the cloud of x-bar values piles up right on μ with a difference of essentially 0, which is what 'unbiased' means. Bias (centering) is separate from precision (how tightly the darts cluster, measured by the standard error); a single estimate is not expected to equal μ exactly."
+    }
+   ]
+  },
+  {
+   "id": "flagship",
+   "questions": [
+    {
+     "type": "mc",
+     "stem": "After computing one specific 95% confidence interval from a sample, which statement is the CORRECT interpretation of '95% confidence'?",
+     "options": [
+      "There is a 95% probability that the true mean μ lies inside this particular interval.",
+      "The procedure used to build the interval captures the true mean about 95% of the time over many repeated samples.",
+      "95% of the data values in the sample fall inside the interval.",
+      "The sample mean has a 95% chance of equaling the true mean μ."
+     ],
+     "answer_index": 1,
+     "explain": "Correct (option B). The lesson stresses that 95% is the method's long-run hit rate across many repeated samples, not a probability about one already-computed interval. Option A is the classic error the lesson explicitly flags: once an interval is fixed, μ is either in it or not, so no probability applies to that one interval. Option C confuses a confidence interval (a range for the unknown mean) with a range covering raw data. Option D is wrong because the sample mean almost never exactly equals μ; the CI brackets μ, it does not pin x̄ to it."
+    },
+    {
+     "type": "mc",
+     "stem": "In this lesson the entire Ames housing file (all 2,930 homes) is treated as the population. Why is that essential to the simulation's goal?",
+     "options": [
+      "It makes the living-area distribution a perfect bell curve.",
+      "It lets us know the TRUE mean μ, so we can check how often the intervals actually capture it.",
+      "It guarantees every confidence interval will contain the true mean.",
+      "It removes the need for the Central Limit Theorem."
+     ],
+     "answer_index": 1,
+     "explain": "Correct (option B). Using the whole file as the population means μ is a known number, so the lesson can count how many sample-based intervals actually catch that true value. Option A is wrong: the lesson deliberately uses living area because it is right-skewed, not a bell curve. Option C is wrong: about 5% of the intervals miss μ, which is the expected price of sampling. Option D is wrong: the Central Limit Theorem is still the engine that makes the sample means approximately normal so the interval recipe works."
+    },
+    {
+     "type": "mc",
+     "stem": "The lesson compares 80%, 90%, 95%, and 99% confidence levels. Choosing a HIGHER confidence level does what to the interval?",
+     "options": [
+      "Makes it narrower and therefore more precise.",
+      "Makes it wider (less precise) while increasing the coverage rate.",
+      "Has no effect on width, only on the sample mean.",
+      "Makes the coverage rate drop below the population mean."
+     ],
+     "answer_index": 1,
+     "explain": "Correct (option B). The lesson frames a higher confidence level as casting a wider net: larger average width (less precision) in exchange for catching μ a higher fraction of the time. Option A reverses the trade-off. Option C is wrong because raising the confidence level enlarges the t* multiplier and thus the width, leaving the sample mean (the interval's center) unchanged. Option D is incoherent: coverage is a percentage of intervals that capture μ, not a value comparable to the population mean, and higher confidence raises coverage rather than lowering it."
+    }
+   ]
+  },
+  {
+   "id": "hypothesis-testing",
+   "questions": [
+    {
+     "type": "mc",
+     "stem": "The lesson defines the two-sided p-value as the share of a simulated 'null world' that is at least as extreme as the observed data. Which statement correctly describes what a p-value IS?",
+     "options": [
+      "The probability that the null hypothesis H0 is true given the data",
+      "If H0 were true, the probability of getting data at least as extreme as what was observed",
+      "The size of the effect — how far the true mean is from the claimed value",
+      "The probability that the alternative hypothesis Ha is true"
+     ],
+     "answer_index": 1,
+     "explain": "Section 5 states a p-value is 'surprise under the null': if H0 were true, the probability of data at least this extreme. It is P(data | H0), never P(H0 | data) (the data is random; H0 is simply true or false), and it is not an effect size — a trivial difference can have a tiny p-value when n is large."
+    },
+    {
+     "type": "mc",
+     "stem": "In the lesson's error table, the test fails to reject H0 when H0 is actually false. What is this mistake called, and what is its rate?",
+     "options": [
+      "A Type I error, occurring at rate alpha",
+      "A correct decision (a 'hit'), with rate equal to power",
+      "A Type II error, occurring at rate beta",
+      "A false alarm, occurring at rate 1 - alpha"
+     ],
+     "answer_index": 2,
+     "explain": "In the section 6 table, failing to reject a false H0 (missing a real effect) is a Type II error, whose rate is beta; power = 1 - beta is the chance of correctly catching a real effect. A Type I error (false alarm) is rejecting a TRUE H0 and occurs at rate alpha, not 1 - alpha."
+    },
+    {
+     "type": "mc",
+     "stem": "The lesson demonstrates the duality between a 95% confidence interval and a two-sided test at alpha = 0.05. According to that duality, a candidate value mu0 is rejected by the test exactly when:",
+     "options": [
+      "mu0 falls outside the 95% confidence interval",
+      "mu0 falls inside the 95% confidence interval",
+      "mu0 equals the observed sample mean",
+      "the p-value for mu0 exceeds 0.05"
+     ],
+     "answer_index": 0,
+     "explain": "Section 8 shows 'reject@5%' is always the opposite of 'inside the 95% CI': a value is rejected exactly when it lies outside the interval. The 95% CI is therefore the set of null values the test would NOT reject (those have p > 0.05 and lie inside the interval)."
+    },
+    {
+     "type": "mc",
+     "stem": "The lesson tests a meaningless 5 sq ft effect at n = 40 versus n = 20,000, and runs 20 true-null tests that produce false alarms. What two cautions do these demonstrations illustrate?",
+     "options": [
+      "That increasing alpha always increases power, and that small samples are always biased",
+      "That a small p-value proves a large effect, and that more tests reduce error",
+      "That a tiny effect becomes 'significant' with a huge sample, and that running many tests on noise produces false positives by chance",
+      "That confidence intervals are unnecessary when the p-value is small, and that Type I errors cannot be controlled"
+     ],
+     "answer_index": 2,
+     "explain": "Section 9 warns about statistical vs. practical significance (a huge n = 20,000 manufactures 'significance' for a trivial 5 sq ft effect, while n = 40 stays near the 5% false-alarm floor) and multiple testing (20 true-null tests yield about one false positive by chance — the 'green jelly beans' problem)."
+    }
+   ]
+  },
+  {
+   "id": "proportions",
+   "questions": [
+    {
+     "type": "mc",
+     "stem": "The lesson reports a 95% confidence interval of roughly (6.4%, 9.8%) for the true low-birth-weight rate p. Which statement is the correct interpretation?",
+     "options": [
+      "About 95% of all US births fall between 6.4% and 9.8% low birth weight.",
+      "There is a 95% probability that this particular interval contains the true rate p.",
+      "We are 95% confident the true rate p lies in this range, where the 95% is a property of the method: about 95% of intervals built this way capture the truth.",
+      "The true rate p is definitely between 6.4% and 9.8%."
+     ],
+     "answer_index": 2,
+     "explain": "The lesson stresses the '95%' describes the method (about 95% of such intervals capture the truth), not a probability about this one fixed interval. The interval is a range of plausible values for p, not a range that 95% of individual births fall into, and it is not a guarantee."
+    },
+    {
+     "type": "mc",
+     "stem": "In the one-proportion z-test against the benchmark p0 = 0.08, the SE in the z-statistic is computed as sqrt(p0(1-p0)/n) rather than sqrt(p-hat(1-p-hat)/n). Why?",
+     "options": [
+      "Because the test assumes the null hypothesis is true, so the standard error is built from the null value p0, not from p-hat.",
+      "Because p0 is always larger than p-hat, giving a more conservative test.",
+      "Because confidence intervals and hypothesis tests must use identical formulas.",
+      "Because p-hat is unknown when running a hypothesis test."
+     ],
+     "answer_index": 0,
+     "explain": "The lesson explains we assume H0 is true while testing it, so the SE is built from the null value p0 rather than p-hat. The confidence interval, by contrast, uses the p-hat-based SE, so the two formulas are deliberately different."
+    },
+    {
+     "type": "mc",
+     "stem": "The two-proportion analysis finds smokers' low-birth-weight rate is significantly higher than nonsmokers' (the entire CI for the difference lies above 0). What does this result establish?",
+     "options": [
+      "That smoking causes low birth weight, proven directly by the z-test.",
+      "That smoking is strongly associated with a higher low-birth-weight rate in these observational data, but causation is not proven by the test alone.",
+      "That there is no real difference between the two groups.",
+      "That the sample was too small to draw any conclusion."
+     ],
+     "answer_index": 1,
+     "explain": "The lesson is explicit: the difference is significant and large, but the data are observational, so the test shows association, not causation. Confounders such as age, nutrition, or income could also drive the gap; establishing causation requires study design, not a single z-test."
+    },
+    {
+     "type": "mc",
+     "stem": "In the two-proportion analysis, the lesson POOLS both groups to estimate a single shared rate (p_pool = (x1+x2)/(n1+n2)) when computing the z-TEST, but does NOT pool when building the confidence interval for the difference. Why the difference?",
+     "options": [
+      "The CI and the test should never use the same data, so pooling is alternated between them by convention.",
+      "The z-test's null hypothesis assumes the two rates are equal (one shared rate), so all the data is used to estimate that common rate; the CI makes no such assumption and so uses each group's own p-hat.",
+      "Pooling is required only because n1 and n2 are unequal in this dataset.",
+      "Pooling always produces a smaller standard error, which is why it is preferred for the test."
+     ],
+     "answer_index": 1,
+     "explain": "The lesson states the test pools because the null assumes one shared rate, so all the data estimates it; the CI is not built under that null, so each group's own p-hat (and its own SE) is used and the variances are added. The choice reflects the assumption being made, not a convention or a sample-size quirk."
+    }
+   ]
+  },
+  {
+   "id": "t-tests",
+   "questions": [
+    {
+     "type": "mc",
+     "stem": "Why do we use the t-distribution instead of the normal (z) distribution when testing a sample mean?",
+     "options": [
+      "Because the population spread sigma is unknown and must be estimated by the sample SD s, which adds extra uncertainty that the t-distribution's heavier tails (governed by df = n - 1) account for",
+      "Because the sample size is always too small to use the normal distribution",
+      "Because the t-distribution always gives smaller p-values, making effects easier to detect",
+      "Because the sample mean stops being normally distributed once sigma is known"
+     ],
+     "answer_index": 0,
+     "explain": "In practice we don't know sigma and substitute the sample SD s; that estimation adds uncertainty, so t uses heavier tails (df = n - 1) to stay honest. The tails fatten as df shrinks and merge with the normal as n grows. The other options are false: t is needed even for large n when sigma is unknown (not 'always too small'); t actually gives LARGER critical values / not-smaller p-values than z; and the mean's normality has nothing to do with whether sigma is known."
+    },
+    {
+     "type": "mc",
+     "stem": "In the two-sample comparison, OJ averaged about 3.7 units higher than VC, but Welch's test gave p approximately 0.06 with a 95% CI for the difference of roughly (-0.2, 7.6) that straddles zero. What is the correct interpretation?",
+     "options": [
+      "We have proven that OJ and VC have identical true means",
+      "We fail to reject the null at the 5% level: we could not detect a difference, but this does NOT prove the effect is zero",
+      "The result is statistically significant because the observed gap of 3.7 units is large",
+      "The confidence interval must be wrong because a difference cannot be negative"
+     ],
+     "answer_index": 1,
+     "explain": "With p approximately 0.06 (above 0.05) and a 95% CI that includes zero, we fail to reject H0. The lesson stresses that 'not significant' means we lack evidence to rule out zero, not that the groups are equal. We cannot prove no effect (the CI still allows a sizable OJ advantage up to ~7.6 units); 3.7 units is not significant given the noise; and a difference in means can legitimately be negative, so the CI is fine."
+    },
+    {
+     "type": "mc",
+     "stem": "On the swim data the SAME 24 numbers gave p approximately 9e-8 with the paired test but p approximately 0.18 with the unpaired (two-sample) test. Why does respecting the pairing make the result so much more decisive?",
+     "options": [
+      "Pairing increases the sample size, which always lowers the p-value",
+      "Pairing subtracts away the large between-swimmer variation (the two suits' speeds are correlated r approximately 0.99), shrinking the standard error of the difference roughly 9-fold",
+      "The unpaired test used the wrong data values, so its p-value is invalid",
+      "Pairing changes the observed mean difference to a much larger value"
+     ],
+     "answer_index": 1,
+     "explain": "A swimmer fast in one suit is fast in both (r approximately 0.99), so taking each swimmer's own difference cancels the between-swimmer spread, making the paired SE about 9x smaller than the unpaired SE. The same ~0.078 m/s gap is then far more decisive. Pairing does not add observations (it reduces 24 values to 12 differences), the unpaired test uses the same numbers, and the observed mean difference is identical either way; only the standard error changes."
+    },
+    {
+     "type": "mc",
+     "stem": "For the one-sample test, OJ tooth growth gave t = 2.21 on df = 29, p = 0.035, with a 95% CI for the true mean of about (18.2, 23.1) against the benchmark of 18. Which statement correctly links the CI and the test?",
+     "options": [
+      "A two-sided test rejects H0: mu = 18 at the 5% level exactly when the 95% CI excludes 18, and here the CI just barely excludes 18, consistent with p = 0.035 < 0.05",
+      "The CI and the p-value can easily disagree, so finding 18 just outside the CI tells us nothing about significance",
+      "Because p = 0.035 is small, the 95% CI must contain 18",
+      "The 95% CI means there is a 95% probability that the true mean lies between 18.2 and 23.1"
+     ],
+     "answer_index": 0,
+     "explain": "The 95% CI and the two-sided 5% test are the same coin: the test rejects mu0 exactly when the CI excludes mu0. The CI (18.2, 23.1) just barely excludes 18, matching p = 0.035 < 0.05. They never disagree (ruling out option 2); a small p means the CI EXCLUDES 18, not contains it (ruling out option 3); and the frequentist 95% CI is not a probability statement about a fixed true mean - it refers to the long-run capture rate of the procedure (ruling out option 4)."
+    }
+   ]
+  },
+  {
+   "id": "anova",
+   "questions": [
+    {
+     "type": "mc",
+     "stem": "Why is running a separate two-sample t-test on every pair of groups a bad way to check whether several group means differ?",
+     "options": [
+      "Each pairwise test has a 5% chance of a false alarm, and across many tests the chance of at least one false 'significant' result accumulates well above 5%",
+      "Two-sample t-tests cannot be computed when there are more than two groups",
+      "Pairwise t-tests always report smaller p-values than they should",
+      "The t-test requires equal sample sizes, which pairs rarely have"
+     ],
+     "answer_index": 0,
+     "explain": "The lesson simulates a world with no real differences and shows the family-wise false-alarm rate climbs to about 30% (5 groups) and about 60% (10 groups), because each test's 5% Type I error rate accumulates across many comparisons. The other options are false: a two-sample t-test runs fine on any pair, it does not systematically shrink p-values, and it does not require equal sample sizes."
+    },
+    {
+     "type": "mc",
+     "stem": "In the one-way ANOVA, the F-statistic is the ratio of between-group variation to within-group variation. What does a large F (well above 1) indicate?",
+     "options": [
+      "That the sample sizes in each group are very large",
+      "That the gaps between group means are large relative to the noise within groups, suggesting the means really do differ",
+      "That all the group means are equal",
+      "That the data violate the normality assumption"
+     ],
+     "answer_index": 1,
+     "explain": "F = MS_between / MS_within, so a large F means the spread between group means dwarfs the within-group noise, which is evidence that at least one group mean truly differs. F near 1 (not a large F) is what equal means would produce, and F says nothing directly about sample size or the normality assumption."
+    },
+    {
+     "type": "mc",
+     "stem": "A one-way ANOVA on the penguins returns an astronomically small p-value (F is about 343). What is the correct interpretation of this 'omnibus' result?",
+     "options": [
+      "Every species has a different mean body mass from every other species",
+      "Gentoo are heavier than Adelie, who are heavier than Chinstrap",
+      "At least one species has a different mean body mass, but the test does not say which pairs differ",
+      "The three species all have equal mean body mass"
+     ],
+     "answer_index": 2,
+     "explain": "ANOVA's alternative hypothesis is only that at least one mean differs; it is an omnibus test that does not identify which pairs differ, which is why a post-hoc test like Tukey HSD is run afterward. In fact the Tukey results show Adelie and Chinstrap are statistically tied, so 'every species differs' and the strict Gentoo > Adelie > Chinstrap ordering are both wrong."
+    },
+    {
+     "type": "mc",
+     "stem": "After the significant ANOVA, Tukey's HSD is used to compare all pairs of species. Why is Tukey HSD preferred over just running raw pairwise t-tests at this stage?",
+     "options": [
+      "It keeps the overall (family-wise) error rate at 5% while comparing all pairs, avoiding the multiple-comparisons trap",
+      "It is the only test that can compute confidence intervals for differences in means",
+      "It assumes the groups have unequal variances, unlike the t-test",
+      "It produces a single F-statistic instead of multiple p-values"
+     ],
+     "answer_index": 0,
+     "explain": "Tukey HSD widens each interval just enough that the whole family of pairwise comparisons together has a 5% false-alarm rate, giving an honest way to test every pair without inflating Type I error. Raw t-tests can also produce confidence intervals; Tukey HSD actually assumes roughly equal variances (it is not the unequal-variance fix); and it reports pairwise comparisons, not a single F-statistic."
+    }
+   ]
+  },
+  {
+   "id": "chi-square",
+   "questions": [
+    {
+     "type": "mc",
+     "stem": "In the chi-square statistic, $\\chi^2 = \\sum (O-E)^2/E$, what does a value near 0 indicate?",
+     "options": [
+      "The observed counts closely match the counts expected under the hypothesis (a good fit)",
+      "There is a strong association between the two variables",
+      "The sample size is too small to run the test",
+      "The expected counts are all below 5"
+     ],
+     "answer_index": 0,
+     "explain": "Chi-square is a 'total surprise' score: each term (O-E)^2/E is tiny when an observed count is close to its expected count, so the sum is near 0, signaling a good fit. A strong association or poor fit produces a LARGE chi-square, not a small one; sample size and the expected>=5 rule are separate assumptions, not what a near-zero value measures."
+    },
+    {
+     "type": "mc",
+     "stem": "The Sex-vs-Survival independence test gave a microscopic p-value (about 1e-58) while Cramer's V was about 0.54. What is the correct interpretation?",
+     "options": [
+      "The association is both statistically significant and a large effect",
+      "The association is statistically significant but the effect is negligible",
+      "The tiny p-value proves that sex causes survival",
+      "A microscopic p-value means there is no association"
+     ],
+     "answer_index": 0,
+     "explain": "The tiny p-value means such data would be extremely unlikely if sex and survival were truly independent, so the association is statistically significant (real, not just chance). Cramer's V near 0.5+ is a large effect by the lesson's guide (~0.1 small, ~0.3 medium, ~0.5+ large), so it is also a strong link. 'Negligible' is wrong because V is large; 'proves causation' is wrong (the lesson stresses association is not causation); 'no association' is wrong because a tiny p-value is strong evidence FOR an association."
+    },
+    {
+     "type": "num",
+     "stem": "For a test of independence on a 3x2 contingency table (3 classes by 2 survival outcomes), df = (rows-1) x (cols-1). What is df?",
+     "options": [],
+     "answer": 2,
+     "tolerance": 0,
+     "unit": "degrees of freedom",
+     "explain": "df = (3-1) x (2-1) = 2 x 1 = 2, exactly as the lesson computes for the class-vs-survival table (section 5)."
+    }
+   ]
+  },
+  {
+   "id": "regression-inference",
+   "questions": [
+    {
+     "type": "mc",
+     "stem": "In the Ames regression, the bootstrap standard error of the slope (~4.7) and the robust HC3 standard error (~4.8) are both more than double the classic OLS standard error (~2.07). What does this tell you?",
+     "options": [
+      "The slope estimate b1 itself is wrong and must be recomputed",
+      "The classic OLS standard error is too small because the residuals are heteroscedastic (the funnel), so it understates the slope's uncertainty",
+      "The bootstrap was run with too few resamples, inflating its standard error",
+      "The relationship between area and price is not real after all"
+     ],
+     "answer_index": 1,
+     "explain": "The lesson's residuals-vs-fitted plot funnels open (heteroscedasticity), violating the equal-scatter assumption that the classic OLS SE formula relies on; the bootstrap and HC3 make no such assumption, so their wider, mutually agreeing SEs are the honest ones. The slope estimate b1 itself is unchanged -- only its stated precision is corrected. Option A is wrong (b1 is fine), C is wrong (4,000 resamples is plenty and the bootstrap matches HC3), and D is wrong (the slope is still ~54 SEs from 0 even with the wider SE)."
+    },
+    {
+     "type": "mc",
+     "stem": "A 95% prediction interval for ONE new 2,000-sq-ft home is much wider than the 95% confidence interval for the MEAN price of all 2,000-sq-ft homes. Why?",
+     "options": [
+      "The prediction interval uses a larger t* multiplier than the confidence interval",
+      "The prediction interval carries two sources of uncertainty -- where the regression line sits AND how far an individual home strays from that line -- while the mean CI carries only the first",
+      "The confidence interval ignores the slope's standard error",
+      "The prediction interval is computed at a 99% level instead of 95%"
+     ],
+     "answer_index": 1,
+     "explain": "The lesson states the prediction interval must also swallow the scatter of individual homes around the line, so it carries two sources of uncertainty (line height plus individual deviation) while the mean-response CI carries only uncertainty in the line's height. The extra width comes from that added variance term, not from a different t* (the multiplier is the same) or a different confidence level (both are 95%); the mean CI does account for the slope's SE."
+    },
+    {
+     "type": "mc",
+     "stem": "The regression table reports P>|t| = 0.000 for the area slope. What is the correct interpretation of this p-value?",
+     "options": [
+      "There is essentially a 0% probability that area affects price",
+      "If the true population slope beta1 were exactly 0, the probability of observing a sample slope at least this far from 0 is essentially nil, so we reject the null of 'no linear relationship'",
+      "The probability that the null hypothesis is true is 0",
+      "The slope explains essentially 0% of the variation in price"
+     ],
+     "answer_index": 1,
+     "explain": "The lesson defines the p-value as the probability, computed UNDER the assumption that the true slope beta1 = 0, of seeing a sample slope at least this extreme; being essentially nil, it leads us to reject H0 of no linear relationship. It is a probability about the data given the null, not a probability that the null is true (C) or that area has no effect (A), and it is not a statement about variance explained, which is R-squared (D)."
+    }
+   ]
+  },
+  {
+   "id": "multiple-regression",
+   "questions": [
+    {
+     "type": "mc",
+     "stem": "In a multiple regression like price ~ area + quality, what does the coefficient on `area` represent?",
+     "options": [
+      "The change in predicted price per extra square foot, holding quality fixed",
+      "The total change in price as both area and quality increase together",
+      "The correlation between area and price",
+      "The percentage of price variation that area explains by itself"
+     ],
+     "answer_index": 0,
+     "explain": "Each coefficient in multiple regression is an adjusted effect: the predicted change in the response per one-unit increase in that predictor while the other predictors are held constant. Here that means the value of one more square foot when comparing homes of the same quality. It is not the joint effect of both predictors, a correlation, or a share of variance."
+    },
+    {
+     "type": "mc",
+     "stem": "When `quality` is added to a model that already contains `area`, area's slope drops from about 112 to about 59 dollars per square foot. The lesson attributes this to:",
+     "options": [
+      "A bug in statsmodels' least-squares algorithm",
+      "Confounding: bigger homes also tend to be higher quality, so the simple slope was crediting area with quality's effect too",
+      "Multicollinearity making the area coefficient unstable",
+      "Extrapolation beyond the range of the data"
+     ],
+     "answer_index": 1,
+     "explain": "Area and quality are positively correlated (r is about 0.57 in this data), so the simple-model slope of ~112 was 'paid twice' — once for size and once for the quality that rides along with size. Controlling for quality leaves only the value of square footage among homes of the same quality (~59). That is confounding, not a software bug. Multicollinearity refers to the unstable, ballooning coefficients of near-duplicate predictors (section 7), which is a different problem; extrapolation is unrelated."
+    },
+    {
+     "type": "mc",
+     "stem": "The lesson tosses a column of pure random noise into the model. Why is adjusted R^2 preferred over plain R^2 for comparing models with different numbers of predictors?",
+     "options": [
+      "Adjusted R^2 is always larger, so it makes the model look better",
+      "Plain R^2 never decreases when a predictor is added (even a useless one), while adjusted R^2 charges a per-predictor penalty and falls when a predictor doesn't earn its place",
+      "Plain R^2 only works for one-predictor models",
+      "Adjusted R^2 measures causation while plain R^2 measures only association"
+     ],
+     "answer_index": 1,
+     "explain": "Plain R^2 can never go down when a predictor is added — even random noise can soak up a sliver of leftover variation by chance — so it rewards clutter. Adjusted R^2 subtracts a penalty for each predictor, so it drops when a column adds nothing (in the demo plain R^2 held flat while adjusted R^2 fell from 0.75394 to 0.75386). Adjusted R^2 is not always larger, plain R^2 works for any number of predictors, and neither measure speaks to causation."
+    }
+   ]
+  },
+  {
+   "id": "bootstrap",
+   "questions": [
+    {
+     "type": "mc",
+     "stem": "What is the defining feature of how the bootstrap creates each resample from your data?",
+     "options": [
+      "It draws a fresh sample of size n from the original population",
+      "It draws n values from your sample WITH replacement, so some points repeat and others are left out",
+      "It removes one data point at a time and recomputes the statistic",
+      "It assumes the data is normal and draws from a fitted normal curve"
+     ],
+     "answer_index": 1,
+     "explain": "The bootstrap treats your one sample as a stand-in for the population and draws a resample of the same size n WITH replacement, so some points appear more than once and others are left out (about 1/e ≈ 37% on average). That resampling wobble is what mimics the sampling distribution and gives a standard error with no formula. Drawing 'fresh from the population' is impossible (we only have the one sample); removing one point at a time is the jackknife; and assuming normality is exactly what the bootstrap avoids."
+    },
+    {
+     "type": "mc",
+     "stem": "In the lesson, the 95% bootstrap confidence interval for the median is built using the 'percentile method.' What does that method actually do?",
+     "options": [
+      "It takes the sample median plus or minus two standard errors",
+      "It takes the 2.5th and 97.5th percentiles of the thousands of bootstrap medians",
+      "It fits a t-distribution to the bootstrap medians and reads off critical values",
+      "It uses the formula s/sqrt(n) on the resampled medians"
+     ],
+     "answer_index": 1,
+     "explain": "The percentile method simply slices off the 2.5th and 97.5th percentiles of the bootstrap distribution, so the middle 95% of resampled medians IS the interval — no formula and no distributional assumption required. The 'plus/minus two SE' and t-distribution options reintroduce exactly the formula machinery the bootstrap was meant to replace, and s/sqrt(n) is the SE of a mean, not a median."
+    },
+    {
+     "type": "mc",
+     "stem": "In the permutation test comparing OJ vs VC tooth growth, what does shuffling the group labels simulate, and how is the (two-sided) p-value defined?",
+     "options": [
+      "It simulates the null world where the labels are interchangeable; the p-value is the fraction of shuffles giving a difference at least as extreme (in either direction) as the observed gap",
+      "It simulates the alternative hypothesis; the p-value is the average shuffled difference",
+      "It estimates the confidence interval for the OJ mean; the p-value is its width",
+      "It removes outliers; the p-value is the share of points outside two standard deviations"
+     ],
+     "answer_index": 0,
+     "explain": "Under H0 the supplement label carries no information, so OJ and VC are interchangeable slices of one pooled set. Shuffling the labels and recomputing (OJ mean − VC mean) thousands of times builds the distribution of the difference WHEN H0 IS TRUE. The two-sided p-value is then the fraction of shuffles whose difference is at least as extreme as the observed 3.7 in absolute value (|shuffled| >= |observed|) — here about 0.06. The other options confuse the null with the alternative, with a CI, or with outlier trimming."
+    },
+    {
+     "type": "num",
+     "stem": "In the ToothGrowth comparison, the OJ group mean tooth length is 20.66 and the VC group mean is 16.96. What is the observed difference (OJ mean − VC mean) that the permutation test evaluates? (units of tooth length)",
+     "unit": "length units",
+     "answer": 3.7,
+     "tolerance": 0.05,
+     "explain": "Directly from the lesson's printout: OJ mean = 20.663 and VC mean = 16.963, so the observed gap (OJ − VC) = 20.663 − 16.963 = 3.70 length units. This is the value the permutation test asks about: how often does shuffling labels alone fake a gap at least this extreme? The answer (p ≈ 0.06, matching scipy's two-sample t-test p ≈ 0.060) makes it a borderline, not-quite-significant result at the 5% level."
+    }
+   ]
+  }
+ ]
+}

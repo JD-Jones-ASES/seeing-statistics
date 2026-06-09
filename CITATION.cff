@@ -1,0 +1,25 @@
+cff-version: 1.2.0
+message: "If you use this course, please cite it as below."
+title: "Statistics, by seeing it happen"
+abstract: >-
+  A self-paced, simulation-first probability and statistics course delivered as
+  interactive Python notebooks, where almost every idea is demonstrated on real
+  data rather than asserted. Includes an in-browser (JupyterLite) live-code layer
+  and interactive explorables. Bundled datasets retain their own licenses.
+type: software
+authors:
+  - family-names: Jones
+    given-names: JD
+license: CC-BY-SA-4.0
+keywords:
+  - statistics
+  - probability
+  - statistics education
+  - jupyter
+  - simulation
+  - confidence intervals
+  - central limit theorem
+url: "https://jd-jones-ases.github.io/seeing-statistics/"
+repository-code: "https://github.com/JD-Jones-ASES/seeing-statistics"
+version: "1.0.0"
+date-released: "2026-06-09"

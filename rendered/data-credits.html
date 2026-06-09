@@ -1,0 +1,162 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Every dataset in the course, its origin and licence, and the lessons that use it.">
+<meta property="og:title" content="Data sources & credits"><meta property="og:description" content="Every dataset in the course, its origin and licence, and the lessons that use it.">
+<meta property="og:image" content="https://jd-jones-ases.github.io/seeing-statistics/assets/og-card.png">
+<meta name="theme-color" content="#4c72b0">
+<link rel="icon" href="assets/favicon.svg">
+
+<link rel="stylesheet" href="assets/course.css">
+<title>Data sources & credits · Statistics, by seeing it happen</title>
+<script>(function(){var t;try{t=localStorage.getItem('sc-theme')}catch(e){}if(t)document.documentElement.setAttribute('data-theme',t);})();</script>
+</head><body>
+<div class="sc-topbar">
+  <a class="sc-home" href="index.html">Statistics, by seeing it happen <span>· course map</span></a>
+  <span class="sc-spacer"></span>
+  <span class="sc-pos" style="color:var(--sc-muted);font-size:12.5px">data sources</span>
+  
+  <button class="sc-btn" type="button" onclick="scToggleTheme()" aria-label="Toggle light or dark theme">◐</button>
+</div>
+<main class="explore-wrap">
+
+<h1>Data sources &amp; credits</h1>
+<p>This course makes claims from data, so it plays fair. Every dataset below was downloaded once from a reliable
+public source, kept <strong>read-only</strong>, and logged here with its origin and licence — so any chart traces
+back to its raw source.</p>
+<p><strong>Licensing.</strong> The course itself (text, code, charts, site) is © JD Jones, licensed
+<a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>. The <strong>15 datasets</strong>
+listed here are <em>not</em> covered by that licence — each keeps the licence of its original source (CC0 / public
+domain, OpenIntro educational use, R "datasets"/HistData, Gapminder CC-BY, U.S. Government public-domain works such
+as NHANES and USGS, etc.). Reuse of a dataset follows its own terms; please credit the original source.</p>
+<style>
+.credit{background:var(--sc-card);border:1px solid var(--sc-line);border-left:4px solid var(--sc-accent);
+  border-radius:10px;padding:12px 16px;margin:12px 0}
+.credit h3{margin:.1em 0 .3em;font-size:16px;font-family:ui-monospace,SFMono-Regular,Menlo,monospace}
+.credit p{margin:.15em 0;font-size:14px;color:var(--sc-muted)}
+.credit .src{color:var(--sc-ink)}
+.credit .lic{display:inline-block;background:rgba(0,158,115,.14);color:var(--sc-capture);
+  border-radius:14px;padding:1px 10px;font-size:12.5px}
+.credit .used{font-size:13px}
+</style>
+<div class="credits">
+        <div class="credit">
+          <h3>penguins.csv</h3>
+          <p class="src">Palmer Station LTER / Dr. Kristen Gorman; packaged by Allison Horst (`palmerpenguins`)</p>
+          <p><span class="lic">CC0 1.0 (public domain)</span> · downloaded 2026-06-08</p>
+          <p class="url"><a href="https://raw.githubusercontent.com/allisonhorst/palmerpenguins/main/inst/extdata/penguins.csv" rel="noopener">raw.githubusercontent.com/allisonhorst/palmerpen…</a></p>
+          <p class="used"><b>Used in:</b> Lesson 1 — Describing data; Lesson 3 — Relationships &amp; regression (Simpson&#x27;s paradox); Lesson 5 *data variant* — conditional probability &amp; independence; Lesson 13 *data variant* — hypothesis testing (species masses); Lesson 16 — ANOVA; Lesson 17 *data variant* — chi-square (species × island); Lesson 19 *data variant* — multiple regression (mass ~ flipper + species)</p>
+        </div>
+        <div class="credit">
+          <h3>faithful.csv</h3>
+          <p class="src">Old Faithful geyser eruptions; W. Härdle (1991); base-R `datasets`, mirrored by Vincent Arel-Bundock (Rdatasets)</p>
+          <p><span class="lic">Public domain / GPL-2 (R datasets)</span> · downloaded 2026-06-08</p>
+          <p class="url"><a href="https://vincentarelbundock.github.io/Rdatasets/csv/datasets/faithful.csv" rel="noopener">vincentarelbundock.github.io/Rdatasets/csv/datas…</a></p>
+          <p class="used"><b>Used in:</b> Lesson 2 — Distributions</p>
+        </div>
+        <div class="credit">
+          <h3>loans.csv</h3>
+          <p class="src">Lending Club peer-to-peer loans; curated by OpenIntro (`loans_full_schema`)</p>
+          <p><span class="lic">Free for educational use (OpenIntro)</span> · downloaded 2026-06-08</p>
+          <p class="url"><a href="https://www.openintro.org/data/csv/loans_full_schema.csv" rel="noopener">www.openintro.org/data/csv/loans_full_schema.csv</a></p>
+          <p class="used"><b>Used in:</b> Lesson 2 — Distributions; Lesson 10 — CLT</p>
+        </div>
+        <div class="credit">
+          <h3>titanic.csv</h3>
+          <p class="src">Titanic passenger manifest; Vanderbilt Biostatistics (F. Harrell) / historical records; Stanford CS109 mirror</p>
+          <p><span class="lic">Public domain (historical record)</span> · downloaded 2026-06-08</p>
+          <p class="url"><a href="https://web.stanford.edu/class/archive/cs/cs109/cs109.1166/stuff/titanic.csv" rel="noopener">web.stanford.edu/class/archive/cs/cs109/cs109.11…</a></p>
+          <p class="used"><b>Used in:</b> Lesson 5 — Probability; Lesson 7 *data variant* — random variables (relatives aboard); Lesson 8 *data variant* — binomial (survival); Lesson 14 *data variant* — inference for proportions (survival by sex)</p>
+        </div>
+        <div class="credit">
+          <h3>births14.csv</h3>
+          <p class="src">US CDC/NCHS Natality Detail File 2014; curated by OpenIntro (`births14`)</p>
+          <p><span class="lic">Free for educational use (OpenIntro); public source data</span> · downloaded 2026-06-08</p>
+          <p class="url"><a href="https://www.openintro.org/data/csv/births14.csv" rel="noopener">www.openintro.org/data/csv/births14.csv</a></p>
+          <p class="used"><b>Used in:</b> Lesson 7 — Random variables; Lesson 8 — Binomial &amp; Poisson</p>
+        </div>
+        <div class="credit">
+          <h3>earthquakes_2024_06.csv</h3>
+          <p class="src">M4.5+ global earthquakes, June 2024; USGS Earthquake Hazards Program (ANSS ComCat), FDSN query</p>
+          <p><span class="lic">US Government work, public domain</span> · downloaded 2026-06-08</p>
+          <p class="url"><a href="https://earthquake.usgs.gov/fdsnws/event/1/query?format=csv&amp;starttime=2024-06-01&amp;endtime=2024-07-01&amp;minmagnitude=4.5&amp;orderby=time-asc" rel="noopener">earthquake.usgs.gov/fdsnws/event/1/query?format=…</a></p>
+          <p class="used"><b>Used in:</b> Lesson 8 — Binomial &amp; Poisson; Lesson 8 *data variant* — Poisson on rarer (M5+) quakes per day</p>
+        </div>
+        <div class="credit">
+          <h3>galton.csv</h3>
+          <p class="src">Galton family heights; F. Galton (1886); `HistData` package, mirrored by Vincent Arel-Bundock (Rdatasets)</p>
+          <p><span class="lic">Public domain (historical) / GPL (HistData)</span> · downloaded 2026-06-08</p>
+          <p class="url"><a href="https://vincentarelbundock.github.io/Rdatasets/csv/HistData/GaltonFamilies.csv" rel="noopener">vincentarelbundock.github.io/Rdatasets/csv/HistD…</a></p>
+          <p class="used"><b>Used in:</b> Lesson 9 — Normal distribution</p>
+        </div>
+        <div class="credit">
+          <h3>ames.csv</h3>
+          <p class="src">Ames, Iowa City Assessor (public record); De Cock (2011, *J. Statistics Education*); distributed by OpenIntro</p>
+          <p><span class="lic">Public data, free for educational use (OpenIntro)</span> · downloaded 2026-06-08</p>
+          <p class="url"><a href="https://www.openintro.org/data/csv/ames.csv" rel="noopener">www.openintro.org/data/csv/ames.csv</a></p>
+          <p class="used"><b>Used in:</b> Lesson 3 — Relationships &amp; regression; Lesson 4 — Sampling &amp; study design; Lesson 10 *data variant* — CLT (sale price); Lesson 11 — Estimation; Lesson 12 — Confidence intervals (flagship); Lesson 12 *data variant* — confidence intervals (sale price); Lessons 18–19 — regression inference</p>
+        </div>
+        <div class="credit">
+          <h3>ToothGrowth.csv</h3>
+          <p class="src">Guinea-pig odontoblast length by vitamin-C supplement (OJ/VC) and dose; Crampton (1947); base-R `datasets`, mirrored by Vincent Arel-Bundock (Rdatasets)</p>
+          <p><span class="lic">Public domain / GPL-2 (R datasets)</span> · downloaded 2026-06-09</p>
+          <p class="url"><a href="https://vincentarelbundock.github.io/Rdatasets/csv/datasets/ToothGrowth.csv" rel="noopener">vincentarelbundock.github.io/Rdatasets/csv/datas…</a></p>
+          <p class="used"><b>Used in:</b> Lesson 15 — t-tests; Lesson 20 — Bootstrap &amp; permutation</p>
+        </div>
+        <div class="credit">
+          <h3>swim.csv</h3>
+          <p class="src">Swimmer velocities, wetsuit vs swimsuit (paired, n=12); De Lucas et al. (2000); curated by OpenIntro</p>
+          <p><span class="lic">Free for educational use (OpenIntro)</span> · downloaded 2026-06-09</p>
+          <p class="url"><a href="https://www.openintro.org/data/csv/swim.csv" rel="noopener">www.openintro.org/data/csv/swim.csv</a></p>
+          <p class="used"><b>Used in:</b> Lesson 15 — t-tests (paired); Lesson 20 *data variant* — bootstrap &amp; permutation (paired diffs)</p>
+        </div>
+        <div class="credit">
+          <h3>iris.csv</h3>
+          <p class="src">Fisher&#x27;s irises (1936); Edgar Anderson measurements; base-R `datasets`, mirrored by Vincent Arel-Bundock (Rdatasets)</p>
+          <p><span class="lic">Public domain / GPL-2 (R datasets)</span> · downloaded 2026-06-09</p>
+          <p class="url"><a href="https://vincentarelbundock.github.io/Rdatasets/csv/datasets/iris.csv" rel="noopener">vincentarelbundock.github.io/Rdatasets/csv/datas…</a></p>
+          <p class="used"><b>Used in:</b> Lesson 1 *data variant* — describing a clean dataset</p>
+        </div>
+        <div class="credit">
+          <h3>gapminder.csv</h3>
+          <p class="src">Gapminder Foundation country-year panel (1952–2007); Jenny Bryan / kirenz GitHub mirror</p>
+          <p><span class="lic">Free, no account (Gapminder data, CC-BY)</span> · downloaded 2026-06-09</p>
+          <p class="url"><a href="https://raw.githubusercontent.com/kirenz/datasets/master/gapminder.csv" rel="noopener">raw.githubusercontent.com/kirenz/datasets/master…</a></p>
+          <p class="used"><b>Used in:</b> Lesson 2 *data variant* — left-skew (life expectancy); Lesson 3 *data variant* — nonlinearity &amp; log transform (GDP vs life expectancy); Lesson 18 *data variant* — regression inference (slope on log GDP)</p>
+        </div>
+        <div class="credit">
+          <h3>nhanes_men.csv</h3>
+          <p class="src">NHANES 2015–2018 adult-male body measurements (height `BMXHT` in mm); CDC / NCHS, parsed by Penn State OPEN Design Lab</p>
+          <p><span class="lic">US Government work, public domain (NHANES); CSV mirror by Penn State OPEN Design Lab</span> · downloaded 2026-06-09</p>
+          <p class="url"><a href="https://bpb-us-e1.wpmucdn.com/sites.psu.edu/dist/4/27975/files/2023/09/NHANES15-18_menAge20YearsAndOver.csv" rel="noopener">bpb-us-e1.wpmucdn.com/sites.psu.edu/dist/4/27975…</a></p>
+          <p class="used"><b>Used in:</b> Lesson 9 *data variant* — the empirical rule on ~5,000 heights; Lesson 11 *data variant* — estimation &amp; standard error</p>
+        </div>
+        <div class="credit">
+          <h3>chickwts.csv</h3>
+          <p class="src">Chick weights by feed supplement (6 feeds); agricultural experiment, base-R `datasets`, mirrored by Vincent Arel-Bundock (Rdatasets)</p>
+          <p><span class="lic">Public domain / GPL-2 (R datasets)</span> · downloaded 2026-06-09</p>
+          <p class="url"><a href="https://vincentarelbundock.github.io/Rdatasets/csv/datasets/chickwts.csv" rel="noopener">vincentarelbundock.github.io/Rdatasets/csv/datas…</a></p>
+          <p class="used"><b>Used in:</b> Lesson 15 *data variant* — two-sample t-test (two feeds); Lesson 16 *data variant* — ANOVA (six feeds)</p>
+        </div>
+        <div class="credit">
+          <h3>textbooks.csv</h3>
+          <p class="src">UCLA bookstore vs Amazon new-textbook prices (paired, 73 books); curated by OpenIntro</p>
+          <p><span class="lic">Free for educational use (OpenIntro)</span> · downloaded 2026-06-09</p>
+          <p class="url"><a href="https://www.openintro.org/data/csv/textbooks.csv" rel="noopener">www.openintro.org/data/csv/textbooks.csv</a></p>
+          <p class="used"><b>Used in:</b> Lesson 15 *data variant* — paired t-test (campus vs online price)</p>
+        </div></div>
+<p style="margin-top:24px;color:var(--sc-muted);font-size:13.5px">A larger catalogue of verified, free,
+no-account datasets — each mapped to the statistics concept it teaches best — lives in the project's
+<code>raw/dataset-catalog.md</code>.</p>
+
+</main>
+<footer class="sc-footer">
+  <p>© JD Jones, 2026 · <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>
+  (bundled datasets keep their own licences — see <a href="data-credits.html">data sources</a>).
+  For study and understanding, not professional advice.</p>
+  <p><a href="index.html">↑ Course map</a> · <a href="glossary.html">Glossary</a> ·
+  <a href="formula-sheet.html">Formula sheet</a> · <a href="data-credits.html">Data sources</a> ·
+  <a href="https://github.com/JD-Jones-ASES/seeing-statistics">Source on GitHub</a></p>
+</footer>
+<script defer src="assets/course.js"></script>
+
+</body></html>

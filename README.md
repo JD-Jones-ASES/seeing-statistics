@@ -1,89 +1,81 @@
 # Statistics, by seeing it happen
 
-A self-paced course in probability & statistics — from the ground floor up —
-where almost every idea is **demonstrated on real data**, not just asserted.
+**A ground-up probability & statistics course where almost every idea is _demonstrated on real data_ — not just asserted.**
 
-Every topic is taught on three levels at once:
+🔗 **Live site: https://jd-jones-ases.github.io/seeing-statistics/**
 
-1. **The math** — the actual formula and how to compute it.
-2. **The meaning** — what the number *is* and what it *does*.
-3. **The interpretation** — what a result actually *says* (and what it doesn't).
+[![License: CC BY-SA 4.0](https://img.shields.io/badge/License-CC%20BY--SA%204.0-009E73.svg)](https://creativecommons.org/licenses/by-sa/4.0/)
+[![Built with Jupyter](https://img.shields.io/badge/built%20with-Jupyter%20%2B%20JupyterLite-4c72b0.svg)](https://jupyterlite.readthedocs.io/)
+![Lessons](https://img.shields.io/badge/lessons-57%20notebooks-4c72b0.svg)
 
-And wherever possible, you **watch it happen**: we take a real dataset, treat it
-as the known truth, and simulate — sampling it hundreds of times to see ideas
-like the Central Limit Theorem and the 95% confidence interval emerge in front
-of you. You can change a number and re-run to see what changes.
+Every topic is taught on three levels at once — **the math** (the actual formula), **the meaning** (what the
+number *is* and *does*), and **the interpretation** (what a result actually *says*, and what it doesn't). And
+wherever possible you **watch it happen**: we treat a real dataset as the known truth and simulate — sampling it
+hundreds of times so ideas like the Central Limit Theorem and the 95% confidence interval emerge in front of you.
 
----
+## Three ways to use it
 
-## How to use it
+1. **Read it online** — open the [live site](https://jd-jones-ases.github.io/seeing-statistics/). Every chart is
+   pre-drawn, the math is typeset, there's full-text search, dark mode, and it works offline once loaded.
+2. **Run it live in your browser** — every lesson has a **Run live ▶** button that opens the real notebook in
+   [JupyterLite](https://jupyterlite.readthedocs.io/): genuine Python (NumPy, pandas, Matplotlib, SciPy,
+   **statsmodels**) running client-side, no install and no account. Change a sample size, a seed, or a confidence
+   level and re-run.
+3. **Run it on your own computer** — clone this repo and:
+   ```bash
+   python -m venv .venv && . .venv/Scripts/activate   # Windows; use .venv/bin/activate on macOS/Linux
+   pip install -r requirements.txt
+   jupyter lab            # open the lessons/ folder
+   ```
 
-1. **Just reading?** Double-click `view-lessons.bat` to open the **course map** in
-   your browser — a table of contents linking every finished lesson, all charts
-   already drawn, nothing to install.
-2. **Want to run and tinker?** Double-click `start-jupyter.bat`. Your browser opens
-   to JupyterLab; the lessons are in the `lessons/` folder, in order. (A black window
-   stays open while it runs — closing it stops the course.)
-3. **Work through a lesson:** read the text, run each cell (Shift+Enter), study
-   the chart, then *tinker* — change a sample size or a confidence level and
-   re-run to see the effect.
-4. **Stop anytime.** Everything is saved as files on your computer. Nothing is
-   online; nothing needs an account.
+## What makes it more than a slideshow
 
-If `start-jupyter.bat` doesn't open, you can also launch from a terminal in this
-folder with: `..\.venv\Scripts\jupyter-lab.exe`
+- **Interactive explorables** — drag a slider and watch the statistics move, computed live in your browser:
+  the [100-confidence-interval coverage demo](https://jd-jones-ases.github.io/seeing-statistics/explore-confidence-intervals.html),
+  a [Central Limit Theorem sampler](https://jd-jones-ases.github.io/seeing-statistics/explore-clt.html), and a
+  [p-value / power explorer](https://jd-jones-ases.github.io/seeing-statistics/explore-p-value.html).
+- **Two companions per lesson** — most data-driven lessons also offer the *same idea* **on another dataset** (see
+  what changes) and a **"the code behind it"** companion that rebuilds the statistic from scratch in Python and
+  checks it against the library. That's **57 notebooks** in all (21 core + 18 "another dataset" + 18 "code").
+- **Self-teaching reference** — full-text search, per-lesson self-check quizzes, a glossary, and a printable
+  formula cheat-sheet.
+- **Honest by construction** — every dataset's source and licence is logged, charts are colourblind-safe, and each
+  lesson keeps *the math*, *what the data shows*, and *what it means in the world* clearly separate.
+
+## Course outline (two parts, at your pace)
+
+**Part 1 — Seeing data & the logic of chance:** describing data · distributions, shape & outliers · correlation &
+the regression line · sampling & study design · probability · counting · random variables · binomial & Poisson ·
+the normal distribution · sampling distributions & the **CLT**.
+
+**Part 2 — Drawing conclusions from data:** estimation & standard error · **confidence intervals (flagship)** ·
+hypothesis testing, p-values, errors & power · inference for proportions · t-tests · ANOVA · chi-square ·
+regression inference · multiple regression · the bootstrap & permutation tests.
 
 ## What's in here
 
 | Folder / file | What it is |
 |---|---|
-| `lessons/` | The notebooks, in order. This is where you spend your time. |
-| `raw/` | Real datasets, downloaded once and kept **read-only**. See `raw/SOURCES.md`. |
-| `lib/` | Small shared helpers (`statslab.py`) for loading data and styling charts. |
-| `tools/` | Scripts that generate, run, and render the lessons. You don't need these to use the course. |
-| `rendered/` | Read-anywhere web (HTML) copies of every lesson. **Open `rendered/index.html` for the course map** — a table of contents that links them all. |
-| `brief.md` | The one-page plan for this whole project. |
-| `requirements.txt` | The list of libraries the course uses. |
+| `lessons/` | The notebooks, in reading order. |
+| `raw/` | Real datasets, downloaded once and kept **read-only**. See [`raw/SOURCES.md`](raw/SOURCES.md). |
+| `lib/` | `statslab.py` — small shared helpers (data loading, the colourblind-safe chart palette). |
+| `tools/` | The build: `lessonkit.py` (one MANIFEST drives everything) → `build_notebooks.py` → `render_html.py` → `make_index.py`, plus `build_jupyterlite.py`, `build_explorables.py`, and `verify_no_drift.py`. |
+| `rendered/` | The static site (open `rendered/index.html`). |
 
-## Course outline (two parts, at your pace)
+## Building the site
 
-**Part 1 — Seeing data & the logic of chance** — ✅ *all built*
-0. ✅ **How these notebooks work (start here)** — a five-minute, no-statistics tour for anyone new to notebooks · *orientation*
-1. ✅ Describing a real dataset — center, spread, shape, z-scores · *Palmer Penguins*
-2. ✅ Distributions: shape, skew & outliers · *Old Faithful, Lending Club*
-3. ✅ Relationships: correlation & the regression line · *Ames housing (+ penguins)*
-4. ✅ Where data comes from: sampling & study design · *simulation on Ames*
-5. ✅ Probability & conditional probability · *Titanic*
-6. ✅ Counting: permutations & combinations · *dice & cards (simulation)*
-7. ✅ Random variables, expectation & variance · *dice, US Births 2014*
-8. ✅ Binomial & Poisson (counts) · *US Births 2014, USGS earthquakes*
-9. ✅ The normal distribution & the empirical rule · *Galton family heights*
-10. ✅ Sampling distributions & the **Central Limit Theorem** · *Lending Club + simulation*
+The notebooks are committed pre-executed (so the published charts are the fact-checked ones). The site is
+assembled — search index, the JupyterLite app, the landing page — and deployed to GitHub Pages by a GitHub
+Actions workflow on every push; it does **not** re-execute the notebooks. To rebuild everything locally, see the
+scripts in `tools/`.
 
-**Part 2 — Drawing conclusions from data** — ✅ *all built*
-11. ✅ Estimation & standard error · *Ames housing*
-12. ✅ **Confidence intervals** — the flagship coverage simulation · *Ames housing*
-13. ✅ Hypothesis testing: p-values, errors & power · *simulation*
-14. ✅ Inference for proportions (one & two) · *US Births 2014*
-15. ✅ t-tests: one-sample, two-sample & paired · *ToothGrowth, Swim*
-16. ✅ Comparing many groups: ANOVA · *Palmer Penguins*
-17. ✅ Chi-square: goodness-of-fit & independence · *Titanic*
-18. ✅ Correlation & regression: inference · *Ames housing*
-19. ✅ Multiple regression (intro) · *Ames housing*
-20. ✅ The bootstrap & permutation tests · *Old Faithful, ToothGrowth*
+## Licence & credits
 
-> The order is built for *intuition*, not to match any official syllabus.
->
-> **Two companions per lesson.** Every data-driven lesson also offers the *same idea*
-> **on another dataset** (see what changes) and a **"the code behind it"** companion that
-> builds the statistic from scratch in Python — open a lesson's card on the course map
-> (`rendered/index.html`) to find its **"Another dataset →"** and **"The code behind it →"**
-> links. That's **57 notebooks** in all (21 core + 18 data + 18 code). *(Next: the course
-> goes online — read + run it in your browser.)*
+© JD Jones, 2026. The course — text, code, charts, and site — is licensed
+**[CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)**. The bundled **datasets are not** covered by
+that licence; each keeps the licence of its original source (CC0 / public domain, OpenIntro educational use, the R
+`datasets`/`HistData` packages, Gapminder, U.S. Government works such as NHANES and USGS, …). Full provenance and
+licences: [`raw/SOURCES.md`](raw/SOURCES.md) and the site's
+[Data sources & credits](https://jd-jones-ases.github.io/seeing-statistics/data-credits.html) page.
 
-## A note on honesty
-
-This course makes claims from data, so it plays fair: every dataset's source and
-license is logged (`raw/SOURCES.md`), and each lesson keeps "the math says,"
-"the data shows," and "what this means in the world" clearly separate. It's for
-study and understanding — not professional (legal, medical, financial) advice.
+> For study and understanding — not professional (legal, medical, financial) advice.

@@ -106,10 +106,17 @@ def _topbar(entry):
 """
 
 
+def _is_core_lesson(entry):
+    return entry["variant"] == "core" and not entry.get("orientation")
+
+
 def _footer(entry):
     cite = (f"Jones, JD ({2026}). <em>{html.escape(entry['title'])}</em>. In "
             f"<em>{html.escape(COURSE_NAME)}</em>. {SITE_URL}/{entry['file'][:-6]}.html")
+    quiz = (f'<div id="sc-quiz" data-lesson="{html.escape(entry["id"])}" data-pagefind-ignore></div>'
+            if _is_core_lesson(entry) else "")
     return f"""
+{quiz}
 <footer class="sc-footer">
   <p class="sc-done"><label><input type="checkbox" id="sc-done-box"/> Mark this lesson complete
     <span style="font-size:12px">(saved on this device only)</span></label></p>
@@ -127,13 +134,17 @@ def _footer(entry):
 """
 
 
-def _scripts():
+def _scripts(entry):
     # self-hosted KaTeX, then course.js (which calls renderMathInElement on load).
-    return """
+    s = """
 <script defer src="assets/vendor/katex/katex.min.js"></script>
 <script defer src="assets/vendor/katex/contrib/auto-render.min.js"></script>
 <script defer src="assets/course.js"></script>
 """
+    if _is_core_lesson(entry):   # self-check quiz on the core lessons
+        s += ('<script defer src="assets/quizzes-data.js"></script>\n'
+              '<script defer src="assets/quiz.js"></script>\n')
+    return s
 
 
 def inject_assets(html_str: str, entry) -> str:
@@ -154,7 +165,7 @@ def inject_assets(html_str: str, entry) -> str:
     # 5. top bar right after <body ...>
     html_str = re.sub(r"(<body[^>]*>)", r"\1" + _topbar(entry), html_str, count=1)
     # 6. footer + scripts right before </body>
-    html_str = html_str.replace("</body>", _footer(entry) + _scripts() + "</body>", 1)
+    html_str = html_str.replace("</body>", _footer(entry) + _scripts(entry) + "</body>", 1)
     return html_str
 
 
