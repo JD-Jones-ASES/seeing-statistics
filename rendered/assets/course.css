@@ -11,15 +11,28 @@
   --sc-capture:#009E73; --sc-miss:#D55E00;   /* match statslab Okabe-Ito roles */
   --sc-maxw:920px;
 }
+/* Dark theme. We also remap nbconvert's own Jupyter content/UI font-colour
+   variables to light, or the lesson prose (which uses --jp-content-font-color*)
+   would render dark-on-dark. */
 :root[data-theme="dark"]{
   --sc-ink:#e7eaf0; --sc-muted:#9aa3b2; --sc-line:#2b3142;
   --sc-accent:#7aa2dd; --sc-accent-ink:#0c0f16;
   --sc-bg:#11141b; --sc-card:#171b24;
+  --jp-content-font-color0:#f1f3f8; --jp-content-font-color1:#e7eaf0;
+  --jp-content-font-color2:#bcc4d2; --jp-content-font-color3:#8e98a8;
+  --jp-ui-font-color0:#f1f3f8; --jp-ui-font-color1:#e7eaf0;
+  --jp-ui-font-color2:#bcc4d2; --jp-ui-font-color3:#8e98a8;
+  --jp-content-link-color:#7aa2dd; --jp-border-color1:#2b3142; --jp-border-color2:#2b3142;
 }
 @media (prefers-color-scheme: dark){
   :root:not([data-theme="light"]){
     --sc-ink:#e7eaf0; --sc-muted:#9aa3b2; --sc-line:#2b3142;
     --sc-accent:#7aa2dd; --sc-accent-ink:#0c0f16; --sc-bg:#11141b; --sc-card:#171b24;
+    --jp-content-font-color0:#f1f3f8; --jp-content-font-color1:#e7eaf0;
+    --jp-content-font-color2:#bcc4d2; --jp-content-font-color3:#8e98a8;
+    --jp-ui-font-color0:#f1f3f8; --jp-ui-font-color1:#e7eaf0;
+    --jp-ui-font-color2:#bcc4d2; --jp-ui-font-color3:#8e98a8;
+    --jp-content-link-color:#7aa2dd; --jp-border-color1:#2b3142; --jp-border-color2:#2b3142;
   }
 }
 
@@ -54,10 +67,17 @@ html, body{ background:var(--sc-bg) !important; color:var(--sc-ink) !important; 
 .jp-Notebook, .jp-RenderedHTMLCommon{ max-width:var(--sc-maxw); margin:0 auto; }
 body > .jp-Notebook{ padding:24px 18px 0; }
 
-/* charts: in dark mode, sit them on a light card so they stay legible */
+/* charts can't recolour — frame them on a light card in dark mode (explicit OR OS) */
 :root[data-theme="dark"] .jp-OutputArea-output img,
-:root[data-theme="dark"] .jp-RenderedImage img{
-  background:#fff; padding:8px; border-radius:8px;
+:root[data-theme="dark"] .jp-RenderedImage img{ background:#fff; padding:8px; border-radius:8px; }
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]) .jp-OutputArea-output img,
+  :root:not([data-theme="light"]) .jp-RenderedImage img{ background:#fff; padding:8px; border-radius:8px; }
+}
+/* inline code in prose: a light pill with light text would be invisible in dark mode */
+:root[data-theme="dark"] .jp-RenderedHTMLCommon :not(pre) > code{ background:rgba(255,255,255,.12); color:#f1f3f8; }
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]) .jp-RenderedHTMLCommon :not(pre) > code{ background:rgba(255,255,255,.12); color:#f1f3f8; }
 }
 
 /* ---- copy-code button ----------------------------------------------------- */
