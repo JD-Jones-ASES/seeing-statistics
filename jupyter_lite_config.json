@@ -1,0 +1,12 @@
+{
+  "LiteBuildConfig": {
+    "ignore_contents": [
+      "/\\.git",
+      "/\\.ipynb_checkpoints",
+      "/__pycache__/",
+      "/node_modules/",
+      "/_build/",
+      "/dist/"
+    ]
+  }
+}

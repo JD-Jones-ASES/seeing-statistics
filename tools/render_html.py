@@ -62,8 +62,10 @@ def _binder_url(entry):
 
 
 def _live_url(entry):
-    # in-browser JupyterLite copy (built in the publish phase under rendered/live/)
-    return f"live/lab/index.html?path={quote(entry['file'])}"
+    # in-browser JupyterLite copy (built under rendered/live/). Notebooks are
+    # bundled at /lessons in the Lite filesystem; the Notebook 7 UI is cleaner
+    # for a single lesson than full Lab.
+    return f"live/notebooks/index.html?path={quote('lessons/' + entry['file'])}"
 
 
 def _head_block(entry):
@@ -139,14 +141,16 @@ def inject_assets(html_str: str, entry) -> str:
         html_str = html_str.replace(loader, "")
     # keep Jupyter's heading-anchor pilcrows (¶) out of the full-text search index
     html_str = html_str.replace('class="anchor-link"', 'class="anchor-link" data-pagefind-ignore')
-    # 3. head additions (before </head>)
+    # 3. rewrite the NOTEBOOK's own prev/next/map nav (.ipynb -> .html) now, BEFORE
+    #    injecting chrome, so the injected "Run live" .ipynb deep-links survive.
+    html_str = rewrite_links(html_str)
+    # 4. head additions (before </head>)
     html_str = html_str.replace("</head>", _head_block(entry) + "</head>", 1)
-    # 4. top bar right after <body ...>
+    # 5. top bar right after <body ...>
     html_str = re.sub(r"(<body[^>]*>)", r"\1" + _topbar(entry), html_str, count=1)
-    # 5. footer + scripts right before </body>
+    # 6. footer + scripts right before </body>
     html_str = html_str.replace("</body>", _footer(entry) + _scripts() + "</body>", 1)
-    # 6. fix nav links to sibling .html
-    return rewrite_links(html_str)
+    return html_str
 
 
 def render(entry, execute=True):
