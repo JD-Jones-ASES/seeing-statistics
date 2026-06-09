@@ -7823,7 +7823,7 @@ a.anchor-link {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h1 id="t-tests-on-different-data:-chick-feeds-&amp;-textbook-prices">t-tests on different data: chick feeds &amp; textbook prices<a class="anchor-link" href="#t-tests-on-different-data:-chick-feeds-&amp;-textbook-prices">¶</a></h1><p><em>Part 2 · Lesson 15 · another dataset  ·  data: Chickwts · Textbooks (paired)</em></p>
+<h1 id="t-tests-on-different-data:-chick-feeds-&amp;-textbook-prices">t-tests on different data: chick feeds &amp; textbook prices<a class="anchor-link" data-pagefind-ignore href="#t-tests-on-different-data:-chick-feeds-&amp;-textbook-prices">¶</a></h1><p><em>Part 2 · Lesson 15 · another dataset  ·  data: Chickwts · Textbooks (paired)</em></p>
 <p><em>↩ A companion to <a href="15-t-tests.html">Lesson 15: t-tests: one-sample, two-sample &amp; paired</a>.</em></p>
 <p><strong>↩ Back:</strong> <a href="15-t-tests.html">Lesson 15: t-tests: one-sample, two-sample &amp; paired</a>  ·  <a href="index.html">↑ Course map</a>  ·  <strong>Also:</strong> <a href="15-t-tests~the-code.html">The code behind it →</a></p>
 <p>The core t-tests lesson met the <strong>t-distribution</strong> and three everyday tests — one-sample, two-sample, and
@@ -7971,7 +7971,7 @@ Textbooks: 73 books, each priced two ways (campus store vs online)
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="1)-A-quick-refresher:-t,-not-z,-and-the-cost-of-estimating-$%5Csigma$">1) A quick refresher: <strong>t</strong>, not z, and the cost of estimating $\sigma$<a class="anchor-link" href="#1)-A-quick-refresher:-t,-not-z,-and-the-cost-of-estimating-$%5Csigma$">¶</a></h2><p>When we compare means we build a <strong>t-statistic</strong> — a signal-to-noise ratio of "how far is the mean from
+<h2 id="1)-A-quick-refresher:-t,-not-z,-and-the-cost-of-estimating-$%5Csigma$">1) A quick refresher: <strong>t</strong>, not z, and the cost of estimating $\sigma$<a class="anchor-link" data-pagefind-ignore href="#1)-A-quick-refresher:-t,-not-z,-and-the-cost-of-estimating-$%5Csigma$">¶</a></h2><p>When we compare means we build a <strong>t-statistic</strong> — a signal-to-noise ratio of "how far is the mean from
 what the null claims?" divided by "how much does a mean of this size typically wobble?":</p>
 <p>$$t = \frac{\text{estimate} - \text{null value}}{\text{standard error}}.$$</p>
 <p>It looks just like a z-score, but the standard error is built from the <strong>sample</strong> spread $s$, not the
@@ -8039,7 +8039,7 @@ normal z* (95% two-sided)        = 1.960   &lt;- the limit t* approaches
 pushed out to $t^{*} = 3.18$ instead of the normal's $1.96$. By <code>df = 40</code> the two curves have all but
 merged. <strong>Takeaway:</strong> the t-distribution simply pays an honest tax for not knowing $\sigma$, and that tax
 fades as the sample grows.</p>
-<h2 id="2)-One-sample-t-test-%E2%80%94-a-building-block">2) One-sample t-test — a building block<a class="anchor-link" href="#2)-One-sample-t-test-%E2%80%94-a-building-block">¶</a></h2><p>Before comparing two things, recall the simplest test: is <strong>one</strong> group's mean different from a target
+<h2 id="2)-One-sample-t-test-%E2%80%94-a-building-block">2) One-sample t-test — a building block<a class="anchor-link" data-pagefind-ignore href="#2)-One-sample-t-test-%E2%80%94-a-building-block">¶</a></h2><p>Before comparing two things, recall the simplest test: is <strong>one</strong> group's mean different from a target
 number? The chicks were weighed after six weeks; suppose a hatchery's nominal six-week target weight is
 <strong>250 grams</strong>. Take just the <strong>casein</strong>-fed chicks — is their mean weight really different from 250?</p>
 <ul>
@@ -8093,7 +8093,7 @@ observed t = (mean - 250) / SE = 3.956
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="Build-the-null-distribution-by-simulation">Build the null distribution by simulation<a class="anchor-link" href="#Build-the-null-distribution-by-simulation">¶</a></h3><p>If $H_0$ were true and the weights were roughly normal, samples of size $n$ drawn from a population
+<h3 id="Build-the-null-distribution-by-simulation">Build the null distribution by simulation<a class="anchor-link" data-pagefind-ignore href="#Build-the-null-distribution-by-simulation">¶</a></h3><p>If $H_0$ were true and the weights were roughly normal, samples of size $n$ drawn from a population
 centered at $\mu_0 = 250$ would scatter t-statistics around 0. We don't know the true shape, so we use a
 faithful stand-in: <strong>recenter our own sample</strong> so its mean is exactly 250 (forcing $H_0$ to hold), then
 <strong>bootstrap-resample</strong> it (draw a fresh sample of the same size by picking values from it at random, with
@@ -8222,7 +8222,7 @@ their mean <strong>excludes</strong> 250, telling us not just <em>whether</em> b
 <strong>exactly when</strong> the 95% CI excludes $\mu_0$. They never disagree.</p>
 </blockquote>
 <p>The one-sample test is the workhorse engine; the two-sample and paired tests below are both built from it.</p>
-<h2 id="3)-Two-sample-t-test-%E2%80%94-comparing-two-independent-groups">3) Two-sample t-test — comparing two independent groups<a class="anchor-link" href="#3)-Two-sample-t-test-%E2%80%94-comparing-two-independent-groups">¶</a></h2><p>Now the real question Chickwts was designed for: <strong>does the diet matter?</strong> Compare the <strong>casein</strong> chicks
+<h2 id="3)-Two-sample-t-test-%E2%80%94-comparing-two-independent-groups">3) Two-sample t-test — comparing two independent groups<a class="anchor-link" data-pagefind-ignore href="#3)-Two-sample-t-test-%E2%80%94-comparing-two-independent-groups">¶</a></h2><p>Now the real question Chickwts was designed for: <strong>does the diet matter?</strong> Compare the <strong>casein</strong> chicks
 against the <strong>horsebean</strong> chicks. These are <em>different</em> chicks, so the two groups are <strong>independent</strong> — the
 classic two-sample setup.</p>
 <ul>
@@ -8271,7 +8271,7 @@ observed difference in means (casein - horsebean) = 163.4 g
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="The-permutation-idea-%E2%80%94-what-if-the-feed-labels-meant-nothing?">The permutation idea — what if the feed labels meant nothing?<a class="anchor-link" href="#The-permutation-idea-%E2%80%94-what-if-the-feed-labels-meant-nothing?">¶</a></h3><p>Here's the cleanest way to picture the null "the feed doesn't matter." If the casein/horsebean label truly
+<h3 id="The-permutation-idea-%E2%80%94-what-if-the-feed-labels-meant-nothing?">The permutation idea — what if the feed labels meant nothing?<a class="anchor-link" data-pagefind-ignore href="#The-permutation-idea-%E2%80%94-what-if-the-feed-labels-meant-nothing?">¶</a></h3><p>Here's the cleanest way to picture the null "the feed doesn't matter." If the casein/horsebean label truly
 had no effect, it's just a <em>sticker</em> on each chick — we could <strong>shuffle the labels at random</strong> and the gap
 between the two groups should be no bigger than what we see. So: pool all the weights, repeatedly deal them
 back into a fake "casein" pile and "horsebean" pile, and record the difference in means each time. That
@@ -8383,7 +8383,7 @@ systematic difference between the groups is the diet, and the gap is so wide rel
 spread that even tiny samples (10–12 birds) settle it decisively. Casein is a far better feed than
 horsebean.</p>
 </blockquote>
-<h2 id="4)-Paired-t-test-%E2%80%94-when-the-two-numbers-come-from-the-same-unit">4) Paired t-test — when the two numbers come from the same unit<a class="anchor-link" href="#4)-Paired-t-test-%E2%80%94-when-the-two-numbers-come-from-the-same-unit">¶</a></h2><p>The two-sample test treats the groups as unrelated. But sometimes each <em>unit</em> gives you <strong>both</strong> numbers —
+<h2 id="4)-Paired-t-test-%E2%80%94-when-the-two-numbers-come-from-the-same-unit">4) Paired t-test — when the two numbers come from the same unit<a class="anchor-link" data-pagefind-ignore href="#4)-Paired-t-test-%E2%80%94-when-the-two-numbers-come-from-the-same-unit">¶</a></h2><p>The two-sample test treats the groups as unrelated. But sometimes each <em>unit</em> gives you <strong>both</strong> numbers —
 a before/after, a left/right, the same item measured two ways. That's a <strong>paired</strong> design, and ignoring
 the pairing throws away its biggest advantage.</p>
 <p>The <strong>Textbooks</strong> data is a different flavour of pairing from the swimmers in the core lesson: instead of
@@ -8515,7 +8515,7 @@ scipy ttest_1samp(d, 0):      t = 7.65,  p = 6.93e-11   (identical)
 roughly 9.5 to 16 dollars that sits comfortably above zero. In 20,000 simulated null worlds we essentially
 never saw a gap this big by chance. On average, buying these books at the campus store costs about
 <strong>12.76 dollars more</strong> apiece than buying them online.</p>
-<h2 id="5)-Why-pairing-matters-%E2%80%94-the-headline-demonstration">5) Why pairing matters — the headline demonstration<a class="anchor-link" href="#5)-Why-pairing-matters-%E2%80%94-the-headline-demonstration">¶</a></h2><p>Here's the punchline of the whole lesson. <strong>Watch what happens if we <em>ignore</em> the pairing</strong> and (wrongly)
+<h2 id="5)-Why-pairing-matters-%E2%80%94-the-headline-demonstration">5) Why pairing matters — the headline demonstration<a class="anchor-link" data-pagefind-ignore href="#5)-Why-pairing-matters-%E2%80%94-the-headline-demonstration">¶</a></h2><p>Here's the punchline of the whole lesson. <strong>Watch what happens if we <em>ignore</em> the pairing</strong> and (wrongly)
 run a two-sample test, treating the 73 campus prices and 73 Amazon prices as two unrelated groups.</p>
 </div>
 </div>
@@ -8670,7 +8670,7 @@ item measured two ways), <em>use the pairing.</em> As with the swimmers in the c
 difference between detecting an effect and missing it — and "paired vs two-sample" comes down to one
 question: <strong>do the two numbers come from the same unit?</strong> For the chicks, no (different birds → two-sample);
 for the textbooks, yes (same book → paired).</p>
-<h2 id="6)-Assumptions-&amp;-robustness-%E2%80%94-when-can-you-trust-a-t-test?">6) Assumptions &amp; robustness — when can you trust a t-test?<a class="anchor-link" href="#6)-Assumptions-&amp;-robustness-%E2%80%94-when-can-you-trust-a-t-test?">¶</a></h2><p>The t-test isn't unconditional. Its key assumptions:</p>
+<h2 id="6)-Assumptions-&amp;-robustness-%E2%80%94-when-can-you-trust-a-t-test?">6) Assumptions &amp; robustness — when can you trust a t-test?<a class="anchor-link" data-pagefind-ignore href="#6)-Assumptions-&amp;-robustness-%E2%80%94-when-can-you-trust-a-t-test?">¶</a></h2><p>The t-test isn't unconditional. Its key assumptions:</p>
 <ol>
 <li><strong>Independent observations</strong> (within each group). The whole <em>point</em> of the paired test is to handle the
 one dependence we expect — the link between a unit's two measurements — by reducing to one number per
@@ -8737,7 +8737,7 @@ n = 73 the CLT keeps the paired t-test on safe ground (and the effect is huge ei
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Now-you-try">Now you try<a class="anchor-link" href="#Now-you-try">¶</a></h2><p>Predict the result first, then change a number and re-run:</p>
+<h2 id="Now-you-try">Now you try<a class="anchor-link" data-pagefind-ignore href="#Now-you-try">¶</a></h2><p>Predict the result first, then change a number and re-run:</p>
 <ol>
 <li><p><strong>A different one-sample target.</strong> In Section 2 the casein target is <code>mu0 = 250.0</code>. Change it to <code>320.0</code>
 (close to the casein mean) and re-run that cell and the scipy cell. Does the casein mean now look
@@ -8761,7 +8761,7 @@ simulated null distributions in Sections 2–4. The simulated p-values should sh
 decimal — confirming the result isn't an artifact of one lucky seed.</p>
 </li>
 </ol>
-<h2 id="What-you-learned">What you learned<a class="anchor-link" href="#What-you-learned">¶</a></h2><ul>
+<h2 id="What-you-learned">What you learned<a class="anchor-link" data-pagefind-ignore href="#What-you-learned">¶</a></h2><ul>
 <li><strong>Why t, not z:</strong> when the population spread $\sigma$ is unknown we estimate it with $s$, adding
 uncertainty; the <strong>t-distribution</strong> absorbs that with heavier tails governed by the degrees of freedom,
 and it melts into the normal as $n$ grows — exactly as in the core lesson, on different data.</li>

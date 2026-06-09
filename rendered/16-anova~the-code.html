@@ -7823,7 +7823,7 @@ a.anchor-link {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h1 id="The-code-behind-it:-ANOVA-from-the-variance-decomposition">The code behind it: ANOVA from the variance decomposition<a class="anchor-link" href="#The-code-behind-it:-ANOVA-from-the-variance-decomposition">¶</a></h1><p><em>Part 2 · Lesson 16 · the code behind it  ·  data: Palmer Penguins (same as Lesson 16)</em></p>
+<h1 id="The-code-behind-it:-ANOVA-from-the-variance-decomposition">The code behind it: ANOVA from the variance decomposition<a class="anchor-link" data-pagefind-ignore href="#The-code-behind-it:-ANOVA-from-the-variance-decomposition">¶</a></h1><p><em>Part 2 · Lesson 16 · the code behind it  ·  data: Palmer Penguins (same as Lesson 16)</em></p>
 <p><em>↩ A companion to <a href="16-anova.html">Lesson 16: Comparing many groups: ANOVA</a>.</em></p>
 <p><strong>↩ Back:</strong> <a href="16-anova.html">Lesson 16: Comparing many groups: ANOVA</a>  ·  <a href="index.html">↑ Course map</a>  ·  <strong>Also:</strong> <a href="16-anova~another-dataset.html">Another dataset →</a></p>
 <p><strong>In Lesson 16 you called <code>stats.f_oneway(*groups)</code></strong> and out came an $F$ of about 343 and a vanishingly
@@ -7863,7 +7863,7 @@ hands you and becomes a few lines of NumPy you could write from memory.</p>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="1)-The-goal">1) The goal<a class="anchor-link" href="#1)-The-goal">¶</a></h2><p>By the end of this notebook you'll have written a function that takes a list of groups (one array of
+<h2 id="1)-The-goal">1) The goal<a class="anchor-link" data-pagefind-ignore href="#1)-The-goal">¶</a></h2><p>By the end of this notebook you'll have written a function that takes a list of groups (one array of
 numbers per species) and returns the <strong>F-statistic</strong>, its two degrees of freedom, and a p-value — the same
 thing <code>scipy.stats.f_oneway</code> hands you for free. Nothing here needs new statistics; everything is the
 Python <em>underneath</em> that one call.</p>
@@ -7952,7 +7952,7 @@ below is "do some arithmetic to a whole array at once."</p>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="2)-The-data-in-code">2) The data in code<a class="anchor-link" href="#2)-The-data-in-code">¶</a></h2><p>Same cleaning as the core lesson, so our group sizes match it exactly. We keep only the rows that have
+<h2 id="2)-The-data-in-code">2) The data in code<a class="anchor-link" data-pagefind-ignore href="#2)-The-data-in-code">¶</a></h2><p>Same cleaning as the core lesson, so our group sizes match it exactly. We keep only the rows that have
 both columns we need — <strong><code>body_mass_g</code></strong> (the response, in grams) and <strong><code>species</code></strong> (the grouping) — by
 dropping <code>NaN</code>s. This makes a <strong>new, smaller table</strong>; it never edits the file on disk (<code>raw/</code> stays
 read-only).</p>
@@ -8016,7 +8016,7 @@ first 5 Adelie masses: [3750. 3800. 3250. 3450. 3650.]
 <p>The three sample means are clearly not identical — Gentoo look much heavier (~5076 g) than Adelie
 (~3700 g) and Chinstrap (~3733 g). ANOVA's job is to decide whether that gap is <strong>bigger than the noise
 inside each species</strong>. To do that, it needs three sums of squares. Let's build them.</p>
-<h2 id="3)-Build-it-step-by-step">3) Build it step by step<a class="anchor-link" href="#3)-Build-it-step-by-step">¶</a></h2><h3 id="The-grand-mean-and-the-group-means">The grand mean and the group means<a class="anchor-link" href="#The-grand-mean-and-the-group-means">¶</a></h3><p>Everything keys off two kinds of average:</p>
+<h2 id="3)-Build-it-step-by-step">3) Build it step by step<a class="anchor-link" data-pagefind-ignore href="#3)-Build-it-step-by-step">¶</a></h2><h3 id="The-grand-mean-and-the-group-means">The grand mean and the group means<a class="anchor-link" data-pagefind-ignore href="#The-grand-mean-and-the-group-means">¶</a></h3><p>Everything keys off two kinds of average:</p>
 <ul>
 <li>the <strong>grand mean</strong> $\bar{x}$ — the mean of <em>all</em> the masses, ignoring species;</li>
 <li>each <strong>group mean</strong> $\bar{x}_j$ — the mean within one species, with size $n_j$.</li>
@@ -8073,7 +8073,7 @@ per-group mean and size (the n_j and x-bar_j the formulas need):
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="The-three-sums-of-squares">The three sums of squares<a class="anchor-link" href="#The-three-sums-of-squares">¶</a></h3><p>Now the heart of ANOVA. A "sum of squares" is just <strong>add up squared distances</strong> — no division, no <code>ddof</code>
+<h3 id="The-three-sums-of-squares">The three sums of squares<a class="anchor-link" data-pagefind-ignore href="#The-three-sums-of-squares">¶</a></h3><p>Now the heart of ANOVA. A "sum of squares" is just <strong>add up squared distances</strong> — no division, no <code>ddof</code>
 anywhere (these are raw sums; the dividing-by-degrees-of-freedom happens <em>later</em>, when we form the mean
 squares). Watch the vectorization: <code>all_mass - grand_mean</code> subtracts the grand mean from <strong>every</strong> value
 at once; <code>** 2</code> squares each; <code>.sum()</code> adds them. No loop over penguins.</p>
@@ -8127,7 +8127,7 @@ SS_within  =    72,443,483.21
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="The-identity-that-makes-ANOVA-work">The identity that makes ANOVA work<a class="anchor-link" href="#The-identity-that-makes-ANOVA-work">¶</a></h3><p>Here is the payoff. Those two pieces — between and within — must <strong>add up to the total</strong>. That is not a
+<h3 id="The-identity-that-makes-ANOVA-work">The identity that makes ANOVA work<a class="anchor-link" data-pagefind-ignore href="#The-identity-that-makes-ANOVA-work">¶</a></h3><p>Here is the payoff. Those two pieces — between and within — must <strong>add up to the total</strong>. That is not a
 coincidence; it is an algebraic identity, and it is the very reason we can split "variance" into a signal
 part and a noise part. Let's check it numerically.</p>
 </div>
@@ -8175,7 +8175,7 @@ SST = SSB + SSW  match? True
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="Mean-squares-and-the-F-ratio">Mean squares and the F-ratio<a class="anchor-link" href="#Mean-squares-and-the-F-ratio">¶</a></h3><p>A raw sum of squares grows just by having more data, so we scale each by its <strong>degrees of freedom</strong> (df) —
+<h3 id="Mean-squares-and-the-F-ratio">Mean squares and the F-ratio<a class="anchor-link" data-pagefind-ignore href="#Mean-squares-and-the-F-ratio">¶</a></h3><p>A raw sum of squares grows just by having more data, so we scale each by its <strong>degrees of freedom</strong> (df) —
 a count of how many values were free to vary — to get a <strong>mean square</strong>. Between-group df is $k-1$;
 within-group df is $N-k$. The F-statistic is their ratio.</p>
 <p>$$MS_{\text{between}} = \frac{SS_{\text{between}}}{k-1}, \quad
@@ -8236,7 +8236,7 @@ p = f.sf(F, 2, 339)    = 2.8924e-82
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="Check-it-against-the-answer-key">Check it against the answer key<a class="anchor-link" href="#Check-it-against-the-answer-key">¶</a></h3><p>We built $F$ from raw sums of squares; scipy does the identical bookkeeping internally. They should agree
+<h3 id="Check-it-against-the-answer-key">Check it against the answer key<a class="anchor-link" data-pagefind-ignore href="#Check-it-against-the-answer-key">¶</a></h3><p>We built $F$ from raw sums of squares; scipy does the identical bookkeeping internally. They should agree
 to the last decimal — and the p-value too.</p>
 </div>
 </div>
@@ -8284,7 +8284,7 @@ match? True True
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="Why-not-just-run-all-the-pairwise-t-tests?-(the-multiple-comparisons-trap)">Why not just run all the pairwise t-tests? (the multiple-comparisons trap)<a class="anchor-link" href="#Why-not-just-run-all-the-pairwise-t-tests?-(the-multiple-comparisons-trap)">¶</a></h3><p>With three groups it's tempting to skip ANOVA and t-test every pair instead (Adelie vs Chinstrap, Adelie
+<h3 id="Why-not-just-run-all-the-pairwise-t-tests?-(the-multiple-comparisons-trap)">Why not just run all the pairwise t-tests? (the multiple-comparisons trap)<a class="anchor-link" data-pagefind-ignore href="#Why-not-just-run-all-the-pairwise-t-tests?-(the-multiple-comparisons-trap)">¶</a></h3><p>With three groups it's tempting to skip ANOVA and t-test every pair instead (Adelie vs Chinstrap, Adelie
 vs Gentoo, Chinstrap vs Gentoo). The trouble: each t-test at $\alpha = 0.05$ has its own 5% chance of a
 false alarm, and those chances <strong>pile up</strong> across the family of tests. Let's <em>see</em> it — build a world
 where <strong>nothing differs</strong> (every group drawn from the same distribution), run all the pairwise tests, and
@@ -8363,7 +8363,7 @@ count how often <em>at least one</em> fires by accident.</p>
 multiple-comparisons trap, and it's exactly why we run <strong>one</strong> omnibus ANOVA at a controlled 5% instead of
 spraying t-tests across every pair. (The core lesson goes deeper on this, and on the post-hoc Tukey HSD
 that finds <em>which</em> pairs differ while staying honest.)</p>
-<h2 id="4)-The-idiom-%E2%80%94-groupby-and-vectorized-sums-of-squares">4) The idiom — <code>groupby</code> and vectorized sums of squares<a class="anchor-link" href="#4)-The-idiom-%E2%80%94-groupby-and-vectorized-sums-of-squares">¶</a></h2><p>Three habits made the build above short and fast, and they're the patterns to reuse:</p>
+<h2 id="4)-The-idiom-%E2%80%94-groupby-and-vectorized-sums-of-squares">4) The idiom — <code>groupby</code> and vectorized sums of squares<a class="anchor-link" data-pagefind-ignore href="#4)-The-idiom-%E2%80%94-groupby-and-vectorized-sums-of-squares">¶</a></h2><p>Three habits made the build above short and fast, and they're the patterns to reuse:</p>
 <ul>
 <li><strong><code>groupby</code> for per-group numbers.</strong> <code>penguins.groupby('species')['body_mass_g'].agg([...])</code> gives the
 count, mean and SD of every group in one expression — no manual looping to bin the rows.</li>
@@ -8423,7 +8423,7 @@ and groupby (above) did the splitting. That is the idiom.
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="5)-Refactor-into-a-reusable-function">5) Refactor into a reusable function<a class="anchor-link" href="#5)-Refactor-into-a-reusable-function">¶</a></h2><p>You've now written the same handful of lines — grand mean, between-sum, within-sum, mean squares, ratio,
+<h2 id="5)-Refactor-into-a-reusable-function">5) Refactor into a reusable function<a class="anchor-link" data-pagefind-ignore href="#5)-Refactor-into-a-reusable-function">¶</a></h2><p>You've now written the same handful of lines — grand mean, between-sum, within-sum, mean squares, ratio,
 p-value — a few times. The programmer's reflex is to <strong>wrap repeated work in a function</strong>: name it, give
 it inputs, <code>return</code> the result. Then "run a one-way ANOVA" is one call you can reuse on <em>any</em> list of
 groups — flipper lengths, a different dataset entirely.</p>
@@ -8544,7 +8544,7 @@ strongly than body mass did (F = 595 vs 344).
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="6)-Now-you-code">6) Now you code<a class="anchor-link" href="#6)-Now-you-code">¶</a></h2><p>Write the code yourself. Add a new cell (the <strong>+</strong> button in the toolbar) and try each — predict the
+<h2 id="6)-Now-you-code">6) Now you code<a class="anchor-link" data-pagefind-ignore href="#6)-Now-you-code">¶</a></h2><p>Write the code yourself. Add a new cell (the <strong>+</strong> button in the toolbar) and try each — predict the
 answer before you run it.</p>
 <ol>
 <li><p><strong>Recover the means from the function's pieces.</strong> Inside a fresh cell, recompute <code>ss_between</code> for the
@@ -8567,7 +8567,7 @@ the <strong>grand</strong> mean instead of each group's own mean (<code>((g - gr
 when "within" is measured from each group's <em>own</em> mean. That's the whole trick.)</p>
 </li>
 </ol>
-<h2 id="What-you-learned">What you learned<a class="anchor-link" href="#What-you-learned">¶</a></h2><p><strong>Coding</strong></p>
+<h2 id="What-you-learned">What you learned<a class="anchor-link" data-pagefind-ignore href="#What-you-learned">¶</a></h2><p><strong>Coding</strong></p>
 <ul>
 <li><strong><code>groupby(...).agg([...])</code></strong> turns "a number per group" (count, mean, SD, size) into one line — the
 split-apply-combine idiom that feeds every per-group quantity ANOVA needs.</li>

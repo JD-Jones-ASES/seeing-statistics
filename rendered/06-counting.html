@@ -7823,7 +7823,7 @@ a.anchor-link {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h1 id="Lesson-6-%E2%80%94-Counting:-permutations-&amp;-combinations">Lesson 6 — Counting: permutations &amp; combinations<a class="anchor-link" href="#Lesson-6-%E2%80%94-Counting:-permutations-&amp;-combinations">¶</a></h1><p><em>Part 1 · Lesson 6 of 20  ·  data: dice &amp; cards (simulation)</em></p>
+<h1 id="Lesson-6-%E2%80%94-Counting:-permutations-&amp;-combinations">Lesson 6 — Counting: permutations &amp; combinations<a class="anchor-link" data-pagefind-ignore href="#Lesson-6-%E2%80%94-Counting:-permutations-&amp;-combinations">¶</a></h1><p><em>Part 1 · Lesson 6 of 20  ·  data: dice &amp; cards (simulation)</em></p>
 <p><strong>←</strong> <a href="05-probability.html">Lesson 5: Probability &amp; conditional probability</a>  ·  <a href="index.html">↑ Course map</a>  ·  <a href="07-random-variables.html">Lesson 7: Random variables, expectation &amp; variance</a> <strong>→</strong></p>
 <p><strong>Welcome.</strong> A huge amount of probability is really just <em>careful counting</em>. If every
 outcome is equally likely, then the probability of something is simply</p>
@@ -7897,7 +7897,7 @@ explain the mysterious "$n$ choose $k$" inside the binomial, and to crack the fa
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="1)-The-fundamental-counting-principle-%E2%80%94-just-multiply">1) The fundamental counting principle — just multiply<a class="anchor-link" href="#1)-The-fundamental-counting-principle-%E2%80%94-just-multiply">¶</a></h2><p>The single most useful idea in counting:</p>
+<h2 id="1)-The-fundamental-counting-principle-%E2%80%94-just-multiply">1) The fundamental counting principle — just multiply<a class="anchor-link" data-pagefind-ignore href="#1)-The-fundamental-counting-principle-%E2%80%94-just-multiply">¶</a></h2><p>The single most useful idea in counting:</p>
 <blockquote>
 <p>If one choice can be made in $a$ ways, and <em>then</em> a second choice in $b$ ways, and <em>then</em> a
 third in $c$ ways, the number of combined outcomes is $a \times b \times c$.</p>
@@ -7954,7 +7954,7 @@ The last  eight pairs: [(5, 5), (5, 6), (6, 1), (6, 2), (6, 3), (6, 4), (6, 5), 
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="2)-Factorials-%E2%80%94-counting-arrangements-of-everything">2) Factorials — counting <em>arrangements</em> of everything<a class="anchor-link" href="#2)-Factorials-%E2%80%94-counting-arrangements-of-everything">¶</a></h2><p>A special case: in how many orders can you arrange $n$ <em>distinct</em> things in a row? The first slot has
+<h2 id="2)-Factorials-%E2%80%94-counting-arrangements-of-everything">2) Factorials — counting <em>arrangements</em> of everything<a class="anchor-link" data-pagefind-ignore href="#2)-Factorials-%E2%80%94-counting-arrangements-of-everything">¶</a></h2><p>A special case: in how many orders can you arrange $n$ <em>distinct</em> things in a row? The first slot has
 $n$ choices, the next $n-1$ (one is used up), then $n-2$, ... down to $1$. Multiply them all:</p>
 <p>$$n! = n \times (n-1) \times (n-2) \times \cdots \times 2 \times 1, \qquad 0! = 1.$$</p>
 <p>This is the <strong>factorial</strong> ("$n$ factorial"). It grows <em>ferociously</em> fast — that's why listing all
@@ -8016,7 +8016,7 @@ How fast does n! grow?
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="3)-Permutations-%E2%80%94-order-matters:-$_nP_r$">3) Permutations — order matters: $_nP_r$<a class="anchor-link" href="#3)-Permutations-%E2%80%94-order-matters:-$_nP_r$">¶</a></h2><p>Often we don't arrange <em>everything</em>, just pick $r$ items out of $n$ and <strong>care about the order</strong>
+<h2 id="3)-Permutations-%E2%80%94-order-matters:-$_nP_r$">3) Permutations — order matters: $_nP_r$<a class="anchor-link" data-pagefind-ignore href="#3)-Permutations-%E2%80%94-order-matters:-$_nP_r$">¶</a></h2><p>Often we don't arrange <em>everything</em>, just pick $r$ items out of $n$ and <strong>care about the order</strong>
 (think: gold / silver / bronze medals — 1st vs 2nd is a different result). The number of such ordered
 picks is the <strong>permutation</strong> count:</p>
 <p>$$_nP_r = \frac{n!}{(n-r)!} = \underbrace{n \times (n-1) \times \cdots \times (n-r+1)}_{r \text{ factors}}.$$</p>
@@ -8089,7 +8089,7 @@ Notice ('A','B') and ('B','A') are BOTH here - order is a different result.
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="4)-Combinations-%E2%80%94-order-does-not-matter:-$_nC_r$-=-%22$n$-choose-$k$%22">4) Combinations — order does <em>not</em> matter: $_nC_r$ = "$n$ choose $k$"<a class="anchor-link" href="#4)-Combinations-%E2%80%94-order-does-not-matter:-$_nC_r$-=-%22$n$-choose-$k$%22">¶</a></h2><p>Now suppose order is irrelevant — you just pick a <em>group</em> (a committee, a hand of cards, a set of
+<h2 id="4)-Combinations-%E2%80%94-order-does-not-matter:-$_nC_r$-=-%22$n$-choose-$k$%22">4) Combinations — order does <em>not</em> matter: $_nC_r$ = "$n$ choose $k$"<a class="anchor-link" data-pagefind-ignore href="#4)-Combinations-%E2%80%94-order-does-not-matter:-$_nC_r$-=-%22$n$-choose-$k$%22">¶</a></h2><p>Now suppose order is irrelevant — you just pick a <em>group</em> (a committee, a hand of cards, a set of
 lottery numbers). Picking $\{A, B\}$ is the same group as $\{B, A\}$. Each unordered group of size $r$
 was counted $r!$ times among the permutations (once for every internal ordering), so we divide it out:</p>
 <p>$$_nC_r = \binom{n}{r} = \frac{_nP_r}{r!} = \frac{n!}{r!\,(n-r)!}.$$</p>
@@ -8154,7 +8154,7 @@ Permutations (12) / r! (2! = 2) = 6 = combinations. The /r! is the whole differe
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="Side-by-side:-the-same-$n$,-every-$r$">Side by side: the same $n$, every $r$<a class="anchor-link" href="#Side-by-side:-the-same-$n$,-every-$r$">¶</a></h3><p>It helps to see permutations and combinations together. For each group size $r$, permutations are
+<h3 id="Side-by-side:-the-same-$n$,-every-$r$">Side by side: the same $n$, every $r$<a class="anchor-link" data-pagefind-ignore href="#Side-by-side:-the-same-$n$,-every-$r$">¶</a></h3><p>It helps to see permutations and combinations together. For each group size $r$, permutations are
 always $r!$ times larger than combinations — exactly the orderings we divided away.</p>
 </div>
 </div>
@@ -8211,7 +8211,7 @@ nCr is symmetric: choosing r to KEEP is the same as choosing (n-r) to LEAVE OUT.
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="5)-From-counting-to-probability-%E2%80%94-equally-likely-outcomes">5) From counting to probability — equally-likely outcomes<a class="anchor-link" href="#5)-From-counting-to-probability-%E2%80%94-equally-likely-outcomes">¶</a></h2><p>When every outcome is equally likely, probability is just a <em>ratio of counts</em>:</p>
+<h2 id="5)-From-counting-to-probability-%E2%80%94-equally-likely-outcomes">5) From counting to probability — equally-likely outcomes<a class="anchor-link" data-pagefind-ignore href="#5)-From-counting-to-probability-%E2%80%94-equally-likely-outcomes">¶</a></h2><p>When every outcome is equally likely, probability is just a <em>ratio of counts</em>:</p>
 <p>$$P(\text{event}) = \frac{\text{favorable outcomes}}{\text{total outcomes}}.$$</p>
 <p><strong>Worked example (dice).</strong> Roll two fair dice. What's $P(\text{sum} = 7)$? We already know the total is
 $6 \times 6 = 36$ equally-likely pairs. The favorable ones are the pairs that add to 7. Let's <em>count</em>
@@ -8353,7 +8353,7 @@ P(flush)            = 0.001981   (about 1 in 505 hands)
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="6)-The-bridge-to-the-binomial-%E2%80%94-why-there's-an-%22$n$-choose-$k$%22">6) The bridge to the binomial — <em>why</em> there's an "$n$ choose $k$"<a class="anchor-link" href="#6)-The-bridge-to-the-binomial-%E2%80%94-why-there's-an-%22$n$-choose-$k$%22">¶</a></h2><p>Here's the payoff that makes this lesson the foundation for the next one. Suppose you run $n$
+<h2 id="6)-The-bridge-to-the-binomial-%E2%80%94-why-there's-an-%22$n$-choose-$k$%22">6) The bridge to the binomial — <em>why</em> there's an "$n$ choose $k$"<a class="anchor-link" data-pagefind-ignore href="#6)-The-bridge-to-the-binomial-%E2%80%94-why-there's-an-%22$n$-choose-$k$%22">¶</a></h2><p>Here's the payoff that makes this lesson the foundation for the next one. Suppose you run $n$
 independent yes/no trials (coin flips, free throws, whether each baby is low birth-weight). You want
 the probability of getting <strong>exactly $k$ successes</strong>.</p>
 <p>A single sequence with $k$ successes and $n-k$ failures — say <code>SSFSF</code> — has probability
@@ -8438,7 +8438,7 @@ exactly this idea — now you know where that coefficient comes from.</p>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="7)-The-birthday-problem-%E2%80%94-counting-in-disguise">7) The birthday problem — counting in disguise<a class="anchor-link" href="#7)-The-birthday-problem-%E2%80%94-counting-in-disguise">¶</a></h2><p>A famous, genuinely surprising result: in a room of just <strong>23 people</strong>, it's slightly <em>more likely than
+<h2 id="7)-The-birthday-problem-%E2%80%94-counting-in-disguise">7) The birthday problem — counting in disguise<a class="anchor-link" data-pagefind-ignore href="#7)-The-birthday-problem-%E2%80%94-counting-in-disguise">¶</a></h2><p>A famous, genuinely surprising result: in a room of just <strong>23 people</strong>, it's slightly <em>more likely than
 not</em> that two of them share a birthday. Most people guess you'd need 100+. Counting settles it.</p>
 <p>It's far easier to count the <strong>complement</strong> — the chance that <em>everyone's birthday is different</em> — and
 subtract from 1. Assume 365 equally-likely birthdays and a group of $k$ people. The number of ways for
@@ -8535,7 +8535,7 @@ At 23 people it first crosses 50%: P = 0.507
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="Confirm-it-by-simulation">Confirm it by simulation<a class="anchor-link" href="#Confirm-it-by-simulation">¶</a></h3><p>The counting answer feels too good to be true, so let's <em>make rooms of people</em> at random and check how
+<h3 id="Confirm-it-by-simulation">Confirm it by simulation<a class="anchor-link" data-pagefind-ignore href="#Confirm-it-by-simulation">¶</a></h3><p>The counting answer feels too good to be true, so let's <em>make rooms of people</em> at random and check how
 often a birthday actually repeats. We'll simulate many rooms of 23 and compare the simulated rate to the
 exact $\approx 0.507$.</p>
 </div>
@@ -8622,7 +8622,7 @@ Close - and they'd match even better with more rooms or a different seed.
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Now-you-try">Now you try<a class="anchor-link" href="#Now-you-try">¶</a></h2><p>Predict first, then change one thing and re-run:</p>
+<h2 id="Now-you-try">Now you try<a class="anchor-link" data-pagefind-ignore href="#Now-you-try">¶</a></h2><p>Predict first, then change one thing and re-run:</p>
 <ol>
 <li><strong>Change $r$.</strong> In the permutations/combinations cells (Sections 3-4), set <code>r = 3</code> and re-run. How
 many ordered podiums vs. unordered groups now? Check that $_4P_3$ is still exactly $3! = 6$ times
@@ -8635,7 +8635,7 @@ cell. How surprised are you that 40 people are almost <em>guaranteed</em> a matc
 re-run the simulations. The exact (counted) values don't budge, but the simulated estimates wiggle a
 little each time — that wiggle <em>is</em> sampling variability.</li>
 </ol>
-<h2 id="What-you-learned">What you learned<a class="anchor-link" href="#What-you-learned">¶</a></h2><ul>
+<h2 id="What-you-learned">What you learned<a class="anchor-link" data-pagefind-ignore href="#What-you-learned">¶</a></h2><ul>
 <li><strong>Equally-likely outcomes</strong> turn probability into pure counting: $P = \dfrac{\text{favorable}}{\text{total}}$.</li>
 <li>The <strong>fundamental counting principle</strong> says multiply the choices at each independent step; <strong>factorials</strong>
 $n!$ count full arrangements and grow explosively.</li>

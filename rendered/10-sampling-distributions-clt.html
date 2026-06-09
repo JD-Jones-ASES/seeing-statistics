@@ -7823,7 +7823,7 @@ a.anchor-link {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h1 id="Lesson-10-%E2%80%94-Sampling-distributions-&amp;-the-Central-Limit-Theorem">Lesson 10 — Sampling distributions &amp; the Central Limit Theorem<a class="anchor-link" href="#Lesson-10-%E2%80%94-Sampling-distributions-&amp;-the-Central-Limit-Theorem">¶</a></h1><p><em>Part 1 · Lesson 10 of 20  ·  data: Lending Club · simulation</em></p>
+<h1 id="Lesson-10-%E2%80%94-Sampling-distributions-&amp;-the-Central-Limit-Theorem">Lesson 10 — Sampling distributions &amp; the Central Limit Theorem<a class="anchor-link" data-pagefind-ignore href="#Lesson-10-%E2%80%94-Sampling-distributions-&amp;-the-Central-Limit-Theorem">¶</a></h1><p><em>Part 1 · Lesson 10 of 20  ·  data: Lending Club · simulation</em></p>
 <p><strong>←</strong> <a href="09-normal-distribution.html">Lesson 9: The normal distribution &amp; the empirical rule</a>  ·  <a href="index.html">↑ Course map</a>  ·  <a href="11-estimation.html">Lesson 11: Estimation &amp; standard error</a> <strong>→</strong></p>
 <p><strong>Same idea, another way:</strong> <a href="10-sampling-distributions-clt~another-dataset.html">Another dataset →</a>  ·  <a href="10-sampling-distributions-clt~the-code.html">The code behind it →</a></p>
 <p>This is the <strong>engine room</strong> of the whole course. We'll take a population that is <em>wildly</em> lopsided — real personal incomes — and watch something almost magical happen: when you take the <strong>average of a sample</strong>, those averages pile up into a tidy <strong>bell curve</strong>, even though the raw data looks nothing like one. That single fact — the <strong>Central Limit Theorem</strong> — is what makes confidence intervals and most of statistics possible.</p>
@@ -7902,7 +7902,7 @@ Skewness         = 9.03   (0 = symmetric; this is HUGELY right-skewed)
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="1)-The-population-%E2%80%94-a-shape-that-is-not-a-bell-curve">1) The population — a shape that is <em>not</em> a bell curve<a class="anchor-link" href="#1)-The-population-%E2%80%94-a-shape-that-is-not-a-bell-curve">¶</a></h2><p>Before we average anything, look at the raw data. These are annual incomes, and like most income data they are violently <strong>right-skewed</strong>: a huge crowd of ordinary incomes, then a long thin tail of a few very high earners stretching to the right.</p>
+<h2 id="1)-The-population-%E2%80%94-a-shape-that-is-not-a-bell-curve">1) The population — a shape that is <em>not</em> a bell curve<a class="anchor-link" data-pagefind-ignore href="#1)-The-population-%E2%80%94-a-shape-that-is-not-a-bell-curve">¶</a></h2><p>Before we average anything, look at the raw data. These are annual incomes, and like most income data they are violently <strong>right-skewed</strong>: a huge crowd of ordinary incomes, then a long thin tail of a few very high earners stretching to the right.</p>
 <ul>
 <li><strong>The math:</strong> the <em>skewness</em> statistic measures lopsidedness. A symmetric bell curve has skewness $0$. This population's skewness is about $9$ — extreme.</li>
 <li><strong>The meaning:</strong> the average ($\mu$) sits well to the <em>right</em> of the typical (median) borrower, dragged up by the millionaires in the tail.</li>
@@ -7960,7 +7960,7 @@ Skewness         = 9.03   (0 = symmetric; this is HUGELY right-skewed)
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="2)-One-sample-%E2%80%94-the-sample-mean-is-itself-just-one-random-number">2) One sample — the sample mean is itself just <em>one</em> random number<a class="anchor-link" href="#2)-One-sample-%E2%80%94-the-sample-mean-is-itself-just-one-random-number">¶</a></h2><p>In real life you can't survey everyone. You take a <strong>sample</strong>. Here we draw $n=30$ borrowers at random and compute their average income, $\bar{x}$ ("x-bar").</p>
+<h2 id="2)-One-sample-%E2%80%94-the-sample-mean-is-itself-just-one-random-number">2) One sample — the sample mean is itself just <em>one</em> random number<a class="anchor-link" data-pagefind-ignore href="#2)-One-sample-%E2%80%94-the-sample-mean-is-itself-just-one-random-number">¶</a></h2><p>In real life you can't survey everyone. You take a <strong>sample</strong>. Here we draw $n=30$ borrowers at random and compute their average income, $\bar{x}$ ("x-bar").</p>
 <ul>
 <li><strong>The math:</strong> $\displaystyle \bar{x} = \frac{1}{n}\sum_{i=1}^{n} x_i$ — add up the 30 incomes, divide by 30.</li>
 <li><strong>The meaning:</strong> $\bar{x}$ is our <em>estimate</em> of the unknown population mean $\mu$.</li>
@@ -8015,7 +8015,7 @@ Different sample -&gt; different mean. xbar wobbles. That wobble has a shape.
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="3)-Many-samples-%E2%80%94-the-sampling-distribution-of-the-mean">3) Many samples — the <em>sampling distribution</em> of the mean<a class="anchor-link" href="#3)-Many-samples-%E2%80%94-the-sampling-distribution-of-the-mean">¶</a></h2><p>So let's stop looking at one $\bar{x}$ and look at <em>thousands</em> of them. We'll repeat "draw 30 people, record their average" <strong>5,000 times</strong> and histogram the 5,000 averages. That histogram is the <strong>sampling distribution of the mean</strong>. <em>(It's drawn on a <strong>density</strong> scale — area sums to 1 — so we can lay the predicted bell curve right on top; don't worry about the exact y-axis numbers, only the shape.)</em></p>
+<h2 id="3)-Many-samples-%E2%80%94-the-sampling-distribution-of-the-mean">3) Many samples — the <em>sampling distribution</em> of the mean<a class="anchor-link" data-pagefind-ignore href="#3)-Many-samples-%E2%80%94-the-sampling-distribution-of-the-mean">¶</a></h2><p>So let's stop looking at one $\bar{x}$ and look at <em>thousands</em> of them. We'll repeat "draw 30 people, record their average" <strong>5,000 times</strong> and histogram the 5,000 averages. That histogram is the <strong>sampling distribution of the mean</strong>. <em>(It's drawn on a <strong>density</strong> scale — area sums to 1 — so we can lay the predicted bell curve right on top; don't worry about the exact y-axis numbers, only the shape.)</em></p>
 <p>Watch what happens to the shape.</p>
 </div>
 </div>
@@ -8093,7 +8093,7 @@ Center of the means:        $79,232   (vs true MU = $79,222)
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="4)-The-effect-of-$n$-%E2%80%94-bigger-samples-are-more-normal-and-narrower">4) The effect of $n$ — bigger samples are <em>more normal</em> and <em>narrower</em><a class="anchor-link" href="#4)-The-effect-of-$n$-%E2%80%94-bigger-samples-are-more-normal-and-narrower">¶</a></h2><p>The CLT is a story about growing $n$. Let's draw the sampling distribution for four sample sizes side by side: $n = 1, 5, 30, 100$.</p>
+<h2 id="4)-The-effect-of-$n$-%E2%80%94-bigger-samples-are-more-normal-and-narrower">4) The effect of $n$ — bigger samples are <em>more normal</em> and <em>narrower</em><a class="anchor-link" data-pagefind-ignore href="#4)-The-effect-of-$n$-%E2%80%94-bigger-samples-are-more-normal-and-narrower">¶</a></h2><p>The CLT is a story about growing $n$. Let's draw the sampling distribution for four sample sizes side by side: $n = 1, 5, 30, 100$.</p>
 <ul>
 <li>$n=1$ is a beautiful anchor: a "sample of 1" is just a single income, so its histogram looks essentially like the raw skewed population again.</li>
 <li>As $n$ climbs, two things happen at once: the shape becomes <strong>more bell-like</strong>, and the spread gets <strong>narrower</strong> (the averages cluster tighter around $\mu$).</li>
@@ -8154,7 +8154,7 @@ Center of the means:        $79,232   (vs true MU = $79,222)
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="5)-The-standard-error-and-the-$%5Csqrt%7Bn%7D$-law">5) The standard error and the $\sqrt{n}$ law<a class="anchor-link" href="#5)-The-standard-error-and-the-$%5Csqrt%7Bn%7D$-law">¶</a></h2><p>How wide is that bell? Its standard deviation has a special name — the <strong>standard error (SE)</strong> — and a beautifully simple formula:</p>
+<h2 id="5)-The-standard-error-and-the-$%5Csqrt%7Bn%7D$-law">5) The standard error and the $\sqrt{n}$ law<a class="anchor-link" data-pagefind-ignore href="#5)-The-standard-error-and-the-$%5Csqrt%7Bn%7D$-law">¶</a></h2><p>How wide is that bell? Its standard deviation has a special name — the <strong>standard error (SE)</strong> — and a beautifully simple formula:</p>
 <p>$$\text{SE} \;=\; \frac{\sigma}{\sqrt{n}}$$</p>
 <ul>
 <li><strong>The math:</strong> divide the population's standard deviation $\sigma$ by the square root of the sample size.</li>
@@ -8249,7 +8249,7 @@ Quadrupling n cuts the standard error about in half. That is the sqrt(n) law.
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="6)-%22Any-shape-works%22-%E2%80%94-the-CLT-is-not-about-the-data-being-normal">6) "Any shape works" — the CLT is not about the data being normal<a class="anchor-link" href="#6)-%22Any-shape-works%22-%E2%80%94-the-CLT-is-not-about-the-data-being-normal">¶</a></h2><p>A common myth is that the CLT needs the data to already look bell-shaped. It does <strong>not</strong>. The whole point is that the <em>averaging</em> creates the bell, regardless of the starting shape.</p>
+<h2 id="6)-%22Any-shape-works%22-%E2%80%94-the-CLT-is-not-about-the-data-being-normal">6) "Any shape works" — the CLT is not about the data being normal<a class="anchor-link" data-pagefind-ignore href="#6)-%22Any-shape-works%22-%E2%80%94-the-CLT-is-not-about-the-data-being-normal">¶</a></h2><p>A common myth is that the CLT needs the data to already look bell-shaped. It does <strong>not</strong>. The whole point is that the <em>averaging</em> creates the bell, regardless of the starting shape.</p>
 <p>To prove it, we'll abandon the income data and invent a brand-new, <strong>simulated</strong> population with a totally different shape — a lumpy <strong>bimodal mixture</strong> (two separated humps, like a crowd of two distinct groups). Nothing bell-shaped about it. Then we average.</p>
 </div>
 </div>
@@ -8320,7 +8320,7 @@ Two humps in -&gt; one clean bell out. The CLT does not care about the input sha
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="7)-The-bridge-%E2%80%94-why-this-powers-confidence-intervals">7) The bridge — why this powers confidence intervals<a class="anchor-link" href="#7)-The-bridge-%E2%80%94-why-this-powers-confidence-intervals">¶</a></h2><p>Here is the payoff that the rest of the course rests on. We now know that a sample mean behaves like:</p>
+<h2 id="7)-The-bridge-%E2%80%94-why-this-powers-confidence-intervals">7) The bridge — why this powers confidence intervals<a class="anchor-link" data-pagefind-ignore href="#7)-The-bridge-%E2%80%94-why-this-powers-confidence-intervals">¶</a></h2><p>Here is the payoff that the rest of the course rests on. We now know that a sample mean behaves like:</p>
 <p>$$\bar{x} \;\approx\; N\!\left(\mu,\ \frac{\sigma}{\sqrt{n}}\right)$$</p>
 <p>Because that distribution is <strong>normal</strong>, we can borrow the bell curve's famous <strong>68–95–99.7 rule</strong>: about <strong>95%</strong> of sample means land within roughly <strong>2 standard errors</strong> of the true mean $\mu$. Turn that around — for about 95% of samples, the true $\mu$ lies within $\pm 2\,\text{SE}$ of the $\bar{x}$ you observed. That window,</p>
 <p>$$\bar{x} \;\pm\; (\text{about } 2)\cdot \frac{\sigma}{\sqrt{n}},$$</p>
@@ -8377,13 +8377,13 @@ into 100 real intervals and counts how many catch the true mean.
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Now-you-try">Now you try<a class="anchor-link" href="#Now-you-try">¶</a></h2><p>Predict what will happen, then change one thing and re-run:</p>
+<h2 id="Now-you-try">Now you try<a class="anchor-link" data-pagefind-ignore href="#Now-you-try">¶</a></h2><p>Predict what will happen, then change one thing and re-run:</p>
 <ol>
 <li><strong>Shrink the sample.</strong> Scroll up to the first code cell under heading <strong>3</strong>, find the line that reads <code>n = 30</code>, change the <code>30</code> to <code>5</code>, and press <strong>Shift + Enter</strong> on that cell. Does the bell get <em>fatter</em> or <em>thinner</em>? Is it still symmetric, or does a little skew creep back in?</li>
 <li><strong>Tame an even uglier variable.</strong> The CLT works on any column. Try <code>population = loans['loan_amount'].dropna().to_numpy()</code> in the setup cell (then re-run setup and section 3). Does averaging still produce a bell?</li>
 <li><strong>Test the $\sqrt{n}$ law yourself.</strong> In section 5, change the pairs to <code>[(20, 80), (50, 200)]</code> (each a 4× jump). Predict the SE ratio <em>before</em> running — it should be near 2.00 every time.</li>
 </ol>
-<h2 id="What-you-learned">What you learned<a class="anchor-link" href="#What-you-learned">¶</a></h2><ul>
+<h2 id="What-you-learned">What you learned<a class="anchor-link" data-pagefind-ignore href="#What-you-learned">¶</a></h2><ul>
 <li>A statistic like the sample mean $\bar{x}$ is itself <strong>random</strong>; the distribution of its possible values is the <strong>sampling distribution</strong>.</li>
 <li>The <strong>Central Limit Theorem</strong>: for large enough $n$, $\bar{x} \approx N(\mu,\ \sigma/\sqrt{n})$ — a <strong>bell curve centered on the true mean</strong> — <em>even when the population is wildly skewed or bimodal</em>. Averaging smooths chaos into a bell.</li>
 <li>The <strong>standard error</strong> $\text{SE} = \sigma/\sqrt{n}$ is the spread of that bell — the typical "give or take" of one estimate. The $\sqrt{n}$ law means <strong>quadrupling $n$ only halves the error</strong>.</li>

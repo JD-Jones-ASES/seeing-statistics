@@ -7823,7 +7823,7 @@ a.anchor-link {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h1 id="Lesson-19-%E2%80%94-Multiple-regression-(intro)">Lesson 19 — Multiple regression (intro)<a class="anchor-link" href="#Lesson-19-%E2%80%94-Multiple-regression-(intro)">¶</a></h1><p><em>Part 2 · Lesson 19 of 20  ·  data: Ames housing</em></p>
+<h1 id="Lesson-19-%E2%80%94-Multiple-regression-(intro)">Lesson 19 — Multiple regression (intro)<a class="anchor-link" data-pagefind-ignore href="#Lesson-19-%E2%80%94-Multiple-regression-(intro)">¶</a></h1><p><em>Part 2 · Lesson 19 of 20  ·  data: Ames housing</em></p>
 <p><strong>←</strong> <a href="18-regression-inference.html">Lesson 18: Correlation &amp; regression: inference</a>  ·  <a href="index.html">↑ Course map</a>  ·  <a href="20-bootstrap-permutation.html">Lesson 20: The bootstrap &amp; permutation tests</a> <strong>→</strong></p>
 <p><strong>Same idea, another way:</strong> <a href="19-multiple-regression~another-dataset.html">Another dataset →</a>  ·  <a href="19-multiple-regression~the-code.html">The code behind it →</a></p>
 <p>A single straight line — price from living area — is a good start, but the real world has <strong>many</strong>
@@ -7976,7 +7976,7 @@ quality is an overall-quality rating from 1 (very poor) to 10 (very excellent).
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="1)-From-one-predictor-to-many">1) From one predictor to many<a class="anchor-link" href="#1)-From-one-predictor-to-many">¶</a></h2><p>In the <em>Relationships</em> lesson we fit a <strong>simple</strong> regression — one predictor:</p>
+<h2 id="1)-From-one-predictor-to-many">1) From one predictor to many<a class="anchor-link" data-pagefind-ignore href="#1)-From-one-predictor-to-many">¶</a></h2><p>In the <em>Relationships</em> lesson we fit a <strong>simple</strong> regression — one predictor:</p>
 <p>$$\hat{y} = b_0 + b_1 x.$$</p>
 <p><strong>Multiple regression</strong> just adds more $x$'s, each with its own slope:</p>
 <p>$$\hat{y} = b_0 + b_1 x_1 + b_2 x_2 + b_3 x_3 + \cdots$$</p>
@@ -8001,7 +8001,7 @@ It lets us ask "what is an extra square foot worth, <em>comparing homes of the s
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="2)-The-baseline:-price-from-area-alone">2) The baseline: price from area alone<a class="anchor-link" href="#2)-The-baseline:-price-from-area-alone">¶</a></h2><p>First the familiar one-predictor fit, so we have a number to watch.</p>
+<h2 id="2)-The-baseline:-price-from-area-alone">2) The baseline: price from area alone<a class="anchor-link" data-pagefind-ignore href="#2)-The-baseline:-price-from-area-alone">¶</a></h2><p>First the familiar one-predictor fit, so we have a number to watch.</p>
 </div>
 </div>
 </div>
@@ -8048,7 +8048,7 @@ R-squared = 0.500  -&gt;  area alone explains 50% of the variation in price.
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <p>So in a one-predictor world, <strong>an extra square foot is "worth" about 112 dollars.</strong> Hold onto that
 number — it's about to change.</p>
-<h2 id="3)-Add-quality-%E2%80%94-and-watch-area's-coefficient-change">3) Add quality — and watch area's coefficient change<a class="anchor-link" href="#3)-Add-quality-%E2%80%94-and-watch-area's-coefficient-change">¶</a></h2><p>Now we let the model <em>also</em> see each home's <strong>quality</strong> rating. We just add <code>+ quality</code> to the formula.</p>
+<h2 id="3)-Add-quality-%E2%80%94-and-watch-area's-coefficient-change">3) Add quality — and watch area's coefficient change<a class="anchor-link" data-pagefind-ignore href="#3)-Add-quality-%E2%80%94-and-watch-area's-coefficient-change">¶</a></h2><p>Now we let the model <em>also</em> see each home's <strong>quality</strong> rating. We just add <code>+ quality</code> to the formula.</p>
 </div>
 </div>
 </div>
@@ -8096,7 +8096,7 @@ R-squared jumped from 0.500 to 0.732.
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="Why-did-area's-value-drop-from-~112-to-~59-dollars?">Why did area's value drop from ~112 to ~59 dollars?<a class="anchor-link" href="#Why-did-area's-value-drop-from-~112-to-~59-dollars?">¶</a></h3><p>This is <strong>confounding</strong>, and it's the same lesson as <em>correlation is not causation</em> from the
+<h3 id="Why-did-area's-value-drop-from-~112-to-~59-dollars?">Why did area's value drop from ~112 to ~59 dollars?<a class="anchor-link" data-pagefind-ignore href="#Why-did-area's-value-drop-from-~112-to-~59-dollars?">¶</a></h3><p>This is <strong>confounding</strong>, and it's the same lesson as <em>correlation is not causation</em> from the
 descriptive <em>Relationships</em> lesson — now living inside a regression.</p>
 <p>Big houses are usually <strong>also</strong> higher quality. So in the simple model, area's slope was secretly
 <em>paid twice</em>: once for the square footage itself, and once for the <strong>quality that tends to ride along
@@ -8154,7 +8154,7 @@ quality fixed?" Let's confirm the two predictors really do move together.</p>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="4)-Read-the-full-regression-table">4) Read the full regression table<a class="anchor-link" href="#4)-Read-the-full-regression-table">¶</a></h2><p>statsmodels can print the whole story in one table. Let's add the third predictor, <strong>year built</strong>,
+<h2 id="4)-Read-the-full-regression-table">4) Read the full regression table<a class="anchor-link" data-pagefind-ignore href="#4)-Read-the-full-regression-table">¶</a></h2><p>statsmodels can print the whole story in one table. Let's add the third predictor, <strong>year built</strong>,
 and call <code>.summary()</code>. It looks busy; we only need a few cells of it, labeled below.</p>
 </div>
 </div>
@@ -8219,7 +8219,7 @@ strong multicollinearity or other numerical problems.
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="A-guided-tour-of-the-numbers-that-matter">A guided tour of the numbers that matter<a class="anchor-link" href="#A-guided-tour-of-the-numbers-that-matter">¶</a></h3><p>Focus on the <strong>coefficient table</strong> (the middle block) and a couple of fit numbers up top:</p>
+<h3 id="A-guided-tour-of-the-numbers-that-matter">A guided tour of the numbers that matter<a class="anchor-link" data-pagefind-ignore href="#A-guided-tour-of-the-numbers-that-matter">¶</a></h3><p>Focus on the <strong>coefficient table</strong> (the middle block) and a couple of fit numbers up top:</p>
 <ul>
 <li><strong><code>coef</code></strong> — the slope $b_j$ for each predictor, the <em>adjusted</em> effect.<ul>
 <li><code>area</code> ≈ <strong>63</strong> dollars per extra sq ft, <em>holding quality and age fixed</em>.</li>
@@ -8246,7 +8246,7 @@ explains. That second one is the subject of the next section, and it's the one t
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="5)-$R%5E2$-versus-adjusted-$R%5E2$-%E2%80%94-why-the-asterisk-matters">5) $R^2$ versus <strong>adjusted</strong> $R^2$ — why the asterisk matters<a class="anchor-link" href="#5)-$R%5E2$-versus-adjusted-$R%5E2$-%E2%80%94-why-the-asterisk-matters">¶</a></h2><p>Plain $R^2$ has a sneaky flaw: <strong>it can never go down when you add a predictor — even a useless one.</strong>
+<h2 id="5)-$R%5E2$-versus-adjusted-$R%5E2$-%E2%80%94-why-the-asterisk-matters">5) $R^2$ versus <strong>adjusted</strong> $R^2$ — why the asterisk matters<a class="anchor-link" data-pagefind-ignore href="#5)-$R%5E2$-versus-adjusted-$R%5E2$-%E2%80%94-why-the-asterisk-matters">¶</a></h2><p>Plain $R^2$ has a sneaky flaw: <strong>it can never go down when you add a predictor — even a useless one.</strong>
 Any new column, however irrelevant, can be twisted to soak up a sliver of leftover variation just by
 chance. So "higher $R^2$" is <em>not</em> proof that a bigger model is better.</p>
 <p><strong>Adjusted $R^2$</strong> fixes this by charging a <strong>penalty for each predictor</strong>:</p>
@@ -8307,7 +8307,7 @@ the penalty saw through the useless column. Trust the adjusted number.
 <p><strong>Takeaway:</strong> when you compare models with different numbers of predictors, compare <strong>adjusted $R^2$</strong>,
 not plain $R^2$. Plain $R^2$ rewards clutter; adjusted $R^2$ rewards predictors that actually earn
 their place.</p>
-<h2 id="6)-A-categorical-predictor-%E2%80%94-quality-as-buckets,-via-dummy-variables">6) A <strong>categorical</strong> predictor — quality as buckets, via dummy variables<a class="anchor-link" href="#6)-A-categorical-predictor-%E2%80%94-quality-as-buckets,-via-dummy-variables">¶</a></h2><p>So far every predictor was a number. What about a <strong>category</strong> — say "Basic / Standard / Premium"
+<h2 id="6)-A-categorical-predictor-%E2%80%94-quality-as-buckets,-via-dummy-variables">6) A <strong>categorical</strong> predictor — quality as buckets, via dummy variables<a class="anchor-link" data-pagefind-ignore href="#6)-A-categorical-predictor-%E2%80%94-quality-as-buckets,-via-dummy-variables">¶</a></h2><p>So far every predictor was a number. What about a <strong>category</strong> — say "Basic / Standard / Premium"
 quality tier? A regression only understands numbers, so a category enters as <strong>dummy variables</strong> (also
 called <strong>one-hot</strong> indicators): a 0/1 column for each level. One level is held out as the <strong>baseline</strong>,
 and each dummy's coefficient is "how much more (or less) than the baseline."</p>
@@ -8366,7 +8366,7 @@ Coefficients:
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="Reading-the-dummy-coefficients">Reading the dummy coefficients<a class="anchor-link" href="#Reading-the-dummy-coefficients">¶</a></h3><p><code>Basic</code> is missing from the list on purpose — it's the <strong>baseline</strong> that the others are measured
+<h3 id="Reading-the-dummy-coefficients">Reading the dummy coefficients<a class="anchor-link" data-pagefind-ignore href="#Reading-the-dummy-coefficients">¶</a></h3><p><code>Basic</code> is missing from the list on purpose — it's the <strong>baseline</strong> that the others are measured
 against. So, <strong>holding area constant</strong>:</p>
 <ul>
 <li><strong><code>C(quality_grade)[T.Standard]</code></strong> ≈ <strong>+39,500 dollars</strong> — a Standard-grade home sells for about that
@@ -8421,7 +8421,7 @@ same slope (<code>area</code>), shifted up by each grade's coefficient.</p>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="7)-The-gremlin:-multicollinearity">7) The gremlin: <strong>multicollinearity</strong><a class="anchor-link" href="#7)-The-gremlin:-multicollinearity">¶</a></h2><p>Multiple regression has one notorious failure mode. When two predictors carry <strong>almost the same
+<h2 id="7)-The-gremlin:-multicollinearity">7) The gremlin: <strong>multicollinearity</strong><a class="anchor-link" data-pagefind-ignore href="#7)-The-gremlin:-multicollinearity">¶</a></h2><p>Multiple regression has one notorious failure mode. When two predictors carry <strong>almost the same
 information</strong> — they're strongly correlated with <em>each other</em> — the model can't tell which one deserves
 the credit. The slopes become <strong>wildly unstable</strong>: huge, with giant standard errors, sometimes the
 wrong sign entirely. This is <strong>multicollinearity</strong>.</p>
@@ -8484,7 +8484,7 @@ The standard error on area exploded from ~2 to ~200, and the coefficients went h
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="Spotting-it:-the-Variance-Inflation-Factor-(VIF)">Spotting it: the Variance Inflation Factor (VIF)<a class="anchor-link" href="#Spotting-it:-the-Variance-Inflation-Factor-(VIF)">¶</a></h3><p>You don't have to guess. The <strong>Variance Inflation Factor</strong> measures how much each predictor's variance
+<h3 id="Spotting-it:-the-Variance-Inflation-Factor-(VIF)">Spotting it: the Variance Inflation Factor (VIF)<a class="anchor-link" data-pagefind-ignore href="#Spotting-it:-the-Variance-Inflation-Factor-(VIF)">¶</a></h3><p>You don't have to guess. The <strong>Variance Inflation Factor</strong> measures how much each predictor's variance
 is "inflated" by overlap with the others. A rough rule of thumb: <strong>VIF above ~5-10 is a red flag.</strong> Our
 three real predictors are fine; the duplicate column lights up like a fire alarm.</p>
 </div>
@@ -8549,7 +8549,7 @@ VIF all comfortably below ~2.5 = fine.   VIF in the thousands = severe multicoll
 Multicollinearity hurts the <em>individual</em> coefficients' trustworthiness, not the model's overall
 predictions — but since reading the coefficients is the whole point of an intro regression, keep your
 predictors from stepping on each other.</p>
-<h2 id="8)-Three-cautions-before-you-read-too-much-into-a-fit">8) Three cautions before you read too much into a fit<a class="anchor-link" href="#8)-Three-cautions-before-you-read-too-much-into-a-fit">¶</a></h2><p>Multiple regression is powerful, which makes it easy to over-claim. Keep three warnings in mind:</p>
+<h2 id="8)-Three-cautions-before-you-read-too-much-into-a-fit">8) Three cautions before you read too much into a fit<a class="anchor-link" data-pagefind-ignore href="#8)-Three-cautions-before-you-read-too-much-into-a-fit">¶</a></h2><p>Multiple regression is powerful, which makes it easy to over-claim. Keep three warnings in mind:</p>
 <ol>
 <li><strong>It's still not causation.</strong> This is <strong>observational</strong> data — nobody randomly assigned homes their
 quality or age. "Holding quality constant, each sq ft adds ~63 dollars" is an <em>association among
@@ -8571,7 +8571,7 @@ sometimes sign-flipped slopes. Check VIF before trusting any single coefficient.
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Now-you-try">Now you try<a class="anchor-link" href="#Now-you-try">¶</a></h2><p>Predict first, then change a number and re-run:</p>
+<h2 id="Now-you-try">Now you try<a class="anchor-link" data-pagefind-ignore href="#Now-you-try">¶</a></h2><p>Predict first, then change a number and re-run:</p>
 <ol>
 <li><p><strong>Reorder the build-up.</strong> In section 3, fit <code>price ~ quality</code> <em>alone</em> in a new cell, then compare
 <code>quality</code>'s slope to its slope in <code>model_aq</code> (<code>price ~ area + quality</code>). Does quality's coefficient
@@ -8593,7 +8593,7 @@ to <code>rng.normal(0, 50, ...)</code>. As the duplicate becomes <em>less</em> i
 calm back down and the VIFs fall out of the danger zone?</p>
 </li>
 </ol>
-<h2 id="What-you-learned">What you learned<a class="anchor-link" href="#What-you-learned">¶</a></h2><ul>
+<h2 id="What-you-learned">What you learned<a class="anchor-link" data-pagefind-ignore href="#What-you-learned">¶</a></h2><ul>
 <li><strong>Multiple regression</strong> fits several predictors at once: $\hat{y} = b_0 + b_1 x_1 + b_2 x_2 + \cdots$,
 still by least squares.</li>
 <li>Each coefficient is an <strong>adjusted</strong> effect — the change in $y$ per unit of <em>that</em> predictor

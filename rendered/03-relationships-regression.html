@@ -7823,7 +7823,7 @@ a.anchor-link {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h1 id="Lesson-3-%E2%80%94-Relationships:-correlation-&amp;-the-regression-line">Lesson 3 — Relationships: correlation &amp; the regression line<a class="anchor-link" href="#Lesson-3-%E2%80%94-Relationships:-correlation-&amp;-the-regression-line">¶</a></h1><p><em>Part 1 · Lesson 3 of 20  ·  data: Ames housing</em></p>
+<h1 id="Lesson-3-%E2%80%94-Relationships:-correlation-&amp;-the-regression-line">Lesson 3 — Relationships: correlation &amp; the regression line<a class="anchor-link" data-pagefind-ignore href="#Lesson-3-%E2%80%94-Relationships:-correlation-&amp;-the-regression-line">¶</a></h1><p><em>Part 1 · Lesson 3 of 20  ·  data: Ames housing</em></p>
 <p><strong>←</strong> <a href="02-distributions-shape-outliers.html">Lesson 2: Distributions: shape, skew &amp; outliers</a>  ·  <a href="index.html">↑ Course map</a>  ·  <a href="04-where-data-comes-from.html">Lesson 4: Where data comes from: sampling &amp; study design</a> <strong>→</strong></p>
 <p><strong>Same idea, another way:</strong> <a href="03-relationships-regression~another-dataset.html">Another dataset →</a>  ·  <a href="03-relationships-regression~the-code.html">The code behind it →</a></p>
 <p>So far we've described <strong>one</strong> variable at a time. The real fun starts with <strong>two</strong>: do bigger
@@ -7961,7 +7961,7 @@ inside every group. Run each grey cell with <strong>Shift+Enter</strong>, then t
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="1)-The-first-move:-a-scatterplot">1) The first move: a scatterplot<a class="anchor-link" href="#1)-The-first-move:-a-scatterplot">¶</a></h2><p>When you have <strong>two numbers</strong> for each item — here a home's living <code>area</code> (sq ft) and its sale
+<h2 id="1)-The-first-move:-a-scatterplot">1) The first move: a scatterplot<a class="anchor-link" data-pagefind-ignore href="#1)-The-first-move:-a-scatterplot">¶</a></h2><p>When you have <strong>two numbers</strong> for each item — here a home's living <code>area</code> (sq ft) and its sale
 <code>price</code> (dollars) — the picture to draw is a <strong>scatterplot</strong>: one dot per home, $x$ across, $y$ up.
 Your eyes do the first analysis for free. Ask three questions of any scatter:</p>
 <ul>
@@ -8010,7 +8010,7 @@ Your eyes do the first analysis for free. Ask three questions of any scatter:</p
 <p>Direction: clearly <strong>up</strong>. Form: roughly a <strong>straight line</strong> (with a bit of fanning-out at the high
 end). Strength: a fairly tight upward band. That's exactly the situation a single number was invented
 to summarize.</p>
-<h2 id="2)-The-correlation-coefficient-r-%E2%80%94-strength-+-direction-of-a-linear-trend">2) The correlation coefficient r — strength + direction of a <em>linear</em> trend<a class="anchor-link" href="#2)-The-correlation-coefficient-r-%E2%80%94-strength-+-direction-of-a-linear-trend">¶</a></h2><p>You met $r$ briefly in Lesson 1. Let's deepen it. The correlation $r$ is the average product of the
+<h2 id="2)-The-correlation-coefficient-r-%E2%80%94-strength-+-direction-of-a-linear-trend">2) The correlation coefficient r — strength + direction of a <em>linear</em> trend<a class="anchor-link" data-pagefind-ignore href="#2)-The-correlation-coefficient-r-%E2%80%94-strength-+-direction-of-a-linear-trend">¶</a></h2><p>You met $r$ briefly in Lesson 1. Let's deepen it. The correlation $r$ is the average product of the
 two variables' <strong>z-scores</strong> (each value rewritten as "how many SDs from its own mean"):</p>
 <p>$$r = \frac{1}{n-1}\sum_{i=1}^{n} \left(\frac{x_i-\bar{x}}{s_x}\right)\left(\frac{y_i-\bar{y}}{s_y}\right)$$</p>
 <ul>
@@ -8072,7 +8072,7 @@ big prices, and the dots hug an upward line reasonably tightly.</p>
 relationship) can have $r \approx 0$. A small $r$ means "no <em>linear</em> trend," <strong>not</strong> "no relationship."
 Always look at the scatter first.</p>
 </blockquote>
-<h2 id="3)-The-least-squares-regression-line">3) The least-squares regression line<a class="anchor-link" href="#3)-The-least-squares-regression-line">¶</a></h2><p>A summary number is nice, but we'd like an actual <strong>line</strong> so we can predict price from area. We fit</p>
+<h2 id="3)-The-least-squares-regression-line">3) The least-squares regression line<a class="anchor-link" data-pagefind-ignore href="#3)-The-least-squares-regression-line">¶</a></h2><p>A summary number is nice, but we'd like an actual <strong>line</strong> so we can predict price from area. We fit</p>
 <p>$$\hat{y} = b_0 + b_1 x$$</p>
 <p>where $\hat{y}$ (read "y-hat") is the <strong>predicted</strong> price, $b_1$ is the <strong>slope</strong>, and $b_0$ is the
 <strong>intercept</strong>. Of all possible lines, the <strong>least-squares</strong> line is the one that makes the total
@@ -8176,7 +8176,7 @@ over the cloud.</p>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="Interpreting-the-slope-and-the-intercept">Interpreting the slope and the intercept<a class="anchor-link" href="#Interpreting-the-slope-and-the-intercept">¶</a></h3><ul>
+<h3 id="Interpreting-the-slope-and-the-intercept">Interpreting the slope and the intercept<a class="anchor-link" data-pagefind-ignore href="#Interpreting-the-slope-and-the-intercept">¶</a></h3><ul>
 <li><strong>Slope $b_1 \approx 112$:</strong> each <strong>extra square foot</strong> of living area is associated with about
 <strong>112 more dollars</strong> in sale price, on average. (Slope is always "change in $y$ per one-unit change
 in $x$" — here, dollars per sq ft.) Note the careful phrase <em>"is associated with"</em> — see section 7
@@ -8195,7 +8195,7 @@ over-read an intercept that sits outside the range of the data.</li>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="4)-Residuals-%E2%80%94-what-the-line-misses">4) Residuals — what the line <em>misses</em><a class="anchor-link" href="#4)-Residuals-%E2%80%94-what-the-line-misses">¶</a></h2><p>No line hits every dot. The leftover for each home is its <strong>residual</strong>:</p>
+<h2 id="4)-Residuals-%E2%80%94-what-the-line-misses">4) Residuals — what the line <em>misses</em><a class="anchor-link" data-pagefind-ignore href="#4)-Residuals-%E2%80%94-what-the-line-misses">¶</a></h2><p>No line hits every dot. The leftover for each home is its <strong>residual</strong>:</p>
 <p>$$e_i = y_i - \hat{y}_i = (\text{actual price}) - (\text{predicted price}).$$</p>
 <p>A positive residual means the home sold for <strong>more</strong> than the line predicted; negative means
 <strong>less</strong>. A <strong>residual plot</strong> puts the predicted value on $x$ and the residual on $y$. What you
@@ -8254,7 +8254,7 @@ straight line is the wrong model.</p>
 <p>The band is roughly centered on 0 (good — the line isn't systematically too high or too low), but it
 <strong>fans out</strong> toward expensive homes: the model's misses get larger for big houses. That's a gentle
 hint the simple straight-line model is better for ordinary homes than for mansions.</p>
-<h3 id="R%C2%B2-%E2%80%94-the-fraction-of-variance-the-line-explains">R² — the fraction of variance the line explains<a class="anchor-link" href="#R%C2%B2-%E2%80%94-the-fraction-of-variance-the-line-explains">¶</a></h3><p>How <em>good</em> is the fit, in one number? The <strong>coefficient of determination</strong> $R^2$ answers "what share
+<h3 id="R%C2%B2-%E2%80%94-the-fraction-of-variance-the-line-explains">R² — the fraction of variance the line explains<a class="anchor-link" data-pagefind-ignore href="#R%C2%B2-%E2%80%94-the-fraction-of-variance-the-line-explains">¶</a></h3><p>How <em>good</em> is the fit, in one number? The <strong>coefficient of determination</strong> $R^2$ answers "what share
 of the up-and-down variation in $y$ does the line account for?"</p>
 <p>$$R^2 = 1 - \frac{\sum (y_i - \hat{y}_i)^2}{\sum (y_i - \bar{y})^2} = \frac{\text{variance explained by the line}}{\text{total variance in } y}.$$</p>
 <p>For a <strong>simple</strong> (one-predictor) regression there's a beautiful shortcut: $R^2 = r^2$, the correlation
@@ -8303,7 +8303,7 @@ The other 50% is everything else: location, quality, age, lot size, ...
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="5)-Prediction-%E2%80%94-and-the-danger-of-extrapolation">5) Prediction — and the danger of extrapolation<a class="anchor-link" href="#5)-Prediction-%E2%80%94-and-the-danger-of-extrapolation">¶</a></h2><p>The whole payoff of the line is <strong>prediction</strong>: plug an area into $\hat{y} = b_0 + b_1 x$ and read off
+<h2 id="5)-Prediction-%E2%80%94-and-the-danger-of-extrapolation">5) Prediction — and the danger of extrapolation<a class="anchor-link" data-pagefind-ignore href="#5)-Prediction-%E2%80%94-and-the-danger-of-extrapolation">¶</a></h2><p>The whole payoff of the line is <strong>prediction</strong>: plug an area into $\hat{y} = b_0 + b_1 x$ and read off
 an estimated price. That's safe <strong>inside</strong> the range of the data. Reach far <strong>outside</strong> it and you're
 <strong>extrapolating</strong> — trusting the straight line in a region where you have <em>no evidence</em> it still holds.</p>
 </div>
@@ -8359,7 +8359,7 @@ an estimated price. That's safe <strong>inside</strong> the range of the data. R
 <p>A 50-sq-ft "home" gets a price of about 19,000 dollars (the line is still positive there only by luck),
 and a 20,000-sq-ft mansion gets a wild figure no Ames sale supports. The line knows nothing beyond the
 cloud it was fit to. <strong>Rule of thumb:</strong> predict only within the range of $x$ you actually observed.</p>
-<h2 id="6)-Correlation-is-not-causation">6) Correlation is <strong>not</strong> causation<a class="anchor-link" href="#6)-Correlation-is-not-causation">¶</a></h2><p>We found a strong correlation between area and price — and here it's plausible that size really does
+<h2 id="6)-Correlation-is-not-causation">6) Correlation is <strong>not</strong> causation<a class="anchor-link" data-pagefind-ignore href="#6)-Correlation-is-not-causation">¶</a></h2><p>We found a strong correlation between area and price — and here it's plausible that size really does
 <em>drive</em> price. But in general, <strong>a correlation alone never proves that one variable causes the
 other.</strong> A classic illustration with made-up-but-realistic numbers:</p>
 <blockquote>
@@ -8430,7 +8430,7 @@ The colour shows the real driver: hot days (red) sit at the top-right of both.
 colour gives away the real cause. To earn the word <em>"causes"</em> you generally need a <strong>randomized
 experiment</strong> (the subject of the next lesson) or very careful adjustment for confounders. Until then,
 say <strong>"is associated with."</strong></p>
-<h2 id="7)-Simpson's-paradox-%E2%80%94-the-centerpiece">7) Simpson's paradox — the centerpiece<a class="anchor-link" href="#7)-Simpson's-paradox-%E2%80%94-the-centerpiece">¶</a></h2><p>Now the most startling trap of all, and it's <strong>real</strong>, not simulated. Switch to the penguins and look
+<h2 id="7)-Simpson's-paradox-%E2%80%94-the-centerpiece">7) Simpson's paradox — the centerpiece<a class="anchor-link" data-pagefind-ignore href="#7)-Simpson's-paradox-%E2%80%94-the-centerpiece">¶</a></h2><p>Now the most startling trap of all, and it's <strong>real</strong>, not simulated. Switch to the penguins and look
 at two bill measurements: <strong>bill length</strong> and <strong>bill depth</strong> (how tall the bill is, top to bottom).</p>
 <p>Watch what happens to the correlation when we lump all three species together versus when we look
 <strong>within</strong> each species.</p>
@@ -8554,7 +8554,7 @@ even though the slope <strong>inside</strong> each cloud points firmly up.</p>
 <p><strong>The lesson:</strong> an aggregate correlation can be the <strong>opposite</strong> of every subgroup correlation. Before
 trusting a single $r$, ask <em>"is there a group variable I'm ignoring?"</em> This is why the species column
 in Lesson 1's scatter mattered so much.</p>
-<h2 id="Now-you-try">Now you try<a class="anchor-link" href="#Now-you-try">¶</a></h2><p>Predict first, then change a number and re-run:</p>
+<h2 id="Now-you-try">Now you try<a class="anchor-link" data-pagefind-ignore href="#Now-you-try">¶</a></h2><p>Predict first, then change a number and re-run:</p>
 <ol>
 <li><p><strong>A different pair of variables.</strong> In sections 1-4, the Ames analysis uses <code>area</code> and <code>price</code>.
 Add a cell and try a different scatter + correlation, e.g.</p>
@@ -8575,7 +8575,7 @@ raise the noise from <code>rng.normal(0, 1.2, ...)</code> to <code>rng.normal(0,
 have to get before the fake ice-cream/drowning correlation stops looking convincing?</p>
 </li>
 </ol>
-<h2 id="What-you-learned">What you learned<a class="anchor-link" href="#What-you-learned">¶</a></h2><ul>
+<h2 id="What-you-learned">What you learned<a class="anchor-link" data-pagefind-ignore href="#What-you-learned">¶</a></h2><ul>
 <li>A <strong>scatterplot</strong> is the first move for two numeric variables: read its <strong>direction</strong>, <strong>form</strong>, and
 <strong>strength</strong> before computing anything.</li>
 <li>The <strong>correlation $r$</strong> ($-1$ to $+1$) measures the strength and direction of a <strong>linear</strong> trend; it

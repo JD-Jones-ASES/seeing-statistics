@@ -7823,7 +7823,7 @@ a.anchor-link {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h1 id="Lesson-8-%E2%80%94-Binomial-&amp;-Poisson-%E2%80%94-counting-events">Lesson 8 — Binomial &amp; Poisson — counting events<a class="anchor-link" href="#Lesson-8-%E2%80%94-Binomial-&amp;-Poisson-%E2%80%94-counting-events">¶</a></h1><p><em>Part 1 · Lesson 8 of 20  ·  data: US Births 2014 · USGS earthquakes</em></p>
+<h1 id="Lesson-8-%E2%80%94-Binomial-&amp;-Poisson-%E2%80%94-counting-events">Lesson 8 — Binomial &amp; Poisson — counting events<a class="anchor-link" data-pagefind-ignore href="#Lesson-8-%E2%80%94-Binomial-&amp;-Poisson-%E2%80%94-counting-events">¶</a></h1><p><em>Part 1 · Lesson 8 of 20  ·  data: US Births 2014 · USGS earthquakes</em></p>
 <p><strong>←</strong> <a href="07-random-variables.html">Lesson 7: Random variables, expectation &amp; variance</a>  ·  <a href="index.html">↑ Course map</a>  ·  <a href="09-normal-distribution.html">Lesson 9: The normal distribution &amp; the empirical rule</a> <strong>→</strong></p>
 <p><strong>Same idea, another way:</strong> <a href="08-binomial-poisson~another-dataset.html">Another dataset →</a>  ·  <a href="08-binomial-poisson~the-code.html">The code behind it →</a></p>
 <p>Last lesson we turned random outcomes into numbers. Now we meet the two most useful <em>counting</em> models in all of statistics: the <strong>Binomial</strong> (how many successes in a fixed number of tries) and the <strong>Poisson</strong> (how many rare events happen in a fixed window of time). We'll build both by hand from real data — low-birthweight babies and worldwide earthquakes — and watch the textbook formulas snap perfectly onto the histograms we simulate. Then we'll see the surprising bridge between them.</p>
@@ -7953,7 +7953,7 @@ a.anchor-link {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="1)-The-building-block:-a-Bernoulli-trial">1) The building block: a Bernoulli trial<a class="anchor-link" href="#1)-The-building-block:-a-Bernoulli-trial">¶</a></h2><p>Everything in this lesson starts with the simplest possible random thing: a single <strong>yes/no</strong> event. Flip a coin, roll for a six, check whether one baby is born underweight. A trial with exactly two outcomes — "success" (1) or "failure" (0) — is a <strong>Bernoulli trial</strong>, named after Jacob Bernoulli.</p>
+<h2 id="1)-The-building-block:-a-Bernoulli-trial">1) The building block: a Bernoulli trial<a class="anchor-link" data-pagefind-ignore href="#1)-The-building-block:-a-Bernoulli-trial">¶</a></h2><p>Everything in this lesson starts with the simplest possible random thing: a single <strong>yes/no</strong> event. Flip a coin, roll for a six, check whether one baby is born underweight. A trial with exactly two outcomes — "success" (1) or "failure" (0) — is a <strong>Bernoulli trial</strong>, named after Jacob Bernoulli.</p>
 <ul>
 <li><strong>The math.</strong> One number does the whole job: $p$, the probability of success. Then $P(\text{success}) = p$ and $P(\text{failure}) = 1 - p$.</li>
 <li><strong>The meaning.</strong> $p$ is the long-run <em>fraction</em> of trials that come up "success."</li>
@@ -8000,7 +8000,7 @@ p = P(low birthweight) = 0.081
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="2)-The-Binomial-distribution-%E2%80%94-successes-in-$n$-tries">2) The Binomial distribution — successes in $n$ tries<a class="anchor-link" href="#2)-The-Binomial-distribution-%E2%80%94-successes-in-$n$-tries">¶</a></h2><p>Now stack $n$ <strong>independent</strong> Bernoulli trials (<em>independent</em> = one trial's result tells you nothing about the next), each with the same $p$, and count the successes. That count is a <strong>Binomial</strong> random variable, written $X \sim \text{Binomial}(n, p)$ — read the squiggle "$\sim$" as <strong>"follows the … distribution"</strong> (so: "$X$ follows a Binomial distribution with settings $n$ and $p$").</p>
+<h2 id="2)-The-Binomial-distribution-%E2%80%94-successes-in-$n$-tries">2) The Binomial distribution — successes in $n$ tries<a class="anchor-link" data-pagefind-ignore href="#2)-The-Binomial-distribution-%E2%80%94-successes-in-$n$-tries">¶</a></h2><p>Now stack $n$ <strong>independent</strong> Bernoulli trials (<em>independent</em> = one trial's result tells you nothing about the next), each with the same $p$, and count the successes. That count is a <strong>Binomial</strong> random variable, written $X \sim \text{Binomial}(n, p)$ — read the squiggle "$\sim$" as <strong>"follows the … distribution"</strong> (so: "$X$ follows a Binomial distribution with settings $n$ and $p$").</p>
 <p>Picture a random group of <strong>$n = 30$ births</strong>. How many will be low-birthweight? It could be 0, or 1, or 2, ... up to 30 — but not all answers are equally likely.</p>
 <ul>
 <li><strong>The math.</strong> The probability of <em>exactly</em> $k$ successes is
@@ -8054,7 +8054,7 @@ Theory std dev  = sqrt(var) = 1.49
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="3)-Simulate-it-%E2%80%94-don't-just-believe-the-formula">3) Simulate it — don't just believe the formula<a class="anchor-link" href="#3)-Simulate-it-%E2%80%94-don't-just-believe-the-formula">¶</a></h2><p>Here is the heart of "by seeing it happen." Instead of trusting the formula, we'll <em>run the experiment</em> thousands of times: draw a random group of 30 babies, count the low-birthweight ones, and repeat. Pile the counts into a histogram and the shape of the Binomial appears on its own.</p>
+<h2 id="3)-Simulate-it-%E2%80%94-don't-just-believe-the-formula">3) Simulate it — don't just believe the formula<a class="anchor-link" data-pagefind-ignore href="#3)-Simulate-it-%E2%80%94-don't-just-believe-the-formula">¶</a></h2><p>Here is the heart of "by seeing it happen." Instead of trusting the formula, we'll <em>run the experiment</em> thousands of times: draw a random group of 30 babies, count the low-birthweight ones, and repeat. Pile the counts into a histogram and the shape of the Binomial appears on its own.</p>
 <p>The tinkerable knobs are at the top of the cell.</p>
 </div>
 </div>
@@ -8167,7 +8167,7 @@ P(5 or more)                       = 0.091
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="A-sanity-check-you-already-trust:-a-fair-coin">A sanity check you already trust: a fair coin<a class="anchor-link" href="#A-sanity-check-you-already-trust:-a-fair-coin">¶</a></h3><p>To convince yourself the Binomial isn't special to birth data, set $p = 0.5$ and flip <strong>10 coins</strong>. The shape becomes the familiar symmetric mound centered on 5 heads.</p>
+<h3 id="A-sanity-check-you-already-trust:-a-fair-coin">A sanity check you already trust: a fair coin<a class="anchor-link" data-pagefind-ignore href="#A-sanity-check-you-already-trust:-a-fair-coin">¶</a></h3><p>To convince yourself the Binomial isn't special to birth data, set $p = 0.5$ and flip <strong>10 coins</strong>. The shape becomes the familiar symmetric mound centered on 5 heads.</p>
 </div>
 </div>
 </div>
@@ -8219,7 +8219,7 @@ P(5 or more)                       = 0.091
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="4)-The-Poisson-distribution-%E2%80%94-rare-events-per-interval">4) The Poisson distribution — rare events per interval<a class="anchor-link" href="#4)-The-Poisson-distribution-%E2%80%94-rare-events-per-interval">¶</a></h2><p>The Binomial needs a fixed number of trials $n$. But many real questions have <strong>no obvious $n$</strong>: how many earthquakes <em>today</em>? How many emails <em>this hour</em>? There were countless moments when a quake <em>could</em> have struck, each with a tiny probability. For "lots of chances, each rare," we use the <strong>Poisson</strong> distribution, written $X \sim \text{Poisson}(\lambda)$.</p>
+<h2 id="4)-The-Poisson-distribution-%E2%80%94-rare-events-per-interval">4) The Poisson distribution — rare events per interval<a class="anchor-link" data-pagefind-ignore href="#4)-The-Poisson-distribution-%E2%80%94-rare-events-per-interval">¶</a></h2><p>The Binomial needs a fixed number of trials $n$. But many real questions have <strong>no obvious $n$</strong>: how many earthquakes <em>today</em>? How many emails <em>this hour</em>? There were countless moments when a quake <em>could</em> have struck, each with a tiny probability. For "lots of chances, each rare," we use the <strong>Poisson</strong> distribution, written $X \sim \text{Poisson}(\lambda)$.</p>
 <ul>
 <li><strong>The math.</strong> With a single rate $\lambda$ (the average number of events per interval),
 $$P(X = k) = \frac{e^{-\lambda}\,\lambda^{k}}{k!}, \qquad k = 0, 1, 2, \dots$$</li>
@@ -8352,7 +8352,7 @@ P(&gt;= 25 on a day)     = 0.038
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="5)-The-bridge:-Binomial-becomes-Poisson">5) The bridge: Binomial becomes Poisson<a class="anchor-link" href="#5)-The-bridge:-Binomial-becomes-Poisson">¶</a></h2><p>These two models look unrelated, but they're secretly the same idea. Imagine slicing a day into a <em>huge</em> number $n$ of tiny instants, each a Bernoulli trial with a <em>tiny</em> chance $p$ of a quake. That's a Binomial — but with $n$ enormous and $p$ minuscule. As $n \to \infty$ and $p \to 0$ while the product $\lambda = np$ stays fixed and moderate, the Binomial PMF <strong>turns into</strong> the Poisson PMF.</p>
+<h2 id="5)-The-bridge:-Binomial-becomes-Poisson">5) The bridge: Binomial becomes Poisson<a class="anchor-link" data-pagefind-ignore href="#5)-The-bridge:-Binomial-becomes-Poisson">¶</a></h2><p>These two models look unrelated, but they're secretly the same idea. Imagine slicing a day into a <em>huge</em> number $n$ of tiny instants, each a Bernoulli trial with a <em>tiny</em> chance $p$ of a quake. That's a Binomial — but with $n$ enormous and $p$ minuscule. As $n \to \infty$ and $p \to 0$ while the product $\lambda = np$ stays fixed and moderate, the Binomial PMF <strong>turns into</strong> the Poisson PMF.</p>
 <ul>
 <li><strong>The math.</strong> $\text{Binomial}(n, p) \to \text{Poisson}(\lambda)$ as $n\to\infty$, $p\to 0$, with $np = \lambda$.</li>
 <li><strong>The meaning.</strong> Poisson is the "many trials, each rare" limit of the Binomial — which is exactly why it models rare events with no obvious $n$.</li>
@@ -8423,13 +8423,13 @@ P(&gt;= 25 on a day)     = 0.038
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Now-you-try">Now you try<a class="anchor-link" href="#Now-you-try">¶</a></h2><p>Predict first, then change one knob and re-run:</p>
+<h2 id="Now-you-try">Now you try<a class="anchor-link" data-pagefind-ignore href="#Now-you-try">¶</a></h2><p>Predict first, then change one knob and re-run:</p>
 <ol>
 <li>In the simulation cell (section 3), set <code>n_groups = 200</code> instead of <code>20000</code>. Will the histogram match the red PMF better or worse? Re-run and see how the simulated mean/variance drift from $np$ and $np(1-p)$.</li>
 <li>In the fair-coin cell, raise <code>n_coins</code> to <code>100</code>. Where does the mound center now, and does its shape start to look like a bell curve? (That's a preview of Lesson 9.)</li>
 <li>In the bridge cell (section 5), change <code>n_big, p_small</code> to <code>100, 0.17</code> (still $np = 17$). The product is unchanged but $p$ is bigger — does the Binomial still hug the Poisson, or does the gap grow? What does that tell you about <em>how small</em> $p$ needs to be?</li>
 </ol>
-<h2 id="What-you-learned">What you learned<a class="anchor-link" href="#What-you-learned">¶</a></h2><ul>
+<h2 id="What-you-learned">What you learned<a class="anchor-link" data-pagefind-ignore href="#What-you-learned">¶</a></h2><ul>
 <li><strong>Bernoulli trial:</strong> one yes/no event with success probability $p$ — the atom every count is built from.</li>
 <li><strong>Binomial</strong> $X\sim\text{Binomial}(n,p)$ counts successes in $n$ independent trials; $P(X=k)=\binom{n}{k}p^k(1-p)^{n-k}$, with <strong>mean $=np$</strong> and <strong>variance $=np(1-p)$</strong> — both confirmed by simulating real birth data.</li>
 <li><strong>Poisson</strong> $X\sim\text{Poisson}(\lambda)$ counts rare events per interval; $P(X=k)=e^{-\lambda}\lambda^k/k!$, with the fingerprint <strong>mean $=$ variance $=\lambda$</strong> — seen in daily earthquake counts.</li>

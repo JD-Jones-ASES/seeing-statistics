@@ -7823,7 +7823,7 @@ a.anchor-link {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h1 id="The-bell-curve-on-a-different-dataset:-5,000-adult-heights">The bell curve on a different dataset: 5,000 adult heights<a class="anchor-link" href="#The-bell-curve-on-a-different-dataset:-5,000-adult-heights">¶</a></h1><p><em>Part 1 · Lesson 9 · another dataset  ·  data: NHANES adult-male heights</em></p>
+<h1 id="The-bell-curve-on-a-different-dataset:-5,000-adult-heights">The bell curve on a different dataset: 5,000 adult heights<a class="anchor-link" data-pagefind-ignore href="#The-bell-curve-on-a-different-dataset:-5,000-adult-heights">¶</a></h1><p><em>Part 1 · Lesson 9 · another dataset  ·  data: NHANES adult-male heights</em></p>
 <p><em>↩ A companion to <a href="09-normal-distribution.html">Lesson 9: The normal distribution &amp; the empirical rule</a>.</em></p>
 <p><strong>↩ Back:</strong> <a href="09-normal-distribution.html">Lesson 9: The normal distribution &amp; the empirical rule</a>  ·  <a href="index.html">↑ Course map</a>  ·  <strong>Also:</strong> <a href="09-normal-distribution~the-code.html">The code behind it →</a></p>
 <p>In the core lesson we watched the heights of <strong>934 grown children</strong> from Francis Galton's 1880s family study fall into the bell curve. The curve fit well — but with under a thousand people from one extended Victorian family, the famous <strong>68–95–99.7 rule</strong> came out a little rough at the edges.</p>
@@ -7904,7 +7904,7 @@ skew                       = -0.071   (near 0 -&gt; essentially symmetric)
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="0)-A-note-on-units-%E2%80%94-millimetres-to-centimetres">0) A note on units — millimetres to centimetres<a class="anchor-link" href="#0)-A-note-on-units-%E2%80%94-millimetres-to-centimetres">¶</a></h2><p>Real-world datasets rarely arrive in the units you'd reach for. NHANES stores standing height as <strong><code>BMXHT</code> in millimetres</strong>, so a value like <code>1845.0</code> means <strong>1845 mm</strong>. Dividing by 10 turns that into the friendlier <strong>184.5 cm</strong> (a hair over six feet). We did that conversion once, up front — <code>height_cm = nh['BMXHT'].dropna() / 10.0</code> — so every number below is in centimetres. Always check a dataset's units before you trust its averages; a "mean height of 1733" is alarming until you realize it's millimetres.</p>
+<h2 id="0)-A-note-on-units-%E2%80%94-millimetres-to-centimetres">0) A note on units — millimetres to centimetres<a class="anchor-link" data-pagefind-ignore href="#0)-A-note-on-units-%E2%80%94-millimetres-to-centimetres">¶</a></h2><p>Real-world datasets rarely arrive in the units you'd reach for. NHANES stores standing height as <strong><code>BMXHT</code> in millimetres</strong>, so a value like <code>1845.0</code> means <strong>1845 mm</strong>. Dividing by 10 turns that into the friendlier <strong>184.5 cm</strong> (a hair over six feet). We did that conversion once, up front — <code>height_cm = nh['BMXHT'].dropna() / 10.0</code> — so every number below is in centimetres. Always check a dataset's units before you trust its averages; a "mean height of 1733" is alarming until you realize it's millimetres.</p>
 <p>With that settled, notice the numbers above: about <strong>5,000 men</strong>, a mean near <strong>173 cm</strong>, a standard deviation near <strong>7.8 cm</strong>, and a <strong>skew of about −0.07</strong> — so close to zero that the distribution is essentially symmetric. That near-zero skew is our first hint that this will be an almost perfect bell.</p>
 </div>
 </div>
@@ -7915,7 +7915,7 @@ skew                       = -0.071   (near 0 -&gt; essentially symmetric)
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="1)-The-normal-curve-and-its-two-knobs">1) The normal curve and its two knobs<a class="anchor-link" href="#1)-The-normal-curve-and-its-two-knobs">¶</a></h2><p>A <strong>normal distribution</strong> (the "bell curve") is a smooth, symmetric hump. Its <em>entire</em> shape is fixed by just <strong>two numbers</strong>:</p>
+<h2 id="1)-The-normal-curve-and-its-two-knobs">1) The normal curve and its two knobs<a class="anchor-link" data-pagefind-ignore href="#1)-The-normal-curve-and-its-two-knobs">¶</a></h2><p>A <strong>normal distribution</strong> (the "bell curve") is a smooth, symmetric hump. Its <em>entire</em> shape is fixed by just <strong>two numbers</strong>:</p>
 <ul>
 <li>$\mu$ (mu) — the <strong>mean</strong>, which sets <em>where the peak sits</em>.</li>
 <li>$\sigma$ (sigma) — the <strong>standard deviation</strong>, which sets <em>how wide</em> the bell is.</li>
@@ -7986,7 +7986,7 @@ skew                       = -0.071   (near 0 -&gt; essentially symmetric)
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="2)-The-empirical-rule:-68-%E2%80%93-95-%E2%80%93-99.7">2) The empirical rule: 68 – 95 – 99.7<a class="anchor-link" href="#2)-The-empirical-rule:-68-%E2%80%93-95-%E2%80%93-99.7">¶</a></h2><p>For <em>any</em> normal curve, the same fixed fractions of the data fall within 1, 2, and 3 standard deviations of the mean. This is the famous <strong>empirical rule</strong>:</p>
+<h2 id="2)-The-empirical-rule:-68-%E2%80%93-95-%E2%80%93-99.7">2) The empirical rule: 68 – 95 – 99.7<a class="anchor-link" data-pagefind-ignore href="#2)-The-empirical-rule:-68-%E2%80%93-95-%E2%80%93-99.7">¶</a></h2><p>For <em>any</em> normal curve, the same fixed fractions of the data fall within 1, 2, and 3 standard deviations of the mean. This is the famous <strong>empirical rule</strong>:</p>
 <table>
 <thead>
 <tr>
@@ -8105,7 +8105,7 @@ mu +/- 3 SD           99.7%             99.7%
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="3)-The-punchline:-a-z-score-becomes-a-probability">3) The punchline: a z-score becomes a <em>probability</em><a class="anchor-link" href="#3)-The-punchline:-a-z-score-becomes-a-probability">¶</a></h2><p>A z-score tells us <em>how far from average</em> a value sits — but the normal model goes further and tells us <em>what fraction of people are beyond it</em>. The missing piece is the <strong>cumulative distribution function (CDF)</strong>, the running total of area under the curve.</p>
+<h2 id="3)-The-punchline:-a-z-score-becomes-a-probability">3) The punchline: a z-score becomes a <em>probability</em><a class="anchor-link" data-pagefind-ignore href="#3)-The-punchline:-a-z-score-becomes-a-probability">¶</a></h2><p>A z-score tells us <em>how far from average</em> a value sits — but the normal model goes further and tells us <em>what fraction of people are beyond it</em>. The missing piece is the <strong>cumulative distribution function (CDF)</strong>, the running total of area under the curve.</p>
 <p><strong>The math.</strong> First convert the question to a z-score, then read off the area under the curve.</p>
 <p>$$z = \frac{x - \mu}{\sigma}, \qquad P(\text{taller than } x) = \text{sf}(z) = 1 - \text{CDF}(z).$$</p>
 <p>Here <code>stats.norm.cdf(z)</code> is the area to the <strong>left</strong> of $z$ (the fraction <em>below</em>), and <code>stats.norm.sf(z)</code> ("survival function") is the area to the <strong>right</strong> (the fraction <em>above</em>). Let's ask: <strong>what fraction of these men are taller than 190 cm</strong> (about 6 ft 3 in)? — and compare the normal model's prediction with a direct head-count of the real data.</p>
@@ -8235,7 +8235,7 @@ The real data's 90th percentile is               183.1 cm.  (close!)
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="4)-The-standard-normal-$N(0,1)$-%E2%80%94-and-a-peek-at-confidence-intervals">4) The standard normal $N(0,1)$ — and a peek at confidence intervals<a class="anchor-link" href="#4)-The-standard-normal-$N(0,1)$-%E2%80%94-and-a-peek-at-confidence-intervals">¶</a></h2><p>Convert <em>every</em> height to its z-score and the whole bell collapses onto one universal curve: the <strong>standard normal</strong>, written $N(0,1)$ — mean $0$, standard deviation $1$. It's the master ruler that every normal distribution shares, no matter its units. Our heights in centimetres and Galton's in inches land on the <em>same</em> standard curve once standardized.</p>
+<h2 id="4)-The-standard-normal-$N(0,1)$-%E2%80%94-and-a-peek-at-confidence-intervals">4) The standard normal $N(0,1)$ — and a peek at confidence intervals<a class="anchor-link" data-pagefind-ignore href="#4)-The-standard-normal-$N(0,1)$-%E2%80%94-and-a-peek-at-confidence-intervals">¶</a></h2><p>Convert <em>every</em> height to its z-score and the whole bell collapses onto one universal curve: the <strong>standard normal</strong>, written $N(0,1)$ — mean $0$, standard deviation $1$. It's the master ruler that every normal distribution shares, no matter its units. Our heights in centimetres and Galton's in inches land on the <em>same</em> standard curve once standardized.</p>
 <p>One number on it is worth remembering. The central <strong>95%</strong> of a normal distribution sits between $z = -1.96$ and $z = +1.96$:</p>
 <p>$$P(-1.96 \le z \le 1.96) = 0.95.$$</p>
 </div>
@@ -8292,7 +8292,7 @@ So about 95% of these men are between 157.9 cm and 188.6 cm.
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="5)-Is-it-really-normal?-The-Q-Q-plot">5) Is it <em>really</em> normal? The Q-Q plot<a class="anchor-link" href="#5)-Is-it-really-normal?-The-Q-Q-plot">¶</a></h2><p>Eyeballing a histogram is rough. The sharper tool is a <strong>quantile-quantile (Q-Q) plot</strong>: it sorts the data and plots each value against the value the normal model <em>expected</em> at that rank.</p>
+<h2 id="5)-Is-it-really-normal?-The-Q-Q-plot">5) Is it <em>really</em> normal? The Q-Q plot<a class="anchor-link" data-pagefind-ignore href="#5)-Is-it-really-normal?-The-Q-Q-plot">¶</a></h2><p>Eyeballing a histogram is rough. The sharper tool is a <strong>quantile-quantile (Q-Q) plot</strong>: it sorts the data and plots each value against the value the normal model <em>expected</em> at that rank.</p>
 <p><strong>How to read it:</strong> if the points fall along a <strong>straight line</strong>, the data is close to normal. <strong>Bends and S-curves reveal skew or fat tails</strong> — places where reality departs from the bell. With 5,000 men the line should be remarkably clean.</p>
 </div>
 </div>
@@ -8395,7 +8395,7 @@ So about 95% of these men are between 157.9 cm and 188.6 cm.
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="What-the-bigger-sample-taught-us">What the bigger sample taught us<a class="anchor-link" href="#What-the-bigger-sample-taught-us">¶</a></h2><p>Side by side with the core lesson, the moral is clear:</p>
+<h2 id="What-the-bigger-sample-taught-us">What the bigger sample taught us<a class="anchor-link" data-pagefind-ignore href="#What-the-bigger-sample-taught-us">¶</a></h2><p>Side by side with the core lesson, the moral is clear:</p>
 <table>
 <thead>
 <tr>
@@ -8447,14 +8447,14 @@ So about 95% of these men are between 157.9 cm and 188.6 cm.
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Now-you-try">Now you try<a class="anchor-link" href="#Now-you-try">¶</a></h2><p>Predict the answer first, then change one thing and re-run:</p>
+<h2 id="Now-you-try">Now you try<a class="anchor-link" data-pagefind-ignore href="#Now-you-try">¶</a></h2><p>Predict the answer first, then change one thing and re-run:</p>
 <ol>
 <li>In the section-3 cell, change <code>cutoff = 190.0</code> to <strong>180.0</strong>. Before running: will the <em>fraction taller</em> go up or down? Do the normal prediction and the count still agree closely?</li>
 <li>In the same cell, set <code>cutoff = mu</code> (exactly the mean). What percentage do you expect to be taller? Run it and confirm the bell curve says ~50% — and that the real-data count agrees, because the distribution is so symmetric.</li>
 <li>In the backwards cell, change <code>top_pct = 0.90</code> to <strong>0.99</strong> (the top 1%). How tall must a man be? Does the normal model still match the data's real 99th percentile, or does the rare tail start to disagree?</li>
 <li>In the setup cell, recompute <code>sd</code> with <code>height_cm.std(ddof=0)</code> instead of <code>ddof=1</code>. With 5,000 rows, does the standard deviation — and therefore the empirical-rule bands — change in any way you can see? (This is the "n vs. n−1" question; on a big sample the difference all but vanishes.)</li>
 </ol>
-<h2 id="What-you-learned">What you learned<a class="anchor-link" href="#What-you-learned">¶</a></h2><ul>
+<h2 id="What-you-learned">What you learned<a class="anchor-link" data-pagefind-ignore href="#What-you-learned">¶</a></h2><ul>
 <li><strong>The units matter:</strong> NHANES height arrives in <strong>millimetres</strong> (<code>BMXHT</code>); dividing by 10 gives centimetres. Always check units before trusting an average.</li>
 <li><strong>The math:</strong> a normal curve is fully described by two numbers, $\mu \approx 173$ cm and $\sigma \approx 7.8$ cm, through $f(x)=\frac{1}{\sigma\sqrt{2\pi}}e^{-\frac12((x-\mu)/\sigma)^2}$.</li>
 <li><strong>The meaning:</strong> on ~5,000 men the <strong>empirical rule</strong> lands almost exactly on $68\%/95\%/99.7\%$ — far cleaner than Galton's smaller sample, because more data reveals the true bell shape.</li>

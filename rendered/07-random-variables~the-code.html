@@ -7823,7 +7823,7 @@ a.anchor-link {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h1 id="The-code-behind-it:-simulate-a-random-variable">The code behind it: simulate a random variable<a class="anchor-link" href="#The-code-behind-it:-simulate-a-random-variable">¶</a></h1><p><em>Part 1 · Lesson 7 · the code behind it  ·  data: dice simulation · US Births 2014 (same as Lesson 7)</em></p>
+<h1 id="The-code-behind-it:-simulate-a-random-variable">The code behind it: simulate a random variable<a class="anchor-link" data-pagefind-ignore href="#The-code-behind-it:-simulate-a-random-variable">¶</a></h1><p><em>Part 1 · Lesson 7 · the code behind it  ·  data: dice simulation · US Births 2014 (same as Lesson 7)</em></p>
 <p><em>↩ A companion to <a href="07-random-variables.html">Lesson 7: Random variables, expectation &amp; variance</a>.</em></p>
 <p><strong>↩ Back:</strong> <a href="07-random-variables.html">Lesson 7: Random variables, expectation &amp; variance</a>  ·  <a href="index.html">↑ Course map</a>  ·  <strong>Also:</strong> <a href="07-random-variables~another-dataset.html">Another dataset →</a></p>
 <p><strong>In Lesson 7 you met random variables on paper</strong> — a fair die's expected value is <em>exactly</em> 3.5, its
@@ -7864,7 +7864,7 @@ you make randomness happen (reproducibly) in Python</strong>. We'll go in the or
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="1)-The-goal">1) The goal<a class="anchor-link" href="#1)-The-goal">¶</a></h2><p>By the end of this notebook you'll have <em>simulated</em> a random variable rather than looked it up: rolled a
+<h2 id="1)-The-goal">1) The goal<a class="anchor-link" data-pagefind-ignore href="#1)-The-goal">¶</a></h2><p>By the end of this notebook you'll have <em>simulated</em> a random variable rather than looked it up: rolled a
 fair die 100,000 times in a single line, built its probability distribution by counting, and written two
 short functions — <code>expectation()</code> and <code>variance()</code> — that take the values and their probabilities and hand
 back $E[X]$ and $\operatorname{Var}[X]$. You'll check every from-scratch number against the textbook value
@@ -7946,7 +7946,7 @@ a lesson whose numbers must be reproducible. Change the seed and you get a diffe
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="2)-The-data-in-code">2) The data in code<a class="anchor-link" href="#2)-The-data-in-code">¶</a></h2><p>There's no CSV to load yet — our "data" is <em>manufactured</em> by the generator. One line rolls a fair die <code>N</code>
+<h2 id="2)-The-data-in-code">2) The data in code<a class="anchor-link" data-pagefind-ignore href="#2)-The-data-in-code">¶</a></h2><p>There's no CSV to load yet — our "data" is <em>manufactured</em> by the generator. One line rolls a fair die <code>N</code>
 times: <code>rng.integers(1, 7, size=N)</code> draws whole numbers from 1 up to <strong>but not including</strong> 7 (so 1–6), each
 equally likely. The result is a plain NumPy array of <code>N</code> rolls.</p>
 <p>Before any statistics, a programmer <em>interrogates the object</em>: what type is it, how big, what values does it
@@ -8000,11 +8000,11 @@ rolls.mean() = 3.4980   (we expect something near 3.5)
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="3)-Build-it-step-by-step">3) Build it step by step<a class="anchor-link" href="#3)-Build-it-step-by-step">¶</a></h2><p>Now the heart of it. We'll turn the raw rolls into a <strong>probability distribution</strong> (a PMF) by counting, then
+<h2 id="3)-Build-it-step-by-step">3) Build it step by step<a class="anchor-link" data-pagefind-ignore href="#3)-Build-it-step-by-step">¶</a></h2><p>Now the heart of it. We'll turn the raw rolls into a <strong>probability distribution</strong> (a PMF) by counting, then
 feed that PMF into the definitions of $E[X]$ and $\operatorname{Var}[X]$. At every step we check our
 from-scratch number against two things: the <strong>theory</strong> (a fair die's known answers) and <strong>numpy's own</strong>
 <code>.mean()</code> / <code>.var()</code>. Once they match to the decimal, the formula is no longer a mystery box.</p>
-<h3 id="The-empirical-PMF-%E2%80%94-count,-then-divide">The empirical PMF — count, then divide<a class="anchor-link" href="#The-empirical-PMF-%E2%80%94-count,-then-divide">¶</a></h3><p>We don't <em>assume</em> each face is $1/6$; we <strong>measure</strong> it. <code>np.unique(rolls, return_counts=True)</code> returns
+<h3 id="The-empirical-PMF-%E2%80%94-count,-then-divide">The empirical PMF — count, then divide<a class="anchor-link" data-pagefind-ignore href="#The-empirical-PMF-%E2%80%94-count,-then-divide">¶</a></h3><p>We don't <em>assume</em> each face is $1/6$; we <strong>measure</strong> it. <code>np.unique(rolls, return_counts=True)</code> returns
 each distinct value and how many times it appeared; dividing the counts by <code>N</code> turns them into
 probabilities. This is the empirical (data-driven) PMF:</p>
 <p>$$\hat{P}(X=x) = \frac{\text{number of rolls equal to } x}{N}.$$</p>
@@ -8060,7 +8060,7 @@ close to a flat 1/6 each? True
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="Expected-value-E%5BX%5D,-from-its-definition">Expected value E[X], from its definition<a class="anchor-link" href="#Expected-value-E%5BX%5D,-from-its-definition">¶</a></h3><p>The <strong>expected value</strong> is the probability-weighted average of the values:</p>
+<h3 id="Expected-value-E%5BX%5D,-from-its-definition">Expected value E[X], from its definition<a class="anchor-link" data-pagefind-ignore href="#Expected-value-E%5BX%5D,-from-its-definition">¶</a></h3><p>The <strong>expected value</strong> is the probability-weighted average of the values:</p>
 <p>$$E[X] = \sum_x x\,P(x).$$</p>
 <p>In vectorized code that is literally <code>np.sum(values * probs)</code> — multiply the two arrays element-by-element,
 then add. We compare it three ways: against the <strong>theoretical</strong> fair-die mean <strong>3.5</strong>, and against numpy's
@@ -8112,7 +8112,7 @@ close to theory 3.5?   True
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="Variance-and-standard-deviation,-from-their-definitions">Variance and standard deviation, from their definitions<a class="anchor-link" href="#Variance-and-standard-deviation,-from-their-definitions">¶</a></h3><p>The <strong>variance</strong> is the probability-weighted average <em>squared</em> distance from the mean; the <strong>SD</strong> is its
+<h3 id="Variance-and-standard-deviation,-from-their-definitions">Variance and standard deviation, from their definitions<a class="anchor-link" data-pagefind-ignore href="#Variance-and-standard-deviation,-from-their-definitions">¶</a></h3><p>The <strong>variance</strong> is the probability-weighted average <em>squared</em> distance from the mean; the <strong>SD</strong> is its
 square root:</p>
 <p>$$\operatorname{Var}[X] = \sum_x (x - E[X])^2\,P(x), \qquad \operatorname{SD}[X] = \sqrt{\operatorname{Var}[X]}.$$</p>
 <p>Watch the vectorization: <code>values - E</code> subtracts the mean from <strong>every</strong> value at once, <code>** 2</code> squares each,
@@ -8173,7 +8173,7 @@ SD[X] from the PMF : 1.7060   (theoretical sqrt(35/12) = 1.7078)
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="The-law-of-large-numbers-%E2%80%94-watch-the-average-converge">The law of large numbers — watch the average converge<a class="anchor-link" href="#The-law-of-large-numbers-%E2%80%94-watch-the-average-converge">¶</a></h3><p>We <em>defined</em> $E[X]$ as the long-run average. The <strong>law of large numbers</strong> makes that precise: as rolls pile
+<h3 id="The-law-of-large-numbers-%E2%80%94-watch-the-average-converge">The law of large numbers — watch the average converge<a class="anchor-link" data-pagefind-ignore href="#The-law-of-large-numbers-%E2%80%94-watch-the-average-converge">¶</a></h3><p>We <em>defined</em> $E[X]$ as the long-run average. The <strong>law of large numbers</strong> makes that precise: as rolls pile
 up, the <strong>running average</strong> settles toward 3.5. The trick is <code>np.cumsum(rolls)</code>, which gives the running
 <em>total</em> after each roll; dividing by <code>np.arange(1, N+1)</code> (1, 2, 3, ... rolls so far) turns it into the
 running <em>mean</em> — the whole curve in two vectorized lines, no loop.</p>
@@ -8229,7 +8229,7 @@ Average of all 100,000 rolls : 3.498   (target 3.5)
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="4)-The-idiom-%E2%80%94-vectorized-simulation-vs.-a-loop">4) The idiom — vectorized simulation vs. a loop<a class="anchor-link" href="#4)-The-idiom-%E2%80%94-vectorized-simulation-vs.-a-loop">¶</a></h2><p>You <em>could</em> roll the die one face at a time in a Python <code>for</code> loop. It gives the same distribution but is
+<h2 id="4)-The-idiom-%E2%80%94-vectorized-simulation-vs.-a-loop">4) The idiom — vectorized simulation vs. a loop<a class="anchor-link" data-pagefind-ignore href="#4)-The-idiom-%E2%80%94-vectorized-simulation-vs.-a-loop">¶</a></h2><p>You <em>could</em> roll the die one face at a time in a Python <code>for</code> loop. It gives the same distribution but is
 slower and noisier to read. The idiom is to ask the generator for the whole batch at once with
 <code>size=N</code>. Let's build both and time them so the difference is visible.</p>
 </div>
@@ -8289,7 +8289,7 @@ and it is one short line. On big simulations this is the difference between seco
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="5)-Refactor-into-reusable-functions">5) Refactor into reusable functions<a class="anchor-link" href="#5)-Refactor-into-reusable-functions">¶</a></h2><p>You've now written "weighted sum of values" and "weighted sum of squared deviations" by hand. The
+<h2 id="5)-Refactor-into-reusable-functions">5) Refactor into reusable functions<a class="anchor-link" data-pagefind-ignore href="#5)-Refactor-into-reusable-functions">¶</a></h2><p>You've now written "weighted sum of values" and "weighted sum of squared deviations" by hand. The
 programmer's reflex is to <strong>wrap repeated work in a function</strong>: name it, give it inputs, <code>return</code> the
 result. Then $E[X]$ and $\operatorname{Var}[X]$ are one call each, reusable on <em>any</em> distribution — a single
 die, the sum of two dice, a real dataset.</p>
@@ -8345,7 +8345,7 @@ match Section 3? True True
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="A-derived-random-variable:-the-sum-of-two-dice">A derived random variable: the sum of two dice<a class="anchor-link" href="#A-derived-random-variable:-the-sum-of-two-dice">¶</a></h3><p>A function earns its keep when you reuse it on something new. Let $S = X_1 + X_2$, the <strong>sum of two fair
+<h3 id="A-derived-random-variable:-the-sum-of-two-dice">A derived random variable: the sum of two dice<a class="anchor-link" data-pagefind-ignore href="#A-derived-random-variable:-the-sum-of-two-dice">¶</a></h3><p>A function earns its keep when you reuse it on something new. Let $S = X_1 + X_2$, the <strong>sum of two fair
 dice</strong> — a fresh random variable with a famous <em>triangular</em> distribution peaking at 7. We simulate it
 (roll two batches, add them), build its empirical PMF by counting, and feed that PMF to the <em>same</em> two
 functions. Theory says $E[S] = 7$ (two dice, $2 \times 3.5$) and $\operatorname{Var}[S] = 35/6 \approx
@@ -8415,7 +8415,7 @@ close to theory (7 and 5.833)?  True True
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="The-same-functions-on-REAL-data-%E2%80%94-prenatal-visits">The same functions on REAL data — prenatal visits<a class="anchor-link" href="#The-same-functions-on-REAL-data-%E2%80%94-prenatal-visits">¶</a></h3><p>The functions never asked the distribution to be a die. Here's the core lesson's <strong>real</strong> random variable:
+<h3 id="The-same-functions-on-REAL-data-%E2%80%94-prenatal-visits">The same functions on REAL data — prenatal visits<a class="anchor-link" data-pagefind-ignore href="#The-same-functions-on-REAL-data-%E2%80%94-prenatal-visits">¶</a></h3><p>The functions never asked the distribution to be a die. Here's the core lesson's <strong>real</strong> random variable:
 $X$ = the number of prenatal <code>visits</code> for a randomly chosen US birth in 2014. We build its empirical PMF by
 counting (dropping the missing values first), then hand it to the <em>exact same</em> <code>expectation()</code> and
 <code>variance()</code>. The PMF-based answers must equal the plain data mean and the population variance
@@ -8475,7 +8475,7 @@ A typical 2014 birth had about 11 prenatal visits, give or take ~4 (SD).
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="6)-Now-you-code">6) Now you code<a class="anchor-link" href="#6)-Now-you-code">¶</a></h2><p>Write the code yourself. Add a new cell (the <strong>+</strong> button in the toolbar) and try each — predict the answer
+<h2 id="6)-Now-you-code">6) Now you code<a class="anchor-link" data-pagefind-ignore href="#6)-Now-you-code">¶</a></h2><p>Write the code yourself. Add a new cell (the <strong>+</strong> button in the toolbar) and try each — predict the answer
 before you run it.</p>
 <ol>
 <li><p><strong>Standard deviation as a function.</strong> Add <code>sd(values, probs)</code> that returns <code>np.sqrt(variance(values, probs))</code>.
@@ -8497,7 +8497,7 @@ $E$ and $\operatorname{Var}$. Predict: should $E[\text{product}]$ equal $3.5 \ti
 (It does, because the two dice are independent — a fact worth checking by simulation.)</p>
 </li>
 </ol>
-<h2 id="What-you-learned">What you learned<a class="anchor-link" href="#What-you-learned">¶</a></h2><p><strong>Coding</strong></p>
+<h2 id="What-you-learned">What you learned<a class="anchor-link" data-pagefind-ignore href="#What-you-learned">¶</a></h2><p><strong>Coding</strong></p>
 <ul>
 <li><code>rng = np.random.default_rng(0)</code> makes a <strong>seeded</strong> generator — reproducible randomness, essential when a
 notebook must give the same numbers every run. <code>rng.integers(1, 7, size=N)</code> rolls a whole batch at once.</li>

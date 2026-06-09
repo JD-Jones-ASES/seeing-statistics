@@ -10,6 +10,11 @@ _site/
 _output/
 .jupyterlite.doit.db
 *.doit.db
+# Pagefind full-text search index (built by pagefind) and the JupyterLite app
+rendered/pagefind/
+rendered/live/
+# transient render log
+.render_5_1.log
 
 # --- Local tooling downloaded at build time (not source of truth) ---
 tools/bin/

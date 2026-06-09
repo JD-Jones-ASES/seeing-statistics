@@ -7823,7 +7823,7 @@ a.anchor-link {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h1 id="The-code-behind-it:-standard-error-by-simulation">The code behind it: standard error by simulation<a class="anchor-link" href="#The-code-behind-it:-standard-error-by-simulation">¶</a></h1><p><em>Part 2 · Lesson 11 · the code behind it  ·  data: Ames housing (same as Lesson 11)</em></p>
+<h1 id="The-code-behind-it:-standard-error-by-simulation">The code behind it: standard error by simulation<a class="anchor-link" data-pagefind-ignore href="#The-code-behind-it:-standard-error-by-simulation">¶</a></h1><p><em>Part 2 · Lesson 11 · the code behind it  ·  data: Ames housing (same as Lesson 11)</em></p>
 <p><em>↩ A companion to <a href="11-estimation.html">Lesson 11: Estimation &amp; standard error</a>.</em></p>
 <p><strong>↩ Back:</strong> <a href="11-estimation.html">Lesson 11: Estimation &amp; standard error</a>  ·  <a href="index.html">↑ Course map</a>  ·  <strong>Also:</strong> <a href="11-estimation~another-dataset.html">Another dataset →</a></p>
 <p><strong>In Lesson 11 you watched the standard error appear</strong> — thousands of sample means dancing around the true
@@ -7864,7 +7864,7 @@ you compute and confirm it in Python</strong>. We'll go in the order a programme
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="1)-The-goal">1) The goal<a class="anchor-link" href="#1)-The-goal">¶</a></h2><p>By the end of this notebook you'll have written the <strong>engine</strong> behind Lesson 11: code that treats a real
+<h2 id="1)-The-goal">1) The goal<a class="anchor-link" data-pagefind-ignore href="#1)-The-goal">¶</a></h2><p>By the end of this notebook you'll have written the <strong>engine</strong> behind Lesson 11: code that treats a real
 dataset as a <em>known population</em>, draws thousands of samples from it, and measures how far a sample average
 typically lands from the truth — the <strong>standard error</strong>. With it you'll <strong>numerically confirm</strong> the famous
 formula $\text{SE} = \sigma/\sqrt{n}$, watch the <strong>$\sqrt{n}$ law</strong> (quadruple the sample, halve the error),
@@ -7951,7 +7951,7 @@ Its workhorse method is <code>rng.choice(pop, size=..., replace=True)</code> —
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="2)-The-data-in-code">2) The data in code<a class="anchor-link" href="#2)-The-data-in-code">¶</a></h2><p>We'll treat the whole <code>area</code> column as our <strong>population</strong> — every home, no sampling yet — so we get to
+<h2 id="2)-The-data-in-code">2) The data in code<a class="anchor-link" data-pagefind-ignore href="#2)-The-data-in-code">¶</a></h2><p>We'll treat the whole <code>area</code> column as our <strong>population</strong> — every home, no sampling yet — so we get to
 <em>know</em> the true answer and check our simulation against it. This is the core lesson's clever trick: in a
 real study you'd never know $\mu$, but by <em>declaring</em> the file the population we can grade our own work.</p>
 <p>A programmer's first move is to <em>interrogate the object</em>: pull out the column, drop the missing values, and
@@ -8032,8 +8032,8 @@ formula with a clean conscience.</p>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="3)-Build-it-step-by-step">3) Build it step by step<a class="anchor-link" href="#3)-Build-it-step-by-step">¶</a></h2><p>Here is the heart of it. We'll build the standard-error story in five short moves.</p>
-<h3 id="Move-1-%E2%80%94-one-sample,-one-estimate-(and-it-misses)">Move 1 — one sample, one estimate (and it misses)<a class="anchor-link" href="#Move-1-%E2%80%94-one-sample,-one-estimate-(and-it-misses)">¶</a></h3><p>A <strong>point estimate</strong> is what you get from a single sample: draw <code>n</code> homes, average them. That one number
+<h2 id="3)-Build-it-step-by-step">3) Build it step by step<a class="anchor-link" data-pagefind-ignore href="#3)-Build-it-step-by-step">¶</a></h2><p>Here is the heart of it. We'll build the standard-error story in five short moves.</p>
+<h3 id="Move-1-%E2%80%94-one-sample,-one-estimate-(and-it-misses)">Move 1 — one sample, one estimate (and it misses)<a class="anchor-link" data-pagefind-ignore href="#Move-1-%E2%80%94-one-sample,-one-estimate-(and-it-misses)">¶</a></h3><p>A <strong>point estimate</strong> is what you get from a single sample: draw <code>n</code> homes, average them. That one number
 is our guess at $\mu$ — and because it's only a sample, it lands <em>near</em> the truth, not on it. The gap is
 <strong>sampling error</strong>.</p>
 </div>
@@ -8082,7 +8082,7 @@ Draw a different sample and the estimate moves. How much it typically moves is t
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="Move-2-%E2%80%94-the-standard-error,-by-simulation">Move 2 — the standard error, by simulation<a class="anchor-link" href="#Move-2-%E2%80%94-the-standard-error,-by-simulation">¶</a></h3><p>The <strong>standard error (SE)</strong> is the <em>typical</em> size of that miss — formally, the <strong>standard deviation of the
+<h3 id="Move-2-%E2%80%94-the-standard-error,-by-simulation">Move 2 — the standard error, by simulation<a class="anchor-link" data-pagefind-ignore href="#Move-2-%E2%80%94-the-standard-error,-by-simulation">¶</a></h3><p>The <strong>standard error (SE)</strong> is the <em>typical</em> size of that miss — formally, the <strong>standard deviation of the
 estimate across all the samples you could have drawn</strong>. We can't see "all possible samples," but we can draw
 a huge pile of them, collect their means, and measure how spread out the means are. That measured spread
 <em>is</em> the standard error, made concrete.</p>
@@ -8142,7 +8142,7 @@ match? True
 <em>describing the spread of the estimates we actually got</em>. (We use <code>ddof=0</code> for <code>xbars.std()</code> here because
 we have the <em>entire</em> cloud of 10,000 estimates — it's a complete population of estimates, not a sample of
 them.)</p>
-<h3 id="Move-3-%E2%80%94-the-$%5Csqrt%7Bn%7D$-law">Move 3 — the $\sqrt{n}$ law<a class="anchor-link" href="#Move-3-%E2%80%94-the-$%5Csqrt%7Bn%7D$-law">¶</a></h3><p>The sample size sits under a <strong>square root</strong> in $\sigma/\sqrt{n}$. So to halve the SE you don't double the
+<h3 id="Move-3-%E2%80%94-the-$%5Csqrt%7Bn%7D$-law">Move 3 — the $\sqrt{n}$ law<a class="anchor-link" data-pagefind-ignore href="#Move-3-%E2%80%94-the-$%5Csqrt%7Bn%7D$-law">¶</a></h3><p>The sample size sits under a <strong>square root</strong> in $\sigma/\sqrt{n}$. So to halve the SE you don't double the
 data — you <strong>quadruple</strong> it. Watch it happen: we'll compute the SE at $n = 10, 40, 160, 640$ (each 4× the
 last) and the SE should halve at every step.</p>
 </div>
@@ -8248,7 +8248,7 @@ but from n=160 to n=640 it is barely visible -- the diminishing returns of more 
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="Move-4-%E2%80%94-unbiased,-and-why-ddof=1-exists">Move 4 — unbiased, and why <code>ddof=1</code> exists<a class="anchor-link" href="#Move-4-%E2%80%94-unbiased,-and-why-ddof=1-exists">¶</a></h3><p>Two estimators worth separating:</p>
+<h3 id="Move-4-%E2%80%94-unbiased,-and-why-ddof=1-exists">Move 4 — unbiased, and why <code>ddof=1</code> exists<a class="anchor-link" data-pagefind-ignore href="#Move-4-%E2%80%94-unbiased,-and-why-ddof=1-exists">¶</a></h3><p>Two estimators worth separating:</p>
 <ul>
 <li>The <strong>sample mean</strong> $\bar{x}$ is <strong>unbiased</strong> for $\mu$: average enough sample means and they pile up
 <em>right on</em> the truth, with no systematic pull either way. The <code>xbars</code> cloud from Move 2 should average to
@@ -8318,7 +8318,7 @@ That gap is exactly why a SAMPLE SD uses ddof=1 -- and why our s/sqrt(n) below u
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="Move-5-%E2%80%94-the-SE-from-a-single-sample-(real-life)">Move 5 — the SE from a <em>single</em> sample (real life)<a class="anchor-link" href="#Move-5-%E2%80%94-the-SE-from-a-single-sample-(real-life)">¶</a></h3><p>In Move 2 we used 10,000 samples and the true $\sigma$. But in a real study you get <strong>one</strong> sample, and you
+<h3 id="Move-5-%E2%80%94-the-SE-from-a-single-sample-(real-life)">Move 5 — the SE from a <em>single</em> sample (real life)<a class="anchor-link" data-pagefind-ignore href="#Move-5-%E2%80%94-the-SE-from-a-single-sample-(real-life)">¶</a></h3><p>In Move 2 we used 10,000 samples and the true $\sigma$. But in a real study you get <strong>one</strong> sample, and you
 <strong>don't know $\sigma$</strong>. So you estimate the standard error by swapping in the sample SD $s$ (with <code>ddof=1</code>,
 because it's a <em>sample</em>):</p>
 <p>$$\widehat{\text{SE}}(\bar{x}) \;=\; \frac{s}{\sqrt{n}}.$$</p>
@@ -8376,7 +8376,7 @@ SD vs SE: s describes how much HOMES vary; s/sqrt(n) describes how much the AVER
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="4)-The-idiom-%E2%80%94-the-loop-vs.-the-vectorized-(reps,-n)-array">4) The idiom — the loop vs. the vectorized <code>(reps, n)</code> array<a class="anchor-link" href="#4)-The-idiom-%E2%80%94-the-loop-vs.-the-vectorized-(reps,-n)-array">¶</a></h2><p>In Move 2 we built the estimates with <code>rng.choice(pop, size=(reps, n))</code> — a <strong>2D array of shape <code>(reps, n)</code></strong>,
+<h2 id="4)-The-idiom-%E2%80%94-the-loop-vs.-the-vectorized-(reps,-n)-array">4) The idiom — the loop vs. the vectorized <code>(reps, n)</code> array<a class="anchor-link" data-pagefind-ignore href="#4)-The-idiom-%E2%80%94-the-loop-vs.-the-vectorized-(reps,-n)-array">¶</a></h2><p>In Move 2 we built the estimates with <code>rng.choice(pop, size=(reps, n))</code> — a <strong>2D array of shape <code>(reps, n)</code></strong>,
 which is <code>reps</code> samples stacked as rows, each row a sample of <code>n</code> homes — then averaged <strong>across each row</strong>
 with <code>.mean(axis=1)</code>. Read <code>axis=1</code> as <strong>"collapse each row to its mean."</strong> The literal alternative is an
 explicit <code>for</code> loop. They give the <em>same</em> answer; the array is one expression and far faster.</p>
@@ -8480,7 +8480,7 @@ identical (same seed -&gt; same draws)? True
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="5)-Refactor-into-reusable-functions">5) Refactor into reusable functions<a class="anchor-link" href="#5)-Refactor-into-reusable-functions">¶</a></h2><p>You've now written "sample SD over root-n" and "draw-average-collect" a few times. The programmer's reflex
+<h2 id="5)-Refactor-into-reusable-functions">5) Refactor into reusable functions<a class="anchor-link" data-pagefind-ignore href="#5)-Refactor-into-reusable-functions">¶</a></h2><p>You've now written "sample SD over root-n" and "draw-average-collect" a few times. The programmer's reflex
 is to <strong>wrap repeated work in a function</strong>: name it, give it inputs, <code>return</code> the result. Two functions
 capture the whole lesson — one for the <em>estimated</em> SE from a single sample, one for the <em>simulated</em>
 sampling distribution we check it against.</p>
@@ -8566,7 +8566,7 @@ $n$, which is <em>why</em> a lone sample is enough to report a margin in real li
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="6)-Now-you-code">6) Now you code<a class="anchor-link" href="#6)-Now-you-code">¶</a></h2><p>Write the code yourself. Add a new cell (the <strong>+</strong> button in the toolbar) and try each — predict the answer
+<h2 id="6)-Now-you-code">6) Now you code<a class="anchor-link" data-pagefind-ignore href="#6)-Now-you-code">¶</a></h2><p>Write the code yourself. Add a new cell (the <strong>+</strong> button in the toolbar) and try each — predict the answer
 before you run it.</p>
 <ol>
 <li><p><strong>Quadruple $n$, halve the SE.</strong> Use <code>sampling_distribution(pop, n, 10_000, rng)</code> to get the SE (the
@@ -8587,7 +8587,7 @@ factor is the <code>ddof=0</code> version too small? (Hint: it's about $(n-1)/n$
 should — the formula doesn't care which column.)</p>
 </li>
 </ol>
-<h2 id="What-you-learned">What you learned<a class="anchor-link" href="#What-you-learned">¶</a></h2><p><strong>Coding</strong></p>
+<h2 id="What-you-learned">What you learned<a class="anchor-link" data-pagefind-ignore href="#What-you-learned">¶</a></h2><p><strong>Coding</strong></p>
 <ul>
 <li>NumPy's <strong>random generator</strong> <code>rng = np.random.default_rng(0)</code> gives reproducible randomness; <code>rng.choice(pop, size=..., replace=True)</code> draws samples <strong>with replacement</strong>.</li>
 <li>The <strong>draw → average → repeat</strong> recipe builds a sampling distribution. The explicit <code>for</code>-loop and the

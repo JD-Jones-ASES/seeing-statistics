@@ -7823,7 +7823,7 @@ a.anchor-link {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h1 id="Hypothesis-testing-on-real-data:-do-penguin-species-differ?">Hypothesis testing on real data: do penguin species differ?<a class="anchor-link" href="#Hypothesis-testing-on-real-data:-do-penguin-species-differ?">¶</a></h1><p><em>Part 2 · Lesson 13 · another dataset  ·  data: Palmer Penguins</em></p>
+<h1 id="Hypothesis-testing-on-real-data:-do-penguin-species-differ?">Hypothesis testing on real data: do penguin species differ?<a class="anchor-link" data-pagefind-ignore href="#Hypothesis-testing-on-real-data:-do-penguin-species-differ?">¶</a></h1><p><em>Part 2 · Lesson 13 · another dataset  ·  data: Palmer Penguins</em></p>
 <p><em>↩ A companion to <a href="13-hypothesis-testing.html">Lesson 13: Hypothesis testing: p-values, errors &amp; power</a>.</em></p>
 <p><strong>↩ Back:</strong> <a href="13-hypothesis-testing.html">Lesson 13: Hypothesis testing: p-values, errors &amp; power</a>  ·  <a href="index.html">↑ Course map</a>  ·  <strong>Also:</strong> <a href="13-hypothesis-testing~the-code.html">The code behind it →</a></p>
 <p>The core lesson built its "null world" by hand — it took a known population and <em>slid</em> it sideways until
@@ -7906,7 +7906,7 @@ Gentoo     n = 123   mean = 5076.0 g   sd = 504.1 g
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="1)-The-question,-and-the-two-hypotheses">1) The question, and the two hypotheses<a class="anchor-link" href="#1)-The-question,-and-the-two-hypotheses">¶</a></h2><p>We're comparing the <strong>average body mass</strong> of two penguin species at a time. The question is always the
+<h2 id="1)-The-question,-and-the-two-hypotheses">1) The question, and the two hypotheses<a class="anchor-link" data-pagefind-ignore href="#1)-The-question,-and-the-two-hypotheses">¶</a></h2><p>We're comparing the <strong>average body mass</strong> of two penguin species at a time. The question is always the
 same shape: <em>"do these two groups really differ, or could the gap we see just be the luck of which
 penguins happened to get weighed?"</em> Every hypothesis test names <strong>two</strong> competing statements:</p>
 <ul>
@@ -7968,7 +7968,7 @@ Adelie - Gentoo    = -1375.4 g   &lt;- huge gap. Surely real... but let us check
 nearly four kilograms. The <strong>1,375-gram</strong> gap to Gentoo is more than a third of a penguin. Our eyes
 already suspect the first is noise and the second is real; the rest of the lesson makes that suspicion
 <em>quantitative</em>, and shows you exactly how a test reaches the same verdict.</p>
-<h2 id="2)-Building-the-null-world-from-real-weights-%E2%80%94-the-permutation-test">2) Building the null world from real weights — the permutation test<a class="anchor-link" href="#2)-Building-the-null-world-from-real-weights-%E2%80%94-the-permutation-test">¶</a></h2><p>In the core lesson we <em>built</em> a null population by shifting a known one. With real groups there's an even
+<h2 id="2)-Building-the-null-world-from-real-weights-%E2%80%94-the-permutation-test">2) Building the null world from real weights — the permutation test<a class="anchor-link" data-pagefind-ignore href="#2)-Building-the-null-world-from-real-weights-%E2%80%94-the-permutation-test">¶</a></h2><p>In the core lesson we <em>built</em> a null population by shifting a known one. With real groups there's an even
 more direct trick, and it needs <strong>no formula and no assumed bell curve</strong>: the <strong>permutation test</strong>.</p>
 <p>Here's the idea. <em>If the null were true</em> — if species labels made no difference to weight — then the
 "Adelie" and "Chinstrap" tags are just arbitrary stickers on one big pooled bag of penguins. So we can
@@ -8031,7 +8031,7 @@ Spread (sd) of the null differences: 63.4 g
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="3)-Demo-1-%E2%80%94-the-near-null:-Adelie-vs-Chinstrap">3) Demo 1 — the near-null: Adelie vs Chinstrap<a class="anchor-link" href="#3)-Demo-1-%E2%80%94-the-near-null:-Adelie-vs-Chinstrap">¶</a></h2><p>Now the <strong>p-value</strong>, the heart of the whole method:</p>
+<h2 id="3)-Demo-1-%E2%80%94-the-near-null:-Adelie-vs-Chinstrap">3) Demo 1 — the near-null: Adelie vs Chinstrap<a class="anchor-link" data-pagefind-ignore href="#3)-Demo-1-%E2%80%94-the-near-null:-Adelie-vs-Chinstrap">¶</a></h2><p>Now the <strong>p-value</strong>, the heart of the whole method:</p>
 <blockquote>
 <p><em>If the two species truly had the same mean weight, how often would pure label-shuffling luck produce a
 gap at least as big as the <strong>32 g</strong> we actually saw?</em></p>
@@ -8162,7 +8162,7 @@ Both say the same thing: with p well above 0.05, FAIL TO REJECT -- no real diffe
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="4)-Demo-2-%E2%80%94-the-glaring-effect:-Adelie-vs-Gentoo">4) Demo 2 — the glaring effect: Adelie vs Gentoo<a class="anchor-link" href="#4)-Demo-2-%E2%80%94-the-glaring-effect:-Adelie-vs-Gentoo">¶</a></h2><p>Exactly the same machinery, a completely different verdict. Gentoos outweigh Adelies by about
+<h2 id="4)-Demo-2-%E2%80%94-the-glaring-effect:-Adelie-vs-Gentoo">4) Demo 2 — the glaring effect: Adelie vs Gentoo<a class="anchor-link" data-pagefind-ignore href="#4)-Demo-2-%E2%80%94-the-glaring-effect:-Adelie-vs-Gentoo">¶</a></h2><p>Exactly the same machinery, a completely different verdict. Gentoos outweigh Adelies by about
 <strong>1,375 g</strong>. We rebuild the null world by shuffling <em>these</em> two groups' labels and ask the same question:
 how often does label-luck alone manufacture a gap that enormous?</p>
 </div>
@@ -8253,7 +8253,7 @@ outside it — so far that not a single one of 20,000 shuffles came close. With 
 <p><strong>Two real datasets, same method, opposite verdicts.</strong> That side-by-side is the whole point of grounding
 this in nature instead of a simulated population: one comparison <em>should</em> fail to reject and one <em>should</em>
 reject, and the machinery sorts them correctly without ever being told the answer.</p>
-<h2 id="5)-The-decision-rule,-and-what-a-p-value-is-(and-isn't)">5) The decision rule, and what a p-value is (and isn't)<a class="anchor-link" href="#5)-The-decision-rule,-and-what-a-p-value-is-(and-isn't)">¶</a></h2><p>Before peeking at the data you pick a <strong>significance level $\alpha$</strong> — the false-alarm risk you'll
+<h2 id="5)-The-decision-rule,-and-what-a-p-value-is-(and-isn't)">5) The decision rule, and what a p-value is (and isn't)<a class="anchor-link" data-pagefind-ignore href="#5)-The-decision-rule,-and-what-a-p-value-is-(and-isn't)">¶</a></h2><p>Before peeking at the data you pick a <strong>significance level $\alpha$</strong> — the false-alarm risk you'll
 accept. The convention is $\alpha = 0.05$. The rule:</p>
 <ul>
 <li><strong>$p \le \alpha$</strong> → <strong>reject $H_0$</strong> (the gap is too surprising for the null — <em>statistically
@@ -8310,7 +8310,7 @@ Adelie vs Gentoo        p =  7.71e-65   -&gt;  REJECT H0  (significant differenc
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="6)-Type-I-error-%E2%80%94-the-price-of-a-5%25-threshold,-measured-on-real-penguins">6) Type I error — the price of a 5% threshold, measured on real penguins<a class="anchor-link" href="#6)-Type-I-error-%E2%80%94-the-price-of-a-5%25-threshold,-measured-on-real-penguins">¶</a></h2><p>A test makes a yes/no call about an unknown truth, so there are exactly <strong>two</strong> ways to blunder:</p>
+<h2 id="6)-Type-I-error-%E2%80%94-the-price-of-a-5%25-threshold,-measured-on-real-penguins">6) Type I error — the price of a 5% threshold, measured on real penguins<a class="anchor-link" data-pagefind-ignore href="#6)-Type-I-error-%E2%80%94-the-price-of-a-5%25-threshold,-measured-on-real-penguins">¶</a></h2><p>A test makes a yes/no call about an unknown truth, so there are exactly <strong>two</strong> ways to blunder:</p>
 <table>
 <thead>
 <tr>
@@ -8438,7 +8438,7 @@ Right around the 0.05 we signed up for -- false positives are the PRICE of a 5% 
 slice below 0.05 is, by definition, about 5% of the area, and that slice <strong>is</strong> the Type I error rate. You
 don't <em>avoid</em> false alarms by choosing $\alpha = 0.05$; you <em>choose</em> their long-run rate to be 5%. Set
 <code>alpha = 0.01</code> and that shaded slice — and the false-alarm rate — shrinks toward 1%.</p>
-<h2 id="7)-Power-%E2%80%94-why-we-caught-Gentoo-but-couldn't-catch-a-tiny-gap">7) Power — why we caught Gentoo but couldn't catch a tiny gap<a class="anchor-link" href="#7)-Power-%E2%80%94-why-we-caught-Gentoo-but-couldn't-catch-a-tiny-gap">¶</a></h2><p><strong>Power</strong> is the happy opposite of a Type II error: when there <em>is</em> a real difference, how often does the
+<h2 id="7)-Power-%E2%80%94-why-we-caught-Gentoo-but-couldn't-catch-a-tiny-gap">7) Power — why we caught Gentoo but couldn't catch a tiny gap<a class="anchor-link" data-pagefind-ignore href="#7)-Power-%E2%80%94-why-we-caught-Gentoo-but-couldn't-catch-a-tiny-gap">¶</a></h2><p><strong>Power</strong> is the happy opposite of a Type II error: when there <em>is</em> a real difference, how often does the
 test actually notice? Two of our three comparisons sit at opposite extremes of power, and we can estimate
 each by resampling the real penguins (drawing fresh samples <em>with replacement</em>, treating each species as
 its own little population) and seeing how often the test rejects.</p>
@@ -8562,7 +8562,7 @@ Chinstrap effect fixed and grow the sample size — power should climb as $n$ ri
 The tiny Chinstrap effect starts near the false-alarm floor and only crawls upward — you'd need <em>hundreds</em>
 of penguins per group to reliably detect a 32 g difference, if it's even real. <strong>Bigger true effect and
 bigger $n$ both push power up; a small effect with small $n$ leaves you nearly blind.</strong></p>
-<h2 id="Now-you-try">Now you try<a class="anchor-link" href="#Now-you-try">¶</a></h2><p>Predict first, then change a number and re-run:</p>
+<h2 id="Now-you-try">Now you try<a class="anchor-link" data-pagefind-ignore href="#Now-you-try">¶</a></h2><p>Predict first, then change a number and re-run:</p>
 <ol>
 <li><strong>Swap the comparison.</strong> In section 3, build <code>null_CG = permutation_null(chinstrap, gentoo, seed=4)</code>
 and compute its p-value against <code>chinstrap.mean() - gentoo.mean()</code>. Will Chinstrap-vs-Gentoo land in
@@ -8576,7 +8576,7 @@ it doesn't depend on which species you pick.</li>
 Chinstrap gap reaches power 0.80. Compare it to the ~40 penguins we actually have of each — could this
 data ever have caught a 32 g difference?</li>
 </ol>
-<h2 id="What-you-learned">What you learned<a class="anchor-link" href="#What-you-learned">¶</a></h2><ul>
+<h2 id="What-you-learned">What you learned<a class="anchor-link" data-pagefind-ignore href="#What-you-learned">¶</a></h2><ul>
 <li>A test pits a precise <strong>null $H_0$</strong> ("the two species weigh the same") against an <strong>alternative $H_a$</strong>
 ("they differ"); you presume the null and ask whether the data is too surprising to keep it.</li>
 <li>The <strong>null world</strong> can be built straight from real data by a <strong>permutation test</strong>: pool both groups,

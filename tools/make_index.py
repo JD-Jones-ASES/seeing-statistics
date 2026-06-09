@@ -157,7 +157,7 @@ def main():
              '<meta property="og:url" content="https://jd-jones-ases.github.io/seeing-statistics/">',
              '<meta name="theme-color" content="#4c72b0">',
              '<link rel="icon" href="assets/favicon.svg">',
-             '<link rel="stylesheet" href="assets/pagefind/pagefind-ui.css">',
+             '<link rel="stylesheet" href="pagefind/pagefind-ui.css">',
              "<title>Statistics, by seeing it happen — course map</title>",
              f"<style>{CSS}</style></head><body><div class='wrap'>"]
 
@@ -224,7 +224,7 @@ def main():
         "<p>Everything runs free; the reading pages work fully offline. "
         "Built with Python, Jupyter, and JupyterLite.</p></footer>")
     parts.append(f"<script>{SCRIPT}</script>")
-    parts.append('<script src="assets/pagefind/pagefind-ui.js"></script>')
+    parts.append('<script src="pagefind/pagefind-ui.js"></script>')
     parts.append("</div></body></html>")
 
     out = RENDERED / "index.html"

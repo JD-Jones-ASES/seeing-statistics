@@ -7823,7 +7823,7 @@ a.anchor-link {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h1 id="The-code-behind-it:-build-describe()-from-scratch">The code behind it: build describe() from scratch<a class="anchor-link" href="#The-code-behind-it:-build-describe()-from-scratch">¶</a></h1><p><em>Part 1 · Lesson 1 · the code behind it  ·  data: Palmer Penguins (same as Lesson 1)</em></p>
+<h1 id="The-code-behind-it:-build-describe()-from-scratch">The code behind it: build describe() from scratch<a class="anchor-link" data-pagefind-ignore href="#The-code-behind-it:-build-describe()-from-scratch">¶</a></h1><p><em>Part 1 · Lesson 1 · the code behind it  ·  data: Palmer Penguins (same as Lesson 1)</em></p>
 <p><em>↩ A companion to <a href="01-describing-data.html">Lesson 1: Describing a real dataset</a>.</em></p>
 <p><strong>↩ Back:</strong> <a href="01-describing-data.html">Lesson 1: Describing a real dataset</a>  ·  <a href="index.html">↑ Course map</a>  ·  <strong>Also:</strong> <a href="01-describing-data~another-dataset.html">Another dataset →</a></p>
 <p><strong>In Lesson 1 you described penguins with pandas one-liners</strong> — <code>mass.mean()</code>, <code>mass.std()</code>,
@@ -7863,7 +7863,7 @@ compute it in Python</strong>. We'll go in the order a programmer actually works
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="1)-The-goal">1) The goal<a class="anchor-link" href="#1)-The-goal">¶</a></h2><p>By the end of this notebook you'll have written a function that takes a column of numbers and returns its
+<h2 id="1)-The-goal">1) The goal<a class="anchor-link" data-pagefind-ignore href="#1)-The-goal">¶</a></h2><p>By the end of this notebook you'll have written a function that takes a column of numbers and returns its
 center, spread and shape — the same summary <code>pandas</code> hands you for free — plus a from-scratch correlation
 and a per-group summary table. Nothing here needs new statistics; everything is the Python <em>underneath</em>
 the one-liners you already ran.</p>
@@ -7944,7 +7944,7 @@ an array of values with an index. Almost everything below is "do some arithmetic
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="2)-The-data-in-code">2) The data in code<a class="anchor-link" href="#2)-The-data-in-code">¶</a></h2><p>Before any statistics, a programmer <em>interrogates the object</em>: what type is it, how big is it, what are the
+<h2 id="2)-The-data-in-code">2) The data in code<a class="anchor-link" data-pagefind-ignore href="#2)-The-data-in-code">¶</a></h2><p>Before any statistics, a programmer <em>interrogates the object</em>: what type is it, how big is it, what are the
 columns, what do the first rows look like? Four habits worth keeping:</p>
 <ul>
 <li><code>.shape</code> → <code>(rows, columns)</code> as a tuple.</li>
@@ -8093,12 +8093,12 @@ dtype: object
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="Selecting-columns-and-rows">Selecting columns and rows<a class="anchor-link" href="#Selecting-columns-and-rows">¶</a></h3><ul>
+<h3 id="Selecting-columns-and-rows">Selecting columns and rows<a class="anchor-link" data-pagefind-ignore href="#Selecting-columns-and-rows">¶</a></h3><ul>
 <li><strong>One column</strong> → <code>penguins['body_mass_g']</code> gives a <code>Series</code>.</li>
 <li><strong>A boolean mask</strong> → <code>penguins['species'] == 'Gentoo'</code> makes a column of <code>True</code>/<code>False</code>; putting it
 <em>inside the brackets</em> keeps only the <code>True</code> rows. This is the single most useful pattern in pandas.</li>
 </ul>
-<h3 id="Missing-values">Missing values<a class="anchor-link" href="#Missing-values">¶</a></h3><p>Real data has holes. A few penguins are missing a measurement, stored as <code>NaN</code> ("not a number"). Math on a
+<h3 id="Missing-values">Missing values<a class="anchor-link" data-pagefind-ignore href="#Missing-values">¶</a></h3><p>Real data has holes. A few penguins are missing a measurement, stored as <code>NaN</code> ("not a number"). Math on a
 <code>NaN</code> silently spreads it, so we drop the rows missing the columns we need with <code>.dropna(subset=[...])</code>.
 This makes a <strong>new, smaller table</strong> — it never edits the file on disk (our <code>raw/</code> data stays read-only).</p>
 </div>
@@ -8153,10 +8153,10 @@ Gentoo penguins: 119 of 333
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="3)-Build-it-step-by-step">3) Build it step by step<a class="anchor-link" href="#3)-Build-it-step-by-step">¶</a></h2><p>Now the heart of it. Each statistic is a one-line <code>pandas</code> method <em>and</em> a short formula — we'll write the
+<h2 id="3)-Build-it-step-by-step">3) Build it step by step<a class="anchor-link" data-pagefind-ignore href="#3)-Build-it-step-by-step">¶</a></h2><p>Now the heart of it. Each statistic is a one-line <code>pandas</code> method <em>and</em> a short formula — we'll write the
 formula in NumPy and check the two agree to the last decimal. Once you've built it, the method is no longer
 a mystery box.</p>
-<h3 id="The-mean">The mean<a class="anchor-link" href="#The-mean">¶</a></h3><p>$$\bar{x} = \frac{1}{n}\sum_{i=1}^{n} x_i \qquad\text{— add them all up, divide by how many.}$$</p>
+<h3 id="The-mean">The mean<a class="anchor-link" data-pagefind-ignore href="#The-mean">¶</a></h3><p>$$\bar{x} = \frac{1}{n}\sum_{i=1}^{n} x_i \qquad\text{— add them all up, divide by how many.}$$</p>
 <p>In code that is literally <code>mass.sum() / len(mass)</code>. <code>numpy</code> adds a whole array for you, so no loop needed.</p>
 </div>
 </div>
@@ -8200,7 +8200,7 @@ match? True
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="Variance-and-standard-deviation">Variance and standard deviation<a class="anchor-link" href="#Variance-and-standard-deviation">¶</a></h3><p>Variance is the <strong>average squared distance from the mean</strong> — but divided by $n-1$, not $n$, for a sample
+<h3 id="Variance-and-standard-deviation">Variance and standard deviation<a class="anchor-link" data-pagefind-ignore href="#Variance-and-standard-deviation">¶</a></h3><p>Variance is the <strong>average squared distance from the mean</strong> — but divided by $n-1$, not $n$, for a sample
 (that "minus one" is <strong>Bessel's correction</strong>; it keeps the estimate from running too small):</p>
 <p>$$s^2 = \frac{1}{n-1}\sum_{i=1}^{n}(x_i-\bar{x})^2, \qquad s=\sqrt{s^2}.$$</p>
 <p>Watch the vectorization: <code>mass - mean_by_hand</code> subtracts the mean from <strong>every</strong> value at once, giving a
@@ -8257,7 +8257,7 @@ match? True True
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="z-scores-%E2%80%94-one-formula,-applied-to-the-whole-column">z-scores — one formula, applied to the whole column<a class="anchor-link" href="#z-scores-%E2%80%94-one-formula,-applied-to-the-whole-column">¶</a></h3><p>A <strong>z-score</strong> says "how many SDs from the mean": $z = (x - \bar{x}) / s$. Because subtraction and division
+<h3 id="z-scores-%E2%80%94-one-formula,-applied-to-the-whole-column">z-scores — one formula, applied to the whole column<a class="anchor-link" data-pagefind-ignore href="#z-scores-%E2%80%94-one-formula,-applied-to-the-whole-column">¶</a></h3><p>A <strong>z-score</strong> says "how many SDs from the mean": $z = (x - \bar{x}) / s$. Because subtraction and division
 work element-by-element, the entire column of z-scores is <em>one expression</em> — no loop over penguins.</p>
 </div>
 </div>
@@ -8306,7 +8306,7 @@ and the mean of True/False is just the proportion that are True.
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="Correlation,-from-its-formula">Correlation, from its formula<a class="anchor-link" href="#Correlation,-from-its-formula">¶</a></h3><p>Lesson 1's <code>flipper.corr(mass)</code> is <strong>Pearson's $r$</strong>. Its formula looks scary but is just "do the
+<h3 id="Correlation,-from-its-formula">Correlation, from its formula<a class="anchor-link" data-pagefind-ignore href="#Correlation,-from-its-formula">¶</a></h3><p>Lesson 1's <code>flipper.corr(mass)</code> is <strong>Pearson's $r$</strong>. Its formula looks scary but is just "do the
 deviations of $x$ and $y$ move together?", scaled to land between $-1$ and $+1$:</p>
 <p>$$r = \frac{\sum (x_i-\bar{x})(y_i-\bar{y})}{\sqrt{\sum (x_i-\bar{x})^2}\;\sqrt{\sum (y_i-\bar{y})^2}}.$$</p>
 <p>Every $\sum$ is a <code>.sum()</code> over a vectorized product. Build it and check against the one-liner.</p>
@@ -8359,7 +8359,7 @@ match? True
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="4)-The-idiom-%E2%80%94-vectorized-vs.-a-loop,-and-groupby">4) The idiom — vectorized vs. a loop, and <code>groupby</code><a class="anchor-link" href="#4)-The-idiom-%E2%80%94-vectorized-vs.-a-loop,-and-groupby">¶</a></h2><h3 id="Why-we-never-wrote-a-loop">Why we never wrote a loop<a class="anchor-link" href="#Why-we-never-wrote-a-loop">¶</a></h3><p>You <em>could</em> compute the mean with a Python <code>for</code> loop. It gives the same answer but is slower and noisier to
+<h2 id="4)-The-idiom-%E2%80%94-vectorized-vs.-a-loop,-and-groupby">4) The idiom — vectorized vs. a loop, and <code>groupby</code><a class="anchor-link" data-pagefind-ignore href="#4)-The-idiom-%E2%80%94-vectorized-vs.-a-loop,-and-groupby">¶</a></h2><h3 id="Why-we-never-wrote-a-loop">Why we never wrote a loop<a class="anchor-link" data-pagefind-ignore href="#Why-we-never-wrote-a-loop">¶</a></h3><p>You <em>could</em> compute the mean with a Python <code>for</code> loop. It gives the same answer but is slower and noisier to
 read. Compare the two — the vectorized one-liner is the idiom you want.</p>
 </div>
 </div>
@@ -8431,7 +8431,7 @@ Mean of 1,000,000 numbers:
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="Split-%E2%86%92-apply-%E2%86%92-combine-with-groupby">Split → apply → combine with <code>groupby</code><a class="anchor-link" href="#Split-%E2%86%92-apply-%E2%86%92-combine-with-groupby">¶</a></h3><p>In Lesson 1 you compared species. The pattern behind "a number per group" is <strong>split-apply-combine</strong>:
+<h3 id="Split-%E2%86%92-apply-%E2%86%92-combine-with-groupby">Split → apply → combine with <code>groupby</code><a class="anchor-link" data-pagefind-ignore href="#Split-%E2%86%92-apply-%E2%86%92-combine-with-groupby">¶</a></h3><p>In Lesson 1 you compared species. The pattern behind "a number per group" is <strong>split-apply-combine</strong>:
 <em>split</em> the rows by a category, <em>apply</em> a summary to each chunk, <em>combine</em> the answers into a table.
 <code>groupby</code> does all three in one expression.</p>
 </div>
@@ -8489,7 +8489,7 @@ combine into one tidy DataFrame. The same idea powers pivot tables and SQL's GRO
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="5)-Refactor-into-a-reusable-function">5) Refactor into a reusable function<a class="anchor-link" href="#5)-Refactor-into-a-reusable-function">¶</a></h2><p>You've now written the same four lines (mean, var, SD, ...) a few times. The programmer's reflex is to
+<h2 id="5)-Refactor-into-a-reusable-function">5) Refactor into a reusable function<a class="anchor-link" data-pagefind-ignore href="#5)-Refactor-into-a-reusable-function">¶</a></h2><p>You've now written the same four lines (mean, var, SD, ...) a few times. The programmer's reflex is to
 <strong>wrap repeated work in a function</strong>: name it, give it inputs, <code>return</code> the result. Then "describe a column"
 is one call you can reuse on <em>any</em> numeric column — flipper length, bill depth, a different dataset entirely.</p>
 </div>
@@ -8561,7 +8561,7 @@ so you know what it's doing.)</p>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="6)-Now-you-code">6) Now you code<a class="anchor-link" href="#6)-Now-you-code">¶</a></h2><p>Write the code yourself. Add a new cell (the <strong>+</strong> button in the toolbar) and try each — predict the answer
+<h2 id="6)-Now-you-code">6) Now you code<a class="anchor-link" data-pagefind-ignore href="#6)-Now-you-code">¶</a></h2><p>Write the code yourself. Add a new cell (the <strong>+</strong> button in the toolbar) and try each — predict the answer
 before you run it.</p>
 <ol>
 <li><p><strong>A function for the IQR.</strong> Write <code>iqr(series)</code> that returns <code>Q3 − Q1</code>. Use <code>series.quantile([0.25, 0.75])</code>,
@@ -8582,7 +8582,7 @@ output to the <code>groupby</code> table from Section 4.</p>
 <code>.std()</code>. (pandas lines up the columns by name for you — that's broadcasting across a DataFrame.)</p>
 </li>
 </ol>
-<h2 id="What-you-learned">What you learned<a class="anchor-link" href="#What-you-learned">¶</a></h2><p><strong>Coding</strong></p>
+<h2 id="What-you-learned">What you learned<a class="anchor-link" data-pagefind-ignore href="#What-you-learned">¶</a></h2><p><strong>Coding</strong></p>
 <ul>
 <li>A <code>DataFrame</code> is a table; a column is a <code>Series</code>. Interrogate any new data with <code>.shape</code>, <code>.columns</code>,
 <code>.dtypes</code>, <code>.head()</code>.</li>

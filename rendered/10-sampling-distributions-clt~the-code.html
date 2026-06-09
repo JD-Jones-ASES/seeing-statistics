@@ -7823,7 +7823,7 @@ a.anchor-link {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h1 id="The-code-behind-it:-simulate-the-CLT-yourself">The code behind it: simulate the CLT yourself<a class="anchor-link" href="#The-code-behind-it:-simulate-the-CLT-yourself">¶</a></h1><p><em>Part 1 · Lesson 10 · the code behind it  ·  data: Lending Club · simulation (same as Lesson 10)</em></p>
+<h1 id="The-code-behind-it:-simulate-the-CLT-yourself">The code behind it: simulate the CLT yourself<a class="anchor-link" data-pagefind-ignore href="#The-code-behind-it:-simulate-the-CLT-yourself">¶</a></h1><p><em>Part 1 · Lesson 10 · the code behind it  ·  data: Lending Club · simulation (same as Lesson 10)</em></p>
 <p><em>↩ A companion to <a href="10-sampling-distributions-clt.html">Lesson 10: Sampling distributions &amp; the Central Limit Theorem</a>.</em></p>
 <p><strong>↩ Back:</strong> <a href="10-sampling-distributions-clt.html">Lesson 10: Sampling distributions &amp; the Central Limit Theorem</a>  ·  <a href="index.html">↑ Course map</a>  ·  <strong>Also:</strong> <a href="10-sampling-distributions-clt~another-dataset.html">Another dataset →</a></p>
 <p><strong>In Lesson 10 you watched the Central Limit Theorem happen</strong> — thousands of sample means piling up into a
@@ -7863,7 +7863,7 @@ you simulate it in Python</strong>. We'll go in the order a programmer actually 
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="1)-The-goal">1) The goal<a class="anchor-link" href="#1)-The-goal">¶</a></h2><p>By the end of this notebook you'll have written the <strong>engine</strong> behind Lesson 10: a function that draws
+<h2 id="1)-The-goal">1) The goal<a class="anchor-link" data-pagefind-ignore href="#1)-The-goal">¶</a></h2><p>By the end of this notebook you'll have written the <strong>engine</strong> behind Lesson 10: a function that draws
 thousands of random samples from a population, averages each one, and hands back the whole pile of sample
 means — the <strong>sampling distribution of the mean</strong>. With it you'll <em>see</em> the Central Limit Theorem appear, and
 you'll <strong>numerically confirm</strong> the famous $\sqrt{n}$ law (the spread of the sample means equals
@@ -7949,7 +7949,7 @@ Its workhorse method is <code>rng.choice(pop, size=..., replace=True)</code> —
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="2)-The-data-in-code">2) The data in code<a class="anchor-link" href="#2)-The-data-in-code">¶</a></h2><p>We'll treat the whole income column as our <strong>population</strong> — every value, no sampling yet — so we get to <em>know</em>
+<h2 id="2)-The-data-in-code">2) The data in code<a class="anchor-link" data-pagefind-ignore href="#2)-The-data-in-code">¶</a></h2><p>We'll treat the whole income column as our <strong>population</strong> — every value, no sampling yet — so we get to <em>know</em>
 the true answer and check our simulation against it.</p>
 <p>A programmer's first move is to <em>interrogate the object</em>: pull out the column, drop the missing values, and
 turn it into a plain NumPy array (fast to sample from). Then compute the two numbers the CLT cares about:</p>
@@ -8009,7 +8009,7 @@ min / max                  = $0 / $2,300,000
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="Confirm-it's-skewed-%E2%80%94-not-a-bell-curve">Confirm it's skewed — <em>not</em> a bell curve<a class="anchor-link" href="#Confirm-it's-skewed-%E2%80%94-not-a-bell-curve">¶</a></h3><p>The whole drama of the CLT is that the <strong>population</strong> looks nothing like a bell, yet the <strong>averages</strong> will.
+<h3 id="Confirm-it's-skewed-%E2%80%94-not-a-bell-curve">Confirm it's skewed — <em>not</em> a bell curve<a class="anchor-link" data-pagefind-ignore href="#Confirm-it's-skewed-%E2%80%94-not-a-bell-curve">¶</a></h3><p>The whole drama of the CLT is that the <strong>population</strong> looks nothing like a bell, yet the <strong>averages</strong> will.
 So look at the raw shape first. The mean printed just above (about $79,000) sitting far <strong>above</strong> the median
 ($65,000) is the giveaway: a long thin tail of high earners drags the average up. Let's draw it. <em>(We clip
 the x-axis at $300k just so the bulk is readable — the tail actually runs all the way to $2.3 million.)</em></p>
@@ -8066,13 +8066,13 @@ Hold that thought: the AVERAGES of samples from it are about to become one.
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="3)-Build-it-step-by-step">3) Build it step by step<a class="anchor-link" href="#3)-Build-it-step-by-step">¶</a></h2><p>Here is the heart of it. The recipe for the sampling distribution of the mean is three plain steps:</p>
+<h2 id="3)-Build-it-step-by-step">3) Build it step by step<a class="anchor-link" data-pagefind-ignore href="#3)-Build-it-step-by-step">¶</a></h2><p>Here is the heart of it. The recipe for the sampling distribution of the mean is three plain steps:</p>
 <ol>
 <li><strong>draw</strong> a random sample of <code>n</code> incomes from the population,</li>
 <li><strong>average</strong> that sample to get one sample mean $\bar{x}$,</li>
 <li><strong>repeat</strong> thousands of times and collect all the $\bar{x}$ values.</li>
 </ol>
-<h3 id="One-sample-first">One sample first<a class="anchor-link" href="#One-sample-first">¶</a></h3><p>A single sample mean is just <em>one</em> random number — a roll of the dice. Draw it twice and you get two
+<h3 id="One-sample-first">One sample first<a class="anchor-link" data-pagefind-ignore href="#One-sample-first">¶</a></h3><p>A single sample mean is just <em>one</em> random number — a roll of the dice. Draw it twice and you get two
 different answers.</p>
 </div>
 </div>
@@ -8119,12 +8119,12 @@ Different sample -&gt; different mean. xbar wobbles. That wobble has a shape we 
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="Why-replace=True?">Why <code>replace=True</code>?<a class="anchor-link" href="#Why-replace=True?">¶</a></h3><p>We draw <strong>with replacement</strong> (<code>replace=True</code>), meaning the same borrower <em>could</em> be picked twice in one
+<h3 id="Why-replace=True?">Why <code>replace=True</code>?<a class="anchor-link" data-pagefind-ignore href="#Why-replace=True?">¶</a></h3><p>We draw <strong>with replacement</strong> (<code>replace=True</code>), meaning the same borrower <em>could</em> be picked twice in one
 sample. That sounds odd, but it's the right choice: it models drawing from an effectively <em>infinite</em> stream of
 similar borrowers, so a finite population never gets "used up." It's also exactly the assumption under which
 $\sigma/\sqrt{n}$ is the <strong>exact</strong> target for the spread — which lets us check our simulation against the
 formula with a clean conscience.</p>
-<h3 id="Many-samples-%E2%80%94-the-loop-way">Many samples — the loop way<a class="anchor-link" href="#Many-samples-%E2%80%94-the-loop-way">¶</a></h3><p>Now repeat step 1–2 thousands of times. The most literal way is an explicit <code>for</code> loop: start an empty list,
+<h3 id="Many-samples-%E2%80%94-the-loop-way">Many samples — the loop way<a class="anchor-link" data-pagefind-ignore href="#Many-samples-%E2%80%94-the-loop-way">¶</a></h3><p>Now repeat step 1–2 thousands of times. The most literal way is an explicit <code>for</code> loop: start an empty list,
 draw-and-average inside the loop, append each result.</p>
 </div>
 </div>
@@ -8173,7 +8173,7 @@ SD   of the sample means = $11,676   (this is the "standard error")
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="The-headline-check:-does-the-spread-equal-$%5Csigma/%5Csqrt%7Bn%7D$?">The headline check: does the spread equal $\sigma/\sqrt{n}$?<a class="anchor-link" href="#The-headline-check:-does-the-spread-equal-$%5Csigma/%5Csqrt%7Bn%7D$?">¶</a></h3><p>The CLT promises the sample means have standard deviation $\sigma/\sqrt{n}$ — the <strong>standard error (SE)</strong>.
+<h3 id="The-headline-check:-does-the-spread-equal-$%5Csigma/%5Csqrt%7Bn%7D$?">The headline check: does the spread equal $\sigma/\sqrt{n}$?<a class="anchor-link" data-pagefind-ignore href="#The-headline-check:-does-the-spread-equal-$%5Csigma/%5Csqrt%7Bn%7D$?">¶</a></h3><p>The CLT promises the sample means have standard deviation $\sigma/\sqrt{n}$ — the <strong>standard error (SE)</strong>.
 We measured the SE straight from our 10,000 means (<code>means.std()</code>); now compare it to the formula. If the
 simulation is right, the two should be close. We test that with <code>np.isclose</code> and print <strong>match?</strong>.</p>
 </div>
@@ -8221,7 +8221,7 @@ match? True
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="The-CLT-picture:-the-bell-appears,-and-sharpens-as-$n$-grows">The CLT picture: the bell appears, and sharpens as $n$ grows<a class="anchor-link" href="#The-CLT-picture:-the-bell-appears,-and-sharpens-as-$n$-grows">¶</a></h3><p>Now the payoff. We build the sampling distribution for four sample sizes — $n = 2, 5, 30, 100$ — and
+<h3 id="The-CLT-picture:-the-bell-appears,-and-sharpens-as-$n$-grows">The CLT picture: the bell appears, and sharpens as $n$ grows<a class="anchor-link" data-pagefind-ignore href="#The-CLT-picture:-the-bell-appears,-and-sharpens-as-$n$-grows">¶</a></h3><p>Now the payoff. We build the sampling distribution for four sample sizes — $n = 2, 5, 30, 100$ — and
 histogram each. Watch two things happen at once as $n$ climbs:</p>
 <ul>
 <li>the shape becomes <strong>more bell-shaped</strong> (even though the population is savagely skewed), and</li>
@@ -8287,7 +8287,7 @@ and by n=100 it is a tight, clean bell -- exactly the Central Limit Theorem.
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="The-$%5Csqrt%7Bn%7D$-law,-in-one-table">The $\sqrt{n}$ law, in one table<a class="anchor-link" href="#The-$%5Csqrt%7Bn%7D$-law,-in-one-table">¶</a></h3><p>Let's line up the empirical SE against the formula for all four sizes at once, and add the <strong>mean of the
+<h3 id="The-$%5Csqrt%7Bn%7D$-law,-in-one-table">The $\sqrt{n}$ law, in one table<a class="anchor-link" data-pagefind-ignore href="#The-$%5Csqrt%7Bn%7D$-law,-in-one-table">¶</a></h3><p>Let's line up the empirical SE against the formula for all four sizes at once, and add the <strong>mean of the
 means</strong> (which should hug $\mu$ every time). This is the numeric core of the whole lesson.</p>
 </div>
 </div>
@@ -8347,7 +8347,7 @@ all four within 5%? True
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="4)-The-idiom-%E2%80%94-the-loop-vs.-the-vectorized-(reps,-n)-array">4) The idiom — the loop vs. the vectorized <code>(reps, n)</code> array<a class="anchor-link" href="#4)-The-idiom-%E2%80%94-the-loop-vs.-the-vectorized-(reps,-n)-array">¶</a></h2><p>In Section 3 we built the means with an explicit <code>for</code> loop. NumPy lets us do the <em>same thing</em> in one shot: ask
+<h2 id="4)-The-idiom-%E2%80%94-the-loop-vs.-the-vectorized-(reps,-n)-array">4) The idiom — the loop vs. the vectorized <code>(reps, n)</code> array<a class="anchor-link" data-pagefind-ignore href="#4)-The-idiom-%E2%80%94-the-loop-vs.-the-vectorized-(reps,-n)-array">¶</a></h2><p>In Section 3 we built the means with an explicit <code>for</code> loop. NumPy lets us do the <em>same thing</em> in one shot: ask
 for a 2D array of shape <strong><code>(reps, n)</code></strong> — that's <code>reps</code> samples stacked as rows, each row a sample of <code>n</code>
 incomes — then average <strong>across each row</strong> with <code>.mean(axis=1)</code>. Read <code>axis=1</code> as <strong>"collapse each row to its
 mean"</strong>. Same answer, one expression, far faster on big runs.</p>
@@ -8451,7 +8451,7 @@ identical (same seed -&gt; same draws)? True
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="5)-Refactor-into-a-reusable-function">5) Refactor into a reusable function<a class="anchor-link" href="#5)-Refactor-into-a-reusable-function">¶</a></h2><p>You've now written the draw-average-collect recipe a few times. The programmer's reflex is to <strong>wrap repeated
+<h2 id="5)-Refactor-into-a-reusable-function">5) Refactor into a reusable function<a class="anchor-link" data-pagefind-ignore href="#5)-Refactor-into-a-reusable-function">¶</a></h2><p>You've now written the draw-average-collect recipe a few times. The programmer's reflex is to <strong>wrap repeated
 work in a function</strong>: name it, give it inputs, <code>return</code> the result. Then "build the sampling distribution" is
 one call you can reuse for <em>any</em> <code>n</code> — or any population at all.</p>
 </div>
@@ -8520,7 +8520,7 @@ sample sizes and standard errors</strong> — exactly the leap from "watching th
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="6)-Now-you-code">6) Now you code<a class="anchor-link" href="#6)-Now-you-code">¶</a></h2><p>Write the code yourself. Add a new cell (the <strong>+</strong> button in the toolbar) and try each — predict the answer
+<h2 id="6)-Now-you-code">6) Now you code<a class="anchor-link" data-pagefind-ignore href="#6)-Now-you-code">¶</a></h2><p>Write the code yourself. Add a new cell (the <strong>+</strong> button in the toolbar) and try each — predict the answer
 before you run it.</p>
 <ol>
 <li><p><strong>Quadruple $n$, halve the SE.</strong> Use <code>sampling_distribution(pop, n, 10_000, rng)</code> to get the empirical SE
@@ -8539,7 +8539,7 @@ empirical SE still match <code>sigma2 / np.sqrt(30)</code>? (It should.)</p>
 <code>np.allclose(...)</code>, then time both — by how much does vectorizing win?</p>
 </li>
 </ol>
-<h2 id="What-you-learned">What you learned<a class="anchor-link" href="#What-you-learned">¶</a></h2><p><strong>Coding</strong></p>
+<h2 id="What-you-learned">What you learned<a class="anchor-link" data-pagefind-ignore href="#What-you-learned">¶</a></h2><p><strong>Coding</strong></p>
 <ul>
 <li>NumPy's <strong>random generator</strong> <code>rng = np.random.default_rng(0)</code> gives reproducible randomness; <code>rng.choice(pop, size=..., replace=True)</code> draws samples, and <code>replace=True</code> means "with replacement."</li>
 <li>The <strong>sampling-distribution recipe</strong> is draw → average → repeat. The literal <code>for</code>-loop and the <strong>vectorized

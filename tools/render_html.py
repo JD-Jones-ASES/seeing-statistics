@@ -137,6 +137,8 @@ def inject_assets(html_str: str, entry) -> str:
     # 2. strip CDN loaders (math is self-hosted KaTeX; require.js is unused here)
     for loader in _CDN_LOADERS:
         html_str = html_str.replace(loader, "")
+    # keep Jupyter's heading-anchor pilcrows (¶) out of the full-text search index
+    html_str = html_str.replace('class="anchor-link"', 'class="anchor-link" data-pagefind-ignore')
     # 3. head additions (before </head>)
     html_str = html_str.replace("</head>", _head_block(entry) + "</head>", 1)
     # 4. top bar right after <body ...>

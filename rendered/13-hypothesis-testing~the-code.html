@@ -7823,7 +7823,7 @@ a.anchor-link {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h1 id="The-code-behind-it:-build-a-test-by-simulating-the-null">The code behind it: build a test by simulating the null<a class="anchor-link" href="#The-code-behind-it:-build-a-test-by-simulating-the-null">¶</a></h1><p><em>Part 2 · Lesson 13 · the code behind it  ·  data: simulation on a known population (same as Lesson 13)</em></p>
+<h1 id="The-code-behind-it:-build-a-test-by-simulating-the-null">The code behind it: build a test by simulating the null<a class="anchor-link" data-pagefind-ignore href="#The-code-behind-it:-build-a-test-by-simulating-the-null">¶</a></h1><p><em>Part 2 · Lesson 13 · the code behind it  ·  data: simulation on a known population (same as Lesson 13)</em></p>
 <p><em>↩ A companion to <a href="13-hypothesis-testing.html">Lesson 13: Hypothesis testing: p-values, errors &amp; power</a>.</em></p>
 <p><strong>↩ Back:</strong> <a href="13-hypothesis-testing.html">Lesson 13: Hypothesis testing: p-values, errors &amp; power</a>  ·  <a href="index.html">↑ Course map</a>  ·  <strong>Also:</strong> <a href="13-hypothesis-testing~another-dataset.html">Another dataset →</a></p>
 <p><strong>In Lesson 13 the p-value appeared as if by magic</strong> — you slid a known population sideways, drew
@@ -7863,7 +7863,7 @@ means</em> to <strong>how you build one in Python</strong>. We'll go in the orde
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="1)-The-goal">1) The goal<a class="anchor-link" href="#1)-The-goal">¶</a></h2><p>By the end of this notebook you'll have written a function that takes an observed statistic and a recipe
+<h2 id="1)-The-goal">1) The goal<a class="anchor-link" data-pagefind-ignore href="#1)-The-goal">¶</a></h2><p>By the end of this notebook you'll have written a function that takes an observed statistic and a recipe
 for simulating the null, and returns a <strong>p-value</strong> — the same number <code>scipy.stats.ttest_1samp</code> hands you
 for free. Then you'll reuse that machinery to <em>measure</em> two long-run rates with brute force: the <strong>Type I
 error rate</strong> (which should sit at $\alpha$) and the <strong>power</strong> (which should rise with effect size and
@@ -7961,7 +7961,7 @@ TRUE mean MU = 1499.7 sq ft   &lt;- normally hidden; here we can look
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="2)-The-data-in-code:-a-claim,-a-sample,-a-statistic">2) The data in code: a claim, a sample, a statistic<a class="anchor-link" href="#2)-The-data-in-code:-a-claim,-a-sample,-a-statistic">¶</a></h2><p>A hypothesis test needs three concrete things in code. We set up each one, exactly as the core lesson did.</p>
+<h2 id="2)-The-data-in-code:-a-claim,-a-sample,-a-statistic">2) The data in code: a claim, a sample, a statistic<a class="anchor-link" data-pagefind-ignore href="#2)-The-data-in-code:-a-claim,-a-sample,-a-statistic">¶</a></h2><p>A hypothesis test needs three concrete things in code. We set up each one, exactly as the core lesson did.</p>
 <ul>
 <li><strong>A null claim <code>mu0</code>.</strong> A realtor insists the typical home has <strong>1,400 sq ft</strong>. That's our null
 hypothesis $H_0:\ \mu = 1400$ — a single, precise number we can simulate.</li>
@@ -8023,7 +8023,7 @@ observed t        = 0.727   (our sample sits 0.73 standard errors from the claim
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="3)-Build-it-step-by-step:-a-p-value-by-simulating-the-null">3) Build it step by step: a p-value by simulating the null<a class="anchor-link" href="#3)-Build-it-step-by-step:-a-p-value-by-simulating-the-null">¶</a></h2><p>Here's the heart of it. We'll build the p-value by simulation <em>first</em>, then check it against the formula.</p>
+<h2 id="3)-Build-it-step-by-step:-a-p-value-by-simulating-the-null">3) Build it step by step: a p-value by simulating the null<a class="anchor-link" data-pagefind-ignore href="#3)-Build-it-step-by-step:-a-p-value-by-simulating-the-null">¶</a></h2><p>Here's the heart of it. We'll build the p-value by simulation <em>first</em>, then check it against the formula.</p>
 <p><strong>The question:</strong> <em>if the realtor were right ($\mu = 1400$), how often would pure sampling luck hand us a
 $t$ at least as extreme as ours?</em></p>
 <p>To answer it we need a <strong>null world</strong> — a population whose true mean really is 1,400. We build one by
@@ -8085,7 +8085,7 @@ the <strong>null distribution</strong> of the statistic.</p>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="The-p-value:-the-mean-of-an-%22at-least-as-extreme%22-mask">The p-value: the mean of an "at least as extreme" mask<a class="anchor-link" href="#The-p-value:-the-mean-of-an-%22at-least-as-extreme%22-mask">¶</a></h3><p>Now the count. Because $H_a:\ \mu \neq 1400$ is <strong>two-sided</strong>, "at least as extreme" means <em>as far from 0
+<h3 id="The-p-value:-the-mean-of-an-%22at-least-as-extreme%22-mask">The p-value: the mean of an "at least as extreme" mask<a class="anchor-link" data-pagefind-ignore href="#The-p-value:-the-mean-of-an-%22at-least-as-extreme%22-mask">¶</a></h3><p>Now the count. Because $H_a:\ \mu \neq 1400$ is <strong>two-sided</strong>, "at least as extreme" means <em>as far from 0
 in either direction</em> — that is, $|t| \ge |t_{obs}|$. In code, <code>np.abs(null_ts) &gt;= abs(t_obs)</code> builds a
 column of <code>True</code>/<code>False</code>, and <strong>the mean of a True/False array is just the fraction that are True</strong> — our
 p-value. Plain English: <em>how often chance alone beats what we saw.</em></p>
@@ -8135,7 +8135,7 @@ Plain English: a sample this far from the claim turns up by pure chance about
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="See-it,-then-check-it-against-scipy">See it, then check it against <code>scipy</code><a class="anchor-link" href="#See-it,-then-check-it-against-scipy">¶</a></h3><p>The histogram is the null distribution of $t$ — every value the statistic <em>could</em> take if the claim were
+<h3 id="See-it,-then-check-it-against-scipy">See it, then check it against <code>scipy</code><a class="anchor-link" data-pagefind-ignore href="#See-it,-then-check-it-against-scipy">¶</a></h3><p>The histogram is the null distribution of $t$ — every value the statistic <em>could</em> take if the claim were
 true. The red lines mark $\pm|t_{obs}|$; the shaded tails are the p-value. Then the textbook one-sample
 <strong>t-test</strong> reads that same tail area off a smooth curve in one line — it should match our simulation.</p>
 </div>
@@ -8217,7 +8217,7 @@ The formula and the simulation agree — two views of the same idea.
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="4)-The-idiom-%E2%80%94-vectorized-null-simulation-vs.-a-loop">4) The idiom — vectorized null simulation vs. a loop<a class="anchor-link" href="#4)-The-idiom-%E2%80%94-vectorized-null-simulation-vs.-a-loop">¶</a></h2><p>The loop in Section 3 is clear, but it asks Python to do <code>reps</code> separate draws one at a time. NumPy lets
+<h2 id="4)-The-idiom-%E2%80%94-vectorized-null-simulation-vs.-a-loop">4) The idiom — vectorized null simulation vs. a loop<a class="anchor-link" data-pagefind-ignore href="#4)-The-idiom-%E2%80%94-vectorized-null-simulation-vs.-a-loop">¶</a></h2><p>The loop in Section 3 is clear, but it asks Python to do <code>reps</code> separate draws one at a time. NumPy lets
 us draw the <strong>whole experiment at once</strong>: ask <code>rng.choice</code> for a <code>(reps, n)</code> array — <code>reps</code> samples of
 size <code>n</code> stacked as rows — then reduce <strong>along each row</strong> (<code>axis=1</code>) to one statistic per row. Same
 answer, far less code, far faster.</p>
@@ -8293,7 +8293,7 @@ vectorized p-value : 0.4713   &lt;- same idea, one block, no Python loop
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="5)-Refactor-into-a-reusable-function">5) Refactor into a reusable function<a class="anchor-link" href="#5)-Refactor-into-a-reusable-function">¶</a></h2><p>We computed a p-value as "simulate a null distribution of the statistic, then take the mean of an
+<h2 id="5)-Refactor-into-a-reusable-function">5) Refactor into a reusable function<a class="anchor-link" data-pagefind-ignore href="#5)-Refactor-into-a-reusable-function">¶</a></h2><p>We computed a p-value as "simulate a null distribution of the statistic, then take the mean of an
 <em>at-least-as-extreme</em> mask." That pattern is reusable, so the programmer's reflex is to <strong>wrap it in a
 function</strong>. We pass in the observed statistic and a <em>recipe</em> for one null draw (a little function), and
 get a p-value back — for <em>any</em> test, not just this one.</p>
@@ -8407,7 +8407,7 @@ returning the fraction of tests that <strong>reject</strong> $H_0$.</p>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="6)-Now-you-code">6) Now you code<a class="anchor-link" href="#6)-Now-you-code">¶</a></h2><p>Write the code yourself. Add a new cell (the <strong>+</strong> button in the toolbar) and try each — <strong>predict the
+<h2 id="6)-Now-you-code">6) Now you code<a class="anchor-link" data-pagefind-ignore href="#6)-Now-you-code">¶</a></h2><p>Write the code yourself. Add a new cell (the <strong>+</strong> button in the toolbar) and try each — <strong>predict the
 number before you run it.</strong></p>
 <ol>
 <li><p><strong>Type I error is $\alpha$.</strong> When $H_0$ is <em>true</em>, a test should falsely reject only $\alpha$ of the
@@ -8439,7 +8439,7 @@ the small-$n$ rate sits near the floor. <strong>Significant $\ne$ large</strong>
 reverse the demo).</p>
 </li>
 </ol>
-<h2 id="What-you-learned">What you learned<a class="anchor-link" href="#What-you-learned">¶</a></h2><p><strong>Coding</strong></p>
+<h2 id="What-you-learned">What you learned<a class="anchor-link" data-pagefind-ignore href="#What-you-learned">¶</a></h2><p><strong>Coding</strong></p>
 <ul>
 <li>A <strong>seeded generator</strong> (<code>rng = np.random.default_rng(0)</code>) makes "chance" reproducible — same seed, same
 numbers, every run.</li>

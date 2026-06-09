@@ -7823,7 +7823,7 @@ a.anchor-link {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h1 id="The-code-behind-it:-the-empirical-rule-in-code">The code behind it: the empirical rule in code<a class="anchor-link" href="#The-code-behind-it:-the-empirical-rule-in-code">¶</a></h1><p><em>Part 1 · Lesson 9 · the code behind it  ·  data: Galton family heights (same as Lesson 9)</em></p>
+<h1 id="The-code-behind-it:-the-empirical-rule-in-code">The code behind it: the empirical rule in code<a class="anchor-link" data-pagefind-ignore href="#The-code-behind-it:-the-empirical-rule-in-code">¶</a></h1><p><em>Part 1 · Lesson 9 · the code behind it  ·  data: Galton family heights (same as Lesson 9)</em></p>
 <p><em>↩ A companion to <a href="09-normal-distribution.html">Lesson 9: The normal distribution &amp; the empirical rule</a>.</em></p>
 <p><strong>↩ Back:</strong> <a href="09-normal-distribution.html">Lesson 9: The normal distribution &amp; the empirical rule</a>  ·  <a href="index.html">↑ Course map</a>  ·  <strong>Also:</strong> <a href="09-normal-distribution~another-dataset.html">Another dataset →</a></p>
 <p><strong>In Lesson 9 you watched real heights fall into the bell curve</strong> and read the famous <strong>68–95–99.7 rule</strong>
@@ -7864,7 +7864,7 @@ compute it in Python</strong>. We'll go in the order a programmer actually works
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="1)-The-goal">1) The goal<a class="anchor-link" href="#1)-The-goal">¶</a></h2><p>By the end of this notebook you'll have turned the bell curve's two famous results into a few lines of code
+<h2 id="1)-The-goal">1) The goal<a class="anchor-link" data-pagefind-ignore href="#1)-The-goal">¶</a></h2><p>By the end of this notebook you'll have turned the bell curve's two famous results into a few lines of code
 you could write from memory: a column of <strong>z-scores</strong> built by hand, the <strong>68–95–99.7 fractions</strong> counted
 straight off the data, and the <strong>normal-density formula</strong> evaluated yourself and shown to match SciPy to the
 last decimal. Nothing here needs new statistics — it's the Python <em>underneath</em> <code>scipy.stats.norm</code>.</p>
@@ -7951,7 +7951,7 @@ some arithmetic to the whole height column at once."</p>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="2)-The-data-in-code">2) The data in code<a class="anchor-link" href="#2)-The-data-in-code">¶</a></h2><p>Same dataset as the core lesson: the heights of grown children from Francis Galton's 1880s family study.
+<h2 id="2)-The-data-in-code">2) The data in code<a class="anchor-link" data-pagefind-ignore href="#2)-The-data-in-code">¶</a></h2><p>Same dataset as the core lesson: the heights of grown children from Francis Galton's 1880s family study.
 Before any statistics, a programmer <em>interrogates the object</em> — how big is it, what are the columns, what is
 the one we want?</p>
 <ul>
@@ -8138,9 +8138,9 @@ standard deviation (sd) = 3.5793 inches
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="3)-Build-it-step-by-step">3) Build it step by step<a class="anchor-link" href="#3)-Build-it-step-by-step">¶</a></h2><p>Now the heart of it. Each piece is a short formula we'll write in NumPy and then check against SciPy with
+<h2 id="3)-Build-it-step-by-step">3) Build it step by step<a class="anchor-link" data-pagefind-ignore href="#3)-Build-it-step-by-step">¶</a></h2><p>Now the heart of it. Each piece is a short formula we'll write in NumPy and then check against SciPy with
 <code>np.isclose</code> / <code>np.allclose</code> — when it prints <code>match? True</code>, the bell curve is no longer a mystery box.</p>
-<h3 id="Standardize:-turn-heights-into-z-scores">Standardize: turn heights into z-scores<a class="anchor-link" href="#Standardize:-turn-heights-into-z-scores">¶</a></h3><p>A <strong>z-score</strong> says "how many SDs from the mean": $z = (x - \bar{x}) / s$. Because subtraction and division
+<h3 id="Standardize:-turn-heights-into-z-scores">Standardize: turn heights into z-scores<a class="anchor-link" data-pagefind-ignore href="#Standardize:-turn-heights-into-z-scores">¶</a></h3><p>A <strong>z-score</strong> says "how many SDs from the mean": $z = (x - \bar{x}) / s$. Because subtraction and division
 work element-by-element, the <em>entire</em> column of z-scores is <strong>one expression</strong> — no loop over children. A
 correct standardization always has mean $\approx 0$ and SD $= 1$; we check both.</p>
 </div>
@@ -8184,7 +8184,7 @@ match? True True
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="The-empirical-rule,-by-counting">The empirical rule, by counting<a class="anchor-link" href="#The-empirical-rule,-by-counting">¶</a></h3><p>The famous rule says that for a normal curve $\approx 68\% / 95\% / 99.7\%$ of values fall within
+<h3 id="The-empirical-rule,-by-counting">The empirical rule, by counting<a class="anchor-link" data-pagefind-ignore href="#The-empirical-rule,-by-counting">¶</a></h3><p>The famous rule says that for a normal curve $\approx 68\% / 95\% / 99.7\%$ of values fall within
 $1 / 2 / 3$ SDs of the mean. We don't have to <em>trust</em> it — we can <strong>count</strong>. The idiom: <code>z.abs() &lt; 1</code> is a
 column of <code>True</code>/<code>False</code>, and <strong>the mean of a True/False column is the fraction that are <code>True</code></strong>. Multiply
 by 100 for a percentage. We line our counted fractions up against the textbook numbers.</p>
@@ -8240,7 +8240,7 @@ empirical rule is an APPROXIMATION and real data is never perfectly normal.
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="The-normal-density,-from-its-formula">The normal density, from its formula<a class="anchor-link" href="#The-normal-density,-from-its-formula">¶</a></h3><p>The height of the bell curve at any value $x$ comes from one formula:</p>
+<h3 id="The-normal-density,-from-its-formula">The normal density, from its formula<a class="anchor-link" data-pagefind-ignore href="#The-normal-density,-from-its-formula">¶</a></h3><p>The height of the bell curve at any value $x$ comes from one formula:</p>
 <p>$$f(x) = \frac{1}{\sigma\sqrt{2\pi}}\; e^{-\frac{1}{2}\left(\frac{x-\mu}{\sigma}\right)^2}
        = \frac{1}{\sigma\sqrt{2\pi}}\; e^{-\frac{(x-\mu)^2}{2\sigma^2}}.$$</p>
 <p>We'll write it as a function and evaluate it <strong>vectorized</strong> on a grid of x-values — one call returns the whole
@@ -8294,7 +8294,7 @@ match? (whole grid)            : True
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="Overlay-it:-does-our-curve-hug-the-bars?">Overlay it: does our curve hug the bars?<a class="anchor-link" href="#Overlay-it:-does-our-curve-hug-the-bars?">¶</a></h3><p>To compare a histogram of real heights with a <em>density</em> curve, the bar <strong>areas</strong> must add up to 1 — that's
+<h3 id="Overlay-it:-does-our-curve-hug-the-bars?">Overlay it: does our curve hug the bars?<a class="anchor-link" data-pagefind-ignore href="#Overlay-it:-does-our-curve-hug-the-bars?">¶</a></h3><p>To compare a histogram of real heights with a <em>density</em> curve, the bar <strong>areas</strong> must add up to 1 — that's
 what <code>density=True</code> does. Then our fitted <code>normal_pdf</code> can be drawn straight on top, on the same vertical
 scale. If the red curve hugs the blue bars, these heights really are close to normal.</p>
 </div>
@@ -8344,7 +8344,7 @@ scale. If the red curve hugs the blue bars, these heights really are close to no
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="From-z-to-a-probability">From z to a <em>probability</em><a class="anchor-link" href="#From-z-to-a-probability">¶</a></h3><p>Where do the textbook 68 / 95 / 99.7 numbers come from? The <strong>CDF</strong> — <code>stats.norm.cdf(z)</code> is the area under
+<h3 id="From-z-to-a-probability">From z to a <em>probability</em><a class="anchor-link" data-pagefind-ignore href="#From-z-to-a-probability">¶</a></h3><p>Where do the textbook 68 / 95 / 99.7 numbers come from? The <strong>CDF</strong> — <code>stats.norm.cdf(z)</code> is the area under
 the standard normal curve to the <em>left</em> of <code>z</code>. The fraction within $\pm k$ SDs is the area between $-k$ and
 $+k$: <code>cdf(k) - cdf(-k)</code>. These are the <em>theoretical</em> targets our counted fractions above were chasing.</p>
 </div>
@@ -8398,7 +8398,7 @@ The theory column is where '68 / 95 / 99.7' actually comes from:
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="4)-The-idiom-%E2%80%94-vectorized-vs.-a-loop,-and-%22fraction-of-True%22">4) The idiom — vectorized vs. a loop, and "fraction of True"<a class="anchor-link" href="#4)-The-idiom-%E2%80%94-vectorized-vs.-a-loop,-and-%22fraction-of-True%22">¶</a></h2><h3 id="Why-we-evaluated-the-formula-in-one-call">Why we evaluated the formula in one call<a class="anchor-link" href="#Why-we-evaluated-the-formula-in-one-call">¶</a></h3><p>We got the whole 200-point curve from <code>normal_pdf(xs, mu, sd)</code> — a <em>single</em> call, because the arithmetic
+<h2 id="4)-The-idiom-%E2%80%94-vectorized-vs.-a-loop,-and-%22fraction-of-True%22">4) The idiom — vectorized vs. a loop, and "fraction of True"<a class="anchor-link" data-pagefind-ignore href="#4)-The-idiom-%E2%80%94-vectorized-vs.-a-loop,-and-%22fraction-of-True%22">¶</a></h2><h3 id="Why-we-evaluated-the-formula-in-one-call">Why we evaluated the formula in one call<a class="anchor-link" data-pagefind-ignore href="#Why-we-evaluated-the-formula-in-one-call">¶</a></h3><p>We got the whole 200-point curve from <code>normal_pdf(xs, mu, sd)</code> — a <em>single</em> call, because the arithmetic
 inside (<code>(x - mu) ** 2</code>, <code>np.exp(...)</code>) runs on the entire array at once. You <em>could</em> loop over the grid
 instead; it gives the identical curve but is slower and noisier to read. Compare the two.</p>
 </div>
@@ -8468,7 +8468,7 @@ Evaluating the density at 1,000,000 points:
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="%22Fraction-of-True%22-is-the-workhorse">"Fraction of True" is the workhorse<a class="anchor-link" href="#%22Fraction-of-True%22-is-the-workhorse">¶</a></h3><p>The empirical-rule counts used the single most useful one-liner in this lesson: a comparison makes a
+<h3 id="%22Fraction-of-True%22-is-the-workhorse">"Fraction of True" is the workhorse<a class="anchor-link" data-pagefind-ignore href="#%22Fraction-of-True%22-is-the-workhorse">¶</a></h3><p>The empirical-rule counts used the single most useful one-liner in this lesson: a comparison makes a
 True/False column, and its <code>.mean()</code> is the proportion that are <code>True</code>. It answers <em>any</em> "what share of the
 data satisfies this condition?" question, no loop and no counter variable.</p>
 </div>
@@ -8512,7 +8512,7 @@ That .mean()-of-a-mask trick is exactly what powered the 68/95/99.7 counts above
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="5)-Refactor-into-a-reusable-function">5) Refactor into a reusable function<a class="anchor-link" href="#5)-Refactor-into-a-reusable-function">¶</a></h2><p>You wrote the same "count within $k$ SDs" loop once already. The programmer's reflex is to <strong>wrap repeated
+<h2 id="5)-Refactor-into-a-reusable-function">5) Refactor into a reusable function<a class="anchor-link" data-pagefind-ignore href="#5)-Refactor-into-a-reusable-function">¶</a></h2><p>You wrote the same "count within $k$ SDs" loop once already. The programmer's reflex is to <strong>wrap repeated
 work in a function</strong>: name it, give it an input, <code>return</code> the result. Then "run the empirical rule" is one
 call you can reuse on <em>any</em> numeric column — the full data, a subgroup, or an entirely different variable.</p>
 </div>
@@ -8577,7 +8577,7 @@ so the rule holds inside each one too.</p>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="6)-Now-you-code">6) Now you code<a class="anchor-link" href="#6)-Now-you-code">¶</a></h2><p>Write the code yourself. Add a new cell (the <strong>+</strong> button in the toolbar) and try each — predict the answer
+<h2 id="6)-Now-you-code">6) Now you code<a class="anchor-link" data-pagefind-ignore href="#6)-Now-you-code">¶</a></h2><p>Write the code yourself. Add a new cell (the <strong>+</strong> button in the toolbar) and try each — predict the answer
 before you run it.</p>
 <ol>
 <li><p><strong>A standalone z-score function.</strong> Write <code>to_z(series)</code> that returns <code>(series - series.mean()) / series.std(ddof=1)</code>.
@@ -8598,7 +8598,7 @@ and compare it to <code>stats.norm.pdf(mu, mu, sd)</code> with <code>np.isclose<
 throw them off? (This shows <em>why</em> the rule needs a roughly-normal shape.)</p>
 </li>
 </ol>
-<h2 id="What-you-learned">What you learned<a class="anchor-link" href="#What-you-learned">¶</a></h2><p><strong>Coding</strong></p>
+<h2 id="What-you-learned">What you learned<a class="anchor-link" data-pagefind-ignore href="#What-you-learned">¶</a></h2><p><strong>Coding</strong></p>
 <ul>
 <li><strong>Standardizing is one vectorized line:</strong> <code>z = (s - s.mean()) / s.std(ddof=1)</code> turns a whole column into
 z-scores at once — no loop.</li>

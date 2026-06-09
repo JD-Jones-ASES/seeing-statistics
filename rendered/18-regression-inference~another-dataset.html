@@ -7823,7 +7823,7 @@ a.anchor-link {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h1 id="Regression-inference-on-different-data:-wealth-&amp;-longevity">Regression inference on different data: wealth &amp; longevity<a class="anchor-link" href="#Regression-inference-on-different-data:-wealth-&amp;-longevity">¶</a></h1><p><em>Part 2 · Lesson 18 · another dataset  ·  data: Gapminder (log GDP vs life expectancy)</em></p>
+<h1 id="Regression-inference-on-different-data:-wealth-&amp;-longevity">Regression inference on different data: wealth &amp; longevity<a class="anchor-link" data-pagefind-ignore href="#Regression-inference-on-different-data:-wealth-&amp;-longevity">¶</a></h1><p><em>Part 2 · Lesson 18 · another dataset  ·  data: Gapminder (log GDP vs life expectancy)</em></p>
 <p><em>↩ A companion to <a href="18-regression-inference.html">Lesson 18: Correlation &amp; regression: inference</a>.</em></p>
 <p><strong>↩ Back:</strong> <a href="18-regression-inference.html">Lesson 18: Correlation &amp; regression: inference</a>  ·  <a href="index.html">↑ Course map</a>  ·  <strong>Also:</strong> <a href="18-regression-inference~the-code.html">The code behind it →</a></p>
 <p>In the <strong>relationships data lesson</strong> we asked whether richer countries live longer, and learned a lesson
@@ -7980,7 +7980,7 @@ life expectancy ranges from 39.6 to 82.6 years
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="1)-The-slope-is-an-estimate-of-something-we-can't-see">1) The slope is an estimate of something we can't see<a class="anchor-link" href="#1)-The-slope-is-an-estimate-of-something-we-can't-see">¶</a></h2><p>When we fit the straight line $\hat{y} = b_0 + b_1 x$ — here with $y$ = life expectancy and
+<h2 id="1)-The-slope-is-an-estimate-of-something-we-can't-see">1) The slope is an estimate of something we can't see<a class="anchor-link" data-pagefind-ignore href="#1)-The-slope-is-an-estimate-of-something-we-can't-see">¶</a></h2><p>When we fit the straight line $\hat{y} = b_0 + b_1 x$ — here with $y$ = life expectancy and
 $x = \log_{10}(\text{GDP per capita})$ — the slope $b_1$ is computed from the <strong>142 countries in our
 data</strong>. But imagine the larger, fuzzier reality those countries are a snapshot of: the long-run
 relationship between wealth and lifespan in the world. There is some <strong>true</strong> underlying slope in that
@@ -8052,7 +8052,7 @@ correlation       r = 0.809    (R^2 = 0.654)
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="2)-Watch-the-slope-wobble-%E2%80%94-the-sampling-distribution,-by-simulation">2) Watch the slope wobble — the sampling distribution, by simulation<a class="anchor-link" href="#2)-Watch-the-slope-wobble-%E2%80%94-the-sampling-distribution,-by-simulation">¶</a></h2><p>Here is the simulation-first heart of the lesson. We don't have other snapshots of the world lying
+<h2 id="2)-Watch-the-slope-wobble-%E2%80%94-the-sampling-distribution,-by-simulation">2) Watch the slope wobble — the sampling distribution, by simulation<a class="anchor-link" data-pagefind-ignore href="#2)-Watch-the-slope-wobble-%E2%80%94-the-sampling-distribution,-by-simulation">¶</a></h2><p>Here is the simulation-first heart of the lesson. We don't have other snapshots of the world lying
 around, so we <strong>manufacture</strong> them by <strong>bootstrapping</strong>: draw a new dataset of the same size by sampling
 countries <strong>with replacement</strong> from the 142 we have, re-fit the log line, and record the slope. Repeat
 thousands of times. The spread of those slopes <em>is</em> the sampling distribution of $b_1$, and its standard
@@ -8147,7 +8147,7 @@ Second, the whole hill sits <strong>a long way to the right of zero</strong> (th
 "a country's wealth tells you nothing about its life expectancy." That value isn't just unlikely — it's
 <strong>off the chart entirely</strong>, far from any slope our resampling ever produced. Already a strong hint that
 the relationship is real, not luck.</p>
-<h3 id="A-bootstrap-confidence-interval-for-the-slope">A bootstrap confidence interval for the slope<a class="anchor-link" href="#A-bootstrap-confidence-interval-for-the-slope">¶</a></h3><p>A 95% confidence interval is just the <strong>middle 95%</strong> of that bootstrap pile — cut off the lowest 2.5%
+<h3 id="A-bootstrap-confidence-interval-for-the-slope">A bootstrap confidence interval for the slope<a class="anchor-link" data-pagefind-ignore href="#A-bootstrap-confidence-interval-for-the-slope">¶</a></h3><p>A 95% confidence interval is just the <strong>middle 95%</strong> of that bootstrap pile — cut off the lowest 2.5%
 and the highest 2.5%.</p>
 </div>
 </div>
@@ -8191,7 +8191,7 @@ goes with somewhere between about 15 and 18 more years of life. Zero is not clos
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="3)-The-textbook-formula-%E2%80%94-and-reading-the-regression-table">3) The textbook formula — and reading the regression table<a class="anchor-link" href="#3)-The-textbook-formula-%E2%80%94-and-reading-the-regression-table">¶</a></h2><p>Statisticians don't bootstrap every time; there's a classic formula for the standard error of the
+<h2 id="3)-The-textbook-formula-%E2%80%94-and-reading-the-regression-table">3) The textbook formula — and reading the regression table<a class="anchor-link" data-pagefind-ignore href="#3)-The-textbook-formula-%E2%80%94-and-reading-the-regression-table">¶</a></h2><p>Statisticians don't bootstrap every time; there's a classic formula for the standard error of the
 slope,</p>
 <p>$$\text{SE}(b_1) = \frac{s_e}{\sqrt{\sum (x_i-\bar{x})^2}},$$</p>
 <p>where $s_e$ is the spread of the residuals. With it you build a <strong>t-statistic</strong> and test the null
@@ -8342,7 +8342,7 @@ is associated with between about <strong>14.6 and 18.6 more years</strong> of li
 confidence intervals — see the <strong>confidence-interval flagship</strong> — the 95% is a property of the <em>method's
 long-run hit rate</em>, not a probability about this one interval.) Because the entire interval is
 <strong>positive and far from 0</strong>, "no relationship" is simply not a credible story.</p>
-<h3 id="Do-the-two-methods-agree?">Do the two methods agree?<a class="anchor-link" href="#Do-the-two-methods-agree?">¶</a></h3><p>We now have two confidence intervals for the same slope: the <strong>bootstrap</strong> one we simulated, and the
+<h3 id="Do-the-two-methods-agree?">Do the two methods agree?<a class="anchor-link" data-pagefind-ignore href="#Do-the-two-methods-agree?">¶</a></h3><p>We now have two confidence intervals for the same slope: the <strong>bootstrap</strong> one we simulated, and the
 <strong>formula</strong> one from statsmodels. Honest methods should roughly agree when the model's conditions hold —
 let's check.</p>
 </div>
@@ -8403,11 +8403,11 @@ small gaps between the two are exactly what you'd expect. (In the core lesson on
 the famous Ames "funnel" where the textbook SE was too optimistic.) When two methods this different agree
 on the substance, the conclusion is trustworthy — but to see <em>why</em> the formula is believable here, we open
 up the <strong>residuals</strong>.</p>
-<h2 id="4)-Residual-diagnostics-%E2%80%94-checking-the-fine-print">4) Residual diagnostics — checking the fine print<a class="anchor-link" href="#4)-Residual-diagnostics-%E2%80%94-checking-the-fine-print">¶</a></h2><p>The slope estimate $b_1$ is trustworthy on its own, but the <strong>standard error, t, p-value, and CI</strong> all
+<h2 id="4)-Residual-diagnostics-%E2%80%94-checking-the-fine-print">4) Residual diagnostics — checking the fine print<a class="anchor-link" data-pagefind-ignore href="#4)-Residual-diagnostics-%E2%80%94-checking-the-fine-print">¶</a></h2><p>The slope estimate $b_1$ is trustworthy on its own, but the <strong>standard error, t, p-value, and CI</strong> all
 ride on a few assumptions about the residuals $e_i = y_i - \hat{y}_i$. Two pictures check most of them —
 and because we already validated the <em>shape</em> with a log transform in the relationships lesson, we expect
 these to come out clean. Let's confirm.</p>
-<h3 id="Diagnostic-1-%E2%80%94-residuals-vs.-fitted-(the-shape-&amp;-funnel-test)">Diagnostic 1 — residuals vs. fitted (the shape &amp; funnel test)<a class="anchor-link" href="#Diagnostic-1-%E2%80%94-residuals-vs.-fitted-(the-shape-&amp;-funnel-test)">¶</a></h3><p>Plot each country's residual against its predicted lifespan. What you <strong>want</strong> is a shapeless, horizontal
+<h3 id="Diagnostic-1-%E2%80%94-residuals-vs.-fitted-(the-shape-&amp;-funnel-test)">Diagnostic 1 — residuals vs. fitted (the shape &amp; funnel test)<a class="anchor-link" data-pagefind-ignore href="#Diagnostic-1-%E2%80%94-residuals-vs.-fitted-(the-shape-&amp;-funnel-test)">¶</a></h3><p>Plot each country's residual against its predicted lifespan. What you <strong>want</strong> is a shapeless, horizontal
 band of constant thickness around 0. A <strong>curve</strong> (an arch) would signal the straight line is the wrong
 shape — exactly the misfit the <em>raw</em>-GDP fit showed in the relationships lesson. A <strong>funnel</strong> that fans
 open would signal <strong>heteroscedasticity</strong> ("unequal scatter"), which breaks the textbook standard errors.</p>
@@ -8471,7 +8471,7 @@ backs us up instead of warning us off. (There's a hint of slightly wider scatter
 low-lifespan countries, but it's mild — not the dramatic, systematic funnel that wrecked the Ames
 formula.) That reasonably clean band is <em>why</em> the textbook formula is believable here — and why the
 bootstrap, which assumes none of that, lands in the same ballpark back in section 3.</p>
-<h3 id="Diagnostic-2-%E2%80%94-the-normal-Q-Q-plot-of-residuals">Diagnostic 2 — the normal Q-Q plot of residuals<a class="anchor-link" href="#Diagnostic-2-%E2%80%94-the-normal-Q-Q-plot-of-residuals">¶</a></h3><p>The second assumption behind the t-based p-value is that the residuals are roughly <strong>normally
+<h3 id="Diagnostic-2-%E2%80%94-the-normal-Q-Q-plot-of-residuals">Diagnostic 2 — the normal Q-Q plot of residuals<a class="anchor-link" data-pagefind-ignore href="#Diagnostic-2-%E2%80%94-the-normal-Q-Q-plot-of-residuals">¶</a></h3><p>The second assumption behind the t-based p-value is that the residuals are roughly <strong>normally
 distributed</strong>. A <strong>Q-Q (quantile-quantile) plot</strong> checks this by sorting the residuals and plotting them
 against the values a perfect normal would produce. If the residuals are normal, the dots fall on a
 straight diagonal; <strong>bent ends</strong> reveal heavy tails or skew — a few countries the line misses by more
@@ -8522,7 +8522,7 @@ curl of house prices in the core lesson. With <strong>142</strong> countries the
 for the <em>slope</em> robust to this mild departure — large samples forgive non-normal residuals. The
 combination — a flat residual band <strong>and</strong> a near-straight Q-Q plot — means the regression table's
 standard error, t, p-value, and CI are all trustworthy here.</p>
-<h2 id="5)-Putting-it-together-%E2%80%94-the-slope-is-real,-but-%22real%22-is-not-%22causal%22">5) Putting it together — the slope is real, but "real" is not "causal"<a class="anchor-link" href="#5)-Putting-it-together-%E2%80%94-the-slope-is-real,-but-%22real%22-is-not-%22causal%22">¶</a></h2><p>Let's collect the verdict in one place, then sound the warning the relationships lesson ended on.</p>
+<h2 id="5)-Putting-it-together-%E2%80%94-the-slope-is-real,-but-%22real%22-is-not-%22causal%22">5) Putting it together — the slope is real, but "real" is not "causal"<a class="anchor-link" data-pagefind-ignore href="#5)-Putting-it-together-%E2%80%94-the-slope-is-real,-but-%22real%22-is-not-%22causal%22">¶</a></h2><p>Let's collect the verdict in one place, then sound the warning the relationships lesson ended on.</p>
 </div>
 </div>
 </div>
@@ -8624,7 +8624,7 @@ together, manufacturing a strong, significant slope <strong>without</strong> wea
 sharpens <em>how confidently we can describe the association</em> (very); it does <strong>not</strong> upgrade an association
 into a cause. The honest phrasing stays: wealth is <strong>strongly and significantly associated with</strong> longer
 life — not proven to cause it.</p>
-<h2 id="Now-you-try">Now you try<a class="anchor-link" href="#Now-you-try">¶</a></h2><p>Predict what will happen <em>before</em> you run each change:</p>
+<h2 id="Now-you-try">Now you try<a class="anchor-link" data-pagefind-ignore href="#Now-you-try">¶</a></h2><p>Predict what will happen <em>before</em> you run each change:</p>
 <ol>
 <li><p><strong>Re-roll the bootstrap.</strong> Change <code>np.random.default_rng(20)</code> to another seed and re-run sections 2-3.
 Does the bootstrap CI for the slope shift much? Do <em>any</em> of your 4,000 resampled slopes ever fall at
@@ -8645,7 +8645,7 @@ log-wealth slope still strongly significant? Is it bigger or smaller than 2007's
 <code>gap['year'].unique()</code> lists the available years.)</p>
 </li>
 </ol>
-<h2 id="What-you-learned">What you learned<a class="anchor-link" href="#What-you-learned">¶</a></h2><ul>
+<h2 id="What-you-learned">What you learned<a class="anchor-link" data-pagefind-ignore href="#What-you-learned">¶</a></h2><ul>
 <li>The sample slope $b_1$ is an <strong>estimate</strong> of an unseen <strong>population slope</strong> $\beta_1$; like any estimate
 it has a <strong>sampling distribution</strong> and a <strong>standard error</strong> — here estimated on the <strong>log-wealth</strong> model
 whose shape we validated in the relationships lesson.</li>

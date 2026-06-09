@@ -7823,7 +7823,7 @@ a.anchor-link {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h1 id="Lesson-15-%E2%80%94-t-tests:-one-sample,-two-sample-&amp;-paired">Lesson 15 — t-tests: one-sample, two-sample &amp; paired<a class="anchor-link" href="#Lesson-15-%E2%80%94-t-tests:-one-sample,-two-sample-&amp;-paired">¶</a></h1><p><em>Part 2 · Lesson 15 of 20  ·  data: ToothGrowth · Swim (paired)</em></p>
+<h1 id="Lesson-15-%E2%80%94-t-tests:-one-sample,-two-sample-&amp;-paired">Lesson 15 — t-tests: one-sample, two-sample &amp; paired<a class="anchor-link" data-pagefind-ignore href="#Lesson-15-%E2%80%94-t-tests:-one-sample,-two-sample-&amp;-paired">¶</a></h1><p><em>Part 2 · Lesson 15 of 20  ·  data: ToothGrowth · Swim (paired)</em></p>
 <p><strong>←</strong> <a href="14-inference-proportions.html">Lesson 14: Inference for proportions (one &amp; two)</a>  ·  <a href="index.html">↑ Course map</a>  ·  <a href="16-anova.html">Lesson 16: Comparing many groups: ANOVA</a> <strong>→</strong></p>
 <p><strong>Same idea, another way:</strong> <a href="15-t-tests~another-dataset.html">Another dataset →</a>  ·  <a href="15-t-tests~the-code.html">The code behind it →</a></p>
 <p>The confidence-interval flagship and the hypothesis-testing lesson both leaned on a friendly fact:
@@ -7977,7 +7977,7 @@ Swim:        12 swimmers, each timed twice
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="1)-Why-t,-and-not-the-normal?-The-cost-of-not-knowing-$%5Csigma$">1) Why <strong>t</strong>, and not the normal? The cost of not knowing $\sigma$<a class="anchor-link" href="#1)-Why-t,-and-not-the-normal?-The-cost-of-not-knowing-$%5Csigma$">¶</a></h2><p>When we built confidence intervals and z-tests, the "wobble" of the sample mean $\bar{x}$ was the
+<h2 id="1)-Why-t,-and-not-the-normal?-The-cost-of-not-knowing-$%5Csigma$">1) Why <strong>t</strong>, and not the normal? The cost of not knowing $\sigma$<a class="anchor-link" data-pagefind-ignore href="#1)-Why-t,-and-not-the-normal?-The-cost-of-not-knowing-$%5Csigma$">¶</a></h2><p>When we built confidence intervals and z-tests, the "wobble" of the sample mean $\bar{x}$ was the
 <strong>standard error</strong> $\sigma/\sqrt{n}$. The catch: that formula needs the <em>true</em> population spread
 $\sigma$, which we never actually have. So we plug in the <strong>sample</strong> standard deviation $s$ instead and
 form the <strong>t-statistic</strong>:</p>
@@ -8049,7 +8049,7 @@ information, extreme t-values are much more likely, so the cutoff for "surprisin
 $t^{*} = 4.30$ instead of the normal's $1.96$. By <code>df = 30</code> the t-curve has all but merged with the
 normal. <strong>Takeaway:</strong> the t-distribution is just the normal's more cautious cousin, and the caution
 fades as your sample grows.</p>
-<h2 id="2)-One-sample-t-test-%E2%80%94-is-a-mean-different-from-a-target?">2) One-sample t-test — is a mean different from a target?<a class="anchor-link" href="#2)-One-sample-t-test-%E2%80%94-is-a-mean-different-from-a-target?">¶</a></h2><p><strong>The question.</strong> Guinea pigs given vitamin C as <strong>orange juice (OJ)</strong> grew tooth cells with some mean
+<h2 id="2)-One-sample-t-test-%E2%80%94-is-a-mean-different-from-a-target?">2) One-sample t-test — is a mean different from a target?<a class="anchor-link" data-pagefind-ignore href="#2)-One-sample-t-test-%E2%80%94-is-a-mean-different-from-a-target?">¶</a></h2><p><strong>The question.</strong> Guinea pigs given vitamin C as <strong>orange juice (OJ)</strong> grew tooth cells with some mean
 length. Suppose a lab's historical benchmark for this measurement is <strong>18 units</strong>. Is the OJ group's
 mean <em>really</em> different from 18, or could the gap be sampling noise?</p>
 <p>We set up two competing claims:</p>
@@ -8104,7 +8104,7 @@ observed t = (mean - 18) / SE = 2.208
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="Build-the-null-distribution-by-simulation">Build the null distribution by simulation<a class="anchor-link" href="#Build-the-null-distribution-by-simulation">¶</a></h3><p>If $H_0$ is true and the data were roughly normal, then drawing samples of size $n$ from a population
+<h3 id="Build-the-null-distribution-by-simulation">Build the null distribution by simulation<a class="anchor-link" data-pagefind-ignore href="#Build-the-null-distribution-by-simulation">¶</a></h3><p>If $H_0$ is true and the data were roughly normal, then drawing samples of size $n$ from a population
 centered at $\mu_0 = 18$ would produce t-statistics scattered around 0. We don't know the true shape,
 but a good stand-in is to <strong>recenter our own sample</strong> so its mean is exactly 18 (forcing $H_0$ to
 hold), then <strong>bootstrap-resample</strong> it thousands of times and recompute $t$ each time. The pile of
@@ -8236,7 +8236,7 @@ always report the CI.</li>
 <p><strong>The CI and the test are the same coin.</strong> A two-sided test rejects $H_0\!: \mu=\mu_0$ at the 5%
 level <strong>exactly when</strong> the 95% CI excludes $\mu_0$. They never disagree.</p>
 </blockquote>
-<h2 id="3)-Two-sample-t-test-%E2%80%94-comparing-two-independent-groups">3) Two-sample t-test — comparing two independent groups<a class="anchor-link" href="#3)-Two-sample-t-test-%E2%80%94-comparing-two-independent-groups">¶</a></h2><p>Now a different question: forget the benchmark — does the <strong>delivery method</strong> matter? Compare the
+<h2 id="3)-Two-sample-t-test-%E2%80%94-comparing-two-independent-groups">3) Two-sample t-test — comparing two independent groups<a class="anchor-link" data-pagefind-ignore href="#3)-Two-sample-t-test-%E2%80%94-comparing-two-independent-groups">¶</a></h2><p>Now a different question: forget the benchmark — does the <strong>delivery method</strong> matter? Compare the
 <strong>OJ</strong> group against the <strong>VC</strong> (ascorbic-acid) group. These are <em>different</em> guinea pigs, so the two
 groups are <strong>independent</strong>.</p>
 <ul>
@@ -8285,7 +8285,7 @@ observed difference in means (OJ - VC) = 3.70 units
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="The-permutation-idea-%E2%80%94-what-if-the-labels-meant-nothing?">The permutation idea — what if the labels meant nothing?<a class="anchor-link" href="#The-permutation-idea-%E2%80%94-what-if-the-labels-meant-nothing?">¶</a></h3><p>Here's the cleanest way to picture the null "the method doesn't matter." If the OJ/VC label truly had
+<h3 id="The-permutation-idea-%E2%80%94-what-if-the-labels-meant-nothing?">The permutation idea — what if the labels meant nothing?<a class="anchor-link" data-pagefind-ignore href="#The-permutation-idea-%E2%80%94-what-if-the-labels-meant-nothing?">¶</a></h3><p>Here's the cleanest way to picture the null "the method doesn't matter." If the OJ/VC label truly had
 no effect, then it's just a <em>sticker</em> we slapped on each guinea pig — we could <strong>shuffle the 60 labels
 at random</strong> and the gap between the two groups should be no bigger than what we see. So: pool all 60
 lengths, repeatedly deal them back into a fake "OJ" pile and "VC" pile, and record the difference in
@@ -8397,7 +8397,7 @@ zero.</em> The CI here runs from a slight OJ disadvantage to a large OJ advantag
 yet with only 30 pigs per group. Don't say "OJ and VC are the same"; say "we couldn't detect a
 difference."</p>
 </blockquote>
-<h2 id="4)-Paired-t-test-%E2%80%94-when-the-same-subjects-are-measured-twice">4) Paired t-test — when the same subjects are measured twice<a class="anchor-link" href="#4)-Paired-t-test-%E2%80%94-when-the-same-subjects-are-measured-twice">¶</a></h2><p>The two-sample test treats the groups as unrelated. But sometimes each subject gives you <strong>both</strong>
+<h2 id="4)-Paired-t-test-%E2%80%94-when-the-same-subjects-are-measured-twice">4) Paired t-test — when the same subjects are measured twice<a class="anchor-link" data-pagefind-ignore href="#4)-Paired-t-test-%E2%80%94-when-the-same-subjects-are-measured-twice">¶</a></h2><p>The two-sample test treats the groups as unrelated. But sometimes each subject gives you <strong>both</strong>
 numbers — a before/after, a left/right, a this-suit/that-suit. That's a <strong>paired</strong> design, and ignoring
 the pairing throws away its biggest advantage.</p>
 <p>The <strong>swim</strong> data is the textbook case: <strong>12 swimmers</strong>, each timed once in a <strong>wetsuit</strong> and once in
@@ -8531,7 +8531,7 @@ scipy ttest_1samp(diff, 0):   t = 12.32,  p = 8.89e-08   (identical)
 <p>The wetsuit advantage is overwhelming: $t \approx 12.3$, $p \approx 9 \times 10^{-8}$, and a 95% CI of
 about $(0.064,\ 0.091)$ m/s that sits comfortably above zero. In 20,000 simulated null worlds we
 essentially never saw a gap this big by chance.</p>
-<h2 id="5)-Why-pairing-matters-%E2%80%94-the-headline-demonstration">5) Why pairing matters — the headline demonstration<a class="anchor-link" href="#5)-Why-pairing-matters-%E2%80%94-the-headline-demonstration">¶</a></h2><p>Here's the punchline of the whole lesson. <strong>Watch what happens if we <em>ignore</em> the pairing</strong> and (wrongly)
+<h2 id="5)-Why-pairing-matters-%E2%80%94-the-headline-demonstration">5) Why pairing matters — the headline demonstration<a class="anchor-link" data-pagefind-ignore href="#5)-Why-pairing-matters-%E2%80%94-the-headline-demonstration">¶</a></h2><p>Here's the punchline of the whole lesson. <strong>Watch what happens if we <em>ignore</em> the pairing</strong> and (wrongly)
 run a two-sample test, treating the 12 wetsuit times and 12 swimsuit times as two unrelated groups.</p>
 </div>
 </div>
@@ -8676,7 +8676,7 @@ differences huddle tightly just above zero. <strong>Pairing cancels the between-
 the clean wetsuit effect — which is why the paired SE was ~9x smaller.</p>
 <p><strong>The real-world lesson:</strong> if your data are naturally matched (before/after, twins, left/right,
 same-subject), <em>use the pairing.</em> It is often the difference between detecting an effect and missing it.</p>
-<h2 id="6)-Assumptions-&amp;-robustness-%E2%80%94-when-can-you-trust-a-t-test?">6) Assumptions &amp; robustness — when can you trust a t-test?<a class="anchor-link" href="#6)-Assumptions-&amp;-robustness-%E2%80%94-when-can-you-trust-a-t-test?">¶</a></h2><p>The t-test isn't unconditional. Its key assumptions:</p>
+<h2 id="6)-Assumptions-&amp;-robustness-%E2%80%94-when-can-you-trust-a-t-test?">6) Assumptions &amp; robustness — when can you trust a t-test?<a class="anchor-link" data-pagefind-ignore href="#6)-Assumptions-&amp;-robustness-%E2%80%94-when-can-you-trust-a-t-test?">¶</a></h2><p>The t-test isn't unconditional. Its key assumptions:</p>
 <ol>
 <li><strong>Independent observations</strong> (within each group). The whole <em>point</em> of the paired test is to handle
 the one dependence we expect — the link between a subject's two measurements — by reducing to one
@@ -8743,7 +8743,7 @@ p &gt; 0.05 -&gt; no evidence against normality, so the paired t-test is on safe
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Now-you-try">Now you try<a class="anchor-link" href="#Now-you-try">¶</a></h2><p>Predict the result first, then change a number and re-run:</p>
+<h2 id="Now-you-try">Now you try<a class="anchor-link" data-pagefind-ignore href="#Now-you-try">¶</a></h2><p>Predict the result first, then change a number and re-run:</p>
 <ol>
 <li><p><strong>A different one-sample target.</strong> In Section 2 the benchmark is <code>mu0 = 18.0</code>. Change it to <code>21.0</code>
 and re-run that cell and the scipy cell. Does the OJ mean now look different from the target, or
@@ -8767,7 +8767,7 @@ simulated null distributions in Sections 2–4. The simulated p-values should sh
 decimal — confirming the result isn't an artifact of one lucky seed.</p>
 </li>
 </ol>
-<h2 id="What-you-learned">What you learned<a class="anchor-link" href="#What-you-learned">¶</a></h2><ul>
+<h2 id="What-you-learned">What you learned<a class="anchor-link" data-pagefind-ignore href="#What-you-learned">¶</a></h2><ul>
 <li><strong>Why t, not z:</strong> when the population spread $\sigma$ is unknown we estimate it with $s$, adding
 uncertainty; the <strong>t-distribution</strong> absorbs that with heavier tails governed by $df = n-1$, and it
 melts into the normal as $n$ grows.</li>

@@ -7823,7 +7823,7 @@ a.anchor-link {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h1 id="Lesson-20-%E2%80%94-The-bootstrap-&amp;-permutation-tests">Lesson 20 — The bootstrap &amp; permutation tests<a class="anchor-link" href="#Lesson-20-%E2%80%94-The-bootstrap-&amp;-permutation-tests">¶</a></h1><p><em>Part 2 · Lesson 20 of 20  ·  data: Old Faithful · ToothGrowth</em></p>
+<h1 id="Lesson-20-%E2%80%94-The-bootstrap-&amp;-permutation-tests">Lesson 20 — The bootstrap &amp; permutation tests<a class="anchor-link" data-pagefind-ignore href="#Lesson-20-%E2%80%94-The-bootstrap-&amp;-permutation-tests">¶</a></h1><p><em>Part 2 · Lesson 20 of 20  ·  data: Old Faithful · ToothGrowth</em></p>
 <p><strong>←</strong> <a href="19-multiple-regression.html">Lesson 19: Multiple regression (intro)</a>  ·  <a href="index.html">↑ Course map</a></p>
 <p><strong>Same idea, another way:</strong> <a href="20-bootstrap-permutation~another-dataset.html">Another dataset →</a>  ·  <a href="20-bootstrap-permutation~the-code.html">The code behind it →</a></p>
 <p>Every test so far has leaned on a <strong>formula</strong>: a standard error, a $t^{*}$ multiplier, a known
@@ -7965,7 +7965,7 @@ ToothGrowth:  60 guinea pigs, supplement = ['OJ', 'VC']
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="1)-The-problem:-a-statistic-with-no-formula">1) The problem: a statistic with no formula<a class="anchor-link" href="#1)-The-problem:-a-statistic-with-no-formula">¶</a></h2><p>The textbook confidence interval for a <strong>mean</strong> is $\bar{x} \pm t^{*}\, s/\sqrt{n}$ — see the
+<h2 id="1)-The-problem:-a-statistic-with-no-formula">1) The problem: a statistic with no formula<a class="anchor-link" data-pagefind-ignore href="#1)-The-problem:-a-statistic-with-no-formula">¶</a></h2><p>The textbook confidence interval for a <strong>mean</strong> is $\bar{x} \pm t^{*}\, s/\sqrt{n}$ — see the
 confidence-interval flagship. That recipe exists because the <strong>standard error of the mean</strong> has a
 tidy formula, $s/\sqrt{n}$, handed to us by the Central Limit Theorem.</p>
 <p>Now look at Old Faithful's eruption durations. They are famously <strong>bimodal</strong> — two clumps, short
@@ -8021,7 +8021,7 @@ The MEDIAN is the better "typical" value here — but it has no standard-error f
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="2)-The-bootstrap-idea-%E2%80%94-pull-yourself-up-by-your-own-bootstraps">2) The bootstrap idea — pull yourself up by your own bootstraps<a class="anchor-link" href="#2)-The-bootstrap-idea-%E2%80%94-pull-yourself-up-by-your-own-bootstraps">¶</a></h2><p>Here is the trick, and it sounds like cheating the first time you hear it.</p>
+<h2 id="2)-The-bootstrap-idea-%E2%80%94-pull-yourself-up-by-your-own-bootstraps">2) The bootstrap idea — pull yourself up by your own bootstraps<a class="anchor-link" data-pagefind-ignore href="#2)-The-bootstrap-idea-%E2%80%94-pull-yourself-up-by-your-own-bootstraps">¶</a></h2><p>Here is the trick, and it sounds like cheating the first time you hear it.</p>
 <p>A confidence interval is really a question about the <strong>sampling distribution</strong>: <em>if I could draw many
 fresh samples from the population, how much would my statistic bounce around?</em> We can't draw fresh
 samples — we only have the <strong>one</strong> sample we collected. <strong>But our sample is our best picture of the
@@ -8087,7 +8087,7 @@ This resample left out 101 of the 272 original points (37% -- never drawn even o
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="3)-A-bootstrap-confidence-interval-for-the-median">3) A bootstrap confidence interval for the median<a class="anchor-link" href="#3)-A-bootstrap-confidence-interval-for-the-median">¶</a></h2><p>Now we do that thousands of times and collect the medians. The result — the <strong>bootstrap
+<h2 id="3)-A-bootstrap-confidence-interval-for-the-median">3) A bootstrap confidence interval for the median<a class="anchor-link" data-pagefind-ignore href="#3)-A-bootstrap-confidence-interval-for-the-median">¶</a></h2><p>Now we do that thousands of times and collect the medians. The result — the <strong>bootstrap
 distribution</strong> — is our stand-in for the sampling distribution of the median. To get a 95% confidence
 interval we use the <strong>percentile method</strong>: just take the <strong>2.5th and 97.5th percentiles</strong> of the
 bootstrap medians. The middle 95% of "where the median landed under resampling" <em>is</em> the interval.</p>
@@ -8213,7 +8213,7 @@ sample is tiny or unrepresentative, the bootstrap faithfully reproduces <em>that
 simple percentile method can be slightly off for very skewed statistics or very small $n$. It is a
 superb general-purpose tool, not a license to ignore a bad sample.</p>
 </blockquote>
-<h2 id="4)-Validate-the-method:-bootstrap-vs.-the-textbook-formula">4) Validate the method: bootstrap vs. the textbook formula<a class="anchor-link" href="#4)-Validate-the-method:-bootstrap-vs.-the-textbook-formula">¶</a></h2><p>A new method is only trustworthy if it <strong>agrees with the old one where the old one works.</strong> The
+<h2 id="4)-Validate-the-method:-bootstrap-vs.-the-textbook-formula">4) Validate the method: bootstrap vs. the textbook formula<a class="anchor-link" data-pagefind-ignore href="#4)-Validate-the-method:-bootstrap-vs.-the-textbook-formula">¶</a></h2><p>A new method is only trustworthy if it <strong>agrees with the old one where the old one works.</strong> The
 classical t-interval <em>does</em> apply to the <strong>mean</strong>. So let's bootstrap the <strong>mean</strong> of the same
 eruptions and check that the bootstrap CI lands on top of the textbook t-interval. If a brand-new
 simulation reproduces a century-old formula, we can trust it on the median where no formula exists.</p>
@@ -8309,7 +8309,7 @@ Formula  SE = s/sqrt(n) = 0.0692   &lt;- the bootstrap rediscovered the formula
 <p>The two intervals are essentially identical, and the bootstrap histogram traces the same normal curve
 the formula assumes. That is the validation we wanted: <strong>the bootstrap agrees with the textbook where
 the textbook applies, so we can trust it on the median where the textbook is silent.</strong></p>
-<h2 id="5)-The-second-tool:-a-permutation-test-for-two-groups">5) The second tool: a permutation test for two groups<a class="anchor-link" href="#5)-The-second-tool:-a-permutation-test-for-two-groups">¶</a></h2><p>Now a different question — not "what's a range for one statistic?" but <strong>"is the difference between
+<h2 id="5)-The-second-tool:-a-permutation-test-for-two-groups">5) The second tool: a permutation test for two groups<a class="anchor-link" data-pagefind-ignore href="#5)-The-second-tool:-a-permutation-test-for-two-groups">¶</a></h2><p>Now a different question — not "what's a range for one statistic?" but <strong>"is the difference between
 two groups real, or just luck?"</strong> We switch datasets to <strong>ToothGrowth</strong>: 60 guinea pigs each given
 vitamin C, half via <strong>orange juice (OJ)</strong> and half via a <strong>synthetic supplement (VC)</strong>. Did the
 delivery method change tooth growth?</p>
@@ -8472,7 +8472,7 @@ the grey histogram out beyond them - the chance shuffling alone fakes a gap this
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="6)-Does-it-agree-with-the-textbook-t-test?">6) Does it agree with the textbook t-test?<a class="anchor-link" href="#6)-Does-it-agree-with-the-textbook-t-test?">¶</a></h2><p>Same validation discipline as before: the classical tool here is the <strong>two-sample t-test</strong> (see the
+<h2 id="6)-Does-it-agree-with-the-textbook-t-test?">6) Does it agree with the textbook t-test?<a class="anchor-link" data-pagefind-ignore href="#6)-Does-it-agree-with-the-textbook-t-test?">¶</a></h2><p>Same validation discipline as before: the classical tool here is the <strong>two-sample t-test</strong> (see the
 t-tests lesson). If the permutation p-value matches <code>scipy</code>'s, we get the same scientific conclusion
 with <strong>fewer assumptions</strong> (the permutation test never assumed the data was normal).</p>
 </div>
@@ -8535,7 +8535,7 @@ permutation test keeps working while the formula quietly breaks.</p>
 | <strong>Shines when</strong> | the statistic has no SE formula (median, ratio, correlation, ...) | comparing groups with no clean test or shaky assumptions |
 | <strong>Limit</strong> | only as good as the sample; rough for tiny $n$ | tests a <em>sharp</em> null ("no difference at all") |</p>
 </blockquote>
-<h2 id="7)-The-big-idea-%E2%80%94-simulation-is-the-throughline-of-the-whole-course">7) The big idea — simulation is the throughline of the whole course<a class="anchor-link" href="#7)-The-big-idea-%E2%80%94-simulation-is-the-throughline-of-the-whole-course">¶</a></h2><p>Step back and notice what just happened twice. We didn't memorize a new distribution table. We
+<h2 id="7)-The-big-idea-%E2%80%94-simulation-is-the-throughline-of-the-whole-course">7) The big idea — simulation is the throughline of the whole course<a class="anchor-link" data-pagefind-ignore href="#7)-The-big-idea-%E2%80%94-simulation-is-the-throughline-of-the-whole-course">¶</a></h2><p>Step back and notice what just happened twice. We didn't memorize a new distribution table. We
 <strong>asked the computer to act out the situation thousands of times</strong> and <strong>read the answer off the
 result.</strong> That is the single thread running through this entire course:</p>
 <ul>
@@ -8557,7 +8557,7 @@ distribution under the null" something you can literally <em>see happen</em> on 
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Now-you-try">Now you try<a class="anchor-link" href="#Now-you-try">¶</a></h2><p>Predict first, then change a number and re-run:</p>
+<h2 id="Now-you-try">Now you try<a class="anchor-link" data-pagefind-ignore href="#Now-you-try">¶</a></h2><p>Predict first, then change a number and re-run:</p>
 <ol>
 <li><p><strong>A different statistic, same machine.</strong> In section 3, the <code>bootstrap_statistic</code> helper takes
 <em>any</em> function. In a new cell, bootstrap the <strong>standard deviation</strong> of eruptions:</p>
@@ -8583,7 +8583,7 @@ print(obs, np.mean(np.abs(null) &gt;= abs(obs)))</code></pre>
 <p>Does the observed gap now sit far out in the tail of the null? What does that p-value say?</p>
 </li>
 </ol>
-<h2 id="What-you-learned">What you learned<a class="anchor-link" href="#What-you-learned">¶</a></h2><ul>
+<h2 id="What-you-learned">What you learned<a class="anchor-link" data-pagefind-ignore href="#What-you-learned">¶</a></h2><ul>
 <li><strong>Resampling replaces formulas:</strong> when the math is hard or the assumptions fail, let the computer
 redo the experiment thousands of times and read the answer off the result.</li>
 <li><strong>The bootstrap</strong> resamples your one sample <em>with replacement</em> to imitate the sampling distribution

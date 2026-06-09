@@ -7823,7 +7823,7 @@ a.anchor-link {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h1 id="The-code-behind-it:-fit-a-regression-line-by-hand">The code behind it: fit a regression line by hand<a class="anchor-link" href="#The-code-behind-it:-fit-a-regression-line-by-hand">¶</a></h1><p><em>Part 1 · Lesson 3 · the code behind it  ·  data: Ames housing (same as Lesson 3)</em></p>
+<h1 id="The-code-behind-it:-fit-a-regression-line-by-hand">The code behind it: fit a regression line by hand<a class="anchor-link" data-pagefind-ignore href="#The-code-behind-it:-fit-a-regression-line-by-hand">¶</a></h1><p><em>Part 1 · Lesson 3 · the code behind it  ·  data: Ames housing (same as Lesson 3)</em></p>
 <p><em>↩ A companion to <a href="03-relationships-regression.html">Lesson 3: Relationships: correlation &amp; the regression line</a>.</em></p>
 <p><strong>↩ Back:</strong> <a href="03-relationships-regression.html">Lesson 3: Relationships: correlation &amp; the regression line</a>  ·  <a href="index.html">↑ Course map</a>  ·  <strong>Also:</strong> <a href="03-relationships-regression~another-dataset.html">Another dataset →</a></p>
 <p><strong>In Lesson 3 you fit a regression line with library one-liners</strong> — <code>area.corr(price)</code>,
@@ -7865,7 +7865,7 @@ programmer actually works:</p>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="1)-The-goal">1) The goal<a class="anchor-link" href="#1)-The-goal">¶</a></h2><p>By the end of this notebook you'll have written a function that takes two columns of numbers — a
+<h2 id="1)-The-goal">1) The goal<a class="anchor-link" data-pagefind-ignore href="#1)-The-goal">¶</a></h2><p>By the end of this notebook you'll have written a function that takes two columns of numbers — a
 predictor $x$ and a response $y$ — and returns the <strong>slope</strong>, <strong>intercept</strong>, <strong>correlation $r$</strong> and
 <strong>$R^2$</strong> of the least-squares line through them: the exact same numbers <code>np.polyfit</code> and
 <code>stats.linregress</code> hand you for free. Nothing here needs new statistics; everything is the Python
@@ -7947,7 +7947,7 @@ an array of values with an index. The whole regression below is "do some arithme
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="2)-The-data-in-code">2) The data in code<a class="anchor-link" href="#2)-The-data-in-code">¶</a></h2><p>Before any statistics, a programmer <em>interrogates the object</em>: what type is it, how big is it, what are
+<h2 id="2)-The-data-in-code">2) The data in code<a class="anchor-link" data-pagefind-ignore href="#2)-The-data-in-code">¶</a></h2><p>Before any statistics, a programmer <em>interrogates the object</em>: what type is it, how big is it, what are
 the columns, what do the first rows look like? Four habits worth keeping:</p>
 <ul>
 <li><code>.shape</code> → <code>(rows, columns)</code> as a tuple.</li>
@@ -8054,7 +8054,7 @@ dtype: object
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="Selecting-columns,-masking-rows,-and-missing-values">Selecting columns, masking rows, and missing values<a class="anchor-link" href="#Selecting-columns,-masking-rows,-and-missing-values">¶</a></h3><ul>
+<h3 id="Selecting-columns,-masking-rows,-and-missing-values">Selecting columns, masking rows, and missing values<a class="anchor-link" data-pagefind-ignore href="#Selecting-columns,-masking-rows,-and-missing-values">¶</a></h3><ul>
 <li><strong>One column</strong> → <code>ames['area']</code> gives a <code>Series</code>.</li>
 <li><strong>A boolean mask</strong> → <code>ames['area'] &gt; 3000</code> makes a column of <code>True</code>/<code>False</code>; putting it <em>inside the
 brackets</em> keeps only the <code>True</code> rows. This is the single most useful pattern in pandas.</li>
@@ -8115,10 +8115,10 @@ Homes over 3,000 sq ft: 26 of 2930
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="3)-Build-it-step-by-step">3) Build it step by step<a class="anchor-link" href="#3)-Build-it-step-by-step">¶</a></h2><p>Now the heart of it. Each piece of the regression is a one-line library call <em>and</em> a short formula —
+<h2 id="3)-Build-it-step-by-step">3) Build it step by step<a class="anchor-link" data-pagefind-ignore href="#3)-Build-it-step-by-step">¶</a></h2><p>Now the heart of it. Each piece of the regression is a one-line library call <em>and</em> a short formula —
 we'll write the formula in NumPy and check the two agree to the last decimal with <code>np.isclose</code>. Once
 you've built it, the library is no longer a mystery box.</p>
-<h3 id="Pearson's-correlation-r,-from-its-formula">Pearson's correlation r, from its formula<a class="anchor-link" href="#Pearson's-correlation-r,-from-its-formula">¶</a></h3><p>Lesson 3's <code>area.corr(price)</code> is <strong>Pearson's $r$</strong>. Its formula looks scary but is just "do the
+<h3 id="Pearson's-correlation-r,-from-its-formula">Pearson's correlation r, from its formula<a class="anchor-link" data-pagefind-ignore href="#Pearson's-correlation-r,-from-its-formula">¶</a></h3><p>Lesson 3's <code>area.corr(price)</code> is <strong>Pearson's $r$</strong>. Its formula looks scary but is just "do the
 deviations of $x$ and $y$ move together?", scaled to land between $-1$ and $+1$:</p>
 <p>$$r = \frac{\sum (x_i-\bar{x})(y_i-\bar{y})}{\sqrt{\sum (x_i-\bar{x})^2}\;\sqrt{\sum (y_i-\bar{y})^2}}.$$</p>
 <p>Every $\sum$ is a <code>.sum()</code> over a vectorized product. The deviations <code>dx</code>, <code>dy</code> are computed for the
@@ -8172,7 +8172,7 @@ match? True
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="The-slope-%E2%80%94-two-formulas-that-must-agree">The slope — two formulas that must agree<a class="anchor-link" href="#The-slope-%E2%80%94-two-formulas-that-must-agree">¶</a></h3><p>The least-squares <strong>slope</strong> can be written two ways that are algebraically identical, so they had
+<h3 id="The-slope-%E2%80%94-two-formulas-that-must-agree">The slope — two formulas that must agree<a class="anchor-link" data-pagefind-ignore href="#The-slope-%E2%80%94-two-formulas-that-must-agree">¶</a></h3><p>The least-squares <strong>slope</strong> can be written two ways that are algebraically identical, so they had
 better produce the same number:</p>
 <p>$$b = r\,\frac{s_y}{s_x} \qquad\text{and}\qquad b = \frac{\operatorname{cov}(x,y)}{\operatorname{var}(x)}.$$</p>
 <p>The first rescales the correlation from "per SD" back into real units (dollars per sq ft). The second
@@ -8229,7 +8229,7 @@ match? True
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="The-intercept,-and-the-fitted-line">The intercept, and the fitted line<a class="anchor-link" href="#The-intercept,-and-the-fitted-line">¶</a></h3><p>The <strong>intercept</strong> comes straight from the requirement that the line pass through the point of averages
+<h3 id="The-intercept,-and-the-fitted-line">The intercept, and the fitted line<a class="anchor-link" data-pagefind-ignore href="#The-intercept,-and-the-fitted-line">¶</a></h3><p>The <strong>intercept</strong> comes straight from the requirement that the line pass through the point of averages
 $(\bar{x}, \bar{y})$:</p>
 <p>$$a = \bar{y} - b\,\bar{x}.$$</p>
 <p>With the slope $b$ and intercept $a$ in hand, the <strong>fitted (predicted) value</strong> for every home is one
@@ -8277,7 +8277,7 @@ yhat is a Series of 2930 predictions; first 5:
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="Residuals-%E2%80%94-what-the-line-misses">Residuals — what the line <em>misses</em><a class="anchor-link" href="#Residuals-%E2%80%94-what-the-line-misses">¶</a></h3><p>The <strong>residual</strong> for each home is the leftover the line didn't catch — actual minus predicted:</p>
+<h3 id="Residuals-%E2%80%94-what-the-line-misses">Residuals — what the line <em>misses</em><a class="anchor-link" data-pagefind-ignore href="#Residuals-%E2%80%94-what-the-line-misses">¶</a></h3><p>The <strong>residual</strong> for each home is the leftover the line didn't catch — actual minus predicted:</p>
 <p>$$e_i = y_i - \hat{y}_i.$$</p>
 <p>A positive residual means the home sold for <strong>more</strong> than the line predicted; negative means <strong>less</strong>.
 Like the fitted values, the whole column of residuals is one vectorized subtraction. A useful sanity
@@ -8319,7 +8319,7 @@ mean residual (should be ~0): -0.0000 dollars
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="R%C2%B2-%E2%80%94-two-ways-that-must-agree">R² — two ways that must agree<a class="anchor-link" href="#R%C2%B2-%E2%80%94-two-ways-that-must-agree">¶</a></h3><p>How <em>good</em> is the fit, in one number? The <strong>coefficient of determination</strong> $R^2$ is the share of the
+<h3 id="R%C2%B2-%E2%80%94-two-ways-that-must-agree">R² — two ways that must agree<a class="anchor-link" data-pagefind-ignore href="#R%C2%B2-%E2%80%94-two-ways-that-must-agree">¶</a></h3><p>How <em>good</em> is the fit, in one number? The <strong>coefficient of determination</strong> $R^2$ is the share of the
 up-and-down variation in $y$ that the line accounts for. For a simple one-predictor regression there's
 a beautiful shortcut — it's just the correlation squared — <em>and</em> it equals one minus the leftover
 variation over the total variation. Both must give the same number:</p>
@@ -8371,7 +8371,7 @@ match? True
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="The-final-check:-against-np.polyfit">The final check: against <code>np.polyfit</code><a class="anchor-link" href="#The-final-check:-against-np.polyfit">¶</a></h3><p>We built the slope and intercept from scratch. The library's <code>np.polyfit(x, y, 1)</code> fits the same line
+<h3 id="The-final-check:-against-np.polyfit">The final check: against <code>np.polyfit</code><a class="anchor-link" data-pagefind-ignore href="#The-final-check:-against-np.polyfit">¶</a></h3><p>We built the slope and intercept from scratch. The library's <code>np.polyfit(x, y, 1)</code> fits the same line
 by least squares and returns <code>[slope, intercept]</code>. If our formulas are right, the two must match to many
 decimals — <em>that's the whole point</em>: the formula <strong>is</strong> what the library computes.</p>
 </div>
@@ -8418,7 +8418,7 @@ intercept match? True
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="Draw-it-%E2%80%94-the-fit,-and-the-residual-plot">Draw it — the fit, and the residual plot<a class="anchor-link" href="#Draw-it-%E2%80%94-the-fit,-and-the-residual-plot">¶</a></h3><p>Two pictures finish the job. First the <strong>scatter with our fitted line overlaid</strong>: plot the dots, then
+<h3 id="Draw-it-%E2%80%94-the-fit,-and-the-residual-plot">Draw it — the fit, and the residual plot<a class="anchor-link" data-pagefind-ignore href="#Draw-it-%E2%80%94-the-fit,-and-the-residual-plot">¶</a></h3><p>Two pictures finish the job. First the <strong>scatter with our fitted line overlaid</strong>: plot the dots, then
 draw a straight segment from the smallest to the largest $x$ using <em>our own</em> <code>a</code> and <code>b1</code>. Second the
 <strong>residual plot</strong> — residuals against $x$, with a horizontal line at zero. What you <em>want</em> to see is a
 shapeless band around 0; a curve or a funnel would warn that a straight line is the wrong model.</p>
@@ -8474,7 +8474,7 @@ shapeless band around 0; a curve or a funnel would warn that a straight line is 
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="4)-The-idiom-%E2%80%94-vectorized-vs.-a-loop">4) The idiom — vectorized vs. a loop<a class="anchor-link" href="#4)-The-idiom-%E2%80%94-vectorized-vs.-a-loop">¶</a></h2><p>We computed all 2,930 residuals with <strong>one expression</strong>, <code>y - (a + b1 * x)</code>, because pandas/NumPy do
+<h2 id="4)-The-idiom-%E2%80%94-vectorized-vs.-a-loop">4) The idiom — vectorized vs. a loop<a class="anchor-link" data-pagefind-ignore href="#4)-The-idiom-%E2%80%94-vectorized-vs.-a-loop">¶</a></h2><p>We computed all 2,930 residuals with <strong>one expression</strong>, <code>y - (a + b1 * x)</code>, because pandas/NumPy do
 arithmetic on a whole column at once. You <em>could</em> instead loop over the homes one by one — it gives the
 same numbers but is slower and noisier to read. Compare the two; the vectorized one-liner is the idiom
 you want.</p>
@@ -8532,7 +8532,7 @@ problem for you; here we did it by hand to see exactly what they return.)
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="5)-Refactor-into-a-reusable-function">5) Refactor into a reusable function<a class="anchor-link" href="#5)-Refactor-into-a-reusable-function">¶</a></h2><p>You've now written the same handful of lines (deviations, $r$, slope, intercept, $R^2$) once. The
+<h2 id="5)-Refactor-into-a-reusable-function">5) Refactor into a reusable function<a class="anchor-link" data-pagefind-ignore href="#5)-Refactor-into-a-reusable-function">¶</a></h2><p>You've now written the same handful of lines (deviations, $r$, slope, intercept, $R^2$) once. The
 programmer's reflex is to <strong>wrap repeated work in a function</strong>: name it, give it inputs, <code>return</code> the
 result. Then "fit a line" is one call you can reuse on <em>any</em> pair of numeric columns — area vs. price, a
 different predictor, a different dataset entirely.</p>
@@ -8615,7 +8615,7 @@ predictions</strong> — exactly the leap from "writing statistics" to "doing st
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="6)-Now-you-code">6) Now you code<a class="anchor-link" href="#6)-Now-you-code">¶</a></h2><p>Write the code yourself. Add a new cell (the <strong>+</strong> button in the toolbar) and try each — predict the
+<h2 id="6)-Now-you-code">6) Now you code<a class="anchor-link" data-pagefind-ignore href="#6)-Now-you-code">¶</a></h2><p>Write the code yourself. Add a new cell (the <strong>+</strong> button in the toolbar) and try each — predict the
 answer before you run it.</p>
 <ol>
 <li><p><strong>Predict a price.</strong> Using your <code>a</code> and <code>b1</code>, write one line that predicts the price of a 2,000-sq-ft
@@ -8636,7 +8636,7 @@ compare its <code>[slope, intercept]</code> to your <code>fit_line(...)</code> r
 to many decimals — confirming your from-scratch fit <em>is</em> the least-squares fit.</p>
 </li>
 </ol>
-<h2 id="What-you-learned">What you learned<a class="anchor-link" href="#What-you-learned">¶</a></h2><p><strong>Coding</strong></p>
+<h2 id="What-you-learned">What you learned<a class="anchor-link" data-pagefind-ignore href="#What-you-learned">¶</a></h2><p><strong>Coding</strong></p>
 <ul>
 <li>A <code>DataFrame</code> is a table; a column is a <code>Series</code>. Interrogate any new data with <code>.shape</code>, <code>.columns</code>,
 <code>.dtypes</code>, <code>.head()</code>, and filter rows with <strong>boolean masks</strong> (<code>df[df['col'] &gt; value]</code>).</li>

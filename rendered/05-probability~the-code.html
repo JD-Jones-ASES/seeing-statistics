@@ -7823,7 +7823,7 @@ a.anchor-link {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h1 id="The-code-behind-it:-probabilities-from-a-crosstab">The code behind it: probabilities from a crosstab<a class="anchor-link" href="#The-code-behind-it:-probabilities-from-a-crosstab">¶</a></h1><p><em>Part 1 · Lesson 5 · the code behind it  ·  data: Titanic (same as Lesson 5)</em></p>
+<h1 id="The-code-behind-it:-probabilities-from-a-crosstab">The code behind it: probabilities from a crosstab<a class="anchor-link" data-pagefind-ignore href="#The-code-behind-it:-probabilities-from-a-crosstab">¶</a></h1><p><em>Part 1 · Lesson 5 · the code behind it  ·  data: Titanic (same as Lesson 5)</em></p>
 <p><em>↩ A companion to <a href="05-probability.html">Lesson 5: Probability &amp; conditional probability</a>.</em></p>
 <p><strong>↩ Back:</strong> <a href="05-probability.html">Lesson 5: Probability &amp; conditional probability</a>  ·  <a href="index.html">↑ Course map</a>  ·  <strong>Also:</strong> <a href="05-probability~another-dataset.html">Another dataset →</a></p>
 <p><strong>In Lesson 5 you counted probabilities off the Titanic</strong> — <code>P(survived)</code>, <code>P(survived | female)</code>, the
@@ -7864,7 +7864,7 @@ compute it in Python</strong>. We'll go in the order a programmer actually works
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="1)-The-goal">1) The goal<a class="anchor-link" href="#1)-The-goal">¶</a></h2><p>By the end of this notebook you'll have pulled three different kinds of probability — <strong>marginal</strong>, <strong>joint</strong>
+<h2 id="1)-The-goal">1) The goal<a class="anchor-link" data-pagefind-ignore href="#1)-The-goal">¶</a></h2><p>By the end of this notebook you'll have pulled three different kinds of probability — <strong>marginal</strong>, <strong>joint</strong>
 and <strong>conditional</strong> — out of a single grid of counts, and verified each one against a direct calculation on
 the raw rows. Then you'll wrap "conditional probability" into your own one-line function. Nothing here needs
 new statistics; everything is the Python <em>underneath</em> the one-liners from Lesson 5.</p>
@@ -7944,7 +7944,7 @@ number in that grid divided by another (a grand total, a row total, or a column 
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="2)-The-data-in-code">2) The data in code<a class="anchor-link" href="#2)-The-data-in-code">¶</a></h2><p>Before any probability, a programmer <em>interrogates the object</em>: how big is it, what are the columns, what do
+<h2 id="2)-The-data-in-code">2) The data in code<a class="anchor-link" data-pagefind-ignore href="#2)-The-data-in-code">¶</a></h2><p>Before any probability, a programmer <em>interrogates the object</em>: how big is it, what are the columns, what do
 the first rows look like, how are the key columns coded? Same habits as always:</p>
 <ul>
 <li><code>.shape</code> → <code>(rows, columns)</code>.</li>
@@ -8079,7 +8079,7 @@ columns: ['Survived', 'Pclass', 'Name', 'Sex', 'Age', 'Siblings/Spouses Aboard',
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="The-two-columns-we-need,-and-how-they're-coded">The two columns we need, and how they're coded<a class="anchor-link" href="#The-two-columns-we-need,-and-how-they're-coded">¶</a></h3><p>We only need two columns: <strong><code>Survived</code></strong> and <strong><code>Sex</code></strong>. Check exactly how each is stored — the whole lesson
+<h3 id="The-two-columns-we-need,-and-how-they're-coded">The two columns we need, and how they're coded<a class="anchor-link" data-pagefind-ignore href="#The-two-columns-we-need,-and-how-they're-coded">¶</a></h3><p>We only need two columns: <strong><code>Survived</code></strong> and <strong><code>Sex</code></strong>. Check exactly how each is stored — the whole lesson
 depends on it.</p>
 <ul>
 <li><code>Survived</code> is already <strong>0 / 1</strong> (0 = died, 1 = survived). A 0/1 column is gold: its <code>.mean()</code> is the
@@ -8126,7 +8126,7 @@ missing in Survived/Sex: 0
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="Boolean-masks-%E2%80%94-the-building-blocks">Boolean masks — the building blocks<a class="anchor-link" href="#Boolean-masks-%E2%80%94-the-building-blocks">¶</a></h3><p>A mask is a <code>True</code>/<code>False</code> column. Inside the brackets it <em>filters</em> rows; on its own its <code>.mean()</code> is a
+<h3 id="Boolean-masks-%E2%80%94-the-building-blocks">Boolean masks — the building blocks<a class="anchor-link" data-pagefind-ignore href="#Boolean-masks-%E2%80%94-the-building-blocks">¶</a></h3><p>A mask is a <code>True</code>/<code>False</code> column. Inside the brackets it <em>filters</em> rows; on its own its <code>.mean()</code> is a
 probability. We'll lean on three masks (and the <code>Survived</code> column, which is already 0/1).</p>
 </div>
 </div>
@@ -8175,10 +8175,10 @@ survivors         : 342 of 887
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="3)-Build-it-step-by-step">3) Build it step by step<a class="anchor-link" href="#3)-Build-it-step-by-step">¶</a></h2><p>Now the heart of it. We'll lay down <strong>one grid of counts</strong> with <code>pd.crosstab</code>, then pull each kind of
+<h2 id="3)-Build-it-step-by-step">3) Build it step by step<a class="anchor-link" data-pagefind-ignore href="#3)-Build-it-step-by-step">¶</a></h2><p>Now the heart of it. We'll lay down <strong>one grid of counts</strong> with <code>pd.crosstab</code>, then pull each kind of
 probability out of it by hand — and check every single one against a direct boolean-mask calculation with
 <code>np.isclose</code>, printing <code>match? True</code>.</p>
-<h3 id="The-count-table">The count table<a class="anchor-link" href="#The-count-table">¶</a></h3><p><code>pd.crosstab(rows, cols)</code> counts how many passengers fall in each combination. We put <code>Survived</code> down the
+<h3 id="The-count-table">The count table<a class="anchor-link" data-pagefind-ignore href="#The-count-table">¶</a></h3><p><code>pd.crosstab(rows, cols)</code> counts how many passengers fall in each combination. We put <code>Survived</code> down the
 rows and <code>Sex</code> across the columns. Each inner cell is a count of people; the margins are the totals.</p>
 </div>
 </div>
@@ -8238,7 +8238,7 @@ survived &amp; female (cell) : 233
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="Marginal-probability-%E2%80%94-a-total-%C3%B7-the-grand-total">Marginal probability — a total ÷ the grand total<a class="anchor-link" href="#Marginal-probability-%E2%80%94-a-total-%C3%B7-the-grand-total">¶</a></h3><p>A <strong>marginal</strong> probability ignores the other variable: it's an <em>edge</em> total over the grand total.
+<h3 id="Marginal-probability-%E2%80%94-a-total-%C3%B7-the-grand-total">Marginal probability — a total ÷ the grand total<a class="anchor-link" data-pagefind-ignore href="#Marginal-probability-%E2%80%94-a-total-%C3%B7-the-grand-total">¶</a></h3><p>A <strong>marginal</strong> probability ignores the other variable: it's an <em>edge</em> total over the grand total.
 $P(\text{survived})$ is "all survivors ÷ everyone" — the survivor row total divided by 887. Check it against
 the direct route, which is just the mean of the 0/1 <code>Survived</code> column.</p>
 <p>$$P(\text{survived}) = \frac{\text{number who survived}}{\text{total number of passengers}}.$$</p>
@@ -8286,7 +8286,7 @@ match? True
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="Joint-probability-%E2%80%94-an-inner-cell-%C3%B7-the-grand-total">Joint probability — an inner cell ÷ the grand total<a class="anchor-link" href="#Joint-probability-%E2%80%94-an-inner-cell-%C3%B7-the-grand-total">¶</a></h3><p>A <strong>joint</strong> probability is two things true at once: an <em>inner</em> cell over the grand total.
+<h3 id="Joint-probability-%E2%80%94-an-inner-cell-%C3%B7-the-grand-total">Joint probability — an inner cell ÷ the grand total<a class="anchor-link" data-pagefind-ignore href="#Joint-probability-%E2%80%94-an-inner-cell-%C3%B7-the-grand-total">¶</a></h3><p>A <strong>joint</strong> probability is two things true at once: an <em>inner</em> cell over the grand total.
 $P(\text{survived and female})$ is the "survived &amp; female" cell divided by 887. The direct route is the mean
 of the <strong>combined</strong> mask <code>survived &amp; female</code>.</p>
 <p>$$P(\text{survived and female}) = \frac{\text{number who survived and were female}}{\text{total}}.$$</p>
@@ -8331,7 +8331,7 @@ match? True
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="Conditional-probability-%E2%80%94-an-inner-cell-%C3%B7-a-column-total">Conditional probability — an inner cell ÷ a <em>column</em> total<a class="anchor-link" href="#Conditional-probability-%E2%80%94-an-inner-cell-%C3%B7-a-column-total">¶</a></h3><p>A <strong>conditional</strong> probability shrinks the world to a subgroup. To get $P(\text{survived} \mid \text{female})$
+<h3 id="Conditional-probability-%E2%80%94-an-inner-cell-%C3%B7-a-column-total">Conditional probability — an inner cell ÷ a <em>column</em> total<a class="anchor-link" data-pagefind-ignore href="#Conditional-probability-%E2%80%94-an-inner-cell-%C3%B7-a-column-total">¶</a></h3><p>A <strong>conditional</strong> probability shrinks the world to a subgroup. To get $P(\text{survived} \mid \text{female})$
 we take the "survived &amp; female" cell and divide by the <strong>column</strong> total for women — not the grand total. That
 re-scales the cell to the world of women only. The direct route restricts to women first
 (<code>titanic.loc[female, 'Survived']</code>), then takes the survival rate.</p>
@@ -8401,7 +8401,7 @@ divisions on a grid of counts.</p>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="Independence-check-%E2%80%94-does-knowing-sex-change-the-bet?">Independence check — does knowing sex change the bet?<a class="anchor-link" href="#Independence-check-%E2%80%94-does-knowing-sex-change-the-bet?">¶</a></h3><p>Two events are <strong>independent</strong> if conditioning on one doesn't move the other:
+<h3 id="Independence-check-%E2%80%94-does-knowing-sex-change-the-bet?">Independence check — does knowing sex change the bet?<a class="anchor-link" data-pagefind-ignore href="#Independence-check-%E2%80%94-does-knowing-sex-change-the-bet?">¶</a></h3><p>Two events are <strong>independent</strong> if conditioning on one doesn't move the other:
 $P(\text{survived} \mid \text{female}) = P(\text{survived})$. We can just <em>subtract</em> to see the gap. If it's
 near zero they're independent; if it's big they're dependent. Sex and survival are about as dependent as it
 gets.</p>
@@ -8453,7 +8453,7 @@ Knowing a passenger is female swings the survival bet up by +36 percentage point
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="One-step-of-Bayes-%E2%80%94-flip-the-conditioning">One step of Bayes — flip the conditioning<a class="anchor-link" href="#One-step-of-Bayes-%E2%80%94-flip-the-conditioning">¶</a></h3><p>We have $P(\text{survived} \mid \text{female})$. The <em>backwards</em> question — among <strong>survivors</strong>, what fraction
+<h3 id="One-step-of-Bayes-%E2%80%94-flip-the-conditioning">One step of Bayes — flip the conditioning<a class="anchor-link" data-pagefind-ignore href="#One-step-of-Bayes-%E2%80%94-flip-the-conditioning">¶</a></h3><p>We have $P(\text{survived} \mid \text{female})$. The <em>backwards</em> question — among <strong>survivors</strong>, what fraction
 were female, $P(\text{female} \mid \text{survived})$ — is a genuinely different number. On our grid the flip
 is easy: divide the same "survived &amp; female" cell by the <strong>row</strong> total (all survivors) instead of the column
 total. Verify against the direct route: restrict to survivors, then take the female rate.</p>
@@ -8506,7 +8506,7 @@ P(survived | female) != P(female | survived): order matters. That is Bayes in on
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="4)-The-idiom">4) The idiom<a class="anchor-link" href="#4)-The-idiom">¶</a></h2><h3 id="A-0/1-column's-groupby(...).mean()-is-the-conditional-probability">A 0/1 column's <code>groupby(...).mean()</code> <em>is</em> the conditional probability<a class="anchor-link" href="#A-0/1-column's-groupby(...).mean()-is-the-conditional-probability">¶</a></h3><p>Everything above was hand division. The pandas idiom packs it into one expression: group the 0/1 <code>Survived</code>
+<h2 id="4)-The-idiom">4) The idiom<a class="anchor-link" data-pagefind-ignore href="#4)-The-idiom">¶</a></h2><h3 id="A-0/1-column's-groupby(...).mean()-is-the-conditional-probability">A 0/1 column's <code>groupby(...).mean()</code> <em>is</em> the conditional probability<a class="anchor-link" data-pagefind-ignore href="#A-0/1-column's-groupby(...).mean()-is-the-conditional-probability">¶</a></h3><p>Everything above was hand division. The pandas idiom packs it into one expression: group the 0/1 <code>Survived</code>
 column by <code>Sex</code> and take the mean of each group. Because the mean of a 0/1 column is a survival rate,
 <code>groupby('Sex')['Survived'].mean()</code> gives you $P(\text{survived} \mid \text{sex})$ for every sex at once.</p>
 </div>
@@ -8558,7 +8558,7 @@ match? True True
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="crosstab(normalize=...)-reproduces-the-tables-we-built-by-hand"><code>crosstab(normalize=...)</code> reproduces the tables we built by hand<a class="anchor-link" href="#crosstab(normalize=...)-reproduces-the-tables-we-built-by-hand">¶</a></h3><p><code>pd.crosstab</code> will do the dividing for us. The <code>normalize</code> argument picks which total to divide by:</p>
+<h3 id="crosstab(normalize=...)-reproduces-the-tables-we-built-by-hand"><code>crosstab(normalize=...)</code> reproduces the tables we built by hand<a class="anchor-link" data-pagefind-ignore href="#crosstab(normalize=...)-reproduces-the-tables-we-built-by-hand">¶</a></h3><p><code>pd.crosstab</code> will do the dividing for us. The <code>normalize</code> argument picks which total to divide by:</p>
 <ul>
 <li><code>normalize='all'</code> → every cell ÷ the <strong>grand total</strong> = the <strong>joint</strong> probabilities.</li>
 <li><code>normalize='columns'</code> → every cell ÷ its <strong>column</strong> total = $P(\text{survived} \mid \text{sex})$ (the
@@ -8648,7 +8648,7 @@ Survived
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="5)-Refactor-into-a-reusable-function">5) Refactor into a reusable function<a class="anchor-link" href="#5)-Refactor-into-a-reusable-function">¶</a></h2><p>We computed conditional probabilities the same way three times: restrict to the rows where a "given" column
+<h2 id="5)-Refactor-into-a-reusable-function">5) Refactor into a reusable function<a class="anchor-link" data-pagefind-ignore href="#5)-Refactor-into-a-reusable-function">¶</a></h2><p>We computed conditional probabilities the same way three times: restrict to the rows where a "given" column
 equals some value, then take the rate of the event. The programmer's reflex is to <strong>wrap repeated work in a
 function</strong> — name it, give it inputs, <code>return</code> the result. Then <em>any</em> conditional probability is one call,
 on any two columns.</p>
@@ -8713,7 +8713,7 @@ it's correct you stop thinking about which total to divide by and start thinking
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="6)-Now-you-code">6) Now you code<a class="anchor-link" href="#6)-Now-you-code">¶</a></h2><p>Write the code yourself. Add a new cell (the <strong>+</strong> button in the toolbar) and try each — predict the answer
+<h2 id="6)-Now-you-code">6) Now you code<a class="anchor-link" data-pagefind-ignore href="#6)-Now-you-code">¶</a></h2><p>Write the code yourself. Add a new cell (the <strong>+</strong> button in the toolbar) and try each — predict the answer
 before you run it.</p>
 <ol>
 <li><p><strong>A conditional on a third variable.</strong> The <code>Pclass</code> column is the ticket class (1, 2, 3). Use your
@@ -8733,7 +8733,7 @@ crosstab and confirm the two agree number-for-number.</p>
 Bayes by hand: <code>(cond_prob(titanic,'Sex','female','Survived',1) * titanic['Survived'].mean()) / (titanic['Sex']=='female').mean()</code>. Check it lands back on the ~0.742 from Section 3.</p>
 </li>
 </ol>
-<h2 id="What-you-learned">What you learned<a class="anchor-link" href="#What-you-learned">¶</a></h2><p><strong>Coding</strong></p>
+<h2 id="What-you-learned">What you learned<a class="anchor-link" data-pagefind-ignore href="#What-you-learned">¶</a></h2><p><strong>Coding</strong></p>
 <ul>
 <li>A <strong>boolean mask</strong> (<code>df['Sex'] == 'female'</code>) is a <code>True</code>/<code>False</code> column; inside brackets it filters rows, and
 the <strong>mean of a 0/1 (or True/False) column is a probability</strong> — the single most useful pattern here.</li>

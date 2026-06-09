@@ -7823,7 +7823,7 @@ a.anchor-link {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h1 id="A-random-variable-from-real-data:-how-many-relatives-aboard?">A random variable from real data: how many relatives aboard?<a class="anchor-link" href="#A-random-variable-from-real-data:-how-many-relatives-aboard?">¶</a></h1><p><em>Part 1 · Lesson 7 · another dataset  ·  data: Titanic</em></p>
+<h1 id="A-random-variable-from-real-data:-how-many-relatives-aboard?">A random variable from real data: how many relatives aboard?<a class="anchor-link" data-pagefind-ignore href="#A-random-variable-from-real-data:-how-many-relatives-aboard?">¶</a></h1><p><em>Part 1 · Lesson 7 · another dataset  ·  data: Titanic</em></p>
 <p><em>↩ A companion to <a href="07-random-variables.html">Lesson 7: Random variables, expectation &amp; variance</a>.</em></p>
 <p><strong>↩ Back:</strong> <a href="07-random-variables.html">Lesson 7: Random variables, expectation &amp; variance</a>  ·  <a href="index.html">↑ Course map</a>  ·  <strong>Also:</strong> <a href="07-random-variables~the-code.html">The code behind it →</a></p>
 <p>The core lesson met a <em>fair die</em> — a random variable so tidy it's almost a fantasy: six equally likely
@@ -7898,7 +7898,7 @@ Columns: ['Survived', 'Pclass', 'Name', 'Sex', 'Age', 'Siblings/Spouses Aboard',
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="1)-Defining-the-random-variable">1) Defining the random variable<a class="anchor-link" href="#1)-Defining-the-random-variable">¶</a></h2><p>Recall the recipe from the core lesson: a <strong>random variable</strong> (RV) is a rule that turns the outcome of a
+<h2 id="1)-Defining-the-random-variable">1) Defining the random variable<a class="anchor-link" data-pagefind-ignore href="#1)-Defining-the-random-variable">¶</a></h2><p>Recall the recipe from the core lesson: a <strong>random variable</strong> (RV) is a rule that turns the outcome of a
 chancy experiment into a <strong>number</strong>, and we write it with a capital letter, usually $X$. The "chancy
 experiment" here is <em>pick a Titanic passenger at random</em>. The number we attach to that passenger is:</p>
 <p>$$X = \text{the number of family members that passenger travelled with}.$$</p>
@@ -7953,7 +7953,7 @@ First ten passengers' values of X: [1 1 0 1 0 0 0 4 2 1]
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="2)-The-probability-distribution-%E2%80%94-a-PMF-you-have-to-estimate">2) The probability distribution — a PMF you have to <em>estimate</em><a class="anchor-link" href="#2)-The-probability-distribution-%E2%80%94-a-PMF-you-have-to-estimate">¶</a></h2><p>For the fair die we <em>knew</em> the probabilities in advance ($\tfrac{1}{6}$ each). Here we don't know them —
+<h2 id="2)-The-probability-distribution-%E2%80%94-a-PMF-you-have-to-estimate">2) The probability distribution — a PMF you have to <em>estimate</em><a class="anchor-link" data-pagefind-ignore href="#2)-The-probability-distribution-%E2%80%94-a-PMF-you-have-to-estimate">¶</a></h2><p>For the fair die we <em>knew</em> the probabilities in advance ($\tfrac{1}{6}$ each). Here we don't know them —
 we have to <strong>estimate</strong> each one from the data. The probability that a random passenger travelled with
 exactly $k$ relatives is just the <strong>fraction of passengers</strong> who did:</p>
 <p>$$P(X = k) = \frac{\text{number of passengers with exactly } k \text{ relatives}}{n}.$$</p>
@@ -8075,7 +8075,7 @@ $\operatorname{Var}[X]$ never asked the distribution to be tidy. They work here,
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="3)-Expected-value-E%5BX%5D-%E2%80%94-two-ways,-one-answer">3) Expected value E[X] — two ways, one answer<a class="anchor-link" href="#3)-Expected-value-E%5BX%5D-%E2%80%94-two-ways,-one-answer">¶</a></h2><p>The <strong>expected value</strong> is the probability-weighted average of all the values, exactly as before:</p>
+<h2 id="3)-Expected-value-E%5BX%5D-%E2%80%94-two-ways,-one-answer">3) Expected value E[X] — two ways, one answer<a class="anchor-link" data-pagefind-ignore href="#3)-Expected-value-E%5BX%5D-%E2%80%94-two-ways,-one-answer">¶</a></h2><p>The <strong>expected value</strong> is the probability-weighted average of all the values, exactly as before:</p>
 <p>$$E[X] = \sum_k k \, P(k).$$</p>
 <ul>
 <li><strong>The math:</strong> multiply each value $k$ by its probability $P(k)$, and add them all up.</li>
@@ -8135,7 +8135,7 @@ not a possible outcome — the same lesson as the die's E[X] = 3.5.
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="4)-Variance-and-standard-deviation-%E2%80%94-how-spread-out-is-it?">4) Variance and standard deviation — how spread out is it?<a class="anchor-link" href="#4)-Variance-and-standard-deviation-%E2%80%94-how-spread-out-is-it?">¶</a></h2><p>The <strong>variance</strong> measures how far, on average, the values land from the expected value — using <em>squared</em>
+<h2 id="4)-Variance-and-standard-deviation-%E2%80%94-how-spread-out-is-it?">4) Variance and standard deviation — how spread out is it?<a class="anchor-link" data-pagefind-ignore href="#4)-Variance-and-standard-deviation-%E2%80%94-how-spread-out-is-it?">¶</a></h2><p>The <strong>variance</strong> measures how far, on average, the values land from the expected value — using <em>squared</em>
 distances so overshoots and undershoots don't cancel:</p>
 <p>$$\operatorname{Var}[X] = \sum_k (k - \mu)^2 \, P(k), \qquad \mu = E[X].$$</p>
 <p>The <strong>standard deviation</strong> is its square root, $\operatorname{SD}[X] = \sqrt{\operatorname{Var}[X]}$,
@@ -8217,7 +8217,7 @@ here because the skew is so extreme.</p>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="5)-The-law-of-large-numbers-%E2%80%94-watch-the-average-converge">5) The law of large numbers — watch the average converge<a class="anchor-link" href="#5)-The-law-of-large-numbers-%E2%80%94-watch-the-average-converge">¶</a></h2><p>We <em>defined</em> $E[X]$ as the long-run average. The <strong>law of large numbers</strong> makes that precise: as we draw
+<h2 id="5)-The-law-of-large-numbers-%E2%80%94-watch-the-average-converge">5) The law of large numbers — watch the average converge<a class="anchor-link" data-pagefind-ignore href="#5)-The-law-of-large-numbers-%E2%80%94-watch-the-average-converge">¶</a></h2><p>We <em>defined</em> $E[X]$ as the long-run average. The <strong>law of large numbers</strong> makes that precise: as we draw
 more and more passengers at random, the <strong>running sample mean</strong> (the average of everyone drawn so far)
 settles down toward the true expected value $E[X]$.</p>
 <p>We draw passengers <strong>with replacement</strong> — meaning the same passenger can be picked more than once, like
@@ -8323,7 +8323,7 @@ They agree to within 0.0151 — and tighten as n_draws grows.
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="6)-Same-machinery,-different-beast-%E2%80%94-the-die-vs.-the-Titanic">6) Same machinery, different beast — the die vs. the Titanic<a class="anchor-link" href="#6)-Same-machinery,-different-beast-%E2%80%94-the-die-vs.-the-Titanic">¶</a></h2><p>It's worth pausing on just how different these two random variables are, even though every formula we
+<h2 id="6)-Same-machinery,-different-beast-%E2%80%94-the-die-vs.-the-Titanic">6) Same machinery, different beast — the die vs. the Titanic<a class="anchor-link" data-pagefind-ignore href="#6)-Same-machinery,-different-beast-%E2%80%94-the-die-vs.-the-Titanic">¶</a></h2><p>It's worth pausing on just how different these two random variables are, even though every formula we
 used was identical.</p>
 <table>
 <thead>
@@ -8379,7 +8379,7 @@ working out here in the wild.</p>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Now-you-try">Now you try<a class="anchor-link" href="#Now-you-try">¶</a></h2><p>Predict first, then change one thing and re-run:</p>
+<h2 id="Now-you-try">Now you try<a class="anchor-link" data-pagefind-ignore href="#Now-you-try">¶</a></h2><p>Predict first, then change one thing and re-run:</p>
 <ol>
 <li><p>In the <strong>convergence</strong> cell (section 5), set <code>n_draws = 200</code>. Run it a few times (change the seed in
 the Setup cell, e.g. <code>default_rng(1)</code>, <code>default_rng(2)</code>). How far can the final running average stray
@@ -8399,7 +8399,7 @@ possible value" idea still apply? (Hint: it applies to <em>any</em> random varia
 way. Does it match the 0.601 in the PMF table?</p>
 </li>
 </ol>
-<h2 id="What-you-learned">What you learned<a class="anchor-link" href="#What-you-learned">¶</a></h2><ul>
+<h2 id="What-you-learned">What you learned<a class="anchor-link" data-pagefind-ignore href="#What-you-learned">¶</a></h2><ul>
 <li>A <strong>random variable</strong> turns a chancy outcome into a number; here $X$ = relatives aboard, built by
 adding two real columns. Its <strong>PMF</strong> lists every value and its probability — <strong>estimated</strong> from data
 ($P(k) = $ count of $k \div n$) because, unlike the die, we don't know it in advance.</li>

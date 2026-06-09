@@ -7823,7 +7823,7 @@ a.anchor-link {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h1 id="Multiple-regression-on-different-data:-penguin-body-mass">Multiple regression on different data: penguin body mass<a class="anchor-link" href="#Multiple-regression-on-different-data:-penguin-body-mass">¶</a></h1><p><em>Part 2 · Lesson 19 · another dataset  ·  data: Palmer Penguins</em></p>
+<h1 id="Multiple-regression-on-different-data:-penguin-body-mass">Multiple regression on different data: penguin body mass<a class="anchor-link" data-pagefind-ignore href="#Multiple-regression-on-different-data:-penguin-body-mass">¶</a></h1><p><em>Part 2 · Lesson 19 · another dataset  ·  data: Palmer Penguins</em></p>
 <p><em>↩ A companion to <a href="19-multiple-regression.html">Lesson 19: Multiple regression (intro)</a>.</em></p>
 <p><strong>↩ Back:</strong> <a href="19-multiple-regression.html">Lesson 19: Multiple regression (intro)</a>  ·  <a href="index.html">↑ Course map</a>  ·  <strong>Also:</strong> <a href="19-multiple-regression~the-code.html">The code behind it →</a></p>
 <p>The core lesson fit house prices to <strong>area, quality, and year</strong> on thousands of homes, and watched
@@ -7980,7 +7980,7 @@ Chinstrap     68
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="1)-The-same-machinery,-a-new-question">1) The same machinery, a new question<a class="anchor-link" href="#1)-The-same-machinery,-a-new-question">¶</a></h2><p>In the <em>Relationships</em> lesson we fit a <strong>simple</strong> regression — one predictor:</p>
+<h2 id="1)-The-same-machinery,-a-new-question">1) The same machinery, a new question<a class="anchor-link" data-pagefind-ignore href="#1)-The-same-machinery,-a-new-question">¶</a></h2><p>In the <em>Relationships</em> lesson we fit a <strong>simple</strong> regression — one predictor:</p>
 <p>$$\hat{y} = b_0 + b_1 x.$$</p>
 <p><strong>Multiple regression</strong> just adds more $x$'s, each with its own slope:</p>
 <p>$$\hat{y} = b_0 + b_1 x_1 + b_2 x_2 + \cdots$$</p>
@@ -8005,7 +8005,7 @@ nothing to mistake for currency — everything is in <strong>grams</strong> and 
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="2)-The-baseline:-mass-from-flipper-length-alone">2) The baseline: mass from flipper length alone<a class="anchor-link" href="#2)-The-baseline:-mass-from-flipper-length-alone">¶</a></h2><p>First the familiar one-predictor fit, so we have a number to watch. Bigger penguins have bigger
+<h2 id="2)-The-baseline:-mass-from-flipper-length-alone">2) The baseline: mass from flipper length alone<a class="anchor-link" data-pagefind-ignore href="#2)-The-baseline:-mass-from-flipper-length-alone">¶</a></h2><p>First the familiar one-predictor fit, so we have a number to watch. Bigger penguins have bigger
 everything, so we expect a healthy positive slope.</p>
 </div>
 </div>
@@ -8053,7 +8053,7 @@ R-squared = 0.759  -&gt;  flipper length alone explains 76% of the variation in 
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <p>So in a one-predictor world, <strong>an extra millimetre of flipper is "worth" about 49.7 grams.</strong> Hold onto
 that number — it's about to change.</p>
-<h2 id="3)-Add-species-%E2%80%94-and-watch-the-flipper-coefficient-change">3) Add species — and watch the flipper coefficient change<a class="anchor-link" href="#3)-Add-species-%E2%80%94-and-watch-the-flipper-coefficient-change">¶</a></h2><p>Now we let the model <em>also</em> see each penguin's <strong>species</strong>. Species is a <strong>category</strong>, not a number, so
+<h2 id="3)-Add-species-%E2%80%94-and-watch-the-flipper-coefficient-change">3) Add species — and watch the flipper coefficient change<a class="anchor-link" data-pagefind-ignore href="#3)-Add-species-%E2%80%94-and-watch-the-flipper-coefficient-change">¶</a></h2><p>Now we let the model <em>also</em> see each penguin's <strong>species</strong>. Species is a <strong>category</strong>, not a number, so
 we wrap it in <code>C(...)</code> — statsmodels reads that as "treat this as categorical" and builds the <strong>dummy
 variables</strong> for us (more on those in section 5). We just add <code>+ C(species)</code> to the formula.</p>
 </div>
@@ -8100,7 +8100,7 @@ R-squared rose from 0.759 to 0.783.
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="Why-did-flipper's-value-fall-from-~49.7-to-~40.7-grams?">Why did flipper's value fall from ~49.7 to ~40.7 grams?<a class="anchor-link" href="#Why-did-flipper's-value-fall-from-~49.7-to-~40.7-grams?">¶</a></h3><p>This is <strong>confounding</strong> — the same lesson as <em>correlation is not causation</em> from the descriptive
+<h3 id="Why-did-flipper's-value-fall-from-~49.7-to-~40.7-grams?">Why did flipper's value fall from ~49.7 to ~40.7 grams?<a class="anchor-link" data-pagefind-ignore href="#Why-did-flipper's-value-fall-from-~49.7-to-~40.7-grams?">¶</a></h3><p>This is <strong>confounding</strong> — the same lesson as <em>correlation is not causation</em> from the descriptive
 <em>Relationships</em> lesson, now living inside a regression. And here it has a single, nameable culprit:
 <strong>Gentoo penguins.</strong></p>
 <p>Gentoos have <strong>both</strong> the longest flippers <strong>and</strong> the most mass. So in the simple model, the flipper
@@ -8194,7 +8194,7 @@ That double-membership is exactly what makes species a confounder of the flipper
 squint past the colors and fit <strong>one</strong> line to the whole blob, it tilts up steeply (slope ~49.7) partly
 because it has to climb from the Adelie/Chinstrap corner up to the Gentoo corner. Some of that climb is
 "flipper length," but some of it is just "these are Gentoos." The next section separates the two.</p>
-<h2 id="4)-Seeing-the-adjustment:-three-parallel-fitted-lines">4) Seeing the adjustment: three parallel fitted lines<a class="anchor-link" href="#4)-Seeing-the-adjustment:-three-parallel-fitted-lines">¶</a></h2><p>Here is the picture that makes "holding species constant" click. Our model
+<h2 id="4)-Seeing-the-adjustment:-three-parallel-fitted-lines">4) Seeing the adjustment: three parallel fitted lines<a class="anchor-link" data-pagefind-ignore href="#4)-Seeing-the-adjustment:-three-parallel-fitted-lines">¶</a></h2><p>Here is the picture that makes "holding species constant" click. Our model
 <code>body_mass_g ~ flipper_length_mm + C(species)</code> gives every species the <strong>same slope</strong> (one common
 flipper effect, 40.7 g/mm) but its <strong>own intercept</strong> (each species starts at a different mass). On a
 chart that is <strong>three parallel lines</strong> — and the <em>slope of those parallel lines</em> is the adjusted flipper
@@ -8255,7 +8255,7 @@ line (49.7), because the steep red line was partly tracking the jump from the li
 heavy Gentoos. Once each species gets its own line, the flipper effect is measured <strong>within</strong> species,
 and it's gentler. <strong>That gap between the dashed line and the parallel lines is the adjustment</strong> — the
 same thing as house area's slope getting halved when quality entered the core lesson.</p>
-<h2 id="5)-Read-the-regression-table-%E2%80%94-and-the-dummy-variables-in-it">5) Read the regression table — and the dummy variables in it<a class="anchor-link" href="#5)-Read-the-regression-table-%E2%80%94-and-the-dummy-variables-in-it">¶</a></h2><p>statsmodels prints the whole story with <code>.summary()</code>. It looks busy; we only need a few cells of it.</p>
+<h2 id="5)-Read-the-regression-table-%E2%80%94-and-the-dummy-variables-in-it">5) Read the regression table — and the dummy variables in it<a class="anchor-link" data-pagefind-ignore href="#5)-Read-the-regression-table-%E2%80%94-and-the-dummy-variables-in-it">¶</a></h2><p>statsmodels prints the whole story with <code>.summary()</code>. It looks busy; we only need a few cells of it.</p>
 </div>
 </div>
 </div>
@@ -8318,7 +8318,7 @@ strong multicollinearity or other numerical problems.
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="A-guided-tour-of-the-numbers-that-matter">A guided tour of the numbers that matter<a class="anchor-link" href="#A-guided-tour-of-the-numbers-that-matter">¶</a></h3><p>Focus on the <strong>coefficient table</strong> (the middle block) and the fit numbers up top:</p>
+<h3 id="A-guided-tour-of-the-numbers-that-matter">A guided tour of the numbers that matter<a class="anchor-link" data-pagefind-ignore href="#A-guided-tour-of-the-numbers-that-matter">¶</a></h3><p>Focus on the <strong>coefficient table</strong> (the middle block) and the fit numbers up top:</p>
 <ul>
 <li><strong><code>flipper_length_mm</code></strong> ≈ <strong>40.7</strong> grams per extra mm, <em>holding species fixed</em> — the adjusted effect,
 the common slope of those three parallel lines.</li>
@@ -8348,7 +8348,7 @@ explains. That second one is the subject of the next section, and it's the one t
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="6)-$R%5E2$-versus-adjusted-$R%5E2$-%E2%80%94-why-the-asterisk-matters">6) $R^2$ versus <strong>adjusted</strong> $R^2$ — why the asterisk matters<a class="anchor-link" href="#6)-$R%5E2$-versus-adjusted-$R%5E2$-%E2%80%94-why-the-asterisk-matters">¶</a></h2><p>Plain $R^2$ has a sneaky flaw: <strong>it can never go down when you add a predictor — even a useless one.</strong>
+<h2 id="6)-$R%5E2$-versus-adjusted-$R%5E2$-%E2%80%94-why-the-asterisk-matters">6) $R^2$ versus <strong>adjusted</strong> $R^2$ — why the asterisk matters<a class="anchor-link" data-pagefind-ignore href="#6)-$R%5E2$-versus-adjusted-$R%5E2$-%E2%80%94-why-the-asterisk-matters">¶</a></h2><p>Plain $R^2$ has a sneaky flaw: <strong>it can never go down when you add a predictor — even a useless one.</strong>
 Any new column, however irrelevant, can be twisted to soak up a sliver of leftover variation by chance.
 So "higher $R^2$" is <em>not</em> proof that a bigger model is better.</p>
 <p><strong>Adjusted $R^2$</strong> fixes this by charging a <strong>penalty for each predictor</strong>:</p>
@@ -8454,7 +8454,7 @@ Adjusted R^2 ROSE: sex pulls its weight. And notice the flipper slope adjusts AG
 not plain $R^2$. Plain $R^2$ rewards clutter; adjusted $R^2$ rewards predictors that genuinely help —
 and just as in the housing lesson, every time a <em>real</em> new predictor enters (species, then sex), the
 flipper coefficient <strong>re-adjusts</strong> to mean "per mm, holding <em>everything else</em> fixed."</p>
-<h2 id="7)-Two-cautions-before-you-read-too-much-into-a-fit">7) Two cautions before you read too much into a fit<a class="anchor-link" href="#7)-Two-cautions-before-you-read-too-much-into-a-fit">¶</a></h2><p>Multiple regression is powerful, which makes it easy to over-claim. Keep two warnings in mind:</p>
+<h2 id="7)-Two-cautions-before-you-read-too-much-into-a-fit">7) Two cautions before you read too much into a fit<a class="anchor-link" data-pagefind-ignore href="#7)-Two-cautions-before-you-read-too-much-into-a-fit">¶</a></h2><p>Multiple regression is powerful, which makes it easy to over-claim. Keep two warnings in mind:</p>
 <ol>
 <li><strong>It's still not causation.</strong> This is <strong>observational</strong> data — nobody assigned penguins their species
 or sex. "Holding species constant, each mm of flipper adds ~40.7 g" is an <em>association among
@@ -8473,7 +8473,7 @@ cloud it was fit to.</li>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Now-you-try">Now you try<a class="anchor-link" href="#Now-you-try">¶</a></h2><p>Predict first, then change a number and re-run:</p>
+<h2 id="Now-you-try">Now you try<a class="anchor-link" data-pagefind-ignore href="#Now-you-try">¶</a></h2><p>Predict first, then change a number and re-run:</p>
 <ol>
 <li><p><strong>Reverse the build-up.</strong> Fit <code>body_mass_g ~ C(species)</code> <em>alone</em> in a new cell, then compare a
 species coefficient to its value in <code>model_fs</code> (<code>flipper_length_mm + C(species)</code>). Does the species
@@ -8495,7 +8495,7 @@ adjusted $R^2$ still fall when you add the random-noise column? (It should — t
 which random numbers you feed it.)</p>
 </li>
 </ol>
-<h2 id="What-you-learned">What you learned<a class="anchor-link" href="#What-you-learned">¶</a></h2><ul>
+<h2 id="What-you-learned">What you learned<a class="anchor-link" data-pagefind-ignore href="#What-you-learned">¶</a></h2><ul>
 <li><strong>Multiple regression</strong> fits several predictors at once: $\hat{y} = b_0 + b_1 x_1 + b_2 x_2 + \cdots$,
 still by least squares — here, penguin <strong>body mass</strong> from <strong>flipper length</strong> and <strong>species</strong>.</li>
 <li>Each coefficient is an <strong>adjusted</strong> effect — the change in $y$ per unit of <em>that</em> predictor <strong>holding

@@ -7823,7 +7823,7 @@ a.anchor-link {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h1 id="Lesson-13-%E2%80%94-Hypothesis-testing:-p-values,-errors-&amp;-power">Lesson 13 — Hypothesis testing: p-values, errors &amp; power<a class="anchor-link" href="#Lesson-13-%E2%80%94-Hypothesis-testing:-p-values,-errors-&amp;-power">¶</a></h1><p><em>Part 2 · Lesson 13 of 20  ·  data: simulation on a known population</em></p>
+<h1 id="Lesson-13-%E2%80%94-Hypothesis-testing:-p-values,-errors-&amp;-power">Lesson 13 — Hypothesis testing: p-values, errors &amp; power<a class="anchor-link" data-pagefind-ignore href="#Lesson-13-%E2%80%94-Hypothesis-testing:-p-values,-errors-&amp;-power">¶</a></h1><p><em>Part 2 · Lesson 13 of 20  ·  data: simulation on a known population</em></p>
 <p><strong>←</strong> <a href="12-confidence-intervals.html">Flagship — Confidence intervals</a>  ·  <a href="index.html">↑ Course map</a>  ·  <a href="14-inference-proportions.html">Lesson 14: Inference for proportions (one &amp; two)</a> <strong>→</strong></p>
 <p><strong>Same idea, another way:</strong> <a href="13-hypothesis-testing~another-dataset.html">Another dataset →</a>  ·  <a href="13-hypothesis-testing~the-code.html">The code behind it →</a></p>
 <p>The confidence-interval flagship asked <em>"what range of values is plausible for the truth?"</em> A
@@ -7906,7 +7906,7 @@ TRUE stdev SIGMA = 505.4 sq ft
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="1)-The-setup:-a-claim,-and-a-way-to-doubt-it">1) The setup: a claim, and a way to doubt it<a class="anchor-link" href="#1)-The-setup:-a-claim,-and-a-way-to-doubt-it">¶</a></h2><p>Suppose a local realtor insists:</p>
+<h2 id="1)-The-setup:-a-claim,-and-a-way-to-doubt-it">1) The setup: a claim, and a way to doubt it<a class="anchor-link" data-pagefind-ignore href="#1)-The-setup:-a-claim,-and-a-way-to-doubt-it">¶</a></h2><p>Suppose a local realtor insists:</p>
 <blockquote>
 <p><em>"The typical Ames home has <strong>1,400 square feet</strong> of living space."</em></p>
 </blockquote>
@@ -7972,7 +7972,7 @@ Is that gap real evidence, or just the luck of which 40 homes we happened to gra
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="2)-The-test-statistic:-turn-the-gap-into-a-standardized-distance">2) The test statistic: turn the gap into a standardized distance<a class="anchor-link" href="#2)-The-test-statistic:-turn-the-gap-into-a-standardized-distance">¶</a></h2><p>A raw gap of "+128 sq ft" is hard to judge — is that a lot? It depends on how much sample means
+<h2 id="2)-The-test-statistic:-turn-the-gap-into-a-standardized-distance">2) The test statistic: turn the gap into a standardized distance<a class="anchor-link" data-pagefind-ignore href="#2)-The-test-statistic:-turn-the-gap-into-a-standardized-distance">¶</a></h2><p>A raw gap of "+128 sq ft" is hard to judge — is that a lot? It depends on how much sample means
 <em>naturally</em> wobble. We rescale the gap by the <strong>standard error</strong> $s/\sqrt{n}$ (the typical wobble of
 $\bar{x}$, from the estimation lesson) to get the <strong>t statistic</strong>:</p>
 <p>$$t = \frac{\bar{x} - \mu_0}{s / \sqrt{n}}$$</p>
@@ -8024,7 +8024,7 @@ Our sample mean sits about 1.80 standard errors above the claimed 1,400 sq ft.
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="3)-The-p-value,-built-by-simulating-the-null-world">3) The p-value, built by simulating the null world<a class="anchor-link" href="#3)-The-p-value,-built-by-simulating-the-null-world">¶</a></h2><p>Here's the heart of the whole lesson — and we'll <strong>simulate it before trusting any formula.</strong></p>
+<h2 id="3)-The-p-value,-built-by-simulating-the-null-world">3) The p-value, built by simulating the null world<a class="anchor-link" data-pagefind-ignore href="#3)-The-p-value,-built-by-simulating-the-null-world">¶</a></h2><p>Here's the heart of the whole lesson — and we'll <strong>simulate it before trusting any formula.</strong></p>
 <p><strong>Question:</strong> <em>if the realtor were right ($\mu = 1400$), how often would pure sampling luck hand us a $t$
 at least as extreme as the one we saw?</em></p>
 <p>To answer it we need a <strong>"null world"</strong>: a population whose true mean really is 1,400. We can build one
@@ -8089,7 +8089,7 @@ Simulated two-sided p-value = 0.0823
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="See-it:-where-does-our-sample-fall-in-the-null-world?">See it: where does our sample fall in the null world?<a class="anchor-link" href="#See-it:-where-does-our-sample-fall-in-the-null-world?">¶</a></h3><p>The histogram is the null distribution of $t$ — every value the statistic <em>could</em> take if the claim
+<h3 id="See-it:-where-does-our-sample-fall-in-the-null-world?">See it: where does our sample fall in the null world?<a class="anchor-link" data-pagefind-ignore href="#See-it:-where-does-our-sample-fall-in-the-null-world?">¶</a></h3><p>The histogram is the null distribution of $t$ — every value the statistic <em>could</em> take if the claim
 were true. The red lines mark $\pm|t_{obs}|$; the shaded tails are the p-value. If our $t$ sits deep in
 a tail, the null world rarely produces data like ours, and we start to doubt the claim.</p>
 </div>
@@ -8142,7 +8142,7 @@ a tail, the null world rarely produces data like ours, and we start to doubt the
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="4)-The-formula-confirms-the-simulation:-scipy.stats.ttest_1samp">4) The formula confirms the simulation: <code>scipy.stats.ttest_1samp</code><a class="anchor-link" href="#4)-The-formula-confirms-the-simulation:-scipy.stats.ttest_1samp">¶</a></h2><p>The simulation taught us <em>what a p-value is</em>. The textbook one-sample <strong>t-test</strong> gives the same number
+<h2 id="4)-The-formula-confirms-the-simulation:-scipy.stats.ttest_1samp">4) The formula confirms the simulation: <code>scipy.stats.ttest_1samp</code><a class="anchor-link" data-pagefind-ignore href="#4)-The-formula-confirms-the-simulation:-scipy.stats.ttest_1samp">¶</a></h2><p>The simulation taught us <em>what a p-value is</em>. The textbook one-sample <strong>t-test</strong> gives the same number
 in one line — it just reads the tail area off the smooth $t$-curve (the black line above) instead of
 counting simulated samples. They should agree closely.</p>
 </div>
@@ -8187,7 +8187,7 @@ The formula and the simulation agree — they are two views of the same idea.
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="5)-The-decision-rule,-and-reading-a-p-value-correctly">5) The decision rule, and reading a p-value correctly<a class="anchor-link" href="#5)-The-decision-rule,-and-reading-a-p-value-correctly">¶</a></h2><p>Before looking at the data, you pick a <strong>significance level $\alpha$</strong> — the risk you're willing to
+<h2 id="5)-The-decision-rule,-and-reading-a-p-value-correctly">5) The decision rule, and reading a p-value correctly<a class="anchor-link" data-pagefind-ignore href="#5)-The-decision-rule,-and-reading-a-p-value-correctly">¶</a></h2><p>Before looking at the data, you pick a <strong>significance level $\alpha$</strong> — the risk you're willing to
 take of a false alarm. The convention is $\alpha = 0.05$. The rule:</p>
 <ul>
 <li><strong>$p \le \alpha$</strong> → <strong>reject $H_0$</strong> (the data is too surprising for the null; call it <em>statistically
@@ -8249,7 +8249,7 @@ from the claim is NOT surprising enough to rule out mu = 1,400. The claim surviv
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="6)-Type-I-and-Type-II-errors-%E2%80%94-the-two-ways-to-be-wrong">6) Type I and Type II errors — the two ways to be wrong<a class="anchor-link" href="#6)-Type-I-and-Type-II-errors-%E2%80%94-the-two-ways-to-be-wrong">¶</a></h2><p>A test makes a yes/no call about an unknown truth, so there are exactly <strong>two</strong> ways to blunder:</p>
+<h2 id="6)-Type-I-and-Type-II-errors-%E2%80%94-the-two-ways-to-be-wrong">6) Type I and Type II errors — the two ways to be wrong<a class="anchor-link" data-pagefind-ignore href="#6)-Type-I-and-Type-II-errors-%E2%80%94-the-two-ways-to-be-wrong">¶</a></h2><p>A test makes a yes/no call about an unknown truth, so there are exactly <strong>two</strong> ways to blunder:</p>
 <table>
 <thead>
 <tr>
@@ -8331,7 +8331,7 @@ It lands near alpha = 0.05 — exactly as the theory promises.
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <p>The false-alarm rate comes out right around <strong>0.05</strong> — the 5% we signed up for. Change <code>alpha</code> to <code>0.01</code>
 and you'd see it drop toward 0.01. <strong>You control your Type I rate directly: it is $\alpha$.</strong></p>
-<h2 id="7)-Power:-catching-a-real-effect-%E2%80%94-built-as-a-simulated-curve">7) Power: catching a real effect — built as a simulated curve<a class="anchor-link" href="#7)-Power:-catching-a-real-effect-%E2%80%94-built-as-a-simulated-curve">¶</a></h2><p>Power is the flip side: when $H_0$ is genuinely <em>false</em>, how often does the test actually notice? We
+<h2 id="7)-Power:-catching-a-real-effect-%E2%80%94-built-as-a-simulated-curve">7) Power: catching a real effect — built as a simulated curve<a class="anchor-link" data-pagefind-ignore href="#7)-Power:-catching-a-real-effect-%E2%80%94-built-as-a-simulated-curve">¶</a></h2><p>Power is the flip side: when $H_0$ is genuinely <em>false</em>, how often does the test actually notice? We
 create a <em>false</em> null by testing a wrong value $\mu_0 = \mu - \text{effect}$, so the true mean is
 "effect" sq ft away from the claim. Power should climb as the <strong>effect size</strong> grows (a bigger lie is
 easier to catch).</p>
@@ -8397,7 +8397,7 @@ easier to catch).</p>
 <p>At an effect of <strong>0</strong> the curve sits at $\alpha = 0.05$ (there's <em>nothing</em> to detect, so every rejection
 is a false alarm — that's the Type I rate again). As the true mean drifts further from the claim, power
 rises toward 1: a whopping lie is almost always caught.</p>
-<h3 id="The-other-lever:-sample-size">The other lever: sample size<a class="anchor-link" href="#The-other-lever:-sample-size">¶</a></h3><p>The second way to buy power is <strong>more data</strong>. A bigger $n$ shrinks the standard error, so even a modest
+<h3 id="The-other-lever:-sample-size">The other lever: sample size<a class="anchor-link" data-pagefind-ignore href="#The-other-lever:-sample-size">¶</a></h3><p>The second way to buy power is <strong>more data</strong>. A bigger $n$ shrinks the standard error, so even a modest
 effect becomes detectable. Let's hold the effect fixed at a stubborn 75 sq ft and grow $n$.</p>
 </div>
 </div>
@@ -8458,7 +8458,7 @@ Four levers set power: effect size, sample size n, alpha, and the spread of the 
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="8)-The-duality:-a-confidence-interval-is-a-test">8) The duality: a confidence interval <em>is</em> a test<a class="anchor-link" href="#8)-The-duality:-a-confidence-interval-is-a-test">¶</a></h2><p>Hypothesis tests and the confidence intervals from the flagship are two faces of one coin:</p>
+<h2 id="8)-The-duality:-a-confidence-interval-is-a-test">8) The duality: a confidence interval <em>is</em> a test<a class="anchor-link" data-pagefind-ignore href="#8)-The-duality:-a-confidence-interval-is-a-test">¶</a></h2><p>Hypothesis tests and the confidence intervals from the flagship are two faces of one coin:</p>
 <blockquote>
 <p>A value $\mu_0$ falls <strong>outside</strong> the 95% confidence interval <strong>exactly when</strong> a two-sided test at
 $\alpha = 0.05$ would <strong>reject</strong> it.</p>
@@ -8522,7 +8522,7 @@ confirm it on our sample — for several candidate claims, "rejected at 5%?" sho
 <p>Notice <strong>1,400 is inside the interval</strong> (so we fail to reject it — agreeing with section 5), and so is
 the <strong>true mean we secretly know</strong>. The interval hands you the test result for <em>every</em> possible claim in
 one shot.</p>
-<h2 id="9)-Two-cautions-before-you-go-testing-everything">9) Two cautions before you go testing everything<a class="anchor-link" href="#9)-Two-cautions-before-you-go-testing-everything">¶</a></h2><p><strong>Statistical vs. practical significance.</strong> With enough data, <em>any</em> tiny difference becomes
+<h2 id="9)-Two-cautions-before-you-go-testing-everything">9) Two cautions before you go testing everything<a class="anchor-link" data-pagefind-ignore href="#9)-Two-cautions-before-you-go-testing-everything">¶</a></h2><p><strong>Statistical vs. practical significance.</strong> With enough data, <em>any</em> tiny difference becomes
 "significant." Imagine the true mean were just 5 sq ft from the claim — a difference nobody would care
 about. With a giant sample the test still rejects, p-value and all. <strong>A small p-value says "this gap is
 probably real," not "this gap is big or important."</strong> Always report the <em>effect size</em> (and ideally a CI)
@@ -8626,7 +8626,7 @@ Hunt through enough true nulls and one will look "significant" — adjust alpha 
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Now-you-try">Now you try<a class="anchor-link" href="#Now-you-try">¶</a></h2><p>Predict first, then change a number and re-run:</p>
+<h2 id="Now-you-try">Now you try<a class="anchor-link" data-pagefind-ignore href="#Now-you-try">¶</a></h2><p>Predict first, then change a number and re-run:</p>
 <ol>
 <li><strong>Make the claim wronger.</strong> In section 1, set <code>H0_value = 1300</code> (further from the true ~1500), re-run
 sections 1-5. Does the p-value go <strong>up</strong> or <strong>down</strong>? Does the decision flip to <em>reject</em>?</li>
@@ -8638,7 +8638,7 @@ with <code>alternative='greater'</code>. How does the p-value compare to the two
 <li><strong>Re-roll luck.</strong> Change <code>np.random.default_rng(13)</code> in section 1 to other seeds and re-run. Roughly
 how often does the test (wrongly) reject the true-ish claim of 1,400? Connect that to the Type I rate.</li>
 </ol>
-<h2 id="What-you-learned">What you learned<a class="anchor-link" href="#What-you-learned">¶</a></h2><ul>
+<h2 id="What-you-learned">What you learned<a class="anchor-link" data-pagefind-ignore href="#What-you-learned">¶</a></h2><ul>
 <li>A test pits a precise <strong>null $H_0$</strong> against an <strong>alternative $H_a$</strong>; you presume the null and ask
 whether the data is too surprising to keep it.</li>
 <li>The <strong>test statistic</strong> ($t = (\bar{x}-\mu_0)/(s/\sqrt{n})$) measures, in standard errors, how far the

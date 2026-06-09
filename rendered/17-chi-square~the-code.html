@@ -7823,7 +7823,7 @@ a.anchor-link {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h1 id="The-code-behind-it:-chi-square-from-a-crosstab">The code behind it: chi-square from a crosstab<a class="anchor-link" href="#The-code-behind-it:-chi-square-from-a-crosstab">¶</a></h1><p><em>Part 2 · Lesson 17 · the code behind it  ·  data: Titanic (same as Lesson 17)</em></p>
+<h1 id="The-code-behind-it:-chi-square-from-a-crosstab">The code behind it: chi-square from a crosstab<a class="anchor-link" data-pagefind-ignore href="#The-code-behind-it:-chi-square-from-a-crosstab">¶</a></h1><p><em>Part 2 · Lesson 17 · the code behind it  ·  data: Titanic (same as Lesson 17)</em></p>
 <p><em>↩ A companion to <a href="17-chi-square.html">Lesson 17: Chi-square: goodness-of-fit &amp; independence</a>.</em></p>
 <p><strong>↩ Back:</strong> <a href="17-chi-square.html">Lesson 17: Chi-square: goodness-of-fit &amp; independence</a>  ·  <a href="index.html">↑ Course map</a>  ·  <strong>Also:</strong> <a href="17-chi-square~another-dataset.html">Another dataset →</a></p>
 <p><strong>In Lesson 17 you ran <code>scipy.stats.chi2_contingency(table)</code></strong> and read off a $\chi^2$, a df and a
@@ -7863,7 +7863,7 @@ compute it in Python</strong>. We'll go in the order a programmer actually works
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="1)-The-goal">1) The goal<a class="anchor-link" href="#1)-The-goal">¶</a></h2><p>By the end of this notebook you'll have written a function that takes a contingency table of counts and
+<h2 id="1)-The-goal">1) The goal<a class="anchor-link" data-pagefind-ignore href="#1)-The-goal">¶</a></h2><p>By the end of this notebook you'll have written a function that takes a contingency table of counts and
 returns its chi-square statistic, degrees of freedom and p-value — the same three numbers
 <code>scipy.stats.chi2_contingency</code> hands you for free. Nothing here needs new statistics; everything is the
 Python <em>underneath</em> the one-liner you already ran.</p>
@@ -7946,7 +7946,7 @@ Python <em>underneath</em> the one-liner you already ran.</p>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="2)-The-data-in-code">2) The data in code<a class="anchor-link" href="#2)-The-data-in-code">¶</a></h2><p>Before any statistics, a programmer <em>interrogates the object</em>: how big is it, what are the columns, what
+<h2 id="2)-The-data-in-code">2) The data in code<a class="anchor-link" data-pagefind-ignore href="#2)-The-data-in-code">¶</a></h2><p>Before any statistics, a programmer <em>interrogates the object</em>: how big is it, what are the columns, what
 do the values look like? The two columns we'll test for a relationship — <strong><code>Sex</code></strong> and <strong><code>Survived</code></strong> —
 are both <strong>categorical</strong> (text, or a 0/1 label), and both are complete (no missing values), so no
 <code>dropna</code> is needed here.</p>
@@ -8063,7 +8063,7 @@ Pclass values  : [np.int64(1), np.int64(2), np.int64(3)]   (1 = first, 2 = secon
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="From-two-columns-to-a-counts-table-%E2%80%94-pd.crosstab">From two columns to a counts table — <code>pd.crosstab</code><a class="anchor-link" href="#From-two-columns-to-a-counts-table-%E2%80%94-pd.crosstab">¶</a></h3><p>A test of independence needs the <strong>contingency table</strong>: a grid that counts how many passengers fall into
+<h3 id="From-two-columns-to-a-counts-table-%E2%80%94-pd.crosstab">From two columns to a counts table — <code>pd.crosstab</code><a class="anchor-link" data-pagefind-ignore href="#From-two-columns-to-a-counts-table-%E2%80%94-pd.crosstab">¶</a></h3><p>A test of independence needs the <strong>contingency table</strong>: a grid that counts how many passengers fall into
 each (<code>Sex</code>, <code>Survived</code>) combination. <code>pd.crosstab(var1, var2)</code> does exactly that — one row per category
 of the first variable, one column per category of the second, each cell a count.</p>
 <p>We'll do the math on the table's raw numbers, <code>O.values</code> (a plain NumPy array), so the array operations
@@ -8123,10 +8123,10 @@ Grand total             : 887
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="3)-Build-it-step-by-step">3) Build it step by step<a class="anchor-link" href="#3)-Build-it-step-by-step">¶</a></h2><p>Now the heart of it. Each piece is a short formula — we'll write it in NumPy and check the whole test
+<h2 id="3)-Build-it-step-by-step">3) Build it step by step<a class="anchor-link" data-pagefind-ignore href="#3)-Build-it-step-by-step">¶</a></h2><p>Now the heart of it. Each piece is a short formula — we'll write it in NumPy and check the whole test
 against <code>scipy.stats.chi2_contingency</code> at the end. Once you've built it, the one-liner is no longer a
 mystery box.</p>
-<h3 id="Expected-counts-under-independence">Expected counts under independence<a class="anchor-link" href="#Expected-counts-under-independence">¶</a></h3><p>The null hypothesis is <strong>independence</strong>: survival has <em>nothing</em> to do with sex. If that were true, the
+<h3 id="Expected-counts-under-independence">Expected counts under independence<a class="anchor-link" data-pagefind-ignore href="#Expected-counts-under-independence">¶</a></h3><p>The null hypothesis is <strong>independence</strong>: survival has <em>nothing</em> to do with sex. If that were true, the
 expected count in each cell is</p>
 <p>$$E_{ij} = \frac{(\text{row } i \text{ total}) \times (\text{column } j \text{ total})}{\text{grand total}}.$$</p>
 <p>For now we'll build $E$ the literal, spelled-out way — a loop over cells — so the formula is unmistakable.
@@ -8237,7 +8237,7 @@ Same margins -&gt; our expected table is consistent with the observed one.
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="The-statistic,-the-df,-and-the-p-value">The statistic, the df, and the p-value<a class="anchor-link" href="#The-statistic,-the-df,-and-the-p-value">¶</a></h3><p>Now turn the formula into code. <code>O.values - E</code> subtracts the two whole tables <strong>element-by-element</strong>;
+<h3 id="The-statistic,-the-df,-and-the-p-value">The statistic, the df, and the p-value<a class="anchor-link" data-pagefind-ignore href="#The-statistic,-the-df,-and-the-p-value">¶</a></h3><p>Now turn the formula into code. <code>O.values - E</code> subtracts the two whole tables <strong>element-by-element</strong>;
 <code>** 2</code> squares every cell; <code>/ E</code> scales each by its expected count; <code>.sum()</code> adds all the pieces — no
 loop over cells. Then:</p>
 <ul>
@@ -8287,7 +8287,7 @@ p-value (right tail) = 1.1984e-58
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="Check-against-scipy.stats.chi2_contingency">Check against <code>scipy.stats.chi2_contingency</code><a class="anchor-link" href="#Check-against-scipy.stats.chi2_contingency">¶</a></h3><p><code>scipy</code> does the same arithmetic and reads the p-value off the theoretical curve. It should agree with
+<h3 id="Check-against-scipy.stats.chi2_contingency">Check against <code>scipy.stats.chi2_contingency</code><a class="anchor-link" data-pagefind-ignore href="#Check-against-scipy.stats.chi2_contingency">¶</a></h3><p><code>scipy</code> does the same arithmetic and reads the p-value off the theoretical curve. It should agree with
 what we built by hand.</p>
 <p><strong>One gotcha for a 2×2 table:</strong> by default <code>chi2_contingency</code> applies <strong>Yates' continuity correction</strong>, a
 small tweak that <em>only</em> kicks in for 2×2 tables and gives a slightly different number. To match our plain
@@ -8345,7 +8345,7 @@ match? True
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="A-goodness-of-fit-aside-%E2%80%94-scipy.stats.chisquare">A goodness-of-fit aside — <code>scipy.stats.chisquare</code><a class="anchor-link" href="#A-goodness-of-fit-aside-%E2%80%94-scipy.stats.chisquare">¶</a></h3><p>Chi-square has a second flavour the core lesson covered: <strong>goodness-of-fit (GOF)</strong>, which checks a
+<h3 id="A-goodness-of-fit-aside-%E2%80%94-scipy.stats.chisquare">A goodness-of-fit aside — <code>scipy.stats.chisquare</code><a class="anchor-link" data-pagefind-ignore href="#A-goodness-of-fit-aside-%E2%80%94-scipy.stats.chisquare">¶</a></h3><p>Chi-square has a second flavour the core lesson covered: <strong>goodness-of-fit (GOF)</strong>, which checks a
 <em>single</em> categorical variable against a <em>claimed</em> distribution. Same statistic $\sum (O-E)^2/E$, but now
 $E$ comes from a stated set of proportions instead of an outer product. Suppose a historian claims the
 class mix was <strong>25% first, 20% second, 55% third</strong>. Does the passenger list fit <em>that</em>? Here $E$ is just
@@ -8401,7 +8401,7 @@ p-value = 0.820  -&gt; large p: NO evidence the data departs from the 25/20/55 c
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="4)-The-idiom-%E2%80%94-np.outer-and-a-fully-vectorized-statistic">4) The idiom — <code>np.outer</code> and a fully vectorized statistic<a class="anchor-link" href="#4)-The-idiom-%E2%80%94-np.outer-and-a-fully-vectorized-statistic">¶</a></h2><h3 id="Build-the-expected-table-with-an-outer-product">Build the expected table with an outer product<a class="anchor-link" href="#Build-the-expected-table-with-an-outer-product">¶</a></h3><p>That double loop in Section 3 was for clarity. The expected table is exactly an <strong>outer product</strong> of the
+<h2 id="4)-The-idiom-%E2%80%94-np.outer-and-a-fully-vectorized-statistic">4) The idiom — <code>np.outer</code> and a fully vectorized statistic<a class="anchor-link" data-pagefind-ignore href="#4)-The-idiom-%E2%80%94-np.outer-and-a-fully-vectorized-statistic">¶</a></h2><h3 id="Build-the-expected-table-with-an-outer-product">Build the expected table with an outer product<a class="anchor-link" data-pagefind-ignore href="#Build-the-expected-table-with-an-outer-product">¶</a></h3><p>That double loop in Section 3 was for clarity. The expected table is exactly an <strong>outer product</strong> of the
 row and column totals, divided by the grand total — and <code>np.outer(a, b)</code> builds the whole grid in one
 call: cell $(i, j)$ is <code>a[i] * b[j]</code>. Divide the result by the grand total and you have $E$, no loop in sight.</p>
 </div>
@@ -8455,7 +8455,7 @@ is row_totals[i] * col_totals[j] -- precisely the numerator of every expected co
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="The-statistic-with-no-loops-at-all">The statistic with no loops at all<a class="anchor-link" href="#The-statistic-with-no-loops-at-all">¶</a></h3><p><code>(O - E)**2 / E</code> is <strong>broadcasting</strong> in action: the subtraction, the square and the division each run
+<h3 id="The-statistic-with-no-loops-at-all">The statistic with no loops at all<a class="anchor-link" data-pagefind-ignore href="#The-statistic-with-no-loops-at-all">¶</a></h3><p><code>(O - E)**2 / E</code> is <strong>broadcasting</strong> in action: the subtraction, the square and the division each run
 across the <em>entire</em> table at once, producing a table of per-cell contributions. <code>.sum()</code> collapses that
 table to the single $\chi^2$ number. Looking at the per-cell contributions is also a nice diagnostic — it
 shows you <em>which</em> cells drove the surprise.</p>
@@ -8509,7 +8509,7 @@ No loop over cells -- the whole computation is three array operations and a sum.
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="5)-Refactor-into-a-reusable-function">5) Refactor into a reusable function<a class="anchor-link" href="#5)-Refactor-into-a-reusable-function">¶</a></h2><p>You've now written the same steps — totals, outer-product expected table, vectorized sum, df, p-value — a
+<h2 id="5)-Refactor-into-a-reusable-function">5) Refactor into a reusable function<a class="anchor-link" data-pagefind-ignore href="#5)-Refactor-into-a-reusable-function">¶</a></h2><p>You've now written the same steps — totals, outer-product expected table, vectorized sum, df, p-value — a
 couple of times. The programmer's reflex is to <strong>wrap repeated work in a function</strong>: name it, give it an
 input, <code>return</code> the result. Then "run a chi-square test of independence" is one call you can reuse on
 <em>any</em> contingency table.</p>
@@ -8632,7 +8632,7 @@ the <code>correction=False</code> footnote stops being mysterious.)</p>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="6)-Now-you-code">6) Now you code<a class="anchor-link" href="#6)-Now-you-code">¶</a></h2><p>Write the code yourself. Add a new cell (the <strong>+</strong> button in the toolbar) and try each — predict the
+<h2 id="6)-Now-you-code">6) Now you code<a class="anchor-link" data-pagefind-ignore href="#6)-Now-you-code">¶</a></h2><p>Write the code yourself. Add a new cell (the <strong>+</strong> button in the toolbar) and try each — predict the
 answer before you run it. Seed any randomness with <code>rng = np.random.default_rng(0)</code> so your runs repeat.</p>
 <ol>
 <li><p><strong>The expected-counts $\ge 5$ check.</strong> The chi-square curve is an approximation that wants every
@@ -8659,7 +8659,7 @@ Confirm the first matches your <code>chi_square_independence(O)['chi2']</code> a
 little smaller. Now try it on the 3×2 class table — why are the two scipy numbers identical there?</p>
 </li>
 </ol>
-<h2 id="What-you-learned">What you learned<a class="anchor-link" href="#What-you-learned">¶</a></h2><p><strong>Coding</strong></p>
+<h2 id="What-you-learned">What you learned<a class="anchor-link" data-pagefind-ignore href="#What-you-learned">¶</a></h2><p><strong>Coding</strong></p>
 <ul>
 <li><code>pd.crosstab(var1, var2)</code> turns two categorical columns into a <strong>contingency table</strong> of counts; pull its
 raw numbers out with <code>.values</code> to do clean array math, and get the <strong>marginals</strong> with <code>.sum(axis=1)</code>

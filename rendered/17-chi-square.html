@@ -7823,7 +7823,7 @@ a.anchor-link {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h1 id="Lesson-17-%E2%80%94-Chi-square:-goodness-of-fit-&amp;-independence">Lesson 17 — Chi-square: goodness-of-fit &amp; independence<a class="anchor-link" href="#Lesson-17-%E2%80%94-Chi-square:-goodness-of-fit-&amp;-independence">¶</a></h1><p><em>Part 2 · Lesson 17 of 20  ·  data: Titanic</em></p>
+<h1 id="Lesson-17-%E2%80%94-Chi-square:-goodness-of-fit-&amp;-independence">Lesson 17 — Chi-square: goodness-of-fit &amp; independence<a class="anchor-link" data-pagefind-ignore href="#Lesson-17-%E2%80%94-Chi-square:-goodness-of-fit-&amp;-independence">¶</a></h1><p><em>Part 2 · Lesson 17 of 20  ·  data: Titanic</em></p>
 <p><strong>←</strong> <a href="16-anova.html">Lesson 16: Comparing many groups: ANOVA</a>  ·  <a href="index.html">↑ Course map</a>  ·  <a href="18-regression-inference.html">Lesson 18: Correlation &amp; regression: inference</a> <strong>→</strong></p>
 <p><strong>Same idea, another way:</strong> <a href="17-chi-square~another-dataset.html">Another dataset →</a>  ·  <a href="17-chi-square~the-code.html">The code behind it →</a></p>
 <p>Every test so far has been about <strong>numbers</strong> — means, slopes, averages. But a huge slice of real data
@@ -7973,7 +7973,7 @@ Pclass values:   [np.int64(1), np.int64(2), np.int64(3)]   (1 = first, 2 = secon
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="1)-The-big-idea:-compare-observed-counts-to-expected-counts">1) The big idea: compare <strong>observed</strong> counts to <strong>expected</strong> counts<a class="anchor-link" href="#1)-The-big-idea:-compare-observed-counts-to-expected-counts">¶</a></h2><p>Everything chi-square does boils down to one move:</p>
+<h2 id="1)-The-big-idea:-compare-observed-counts-to-expected-counts">1) The big idea: compare <strong>observed</strong> counts to <strong>expected</strong> counts<a class="anchor-link" data-pagefind-ignore href="#1)-The-big-idea:-compare-observed-counts-to-expected-counts">¶</a></h2><p>Everything chi-square does boils down to one move:</p>
 <ol>
 <li>Count what actually happened — the <strong>observed</strong> counts $O$.</li>
 <li>Work out what we'd expect <em>if our hypothesis were true</em> — the <strong>expected</strong> counts $E$.</li>
@@ -8035,7 +8035,7 @@ chi^2 when O != E : 3.75
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="2)-Goodness-of-fit-%E2%80%94-do-the-class-counts-match-what-we-expected?">2) Goodness-of-fit — do the class counts match what we expected?<a class="anchor-link" href="#2)-Goodness-of-fit-%E2%80%94-do-the-class-counts-match-what-we-expected?">¶</a></h2><p>The first flavour, <strong>goodness-of-fit (GOF)</strong>, checks a <em>single</em> categorical variable against a
+<h2 id="2)-Goodness-of-fit-%E2%80%94-do-the-class-counts-match-what-we-expected?">2) Goodness-of-fit — do the class counts match what we expected?<a class="anchor-link" data-pagefind-ignore href="#2)-Goodness-of-fit-%E2%80%94-do-the-class-counts-match-what-we-expected?">¶</a></h2><p>The first flavour, <strong>goodness-of-fit (GOF)</strong>, checks a <em>single</em> categorical variable against a
 <strong>claimed distribution</strong>. Question: how were passengers spread across the three ticket classes?</p>
 <p>Let's start with the simplest possible claim — the <strong>uniform</strong> hypothesis: <em>"passengers were split
 evenly across the three classes, one-third each."</em> If that were true, with 887 passengers we'd expect
@@ -8165,7 +8165,7 @@ crucially, by <strong>building the chance distribution ourselves</strong>.</p>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="Simulation-first:-what-does-$%5Cchi%5E2$-look-like-if-the-hypothesis-were-true?">Simulation first: what does $\chi^2$ look like <em>if the hypothesis were true</em>?<a class="anchor-link" href="#Simulation-first:-what-does-$%5Cchi%5E2$-look-like-if-the-hypothesis-were-true?">¶</a></h3><p>Here is the heart of the lesson. The <strong>null hypothesis</strong> is "passengers really are split evenly across
+<h3 id="Simulation-first:-what-does-$%5Cchi%5E2$-look-like-if-the-hypothesis-were-true?">Simulation first: what does $\chi^2$ look like <em>if the hypothesis were true</em>?<a class="anchor-link" data-pagefind-ignore href="#Simulation-first:-what-does-$%5Cchi%5E2$-look-like-if-the-hypothesis-were-true?">¶</a></h3><p>Here is the heart of the lesson. The <strong>null hypothesis</strong> is "passengers really are split evenly across
 classes; the wobble we see is just luck." Let's literally <strong>act out that null world</strong>: hand each of the
 887 passengers a class drawn uniformly at random, count the three categories, and compute $\chi^2$.
 Do that thousands of times and we get the whole <strong>null distribution</strong> of $\chi^2$ — the values it takes
@@ -8265,7 +8265,7 @@ red <strong>chi-square distribution</strong> — that's the famous theoretical c
 random counts</strong> instead of taking it on faith. Second, our real $\chi^2$ of about 187 is so far to the
 right that <strong>none</strong> of the 20,000 chance worlds came anywhere close (the biggest was around 20). The
 even-split hypothesis is crushed.</p>
-<h3 id="Degrees-of-freedom-%E2%80%94-the-curve's-only-dial">Degrees of freedom — the curve's only dial<a class="anchor-link" href="#Degrees-of-freedom-%E2%80%94-the-curve's-only-dial">¶</a></h3><p>The chi-square curve has one setting, its <strong>degrees of freedom (df)</strong>. For a goodness-of-fit test on
+<h3 id="Degrees-of-freedom-%E2%80%94-the-curve's-only-dial">Degrees of freedom — the curve's only dial<a class="anchor-link" data-pagefind-ignore href="#Degrees-of-freedom-%E2%80%94-the-curve's-only-dial">¶</a></h3><p>The chi-square curve has one setting, its <strong>degrees of freedom (df)</strong>. For a goodness-of-fit test on
 $k$ categories,</p>
 <p>$$\text{df} = k - 1.$$</p>
 <p><strong>Intuition:</strong> once you know the total (887) and the counts in the first $k-1$ categories, the last one
@@ -8307,7 +8307,7 @@ Mean of our simulated null chi^2 values: 2.00   (should be ~ df = 2)
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="Now-the-textbook-function-%E2%80%94-scipy.stats.chisquare">Now the textbook function — <code>scipy.stats.chisquare</code><a class="anchor-link" href="#Now-the-textbook-function-%E2%80%94-scipy.stats.chisquare">¶</a></h3><p><code>scipy</code> does the same arithmetic and reads the p-value off the <em>theoretical</em> curve (no simulation
+<h3 id="Now-the-textbook-function-%E2%80%94-scipy.stats.chisquare">Now the textbook function — <code>scipy.stats.chisquare</code><a class="anchor-link" data-pagefind-ignore href="#Now-the-textbook-function-%E2%80%94-scipy.stats.chisquare">¶</a></h3><p><code>scipy</code> does the same arithmetic and reads the p-value off the <em>theoretical</em> curve (no simulation
 needed). It should agree with what we built by hand.</p>
 </div>
 </div>
@@ -8353,7 +8353,7 @@ Verdict: p is essentially 0 -&gt; reject the even-split hypothesis. The classes 
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="A-fairer-hypothesis-%E2%80%94-and-when-chi-square-says-%22fine%22">A fairer hypothesis — and when chi-square says "fine"<a class="anchor-link" href="#A-fairer-hypothesis-%E2%80%94-and-when-chi-square-says-%22fine%22">¶</a></h3><p>Rejecting "uniform" was easy because it was a strawman. The real power of GOF is testing a <em>plausible</em>
+<h3 id="A-fairer-hypothesis-%E2%80%94-and-when-chi-square-says-%22fine%22">A fairer hypothesis — and when chi-square says "fine"<a class="anchor-link" data-pagefind-ignore href="#A-fairer-hypothesis-%E2%80%94-and-when-chi-square-says-%22fine%22">¶</a></h3><p>Rejecting "uniform" was easy because it was a strawman. The real power of GOF is testing a <em>plausible</em>
 claim. Suppose a maritime historian states the White Star Line's expected mix was roughly <strong>25% first,
 20% second, 55% third</strong> class. Does the Titanic's passenger list fit <em>that</em>?</p>
 <p>This time we expect the counts to be <strong>close</strong>, so $\chi^2$ should be <strong>small</strong> and the p-value
@@ -8415,7 +8415,7 @@ p is large (&gt; 0.05) -&gt; NO evidence the data departs from the 25/20/55 clai
 <strong>consistent</strong> with the claim. "Fail to reject" is not the same as "accept." Chi-square can flag a
 mismatch; it can never certify a perfect match.</p>
 </blockquote>
-<h2 id="3)-Test-of-independence-%E2%80%94-are-two-categories-related?">3) Test of independence — are <strong>two</strong> categories related?<a class="anchor-link" href="#3)-Test-of-independence-%E2%80%94-are-two-categories-related?">¶</a></h2><p>The second flavour asks whether <strong>two</strong> categorical variables move together. The Titanic's most famous
+<h2 id="3)-Test-of-independence-%E2%80%94-are-two-categories-related?">3) Test of independence — are <strong>two</strong> categories related?<a class="anchor-link" data-pagefind-ignore href="#3)-Test-of-independence-%E2%80%94-are-two-categories-related?">¶</a></h2><p>The second flavour asks whether <strong>two</strong> categorical variables move together. The Titanic's most famous
 question fits perfectly: <strong>was survival associated with sex?</strong> ("Women and children first.")</p>
 <p>We cross-tabulate the two variables into a <strong>contingency table</strong> — a grid of counts.</p>
 </div>
@@ -8472,7 +8472,7 @@ Grand total: 887
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="What-would-%22no-relationship%22-predict?">What would "no relationship" predict?<a class="anchor-link" href="#What-would-%22no-relationship%22-predict?">¶</a></h3><p>The null hypothesis is <strong>independence</strong>: survival has <em>nothing</em> to do with sex. If that were true, the
+<h3 id="What-would-%22no-relationship%22-predict?">What would "no relationship" predict?<a class="anchor-link" data-pagefind-ignore href="#What-would-%22no-relationship%22-predict?">¶</a></h3><p>The null hypothesis is <strong>independence</strong>: survival has <em>nothing</em> to do with sex. If that were true, the
 overall survival rate would apply equally to men and women. So the <strong>expected</strong> count for any cell is</p>
 <p>$$E_{ij} = \frac{(\text{row } i \text{ total}) \times (\text{column } j \text{ total})}{\text{grand total}}.$$</p>
 <p><strong>Why this formula?</strong> Under independence, $P(\text{female and survived}) = P(\text{female}) \times
@@ -8569,7 +8569,7 @@ df = (rows - 1) x (cols - 1) = (2-1) x (2-1) = 1
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="Simulate-the-null-again-%E2%80%94-by-shuffling">Simulate the null again — by <strong>shuffling</strong><a class="anchor-link" href="#Simulate-the-null-again-%E2%80%94-by-shuffling">¶</a></h3><p>For independence there's an even more vivid way to act out "no relationship": keep every passenger's
+<h3 id="Simulate-the-null-again-%E2%80%94-by-shuffling">Simulate the null again — by <strong>shuffling</strong><a class="anchor-link" data-pagefind-ignore href="#Simulate-the-null-again-%E2%80%94-by-shuffling">¶</a></h3><p>For independence there's an even more vivid way to act out "no relationship": keep every passenger's
 <strong>sex</strong> exactly as it is, but <strong>shuffle the survival labels</strong> at random across all 887 people. Shuffling
 deliberately <em>destroys</em> any real link between sex and survival while keeping the totals (how many men,
 how many survivors) fixed. Each shuffle is one draw from the world where the null is true. Compute
@@ -8668,7 +8668,7 @@ Simulated p-value = 0.0000   (0.0000 means not one shuffle reached our value)
 <p>The story repeats: the shuffled-null histogram traces the theoretical chi-square curve with df = 1, and
 our observed $\chi^2 \approx 261$ is so extreme that <strong>not a single one</strong> of 5,000 "no relationship"
 worlds came near it. Survival and sex are emphatically <strong>not</strong> independent.</p>
-<h3 id="The-one-liner:-scipy.stats.chi2_contingency">The one-liner: <code>scipy.stats.chi2_contingency</code><a class="anchor-link" href="#The-one-liner:-scipy.stats.chi2_contingency">¶</a></h3><p>In practice you don't compute expected counts by hand — <code>chi2_contingency</code> takes the raw table and
+<h3 id="The-one-liner:-scipy.stats.chi2_contingency">The one-liner: <code>scipy.stats.chi2_contingency</code><a class="anchor-link" data-pagefind-ignore href="#The-one-liner:-scipy.stats.chi2_contingency">¶</a></h3><p>In practice you don't compute expected counts by hand — <code>chi2_contingency</code> takes the raw table and
 returns the statistic, the p-value, the df, and the expected counts all at once. (We pass
 <code>correction=False</code> to match our by-hand formula exactly; the default applies a small "Yates" tweak for
 2×2 tables.)</p>
@@ -8724,7 +8724,7 @@ Verdict: reject independence. Survival WAS strongly associated with sex.
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="4)-How-strong-is-the-link?-Significance-vs-effect-size">4) How strong is the link? Significance vs effect size<a class="anchor-link" href="#4)-How-strong-is-the-link?-Significance-vs-effect-size">¶</a></h2><p>A tiny but crucial point: a huge $\chi^2$ and microscopic p-value say the association is <strong>real</strong>
+<h2 id="4)-How-strong-is-the-link?-Significance-vs-effect-size">4) How strong is the link? Significance vs effect size<a class="anchor-link" data-pagefind-ignore href="#4)-How-strong-is-the-link?-Significance-vs-effect-size">¶</a></h2><p>A tiny but crucial point: a huge $\chi^2$ and microscopic p-value say the association is <strong>real</strong>
 (unlikely to be chance) — they do <strong>not</strong> say it is <strong>large</strong>. With enough data even a trivial link
 becomes "statistically significant." To gauge <em>strength</em> we need an <strong>effect size</strong>. For contingency
 tables that's <strong>Cramér's V</strong>:</p>
@@ -8777,7 +8777,7 @@ Rough guide:  ~0.1 small,  ~0.3 medium,  ~0.5+ large association.
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="5)-One-more-table-%E2%80%94-was-class-related-to-survival?">5) One more table — was <strong>class</strong> related to survival?<a class="anchor-link" href="#5)-One-more-table-%E2%80%94-was-class-related-to-survival?">¶</a></h2><p>Let's reuse the whole machine on a 3×2 table: ticket <strong>class</strong> vs survival. (Did first-class
+<h2 id="5)-One-more-table-%E2%80%94-was-class-related-to-survival?">5) One more table — was <strong>class</strong> related to survival?<a class="anchor-link" data-pagefind-ignore href="#5)-One-more-table-%E2%80%94-was-class-related-to-survival?">¶</a></h2><p>Let's reuse the whole machine on a 3×2 table: ticket <strong>class</strong> vs survival. (Did first-class
 passengers fare better?) Same recipe — <code>chi2_contingency</code> plus Cramér's V — now with df =
 $(3-1)(2-1) = 2$.</p>
 </div>
@@ -8864,7 +8864,7 @@ Cramer's V = 0.338  (a medium-to-large effect)
 <p>First class survived at roughly 63%, third class at only ~24% — nowhere near the flat ~38% that
 independence (the red line) would demand. Chi-square turns that visual gap into a verdict: class and
 survival are associated too.</p>
-<h2 id="6)-The-fine-print-%E2%80%94-assumptions-&amp;-cautions">6) The fine print — assumptions &amp; cautions<a class="anchor-link" href="#6)-The-fine-print-%E2%80%94-assumptions-&amp;-cautions">¶</a></h2><p>Chi-square is sturdy, but mind these:</p>
+<h2 id="6)-The-fine-print-%E2%80%94-assumptions-&amp;-cautions">6) The fine print — assumptions &amp; cautions<a class="anchor-link" data-pagefind-ignore href="#6)-The-fine-print-%E2%80%94-assumptions-&amp;-cautions">¶</a></h2><p>Chi-square is sturdy, but mind these:</p>
 <ul>
 <li><strong>Counts, not percentages.</strong> Always feed the test <strong>raw counts</strong>. Running it on rates or proportions
 silently breaks it.</li>
@@ -8928,7 +8928,7 @@ C:\Users\jdj32\AppData\Local\Temp\ipykernel_14636\3636873151.py:2: Pandas4Warnin
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Now-you-try">Now you try<a class="anchor-link" href="#Now-you-try">¶</a></h2><p>Predict first, then change a number and re-run:</p>
+<h2 id="Now-you-try">Now you try<a class="anchor-link" data-pagefind-ignore href="#Now-you-try">¶</a></h2><p>Predict first, then change a number and re-run:</p>
 <ol>
 <li><p><strong>A different stated distribution.</strong> In section 2, change <code>claimed_props = np.array([0.25, 0.20, 0.55])</code> to <code>[0.33, 0.33, 0.34]</code> (back to nearly uniform). Predict: will the p-value shoot back down
 toward 0? Now nudge it to <code>[0.30, 0.20, 0.50]</code> — how close does the claim have to be before the test
@@ -8949,7 +8949,7 @@ print(stats.chi2_contingency(tab, correction=False)[:3])   # chi^2, p, df</code>
 <code>observed / n * 100</code>) and watch the statistic change. Why does the test demand raw counts?</p>
 </li>
 </ol>
-<h2 id="What-you-learned">What you learned<a class="anchor-link" href="#What-you-learned">¶</a></h2><ul>
+<h2 id="What-you-learned">What you learned<a class="anchor-link" data-pagefind-ignore href="#What-you-learned">¶</a></h2><ul>
 <li>The <strong>chi-square statistic</strong> $\chi^2 = \sum (O-E)^2/E$ is a single "total surprise" score comparing
 <strong>observed</strong> category counts to the counts a hypothesis <strong>expects</strong>; near 0 means a good fit, large
 means a poor one.</li>

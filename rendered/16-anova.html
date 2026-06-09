@@ -7823,7 +7823,7 @@ a.anchor-link {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h1 id="Lesson-16-%E2%80%94-Comparing-many-groups:-ANOVA">Lesson 16 — Comparing many groups: ANOVA<a class="anchor-link" href="#Lesson-16-%E2%80%94-Comparing-many-groups:-ANOVA">¶</a></h1><p><em>Part 2 · Lesson 16 of 20  ·  data: Palmer Penguins</em></p>
+<h1 id="Lesson-16-%E2%80%94-Comparing-many-groups:-ANOVA">Lesson 16 — Comparing many groups: ANOVA<a class="anchor-link" data-pagefind-ignore href="#Lesson-16-%E2%80%94-Comparing-many-groups:-ANOVA">¶</a></h1><p><em>Part 2 · Lesson 16 of 20  ·  data: Palmer Penguins</em></p>
 <p><strong>←</strong> <a href="15-t-tests.html">Lesson 15: t-tests: one-sample, two-sample &amp; paired</a>  ·  <a href="index.html">↑ Course map</a>  ·  <a href="17-chi-square.html">Lesson 17: Chi-square: goodness-of-fit &amp; independence</a> <strong>→</strong></p>
 <p><strong>Same idea, another way:</strong> <a href="16-anova~another-dataset.html">Another dataset →</a>  ·  <a href="16-anova~the-code.html">The code behind it →</a></p>
 <p>You already know how to compare <strong>two</strong> group means with a t-test. But what if you have <strong>three</strong>
@@ -7955,7 +7955,7 @@ Gentoo). Run each grey cell with <strong>Shift+Enter</strong>, then tinker.</p>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="1)-The-question,-and-the-wrong-way-to-answer-it">1) The question, and the wrong way to answer it<a class="anchor-link" href="#1)-The-question,-and-the-wrong-way-to-answer-it">¶</a></h2><p>We want to know: <strong>does mean body mass differ among the three species?</strong> The three sample means above
+<h2 id="1)-The-question,-and-the-wrong-way-to-answer-it">1) The question, and the wrong way to answer it<a class="anchor-link" data-pagefind-ignore href="#1)-The-question,-and-the-wrong-way-to-answer-it">¶</a></h2><p>We want to know: <strong>does mean body mass differ among the three species?</strong> The three sample means above
 are clearly not identical — Gentoo look much heavier — but sample means <em>always</em> differ a little just
 by luck. The real question is whether the differences are <strong>bigger than sampling noise</strong>.</p>
 <p>Your first instinct, fresh from the t-tests lesson, is probably to run a t-test on each <strong>pair</strong>:
@@ -7973,7 +7973,7 @@ Run many tests and those 5%-chances <em>accumulate</em>. Let's measure exactly h
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="2)-The-multiple-comparisons-problem-%E2%80%94-seen,-not-just-stated">2) The multiple-comparisons problem — <em>seen</em>, not just stated<a class="anchor-link" href="#2)-The-multiple-comparisons-problem-%E2%80%94-seen,-not-just-stated">¶</a></h2><p>Here is the cleanest possible demonstration. We'll build a world where <strong>there is no real difference
+<h2 id="2)-The-multiple-comparisons-problem-%E2%80%94-seen,-not-just-stated">2) The multiple-comparisons problem — <em>seen</em>, not just stated<a class="anchor-link" data-pagefind-ignore href="#2)-The-multiple-comparisons-problem-%E2%80%94-seen,-not-just-stated">¶</a></h2><p>Here is the cleanest possible demonstration. We'll build a world where <strong>there is no real difference
 at all</strong>: every "group" is drawn from the <em>same</em> normal distribution. Then we run all the pairwise
 t-tests and ask: <em>did at least one of them cry "significant" by accident?</em></p>
 <p>That "at least one false alarm" event is the <strong>family-wise error rate</strong> (FWER) — the chance the whole
@@ -8118,7 +8118,7 @@ overlay the two and see exactly how far below.</p>
 <p>This is <em>why</em> we don't just spray t-tests across every pair. We need a <strong>single</strong> test that asks one
 honest question — "is <strong>any</strong> group different?" — at one controlled error rate of 5%. That test is the
 <strong>one-way ANOVA</strong>.</p>
-<h2 id="3)-The-idea-behind-ANOVA:-split-the-variation-in-two">3) The idea behind ANOVA: split the variation in two<a class="anchor-link" href="#3)-The-idea-behind-ANOVA:-split-the-variation-in-two">¶</a></h2><p><strong>ANOVA</strong> stands for <strong>AN</strong>alysis <strong>O</strong>f <strong>VA</strong>riance. The name sounds odd — we're comparing <em>means</em>,
+<h2 id="3)-The-idea-behind-ANOVA:-split-the-variation-in-two">3) The idea behind ANOVA: split the variation in two<a class="anchor-link" data-pagefind-ignore href="#3)-The-idea-behind-ANOVA:-split-the-variation-in-two">¶</a></h2><p><strong>ANOVA</strong> stands for <strong>AN</strong>alysis <strong>O</strong>f <strong>VA</strong>riance. The name sounds odd — we're comparing <em>means</em>,
 so why analyze <em>variance</em>? The trick is that we can answer "do the means differ?" by comparing <strong>two
 kinds of spread</strong>:</p>
 <ul>
@@ -8151,7 +8151,7 @@ the follow-up question in section 6.)</li>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="The-math,-term-by-term">The math, term by term<a class="anchor-link" href="#The-math,-term-by-term">¶</a></h3><p>Let there be $k$ groups, group $j$ having $n_j$ observations with mean $\bar{x}_j$, and let $\bar{x}$
+<h3 id="The-math,-term-by-term">The math, term by term<a class="anchor-link" data-pagefind-ignore href="#The-math,-term-by-term">¶</a></h3><p>Let there be $k$ groups, group $j$ having $n_j$ observations with mean $\bar{x}_j$, and let $\bar{x}$
 be the grand mean of all $N$ observations. We add up squared distances ("sums of squares"):</p>
 <p>$$SS_{\text{between}} = \sum_{j=1}^{k} n_j(\bar{x}_j - \bar{x})^2,
   \qquad
@@ -8273,7 +8273,7 @@ at least one species has a different mean body mass. (No surprise — look at Ge
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="4)-Where-does-the-F-distribution-come-from?">4) Where does the F-distribution come from?<a class="anchor-link" href="#4)-Where-does-the-F-distribution-come-from?">¶</a></h2><p>The p-value answers: <em>if all species truly had the same mean (H0), how often would random sampling
+<h2 id="4)-Where-does-the-F-distribution-come-from?">4) Where does the F-distribution come from?<a class="anchor-link" data-pagefind-ignore href="#4)-Where-does-the-F-distribution-come-from?">¶</a></h2><p>The p-value answers: <em>if all species truly had the same mean (H0), how often would random sampling
 hand us an $F$ this large or larger?</em> The reference curve is the <strong>F-distribution</strong>, which has <strong>two</strong>
 degrees-of-freedom parameters — $df_{\text{between}} = k-1$ on top and $df_{\text{within}} = N-k$ on
 the bottom.</p>
@@ -8380,7 +8380,7 @@ Permutation p-value = 0.0002   (none of the fake worlds came anywhere close)
 can trust the formula's p-value. And our real $F \approx 343$ is so far off the right edge of this
 plot that no shuffled world ever produced anything like it. That tiny p-value is the omnibus test
 shouting: <strong>the species are not all the same.</strong></p>
-<h3 id="See-it:-group-means-and-a-boxplot">See it: group means and a boxplot<a class="anchor-link" href="#See-it:-group-means-and-a-boxplot">¶</a></h3><p>A picture makes the same point your $F$-statistic does. The spread of the <em>colored group means</em> (the
+<h3 id="See-it:-group-means-and-a-boxplot">See it: group means and a boxplot<a class="anchor-link" data-pagefind-ignore href="#See-it:-group-means-and-a-boxplot">¶</a></h3><p>A picture makes the same point your $F$-statistic does. The spread of the <em>colored group means</em> (the
 between-group signal) is huge compared with the <em>height of each box</em> (the within-group noise).</p>
 </div>
 </div>
@@ -8432,7 +8432,7 @@ between-group signal) is huge compared with the <em>height of each box</em> (the
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="5)-Sanity-check:-ANOVA-with-two-groups-is-the-two-sample-t-test">5) Sanity check: ANOVA with two groups <em>is</em> the two-sample t-test<a class="anchor-link" href="#5)-Sanity-check:-ANOVA-with-two-groups-is-the-two-sample-t-test">¶</a></h2><p>ANOVA generalizes the two-sample t-test you already know. In fact, with exactly <strong>two</strong> groups they
+<h2 id="5)-Sanity-check:-ANOVA-with-two-groups-is-the-two-sample-t-test">5) Sanity check: ANOVA with two groups <em>is</em> the two-sample t-test<a class="anchor-link" data-pagefind-ignore href="#5)-Sanity-check:-ANOVA-with-two-groups-is-the-two-sample-t-test">¶</a></h2><p>ANOVA generalizes the two-sample t-test you already know. In fact, with exactly <strong>two</strong> groups they
 are the <em>same test</em>, related by a clean identity: $F = t^2$, and the two p-values are identical. Let's
 prove it on Adelie vs Chinstrap.</p>
 </div>
@@ -8482,7 +8482,7 @@ Identical p-values: ANOVA is the same test, extended to 3+ groups.
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="6)-ANOVA-said-%22at-least-one-differs%22-%E2%80%94-but-which-ones?-(Tukey-HSD)">6) ANOVA said "at least one differs" — but <em>which</em> ones? (Tukey HSD)<a class="anchor-link" href="#6)-ANOVA-said-%22at-least-one-differs%22-%E2%80%94-but-which-ones?-(Tukey-HSD)">¶</a></h2><p>A significant ANOVA is an <strong>omnibus</strong> result: it tells you <em>that</em> the means aren't all equal, not
+<h2 id="6)-ANOVA-said-%22at-least-one-differs%22-%E2%80%94-but-which-ones?-(Tukey-HSD)">6) ANOVA said "at least one differs" — but <em>which</em> ones? (Tukey HSD)<a class="anchor-link" data-pagefind-ignore href="#6)-ANOVA-said-%22at-least-one-differs%22-%E2%80%94-but-which-ones?-(Tukey-HSD)">¶</a></h2><p>A significant ANOVA is an <strong>omnibus</strong> result: it tells you <em>that</em> the means aren't all equal, not
 <em>which</em> pairs differ. Now we <em>do</em> want the pairwise comparisons — but if we just run raw t-tests we're
 back to the multiple-comparisons trap from section 2.</p>
 <p>The fix is a <strong>post-hoc</strong> (Latin for "after this") test that compares all pairs <strong>while keeping the
@@ -8590,7 +8590,7 @@ detected is really "<strong>Gentoo vs the rest</strong>."</p>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="7)-The-fine-print:-ANOVA's-assumptions">7) The fine print: ANOVA's assumptions<a class="anchor-link" href="#7)-The-fine-print:-ANOVA's-assumptions">¶</a></h2><p>Like every test, ANOVA trusts a few conditions. Worth knowing what they are and how to eyeball them:</p>
+<h2 id="7)-The-fine-print:-ANOVA's-assumptions">7) The fine print: ANOVA's assumptions<a class="anchor-link" data-pagefind-ignore href="#7)-The-fine-print:-ANOVA's-assumptions">¶</a></h2><p>Like every test, ANOVA trusts a few conditions. Worth knowing what they are and how to eyeball them:</p>
 <ol>
 <li><strong>Independence</strong> — observations don't influence each other (each penguin measured once,
 independently). This is about <em>how the data was collected</em>; no plot can rescue a violation, so it
@@ -8677,7 +8677,7 @@ the situation where plain one-way ANOVA's assumptions are shaky and you reach fo
 the robust alternative (just as Welch's t-test handles unequal variances for two groups). Reassuringly,
 the omnibus signal here is so overwhelming — $F \approx 343$, Gentoo standing far apart — that the
 "Gentoo vs the rest" conclusion holds either way; Welch would simply give a more honest p-value.</p>
-<h2 id="Now-you-try">Now you try<a class="anchor-link" href="#Now-you-try">¶</a></h2><p>Predict first, then change a number and re-run:</p>
+<h2 id="Now-you-try">Now you try<a class="anchor-link" data-pagefind-ignore href="#Now-you-try">¶</a></h2><p>Predict first, then change a number and re-run:</p>
 <ol>
 <li><p><strong>Feel the trap grow.</strong> In section 2, raise the groups in the loop to include <code>20</code> or <code>25</code>. Before
 running, guess: at 20 identical groups, will the family-wise false-alarm rate be above or below
@@ -8700,7 +8700,7 @@ Drop Gentoo and test only Adelie vs Chinstrap with <code>stats.f_oneway</code>. 
 significant or not? — then confirm against the Tukey row for that pair.</p>
 </li>
 </ol>
-<h2 id="What-you-learned">What you learned<a class="anchor-link" href="#What-you-learned">¶</a></h2><ul>
+<h2 id="What-you-learned">What you learned<a class="anchor-link" data-pagefind-ignore href="#What-you-learned">¶</a></h2><ul>
 <li><strong>Running many pairwise t-tests inflates the false-positive rate:</strong> with several groups, the chance
 of at least one false "significant" climbs well past 5% even when nothing truly differs — you
 <em>simulated</em> this directly, and saw $1-(1-\alpha)^m$ act as an <strong>upper bound</strong> that the true

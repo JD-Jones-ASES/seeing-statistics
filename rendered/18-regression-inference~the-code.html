@@ -7823,7 +7823,7 @@ a.anchor-link {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h1 id="The-code-behind-it:-inference-for-a-regression-slope">The code behind it: inference for a regression slope<a class="anchor-link" href="#The-code-behind-it:-inference-for-a-regression-slope">¶</a></h1><p><em>Part 2 · Lesson 18 · the code behind it  ·  data: Ames housing (same as Lesson 18)</em></p>
+<h1 id="The-code-behind-it:-inference-for-a-regression-slope">The code behind it: inference for a regression slope<a class="anchor-link" data-pagefind-ignore href="#The-code-behind-it:-inference-for-a-regression-slope">¶</a></h1><p><em>Part 2 · Lesson 18 · the code behind it  ·  data: Ames housing (same as Lesson 18)</em></p>
 <p><em>↩ A companion to <a href="18-regression-inference.html">Lesson 18: Correlation &amp; regression: inference</a>.</em></p>
 <p><strong>↩ Back:</strong> <a href="18-regression-inference.html">Lesson 18: Correlation &amp; regression: inference</a>  ·  <a href="index.html">↑ Course map</a>  ·  <strong>Also:</strong> <a href="18-regression-inference~another-dataset.html">Another dataset →</a></p>
 <p><strong>In Lesson 18 you read the slope's inference off a regression table</strong> — <code>std err</code>, <code>t</code>, <code>P&gt;|t|</code>,
@@ -7868,7 +7868,7 @@ programmer actually works:</p>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="1)-The-goal">1) The goal<a class="anchor-link" href="#1)-The-goal">¶</a></h2><p>By the end of this notebook you'll have written a function that takes a predictor $x$ and a response $y$
+<h2 id="1)-The-goal">1) The goal<a class="anchor-link" data-pagefind-ignore href="#1)-The-goal">¶</a></h2><p>By the end of this notebook you'll have written a function that takes a predictor $x$ and a response $y$
 and returns the <strong>inference for the regression slope</strong> — its <strong>standard error</strong>, its <strong>t-statistic</strong>,
 the <strong>degrees of freedom</strong>, the two-sided <strong>p-value</strong> testing "no relationship," and a 95% <strong>confidence
 interval</strong> — the exact same numbers <code>scipy.stats.linregress</code> and a <code>statsmodels</code> table hand you for free.
@@ -7960,9 +7960,9 @@ is "do some arithmetic to two columns at once, then ask the t-distribution a que
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="2)-The-data-in-code">2) The data in code<a class="anchor-link" href="#2)-The-data-in-code">¶</a></h2><p>Before any inference, a programmer <em>interrogates the object</em>: how big is it, which columns, what do the
+<h2 id="2)-The-data-in-code">2) The data in code<a class="anchor-link" data-pagefind-ignore href="#2)-The-data-in-code">¶</a></h2><p>Before any inference, a programmer <em>interrogates the object</em>: how big is it, which columns, what do the
 first rows look like? Same four habits as ever — <code>.shape</code>, <code>.columns</code>, <code>.dtypes</code>, <code>.head()</code>.</p>
-<h3 id="Missing-values,-then-the-two-columns">Missing values, then the two columns<a class="anchor-link" href="#Missing-values,-then-the-two-columns">¶</a></h3><p>Real data has holes. A few homes are missing a measurement, stored as <code>NaN</code> ("not a number"). Math on a
+<h3 id="Missing-values,-then-the-two-columns">Missing values, then the two columns<a class="anchor-link" data-pagefind-ignore href="#Missing-values,-then-the-two-columns">¶</a></h3><p>Real data has holes. A few homes are missing a measurement, stored as <code>NaN</code> ("not a number"). Math on a
 <code>NaN</code> silently spreads it — and, crucially here, it would change our sample size <strong>n</strong>, which feeds the
 degrees of freedom and the standard error. So we drop the rows missing either column with
 <code>.dropna(subset=[...])</code> (mirroring the core lesson), so our <strong>n</strong> matches theirs exactly. This makes a
@@ -8027,11 +8027,11 @@ n = 2930 homes; first 5 areas : [1656.  896. 1329. 2110. 1629.]
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="3)-Build-it-step-by-step">3) Build it step by step<a class="anchor-link" href="#3)-Build-it-step-by-step">¶</a></h2><p>Now the heart of it. We'll fit the line first (the L3-code warm-up), then build the <strong>inference</strong> — the
+<h2 id="3)-Build-it-step-by-step">3) Build it step by step<a class="anchor-link" data-pagefind-ignore href="#3)-Build-it-step-by-step">¶</a></h2><p>Now the heart of it. We'll fit the line first (the L3-code warm-up), then build the <strong>inference</strong> — the
 residual standard error, $\text{SE}(b)$, the $t$-statistic, the $p$-value and the confidence interval —
 each from its formula, and check the key three against <code>scipy.stats.linregress</code> with <code>np.isclose</code>. Once
 you've built it, the regression table is no longer a mystery box.</p>
-<h3 id="Warm-up:-fit-the-line-(slope-and-intercept)">Warm-up: fit the line (slope and intercept)<a class="anchor-link" href="#Warm-up:-fit-the-line-(slope-and-intercept)">¶</a></h3><p>The least-squares <strong>slope</strong> is the covariance of $x$ and $y$ over the variance of $x$, which is the same
+<h3 id="Warm-up:-fit-the-line-(slope-and-intercept)">Warm-up: fit the line (slope and intercept)<a class="anchor-link" data-pagefind-ignore href="#Warm-up:-fit-the-line-(slope-and-intercept)">¶</a></h3><p>The least-squares <strong>slope</strong> is the covariance of $x$ and $y$ over the variance of $x$, which is the same
 as $\sum d_x d_y / \sum d_x^2$ once the $1/(n-1)$ factors cancel; the <strong>intercept</strong> then forces the line
 through the point of averages $(\bar{x}, \bar{y})$:</p>
 <p>$$b = \frac{\sum (x_i-\bar{x})(y_i-\bar{y})}{\sum (x_i-\bar{x})^2}, \qquad a = \bar{y} - b\,\bar{x}.$$</p>
@@ -8080,7 +8080,7 @@ intercept a = 13,289.63 dollars   (price of a 0-sq-ft "home" -- only anchors the
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="The-residuals,-and-the-residual-standard-error-$s_e$">The residuals, and the residual standard error $s_e$<a class="anchor-link" href="#The-residuals,-and-the-residual-standard-error-$s_e$">¶</a></h3><p>The slope is a <em>point estimate</em>; to say how much it would wobble we first need the spread of the
+<h3 id="The-residuals,-and-the-residual-standard-error-$s_e$">The residuals, and the residual standard error $s_e$<a class="anchor-link" data-pagefind-ignore href="#The-residuals,-and-the-residual-standard-error-$s_e$">¶</a></h3><p>The slope is a <em>point estimate</em>; to say how much it would wobble we first need the spread of the
 <strong>residuals</strong> $e_i = y_i - \hat{y}_i$ (actual minus predicted). The <strong>residual standard error</strong> $s_e$ is
 their typical size:</p>
 <p>$$\hat{y} = a + b\,x, \qquad e_i = y_i - \hat{y}_i, \qquad
@@ -8132,7 +8132,7 @@ residual standard error s_e  : 56,524.17 dollars
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="The-standard-error-of-the-slope">The standard error of the slope<a class="anchor-link" href="#The-standard-error-of-the-slope">¶</a></h3><p>Now the key formula. How much would the slope $b$ jump around if we redrew the sample? That's the
+<h3 id="The-standard-error-of-the-slope">The standard error of the slope<a class="anchor-link" data-pagefind-ignore href="#The-standard-error-of-the-slope">¶</a></h3><p>Now the key formula. How much would the slope $b$ jump around if we redrew the sample? That's the
 <strong>standard error of the slope</strong>, and it is the residual spread divided by how spread out the $x$'s are:</p>
 <p>$$\text{SE}(b) = \frac{s_e}{\sqrt{\sum (x_i-\bar{x})^2}}.$$</p>
 <p>Note the denominator is the <strong>sum</strong> $\sum (x_i-\bar{x})^2$ — <em>not</em> a variance (no dividing by $n$ or
@@ -8180,7 +8180,7 @@ SE(b)               : 2.0661 dollars/sq ft
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="The-t-test-for-%22no-relationship,%22-and-its-p-value">The t-test for "no relationship," and its p-value<a class="anchor-link" href="#The-t-test-for-%22no-relationship,%22-and-its-p-value">¶</a></h3><p>The null hypothesis is $H_0:\ \beta_1 = 0$ — <em>area has no linear effect on price</em>. We measure how many
+<h3 id="The-t-test-for-%22no-relationship,%22-and-its-p-value">The t-test for "no relationship," and its p-value<a class="anchor-link" data-pagefind-ignore href="#The-t-test-for-%22no-relationship,%22-and-its-p-value">¶</a></h3><p>The null hypothesis is $H_0:\ \beta_1 = 0$ — <em>area has no linear effect on price</em>. We measure how many
 standard errors our slope sits from that 0:</p>
 <p>$$t = \frac{b - 0}{\text{SE}(b)}, \qquad df = n-2.$$</p>
 <p>The two-sided <strong>p-value</strong> is the chance, <em>if the true slope really were 0</em>, of seeing a $t$ at least this
@@ -8232,7 +8232,7 @@ two-sided p   = 0
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="A-95%25-confidence-interval-for-the-slope">A 95% confidence interval for the slope<a class="anchor-link" href="#A-95%25-confidence-interval-for-the-slope">¶</a></h3><p>A confidence interval is the slope give-or-take a <strong>t-multiplier</strong> of its standard error. The multiplier
+<h3 id="A-95%25-confidence-interval-for-the-slope">A 95% confidence interval for the slope<a class="anchor-link" data-pagefind-ignore href="#A-95%25-confidence-interval-for-the-slope">¶</a></h3><p>A confidence interval is the slope give-or-take a <strong>t-multiplier</strong> of its standard error. The multiplier
 $t^{*}$ is the value with 2.5% of the t-distribution beyond it on each side — <code>stats.t.ppf(0.975, df)</code>
 (the <strong>p</strong>ercent-<strong>p</strong>oint function, the inverse of the CDF):</p>
 <p>$$b \pm t^{*}\,\text{SE}(b), \qquad t^{*} = \texttt{stats.t.ppf(0.975, df)} \approx 1.96.$$</p>
@@ -8281,7 +8281,7 @@ $t^{*}$ is the value with 2.5% of the t-distribution beyond it on each side — 
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="The-final-check:-against-scipy.stats.linregress">The final check: against <code>scipy.stats.linregress</code><a class="anchor-link" href="#The-final-check:-against-scipy.stats.linregress">¶</a></h3><p>We built the slope, its standard error, the t/p and the CI from scratch. <code>scipy.stats.linregress(x, y)</code>
+<h3 id="The-final-check:-against-scipy.stats.linregress">The final check: against <code>scipy.stats.linregress</code><a class="anchor-link" data-pagefind-ignore href="#The-final-check:-against-scipy.stats.linregress">¶</a></h3><p>We built the slope, its standard error, the t/p and the CI from scratch. <code>scipy.stats.linregress(x, y)</code>
 fits the same line and returns <code>slope</code>, <code>intercept</code>, <code>rvalue</code>, <code>pvalue</code> and <code>stderr</code> — and its <code>pvalue</code>
 is <strong>exactly</strong> this two-sided slope t-test. If our formulas are right, three numbers must match to many
 decimals: our slope vs <code>linregress.slope</code>, our $\text{SE}(b)$ vs <code>linregress.stderr</code>, and our $p$ vs
@@ -8333,7 +8333,7 @@ p-value :        0.000e+00         0.000e+00   True
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="Residual-diagnostic-%E2%80%94-residuals-vs.-fitted-(does-the-SE-hold-up?)">Residual diagnostic — residuals vs. fitted (does the SE hold up?)<a class="anchor-link" href="#Residual-diagnostic-%E2%80%94-residuals-vs.-fitted-(does-the-SE-hold-up?)">¶</a></h3><p>The slope and its t/p ride on an assumption: that the leftover scatter is the <strong>same size everywhere</strong>
+<h3 id="Residual-diagnostic-%E2%80%94-residuals-vs.-fitted-(does-the-SE-hold-up?)">Residual diagnostic — residuals vs. fitted (does the SE hold up?)<a class="anchor-link" data-pagefind-ignore href="#Residual-diagnostic-%E2%80%94-residuals-vs.-fitted-(does-the-SE-hold-up?)">¶</a></h3><p>The slope and its t/p ride on an assumption: that the leftover scatter is the <strong>same size everywhere</strong>
 (called <strong>homoscedasticity</strong>, "equal scatter"). We check it by plotting each home's residual against its
 predicted price. What you <em>want</em> is a shapeless, horizontal band of constant thickness around 0. A
 <strong>funnel</strong> that fans open as prices rise means the scatter is <em>not</em> constant (<strong>heteroscedasticity</strong>),
@@ -8401,7 +8401,7 @@ $\text{SE}(b)$ runs a touch small (the core lesson shows a bootstrap and a robus
 both wider and more honest). The good news: the slope itself is unchanged and still sits dozens of
 standard errors from 0, so <em>whether</em> the relationship is real never came into doubt — only <em>how
 precisely</em> we can pin the number down.</p>
-<h2 id="4)-The-idiom-%E2%80%94-vectorized-residuals">4) The idiom — vectorized residuals<a class="anchor-link" href="#4)-The-idiom-%E2%80%94-vectorized-residuals">¶</a></h2><p>Every quantity above leaned on <strong>one vectorized expression</strong>: <code>resid = y - (a + b * x)</code> computes all
+<h2 id="4)-The-idiom-%E2%80%94-vectorized-residuals">4) The idiom — vectorized residuals<a class="anchor-link" data-pagefind-ignore href="#4)-The-idiom-%E2%80%94-vectorized-residuals">¶</a></h2><p>Every quantity above leaned on <strong>one vectorized expression</strong>: <code>resid = y - (a + b * x)</code> computes all
 2,930 residuals at once, with no loop. You <em>could</em> loop over the homes one at a time — same numbers, but
 slower and noisier to read. Compare the two; the vectorized line is the idiom you want (and the one the
 library uses under the hood).</p>
@@ -8460,7 +8460,7 @@ No loop anywhere -- residuals, the sum of squares, and SE(b) are all whole-array
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="5)-Refactor-into-a-reusable-function">5) Refactor into a reusable function<a class="anchor-link" href="#5)-Refactor-into-a-reusable-function">¶</a></h2><p>You've now written the same chain — fit, residuals, $s_e$, $\text{SE}(b)$, $t$, $df$, $p$, CI — once. The
+<h2 id="5)-Refactor-into-a-reusable-function">5) Refactor into a reusable function<a class="anchor-link" data-pagefind-ignore href="#5)-Refactor-into-a-reusable-function">¶</a></h2><p>You've now written the same chain — fit, residuals, $s_e$, $\text{SE}(b)$, $t$, $df$, $p$, CI — once. The
 programmer's reflex is to <strong>wrap repeated work in a function</strong>: name it, give it inputs, <code>return</code> the
 result. Then "is this slope real?" is one call you can reuse on <em>any</em> pair of numeric columns — a
 different predictor, a different dataset entirely.</p>
@@ -8558,7 +8558,7 @@ them.)</p>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="6)-Now-you-code">6) Now you code<a class="anchor-link" href="#6)-Now-you-code">¶</a></h2><p>Write the code yourself. Add a new cell (the <strong>+</strong> button in the toolbar) and try each — predict the
+<h2 id="6)-Now-you-code">6) Now you code<a class="anchor-link" data-pagefind-ignore href="#6)-Now-you-code">¶</a></h2><p>Write the code yourself. Add a new cell (the <strong>+</strong> button in the toolbar) and try each — predict the
 answer before you run it.</p>
 <ol>
 <li><p><strong>Rebuild the CI by hand from the pieces.</strong> Using the <code>b</code>, <code>se_b</code> and <code>df</code> already in memory, write the
@@ -8579,7 +8579,7 @@ tail area collapses toward 0 as $t$ grows, which is why our p prints as essentia
 your dict against <code>stats.linregress(q['Overall.Qual'], q['price'])</code>.</p>
 </li>
 </ol>
-<h2 id="What-you-learned">What you learned<a class="anchor-link" href="#What-you-learned">¶</a></h2><p><strong>Coding</strong></p>
+<h2 id="What-you-learned">What you learned<a class="anchor-link" data-pagefind-ignore href="#What-you-learned">¶</a></h2><p><strong>Coding</strong></p>
 <ul>
 <li>Pull columns to NumPy arrays and do <strong>vectorized</strong> math: <code>resid = y - (a + b*x)</code> builds all 2,930
 residuals in one line, and $\text{SE}(b)$ is two more whole-array reductions — no loop, far faster.</li>

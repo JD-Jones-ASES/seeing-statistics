@@ -7823,7 +7823,7 @@ a.anchor-link {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h1 id="Lesson-18-%E2%80%94-Correlation-&amp;-regression:-inference">Lesson 18 — Correlation &amp; regression: inference<a class="anchor-link" href="#Lesson-18-%E2%80%94-Correlation-&amp;-regression:-inference">¶</a></h1><p><em>Part 2 · Lesson 18 of 20  ·  data: Ames housing</em></p>
+<h1 id="Lesson-18-%E2%80%94-Correlation-&amp;-regression:-inference">Lesson 18 — Correlation &amp; regression: inference<a class="anchor-link" data-pagefind-ignore href="#Lesson-18-%E2%80%94-Correlation-&amp;-regression:-inference">¶</a></h1><p><em>Part 2 · Lesson 18 of 20  ·  data: Ames housing</em></p>
 <p><strong>←</strong> <a href="17-chi-square.html">Lesson 17: Chi-square: goodness-of-fit &amp; independence</a>  ·  <a href="index.html">↑ Course map</a>  ·  <a href="19-multiple-regression.html">Lesson 19: Multiple regression (intro)</a> <strong>→</strong></p>
 <p><strong>Same idea, another way:</strong> <a href="18-regression-inference~another-dataset.html">Another dataset →</a>  ·  <a href="18-regression-inference~the-code.html">The code behind it →</a></p>
 <p>In the <strong>relationships lesson</strong> we fit a line through the Ames homes and read off a slope: each extra
@@ -7956,7 +7956,7 @@ decide whether those tidy textbook numbers can be trusted. Spoiler — the Ames 
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="1)-The-slope-is-an-estimate-of-something-we-can't-see">1) The slope is an estimate of something we can't see<a class="anchor-link" href="#1)-The-slope-is-an-estimate-of-something-we-can't-see">¶</a></h2><p>When we fit $\hat{y} = b_0 + b_1 x$, the slope $b_1$ is computed from the homes <strong>in our data</strong>. But
+<h2 id="1)-The-slope-is-an-estimate-of-something-we-can't-see">1) The slope is an estimate of something we can't see<a class="anchor-link" data-pagefind-ignore href="#1)-The-slope-is-an-estimate-of-something-we-can't-see">¶</a></h2><p>When we fit $\hat{y} = b_0 + b_1 x$, the slope $b_1$ is computed from the homes <strong>in our data</strong>. But
 imagine the much larger world of all comparable homes that <em>could</em> have been sold. There is some
 <strong>true</strong> underlying relationship in that world,</p>
 <p>$$y = \beta_0 + \beta_1 x + \varepsilon,$$</p>
@@ -8024,7 +8024,7 @@ correlation       r = 0.707    (R^2 = 0.500)
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="2)-Watch-the-slope-wobble-%E2%80%94-the-sampling-distribution,-by-simulation">2) Watch the slope wobble — the sampling distribution, by simulation<a class="anchor-link" href="#2)-Watch-the-slope-wobble-%E2%80%94-the-sampling-distribution,-by-simulation">¶</a></h2><p>Here is the simulation-first heart of the lesson. We don't have other samples lying around, so we
+<h2 id="2)-Watch-the-slope-wobble-%E2%80%94-the-sampling-distribution,-by-simulation">2) Watch the slope wobble — the sampling distribution, by simulation<a class="anchor-link" data-pagefind-ignore href="#2)-Watch-the-slope-wobble-%E2%80%94-the-sampling-distribution,-by-simulation">¶</a></h2><p>Here is the simulation-first heart of the lesson. We don't have other samples lying around, so we
 <strong>manufacture</strong> them by <strong>bootstrapping</strong>: draw a new dataset of the same size by sampling rows <strong>with
 replacement</strong> from the homes we have, re-fit the line, and record the slope. Repeat thousands of times.
 The spread of those slopes <em>is</em> the sampling distribution of $b_1$, and its standard deviation <em>is</em> the
@@ -8118,7 +8118,7 @@ the same Central Limit Theorem magic that made sample <em>means</em> normal also
 Second, the whole hill sits <strong>a long way to the right of zero</strong> (the red line). A slope of 0 would mean
 "area tells you nothing about price." That value is nowhere near our pile of plausible slopes — already
 a strong hint that the relationship is real, not luck.</p>
-<h3 id="A-bootstrap-confidence-interval-for-the-slope">A bootstrap confidence interval for the slope<a class="anchor-link" href="#A-bootstrap-confidence-interval-for-the-slope">¶</a></h3><p>A 95% confidence interval is just the <strong>middle 95%</strong> of that bootstrap pile — cut off the lowest 2.5%
+<h3 id="A-bootstrap-confidence-interval-for-the-slope">A bootstrap confidence interval for the slope<a class="anchor-link" data-pagefind-ignore href="#A-bootstrap-confidence-interval-for-the-slope">¶</a></h3><p>A 95% confidence interval is just the <strong>middle 95%</strong> of that bootstrap pile — cut off the lowest 2.5%
 and the highest 2.5%.</p>
 </div>
 </div>
@@ -8162,7 +8162,7 @@ between about 102 and 121 dollars. Zero is not in that range.
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="3)-The-textbook-formula-%E2%80%94-and-reading-the-regression-table">3) The textbook formula — and reading the regression table<a class="anchor-link" href="#3)-The-textbook-formula-%E2%80%94-and-reading-the-regression-table">¶</a></h2><p>Statisticians don't bootstrap every time; there's a classic formula for the standard error of the
+<h2 id="3)-The-textbook-formula-%E2%80%94-and-reading-the-regression-table">3) The textbook formula — and reading the regression table<a class="anchor-link" data-pagefind-ignore href="#3)-The-textbook-formula-%E2%80%94-and-reading-the-regression-table">¶</a></h2><p>Statisticians don't bootstrap every time; there's a classic formula for the standard error of the
 slope,</p>
 <p>$$\text{SE}(b_1) = \frac{s_e}{\sqrt{\sum (x_i-\bar{x})^2}},$$</p>
 <p>where $s_e$ is the spread of the <strong>residuals</strong> (each home's leftover gap — its actual price minus the
@@ -8317,7 +8317,7 @@ homes represent, each additional square foot of living area is associated with b
 flagship</strong> — the 95% is a property of the <em>method's long-run hit rate</em>, not a probability about this one
 interval.) Because the entire interval is <strong>positive and far from 0</strong>, "no relationship" is not a
 credible story.</p>
-<h3 id="Do-the-two-methods-agree?">Do the two methods agree?<a class="anchor-link" href="#Do-the-two-methods-agree?">¶</a></h3><p>We now have two confidence intervals for the same slope: the <strong>bootstrap</strong> one we simulated, and the
+<h3 id="Do-the-two-methods-agree?">Do the two methods agree?<a class="anchor-link" data-pagefind-ignore href="#Do-the-two-methods-agree?">¶</a></h3><p>We now have two confidence intervals for the same slope: the <strong>bootstrap</strong> one we simulated, and the
 <strong>formula</strong> one from statsmodels. Honest methods should roughly agree — let's check.</p>
 </div>
 </div>
@@ -8365,9 +8365,9 @@ credible story.</p>
 <strong>wider</strong>, and the bootstrap standard error (~4.7) is more than <strong>double</strong> the formula's (~2.07). When
 an honest simulation and a textbook formula disagree like this, one of them is leaning on an assumption
 that the data is breaking. To find out which, we open up the <strong>residuals</strong>.</p>
-<h2 id="4)-Residual-diagnostics-%E2%80%94-checking-the-fine-print">4) Residual diagnostics — checking the fine print<a class="anchor-link" href="#4)-Residual-diagnostics-%E2%80%94-checking-the-fine-print">¶</a></h2><p>The slope estimate $b_1$ is trustworthy on its own, but the <strong>standard error, t, p-value, and CI</strong> all
+<h2 id="4)-Residual-diagnostics-%E2%80%94-checking-the-fine-print">4) Residual diagnostics — checking the fine print<a class="anchor-link" data-pagefind-ignore href="#4)-Residual-diagnostics-%E2%80%94-checking-the-fine-print">¶</a></h2><p>The slope estimate $b_1$ is trustworthy on its own, but the <strong>standard error, t, p-value, and CI</strong> all
 ride on a few assumptions about the residuals $e_i = y_i - \hat{y}_i$. Two pictures check most of them.</p>
-<h3 id="Diagnostic-1-%E2%80%94-residuals-vs.-fitted-(the-funnel-test)">Diagnostic 1 — residuals vs. fitted (the funnel test)<a class="anchor-link" href="#Diagnostic-1-%E2%80%94-residuals-vs.-fitted-(the-funnel-test)">¶</a></h3><p>Plot each home's residual against its predicted price. What you <strong>want</strong> is a shapeless, horizontal band
+<h3 id="Diagnostic-1-%E2%80%94-residuals-vs.-fitted-(the-funnel-test)">Diagnostic 1 — residuals vs. fitted (the funnel test)<a class="anchor-link" data-pagefind-ignore href="#Diagnostic-1-%E2%80%94-residuals-vs.-fitted-(the-funnel-test)">¶</a></h3><p>Plot each home's residual against its predicted price. What you <strong>want</strong> is a shapeless, horizontal band
 of constant thickness around 0. That would mean the leftover scatter is the same size everywhere — an
 assumption with a name: <strong>homoscedasticity</strong> ("equal scatter"). A <strong>curve</strong> signals the straight line is
 the wrong shape; a <strong>funnel</strong> that fans open signals <strong>heteroscedasticity</strong> ("unequal scatter"), which
@@ -8482,7 +8482,7 @@ less certain than the classic OLS table claimed. The slope itself is unchanged.
 2.07. The good news: even with the honest, wider interval, the slope is <em>still</em> overwhelmingly far from
 0 — "area predicts price" survives easily. The funnel didn't change <em>whether</em> the relationship is real;
 it changed <em>how precisely</em> we can pin the number down.</p>
-<h3 id="Diagnostic-2-%E2%80%94-the-normal-Q-Q-plot-of-residuals">Diagnostic 2 — the normal Q-Q plot of residuals<a class="anchor-link" href="#Diagnostic-2-%E2%80%94-the-normal-Q-Q-plot-of-residuals">¶</a></h3><p>The second assumption behind the t-based p-value is that the residuals are roughly <strong>normally
+<h3 id="Diagnostic-2-%E2%80%94-the-normal-Q-Q-plot-of-residuals">Diagnostic 2 — the normal Q-Q plot of residuals<a class="anchor-link" data-pagefind-ignore href="#Diagnostic-2-%E2%80%94-the-normal-Q-Q-plot-of-residuals">¶</a></h3><p>The second assumption behind the t-based p-value is that the residuals are roughly <strong>normally
 distributed</strong>. A <strong>Q-Q (quantile-quantile) plot</strong> checks this by sorting the residuals and plotting them
 against the values a perfect normal would produce. If the residuals are normal, the dots fall on a
 straight diagonal; <strong>bent ends</strong> (especially upward at the top right) reveal <strong>heavy tails</strong> — a few
@@ -8531,7 +8531,7 @@ much more expensive than a normal model expects (the heavy right tail of house p
 homes the Central Limit Theorem keeps the test for the <em>slope</em> robust to this — large samples forgive
 non-normal residuals. Where it bites is <strong>individual prediction intervals</strong> at the high end, which lean
 directly on the normal-tail assumption. That's the bridge to our last idea.</p>
-<h2 id="5)-Two-very-different-%22intervals%22-for-a-prediction">5) Two very different "intervals" for a prediction<a class="anchor-link" href="#5)-Two-very-different-%22intervals%22-for-a-prediction">¶</a></h2><p>Suppose a 2,000-sq-ft home comes on the market. There are <strong>two</strong> honest questions, and they have very
+<h2 id="5)-Two-very-different-%22intervals%22-for-a-prediction">5) Two very different "intervals" for a prediction<a class="anchor-link" data-pagefind-ignore href="#5)-Two-very-different-%22intervals%22-for-a-prediction">¶</a></h2><p>Suppose a 2,000-sq-ft home comes on the market. There are <strong>two</strong> honest questions, and they have very
 different answers:</p>
 <ul>
 <li><strong>Confidence interval for the mean response</strong> — "what is the <strong>average</strong> price of <em>all</em> 2,000-sq-ft
@@ -8637,7 +8637,7 @@ single home can stray a lot from the line. And here the funnel returns to bite: 
 right size for ordinary homes but <strong>too narrow for the priciest ones</strong>. That is the concrete cost of the
 Ames funnel — naive prediction intervals are untrustworthy at the high end, which a residual plot warns
 you about <em>before</em> you quote a buyer a number.</p>
-<h2 id="Now-you-try">Now you try<a class="anchor-link" href="#Now-you-try">¶</a></h2><p>Predict first, then change a number and re-run:</p>
+<h2 id="Now-you-try">Now you try<a class="anchor-link" data-pagefind-ignore href="#Now-you-try">¶</a></h2><p>Predict first, then change a number and re-run:</p>
 <ol>
 <li><p><strong>Re-roll the bootstrap.</strong> Change <code>np.random.default_rng(20)</code> to another seed and re-run sections 2-3.
 Does the bootstrap CI for the slope shift much? About how many of your 4,000 resampled slopes ever
@@ -8656,7 +8656,7 @@ Which gets the wider prediction interval, and does the funnel make you trust the
 residuals-vs-fitted plot. Is the funnel tamer? (Logging often equalizes scatter on skewed money data.)</p>
 </li>
 </ol>
-<h2 id="What-you-learned">What you learned<a class="anchor-link" href="#What-you-learned">¶</a></h2><ul>
+<h2 id="What-you-learned">What you learned<a class="anchor-link" data-pagefind-ignore href="#What-you-learned">¶</a></h2><ul>
 <li>The sample slope $b_1$ is an <strong>estimate</strong> of an unseen <strong>population slope</strong> $\beta_1$; like any
 estimate it has a <strong>sampling distribution</strong> and a <strong>standard error</strong>.</li>
 <li><strong>Resampling (bootstrap)</strong> builds that sampling distribution directly: re-fit the line on many

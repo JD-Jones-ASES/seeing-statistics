@@ -7823,7 +7823,7 @@ a.anchor-link {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h1 id="ANOVA-on-a-different-dataset:-six-chicken-feeds">ANOVA on a different dataset: six chicken feeds<a class="anchor-link" href="#ANOVA-on-a-different-dataset:-six-chicken-feeds">¶</a></h1><p><em>Part 2 · Lesson 16 · another dataset  ·  data: Chickwts</em></p>
+<h1 id="ANOVA-on-a-different-dataset:-six-chicken-feeds">ANOVA on a different dataset: six chicken feeds<a class="anchor-link" data-pagefind-ignore href="#ANOVA-on-a-different-dataset:-six-chicken-feeds">¶</a></h1><p><em>Part 2 · Lesson 16 · another dataset  ·  data: Chickwts</em></p>
 <p><em>↩ A companion to <a href="16-anova.html">Lesson 16: Comparing many groups: ANOVA</a>.</em></p>
 <p><strong>↩ Back:</strong> <a href="16-anova.html">Lesson 16: Comparing many groups: ANOVA</a>  ·  <a href="index.html">↑ Course map</a>  ·  <strong>Also:</strong> <a href="16-anova~the-code.html">The code behind it →</a></p>
 <p>The core lesson ran <strong>one-way ANOVA</strong> on <strong>three</strong> penguin species. Here we keep the <em>exact same ideas</em>
@@ -7977,7 +7977,7 @@ Run each grey cell with <strong>Shift+Enter</strong>, then tinker.</p>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="1)-The-question,-and-the-wrong-way-to-answer-it">1) The question, and the wrong way to answer it<a class="anchor-link" href="#1)-The-question,-and-the-wrong-way-to-answer-it">¶</a></h2><p>We want to know: <strong>does mean chick weight differ among the six feeds?</strong> The six sample means above are
+<h2 id="1)-The-question,-and-the-wrong-way-to-answer-it">1) The question, and the wrong way to answer it<a class="anchor-link" data-pagefind-ignore href="#1)-The-question,-and-the-wrong-way-to-answer-it">¶</a></h2><p>We want to know: <strong>does mean chick weight differ among the six feeds?</strong> The six sample means above are
 clearly not identical — sunflower and casein chicks look heavy (~320–330 g), horsebean chicks look
 light (~160 g) — but sample means <em>always</em> differ a little just by luck. The real question is whether
 those differences are <strong>bigger than sampling noise</strong>.</p>
@@ -8061,7 +8061,7 @@ them correlated. So let's not take the formula on faith — let's <strong>simula
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="2)-The-multiple-comparisons-problem-%E2%80%94-seen,-not-just-stated">2) The multiple-comparisons problem — <em>seen</em>, not just stated<a class="anchor-link" href="#2)-The-multiple-comparisons-problem-%E2%80%94-seen,-not-just-stated">¶</a></h2><p>Here is the cleanest demonstration. We build a world where <strong>there is no real difference at all</strong>:
+<h2 id="2)-The-multiple-comparisons-problem-%E2%80%94-seen,-not-just-stated">2) The multiple-comparisons problem — <em>seen</em>, not just stated<a class="anchor-link" data-pagefind-ignore href="#2)-The-multiple-comparisons-problem-%E2%80%94-seen,-not-just-stated">¶</a></h2><p>Here is the cleanest demonstration. We build a world where <strong>there is no real difference at all</strong>:
 every "group" is drawn from the <em>same</em> normal distribution. Then we run all the pairwise t-tests and
 ask: <em>did at least one cry "significant" by accident?</em></p>
 <p>That "at least one false alarm" event is the <strong>family-wise error rate</strong> (FWER) — the chance the whole
@@ -8207,7 +8207,7 @@ but both shoot far past 5% — and at our k = 6 the bound is the ~54% we compute
 <p>This is <em>why</em> we don't spray 15 t-tests across every pair of feeds. We need a <strong>single</strong> test that asks
 one honest question — "is <strong>any</strong> feed different?" — at one controlled error rate of 5%. That test is
 the <strong>one-way ANOVA</strong>.</p>
-<h2 id="3)-The-idea-behind-ANOVA:-split-the-variation-in-two">3) The idea behind ANOVA: split the variation in two<a class="anchor-link" href="#3)-The-idea-behind-ANOVA:-split-the-variation-in-two">¶</a></h2><p><strong>ANOVA</strong> stands for <strong>AN</strong>alysis <strong>O</strong>f <strong>VA</strong>riance. The name sounds odd — we're comparing <em>means</em>,
+<h2 id="3)-The-idea-behind-ANOVA:-split-the-variation-in-two">3) The idea behind ANOVA: split the variation in two<a class="anchor-link" data-pagefind-ignore href="#3)-The-idea-behind-ANOVA:-split-the-variation-in-two">¶</a></h2><p><strong>ANOVA</strong> stands for <strong>AN</strong>alysis <strong>O</strong>f <strong>VA</strong>riance. The name sounds odd — we're comparing <em>means</em>,
 so why analyze <em>variance</em>? The trick is that we can answer "do the means differ?" by comparing <strong>two
 kinds of spread</strong>:</p>
 <ul>
@@ -8241,7 +8241,7 @@ the follow-up question in section 6.)</li>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="The-math,-term-by-term">The math, term by term<a class="anchor-link" href="#The-math,-term-by-term">¶</a></h3><p>Let there be $k$ groups, group $j$ having $n_j$ observations with mean $\bar{x}_j$, and let $\bar{x}$
+<h3 id="The-math,-term-by-term">The math, term by term<a class="anchor-link" data-pagefind-ignore href="#The-math,-term-by-term">¶</a></h3><p>Let there be $k$ groups, group $j$ having $n_j$ observations with mean $\bar{x}_j$, and let $\bar{x}$
 be the grand mean of all $N$ observations. We add up squared distances ("sums of squares"):</p>
 <p>$$SS_{\text{between}} = \sum_{j=1}^{k} n_j(\bar{x}_j - \bar{x})^2,
   \qquad
@@ -8377,7 +8377,7 @@ that travels with species. Chickwts is a <strong>designed experiment</strong>: t
 each chick to a feed, which (on average) balances every other trait across the groups. So a significant
 ANOVA here licenses the strong, causal sentence "<strong>the feed changes the weight</strong>," not merely "weight
 and feed are associated." Same test, much stronger conclusion — because of <em>how the data was made</em>.</p>
-<h2 id="4)-Where-does-the-F-distribution-come-from?">4) Where does the F-distribution come from?<a class="anchor-link" href="#4)-Where-does-the-F-distribution-come-from?">¶</a></h2><p>The p-value answers: <em>if all feeds truly had the same mean ($H_0$), how often would random sampling
+<h2 id="4)-Where-does-the-F-distribution-come-from?">4) Where does the F-distribution come from?<a class="anchor-link" data-pagefind-ignore href="#4)-Where-does-the-F-distribution-come-from?">¶</a></h2><p>The p-value answers: <em>if all feeds truly had the same mean ($H_0$), how often would random sampling
 hand us an $F$ this large or larger?</em> The reference curve is the <strong>F-distribution</strong>, which has <strong>two</strong>
 degrees-of-freedom parameters — $df_{\text{between}} = k-1 = 5$ on top and $df_{\text{within}} = N-k$
 on the bottom.</p>
@@ -8486,7 +8486,7 @@ can trust the formula's p-value. And our real $F \approx 15$ (green line) is far
 everything the null worlds produced. Unlike the penguins, where $F \approx 343$ flew completely off the
 chart, here you can actually <em>see</em> the observed $F$ sitting at the tail's edge — a good reminder that an
 $F$ of 15 is already overwhelming evidence even though it is nowhere near 343.</p>
-<h3 id="See-it:-group-means-and-a-boxplot">See it: group means and a boxplot<a class="anchor-link" href="#See-it:-group-means-and-a-boxplot">¶</a></h3><p>A picture makes the same point your $F$-statistic does. The spread of the <em>colored feed means</em> (the
+<h3 id="See-it:-group-means-and-a-boxplot">See it: group means and a boxplot<a class="anchor-link" data-pagefind-ignore href="#See-it:-group-means-and-a-boxplot">¶</a></h3><p>A picture makes the same point your $F$-statistic does. The spread of the <em>colored feed means</em> (the
 between-group signal) is large compared with the <em>height of each box</em> (the within-group noise).</p>
 </div>
 </div>
@@ -8543,7 +8543,7 @@ between-group signal) is large compared with the <em>height of each box</em> (th
 mean threads between them — that vertical spread of dots <em>is</em> the between-group signal. On the right,
 each box is only moderately tall — that <em>is</em> the within-group noise. Big gaps between, modest spread
 within: exactly the recipe for a large $F$.</p>
-<h2 id="5)-Sanity-check:-ANOVA-with-two-groups-is-the-two-sample-t-test">5) Sanity check: ANOVA with two groups <em>is</em> the two-sample t-test<a class="anchor-link" href="#5)-Sanity-check:-ANOVA-with-two-groups-is-the-two-sample-t-test">¶</a></h2><p>ANOVA generalizes the two-sample t-test you already know. With exactly <strong>two</strong> groups they are the
+<h2 id="5)-Sanity-check:-ANOVA-with-two-groups-is-the-two-sample-t-test">5) Sanity check: ANOVA with two groups <em>is</em> the two-sample t-test<a class="anchor-link" data-pagefind-ignore href="#5)-Sanity-check:-ANOVA-with-two-groups-is-the-two-sample-t-test">¶</a></h2><p>ANOVA generalizes the two-sample t-test you already know. With exactly <strong>two</strong> groups they are the
 <em>same test</em>, related by a clean identity: $F = t^2$, and the two p-values are identical. Let's prove it
 on the two heaviest feeds, casein vs sunflower.</p>
 </div>
@@ -8598,7 +8598,7 @@ are statistically indistinguishable -- a preview of the post-hoc results below.
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="6)-ANOVA-said-%22at-least-one-differs%22-%E2%80%94-but-which-ones?-(Tukey-HSD)">6) ANOVA said "at least one differs" — but <em>which</em> ones? (Tukey HSD)<a class="anchor-link" href="#6)-ANOVA-said-%22at-least-one-differs%22-%E2%80%94-but-which-ones?-(Tukey-HSD)">¶</a></h2><p>A significant ANOVA is an <strong>omnibus</strong> result: it tells you <em>that</em> the means aren't all equal, not
+<h2 id="6)-ANOVA-said-%22at-least-one-differs%22-%E2%80%94-but-which-ones?-(Tukey-HSD)">6) ANOVA said "at least one differs" — but <em>which</em> ones? (Tukey HSD)<a class="anchor-link" data-pagefind-ignore href="#6)-ANOVA-said-%22at-least-one-differs%22-%E2%80%94-but-which-ones?-(Tukey-HSD)">¶</a></h2><p>A significant ANOVA is an <strong>omnibus</strong> result: it tells you <em>that</em> the means aren't all equal, not
 <em>which</em> pairs differ. Now we <em>do</em> want the pairwise comparisons — but if we just run 15 raw t-tests
 we're back to the ~54% false-alarm trap from sections 1–2.</p>
 <p>The fix is a <strong>post-hoc</strong> (Latin for "after this") test that compares all pairs <strong>while keeping the
@@ -8731,7 +8731,7 @@ overlap sunflower's shaded reference region differ significantly from sunflower.
 band overlaps it (statistically tied with sunflower), while horsebean and linseed sit far to the left,
 clear of the shading — significantly lighter. That single picture captures what 15 separate t-tests
 would have tried (and risked corrupting) to tell you, all at one honest 5% error rate.</p>
-<h2 id="7)-The-fine-print:-ANOVA's-assumptions">7) The fine print: ANOVA's assumptions<a class="anchor-link" href="#7)-The-fine-print:-ANOVA's-assumptions">¶</a></h2><p>Like every test, ANOVA trusts a few conditions. Worth knowing what they are and how to eyeball them:</p>
+<h2 id="7)-The-fine-print:-ANOVA's-assumptions">7) The fine print: ANOVA's assumptions<a class="anchor-link" data-pagefind-ignore href="#7)-The-fine-print:-ANOVA's-assumptions">¶</a></h2><p>Like every test, ANOVA trusts a few conditions. Worth knowing what they are and how to eyeball them:</p>
 <ol>
 <li><strong>Independence</strong> — observations don't influence each other (each chick weighed once, and — crucially
 here — <em>randomly assigned</em> to its feed). This is about <em>how the data was collected</em>; no plot can
@@ -8820,7 +8820,7 @@ actually <em>rejected</em> equal variances ($p \approx 0.006$) and pushed us tow
 chicks, plain one-way ANOVA's conditions hold up, the group sizes are nearly balanced (10–14 each), and
 the omnibus signal is strong. The "feed matters, and here is the ranking" conclusion is on solid
 ground.</p>
-<h2 id="Now-you-try">Now you try<a class="anchor-link" href="#Now-you-try">¶</a></h2><p>Predict first, then change a number and re-run:</p>
+<h2 id="Now-you-try">Now you try<a class="anchor-link" data-pagefind-ignore href="#Now-you-try">¶</a></h2><p>Predict first, then change a number and re-run:</p>
 <ol>
 <li><p><strong>Feel the trap at six and beyond.</strong> In section 2, change the loop to <code>[2, 6, 15, 30]</code>. Before
 running, guess: at 30 identical groups, will the family-wise false-alarm rate be above or below 99%?
@@ -8844,7 +8844,7 @@ FWER percentages move much, or are they stable across seeds? (They should be sta
 makes it a <em>rate</em>.)</p>
 </li>
 </ol>
-<h2 id="What-you-learned">What you learned<a class="anchor-link" href="#What-you-learned">¶</a></h2><ul>
+<h2 id="What-you-learned">What you learned<a class="anchor-link" data-pagefind-ignore href="#What-you-learned">¶</a></h2><ul>
 <li><strong>Running many pairwise t-tests inflates the false-positive rate</strong>, and <em>more groups makes it much
 worse</em>: six feeds force <strong>15</strong> comparisons, giving a roughly $1-0.95^{15} \approx 54\%$ chance of at
 least one false "significant" even when every feed is identical — versus only ~14% for the penguins'

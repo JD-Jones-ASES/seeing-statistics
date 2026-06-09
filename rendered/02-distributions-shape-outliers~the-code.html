@@ -7823,7 +7823,7 @@ a.anchor-link {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h1 id="The-code-behind-it:-histograms,-skew-&amp;-the-IQR-rule-in-code">The code behind it: histograms, skew &amp; the IQR rule in code<a class="anchor-link" href="#The-code-behind-it:-histograms,-skew-&amp;-the-IQR-rule-in-code">¶</a></h1><p><em>Part 1 · Lesson 2 · the code behind it  ·  data: Old Faithful · Lending Club (same as Lesson 2)</em></p>
+<h1 id="The-code-behind-it:-histograms,-skew-&amp;-the-IQR-rule-in-code">The code behind it: histograms, skew &amp; the IQR rule in code<a class="anchor-link" data-pagefind-ignore href="#The-code-behind-it:-histograms,-skew-&amp;-the-IQR-rule-in-code">¶</a></h1><p><em>Part 1 · Lesson 2 · the code behind it  ·  data: Old Faithful · Lending Club (same as Lesson 2)</em></p>
 <p><em>↩ A companion to <a href="02-distributions-shape-outliers.html">Lesson 2: Distributions: shape, skew &amp; outliers</a>.</em></p>
 <p><strong>↩ Back:</strong> <a href="02-distributions-shape-outliers.html">Lesson 2: Distributions: shape, skew &amp; outliers</a>  ·  <a href="index.html">↑ Course map</a>  ·  <strong>Also:</strong> <a href="02-distributions-shape-outliers~another-dataset.html">Another dataset →</a></p>
 <p><strong>In Lesson 2 you read shape off the data with one-liners</strong> — <code>e.skew()</code>, <code>income.quantile([.25, .75])</code>,
@@ -7864,7 +7864,7 @@ compute it in Python</strong>. We'll go in the order a programmer actually works
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="1)-The-goal">1) The goal<a class="anchor-link" href="#1)-The-goal">¶</a></h2><p>By the end of this notebook you'll have built the three tools Lesson 2 used to read the <em>shape</em> of data:
+<h2 id="1)-The-goal">1) The goal<a class="anchor-link" data-pagefind-ignore href="#1)-The-goal">¶</a></h2><p>By the end of this notebook you'll have built the three tools Lesson 2 used to read the <em>shape</em> of data:
 a <strong>frequency table</strong> (and the histogram that draws it), a <strong>skewness</strong> number from its formula, and the
 <strong>1.5 × IQR outlier fence</strong> — then wrapped that fence as your own reusable function. Nothing here needs new
 statistics; everything is the Python <em>underneath</em> the one-liners you already ran.</p>
@@ -7957,7 +7957,7 @@ Lending Club: shape (10000, 55)
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="2)-The-data-in-code">2) The data in code<a class="anchor-link" href="#2)-The-data-in-code">¶</a></h2><p>Before any statistics, a programmer <em>interrogates the object</em>: what type is it, how big is it, what are the
+<h2 id="2)-The-data-in-code">2) The data in code<a class="anchor-link" data-pagefind-ignore href="#2)-The-data-in-code">¶</a></h2><p>Before any statistics, a programmer <em>interrogates the object</em>: what type is it, how big is it, what are the
 columns, what do the first rows look like? Four habits worth keeping:</p>
 <ul>
 <li><code>.shape</code> → <code>(rows, columns)</code> as a tuple.</li>
@@ -8071,7 +8071,7 @@ dtype: object
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="Selecting-a-column-and-a-row-mask">Selecting a column and a row mask<a class="anchor-link" href="#Selecting-a-column-and-a-row-mask">¶</a></h3><ul>
+<h3 id="Selecting-a-column-and-a-row-mask">Selecting a column and a row mask<a class="anchor-link" data-pagefind-ignore href="#Selecting-a-column-and-a-row-mask">¶</a></h3><ul>
 <li><strong>One column</strong> → <code>faithful['eruptions']</code> gives a <code>Series</code> of eruption lengths in minutes.</li>
 <li><strong>A boolean mask</strong> → <code>e &gt; 3</code> makes a column of <code>True</code>/<code>False</code>; the <strong>mean of a True/False column is just the
 proportion that are <code>True</code></strong>, and <code>.sum()</code> counts them. This filter-and-count pattern is the single most
@@ -8122,9 +8122,9 @@ eruptions longer than 3 min: 175 of 272  (64%)
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="3)-Build-it-step-by-step">3) Build it step by step<a class="anchor-link" href="#3)-Build-it-step-by-step">¶</a></h2><p>Now the heart of it. Each tool is a one-line library call <em>and</em> a short formula — we'll write the formula in
+<h2 id="3)-Build-it-step-by-step">3) Build it step by step<a class="anchor-link" data-pagefind-ignore href="#3)-Build-it-step-by-step">¶</a></h2><p>Now the heart of it. Each tool is a one-line library call <em>and</em> a short formula — we'll write the formula in
 NumPy and check the two agree. Once you've built it, the library call is no longer a mystery box.</p>
-<h3 id="A-frequency-table-from-scratch">A frequency table from scratch<a class="anchor-link" href="#A-frequency-table-from-scratch">¶</a></h3><p>A <strong>frequency table</strong> chops the number line into equal slices ("bins") and counts how many values fall in
+<h3 id="A-frequency-table-from-scratch">A frequency table from scratch<a class="anchor-link" data-pagefind-ignore href="#A-frequency-table-from-scratch">¶</a></h3><p>A <strong>frequency table</strong> chops the number line into equal slices ("bins") and counts how many values fall in
 each. First we <em>choose the bin edges</em> (here, every half-minute), then count. <code>np.histogram</code> does the counting
 for us — and it's worth seeing it return exactly the same tallies as pandas' <code>pd.cut(...).value_counts()</code>.</p>
 </div>
@@ -8192,7 +8192,7 @@ eruptions
 <p>Look at the <code>bar</code> column: two crowds, a cluster of short eruptions near 2 minutes and a bigger cluster of long
 ones near 4 to 4.5, separated by a near-empty valley around 3. A distribution with two peaks like this is
 <strong>bimodal</strong> ("two modes") — and the table already shows it before we draw a single bar.</p>
-<h3 id="A-histogram-is-just-bars-over-that-table">A histogram is just bars over that table<a class="anchor-link" href="#A-histogram-is-just-bars-over-that-table">¶</a></h3><p>A histogram is <em>nothing more</em> than a bar chart of the frequency table. To prove it, we won't call <code>ax.hist</code>
+<h3 id="A-histogram-is-just-bars-over-that-table">A histogram is just bars over that table<a class="anchor-link" data-pagefind-ignore href="#A-histogram-is-just-bars-over-that-table">¶</a></h3><p>A histogram is <em>nothing more</em> than a bar chart of the frequency table. To prove it, we won't call <code>ax.hist</code>
 — we'll draw the bars ourselves with <code>ax.bar</code>, one bar per bin, as tall as that bin's count. The bin
 <strong>centers</strong> sit halfway between consecutive edges, and the <strong>width</strong> is the gap between edges.</p>
 </div>
@@ -8245,7 +8245,7 @@ count-then-bar for you in one call — there is no magic underneath.
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="Skew,-from-its-formula">Skew, from its formula<a class="anchor-link" href="#Skew,-from-its-formula">¶</a></h3><p>Now switch to <strong>Lending Club</strong> incomes — a textbook <strong>right skew</strong> (most people cluster low, a long tail of
+<h3 id="Skew,-from-its-formula">Skew, from its formula<a class="anchor-link" data-pagefind-ignore href="#Skew,-from-its-formula">¶</a></h3><p>Now switch to <strong>Lending Club</strong> incomes — a textbook <strong>right skew</strong> (most people cluster low, a long tail of
 high earners stretches right). <strong>Skewness</strong> is the <em>third standardized moment</em>: standardize each value to a
 z-score, cube it, average. Cubing keeps the sign, so values far out on one side dominate and decide which way
 it tips:</p>
@@ -8307,7 +8307,7 @@ pandas income.skew(): 9.034492  (bias-corrected, so it differs slightly — that
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="The-1.5-%C3%97-IQR-outlier-fence,-from-the-formula">The 1.5 × IQR outlier fence, from the formula<a class="anchor-link" href="#The-1.5-%C3%97-IQR-outlier-fence,-from-the-formula">¶</a></h3><p>How far is "too far" out in the tail? The standard automatic flag uses the <strong>IQR</strong> (interquartile range, the
+<h3 id="The-1.5-%C3%97-IQR-outlier-fence,-from-the-formula">The 1.5 × IQR outlier fence, from the formula<a class="anchor-link" data-pagefind-ignore href="#The-1.5-%C3%97-IQR-outlier-fence,-from-the-formula">¶</a></h3><p>How far is "too far" out in the tail? The standard automatic flag uses the <strong>IQR</strong> (interquartile range, the
 width of the middle 50%). With quartiles $Q_1$ (25th percentile) and $Q_3$ (75th percentile):</p>
 <p>$$\text{IQR} = Q_3 - Q_1, \qquad \text{lower fence} = Q_1 - 1.5\,\text{IQR}, \qquad \text{upper fence} = Q_3 + 1.5\,\text{IQR}.$$</p>
 <p><code>np.percentile</code> and pandas' <code>Series.quantile</code> both give the quartiles (and should agree). Then the fences are
@@ -8380,7 +8380,7 @@ money data the rule fires only on the long high side.</p>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="4)-The-idiom-%E2%80%94-a-mask-vs.-a-loop,-and-binning">4) The idiom — a mask vs. a loop, and binning<a class="anchor-link" href="#4)-The-idiom-%E2%80%94-a-mask-vs.-a-loop,-and-binning">¶</a></h2><h3 id="Counting-outliers:-vectorized-mask-vs.-a-Python-loop">Counting outliers: vectorized mask vs. a Python loop<a class="anchor-link" href="#Counting-outliers:-vectorized-mask-vs.-a-Python-loop">¶</a></h3><p>You <em>could</em> count the outliers with a Python <code>for</code> loop. It gives the same answer but is slower and noisier to
+<h2 id="4)-The-idiom-%E2%80%94-a-mask-vs.-a-loop,-and-binning">4) The idiom — a mask vs. a loop, and binning<a class="anchor-link" data-pagefind-ignore href="#4)-The-idiom-%E2%80%94-a-mask-vs.-a-loop,-and-binning">¶</a></h2><h3 id="Counting-outliers:-vectorized-mask-vs.-a-Python-loop">Counting outliers: vectorized mask vs. a Python loop<a class="anchor-link" data-pagefind-ignore href="#Counting-outliers:-vectorized-mask-vs.-a-Python-loop">¶</a></h3><p>You <em>could</em> count the outliers with a Python <code>for</code> loop. It gives the same answer but is slower and noisier to
 read. Compare the two — the vectorized boolean mask is the idiom you want.</p>
 </div>
 </div>
@@ -8429,7 +8429,7 @@ match? True
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="Binning:-which-bin-does-each-value-fall-in?">Binning: which bin does each value fall in?<a class="anchor-link" href="#Binning:-which-bin-does-each-value-fall-in?">¶</a></h3><p>Two ways to assign every value to a bin, both from the edges we already chose. <code>pd.cut</code> gives a <strong>labelled
+<h3 id="Binning:-which-bin-does-each-value-fall-in?">Binning: which bin does each value fall in?<a class="anchor-link" data-pagefind-ignore href="#Binning:-which-bin-does-each-value-fall-in?">¶</a></h3><p>Two ways to assign every value to a bin, both from the edges we already chose. <code>pd.cut</code> gives a <strong>labelled
 category</strong> per value (great for tables); <code>np.digitize</code> gives a plain <strong>integer index</strong> per value (great for
 math). Picking the right one is the idiom.</p>
 </div>
@@ -8476,7 +8476,7 @@ same tallies as the frequency table? True
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="5)-Refactor-into-a-reusable-function">5) Refactor into a reusable function<a class="anchor-link" href="#5)-Refactor-into-a-reusable-function">¶</a></h2><p>You computed Q1, Q3, the IQR and the two fences once for income. The programmer's reflex is to <strong>wrap repeated
+<h2 id="5)-Refactor-into-a-reusable-function">5) Refactor into a reusable function<a class="anchor-link" data-pagefind-ignore href="#5)-Refactor-into-a-reusable-function">¶</a></h2><p>You computed Q1, Q3, the IQR and the two fences once for income. The programmer's reflex is to <strong>wrap repeated
 work in a function</strong>: name it, give it inputs, <code>return</code> the result. Then "flag the outliers" is one call you
 can reuse on <em>any</em> numeric column — and the <code>k=1.5</code> is a parameter you can dial.</p>
 </div>
@@ -8551,7 +8551,7 @@ exactly the leap from "writing statistics" to "doing statistics in code."</p>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="6)-Now-you-code">6) Now you code<a class="anchor-link" href="#6)-Now-you-code">¶</a></h2><p>Write the code yourself. Add a new cell (the <strong>+</strong> button in the toolbar) and try each — predict the answer
+<h2 id="6)-Now-you-code">6) Now you code<a class="anchor-link" data-pagefind-ignore href="#6)-Now-you-code">¶</a></h2><p>Write the code yourself. Add a new cell (the <strong>+</strong> button in the toolbar) and try each — predict the answer
 before you run it.</p>
 <ol>
 <li><p><strong>Your own frequency table.</strong> Pick bin edges for income with <code>edges = np.arange(0, 250_000 + 25_000, 25_000)</code>
@@ -8569,7 +8569,7 @@ table from Section 3.</p>
 <code>k=1.5</code> vs <code>k=3.0</code> — does the stricter fence flag fewer? (It should.)</p>
 </li>
 </ol>
-<h2 id="What-you-learned">What you learned<a class="anchor-link" href="#What-you-learned">¶</a></h2><p><strong>Coding</strong></p>
+<h2 id="What-you-learned">What you learned<a class="anchor-link" data-pagefind-ignore href="#What-you-learned">¶</a></h2><p><strong>Coding</strong></p>
 <ul>
 <li>A <code>DataFrame</code> is a table; a column is a <code>Series</code>. Interrogate any new data with <code>.shape</code>, <code>.columns</code>,
 <code>.dtypes</code>, <code>.head()</code>.</li>

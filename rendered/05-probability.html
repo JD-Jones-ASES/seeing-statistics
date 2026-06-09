@@ -7823,7 +7823,7 @@ a.anchor-link {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h1 id="Lesson-5-%E2%80%94-Probability-&amp;-conditional-probability">Lesson 5 — Probability &amp; conditional probability<a class="anchor-link" href="#Lesson-5-%E2%80%94-Probability-&amp;-conditional-probability">¶</a></h1><p><em>Part 1 · Lesson 5 of 20  ·  data: Titanic</em></p>
+<h1 id="Lesson-5-%E2%80%94-Probability-&amp;-conditional-probability">Lesson 5 — Probability &amp; conditional probability<a class="anchor-link" data-pagefind-ignore href="#Lesson-5-%E2%80%94-Probability-&amp;-conditional-probability">¶</a></h1><p><em>Part 1 · Lesson 5 of 20  ·  data: Titanic</em></p>
 <p><strong>←</strong> <a href="04-where-data-comes-from.html">Lesson 4: Where data comes from: sampling &amp; study design</a>  ·  <a href="index.html">↑ Course map</a>  ·  <a href="06-counting.html">Lesson 6: Counting: permutations &amp; combinations</a> <strong>→</strong></p>
 <p><strong>Same idea, another way:</strong> <a href="05-probability~another-dataset.html">Another dataset →</a>  ·  <a href="05-probability~the-code.html">The code behind it →</a></p>
 <p><strong>Welcome.</strong> Probability sounds abstract, so we'll do something concrete instead: <em>count real people.</em> Using the <strong>887 passengers of the Titanic</strong>, we'll see that a probability is just a fraction of a group, that "conditional" means "restrict to a subgroup," and that flipping a conditional around (the first taste of <strong>Bayes</strong>) can change the answer completely. We'll even watch a probability <em>emerge</em> by drawing passengers at random over and over.</p>
@@ -7982,7 +7982,7 @@ a.anchor-link {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="1)-Probability-=-favorable-%C3%B7-total">1) Probability = favorable ÷ total<a class="anchor-link" href="#1)-Probability-=-favorable-%C3%B7-total">¶</a></h2><p>Forget formulas for a second. If I shut my eyes, reach into this list of passengers, and pull one out at random, <strong>what's the chance they survived?</strong> The honest answer is just bookkeeping:</p>
+<h2 id="1)-Probability-=-favorable-%C3%B7-total">1) Probability = favorable ÷ total<a class="anchor-link" data-pagefind-ignore href="#1)-Probability-=-favorable-%C3%B7-total">¶</a></h2><p>Forget formulas for a second. If I shut my eyes, reach into this list of passengers, and pull one out at random, <strong>what's the chance they survived?</strong> The honest answer is just bookkeeping:</p>
 <p>$$P(\text{survived}) = \frac{\text{number who survived}}{\text{total number of passengers}}.$$</p>
 <ul>
 <li><strong>The math:</strong> count the "favorable" outcomes (survivors) and divide by the total.</li>
@@ -8032,7 +8032,7 @@ So about 39% of passengers in this dataset survived.
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="2)-Conditional-probability-%E2%80%94-restrict-to-a-subgroup">2) Conditional probability — <em>restrict to a subgroup</em><a class="anchor-link" href="#2)-Conditional-probability-%E2%80%94-restrict-to-a-subgroup">¶</a></h2><p>The single number above hides a brutal story. Let's ask a sharper question: <em>given that the passenger is a woman, what's the chance she survived?</em> That "given" is the whole idea of <strong>conditional probability</strong>, written $P(A \mid B)$ and read "the probability of $A$ <strong>given</strong> $B$."</p>
+<h2 id="2)-Conditional-probability-%E2%80%94-restrict-to-a-subgroup">2) Conditional probability — <em>restrict to a subgroup</em><a class="anchor-link" data-pagefind-ignore href="#2)-Conditional-probability-%E2%80%94-restrict-to-a-subgroup">¶</a></h2><p>The single number above hides a brutal story. Let's ask a sharper question: <em>given that the passenger is a woman, what's the chance she survived?</em> That "given" is the whole idea of <strong>conditional probability</strong>, written $P(A \mid B)$ and read "the probability of $A$ <strong>given</strong> $B$."</p>
 <ul>
 <li><strong>The math:</strong> there are two equivalent ways to get it.<ol>
 <li><em>Restrict, then count:</em> throw away everyone who isn't in group $B$, then compute the survival fraction among who's left.</li>
@@ -8108,7 +8108,7 @@ P(survived | male)   = 0.1902
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="3)-The-contingency-table:-marginal,-joint-&amp;-conditional-in-one-grid">3) The contingency table: marginal, joint &amp; conditional in one grid<a class="anchor-link" href="#3)-The-contingency-table:-marginal,-joint-&amp;-conditional-in-one-grid">¶</a></h2><p>Every probability we'll touch in this lesson lives inside one little table that cross-tabulates <strong>Sex</strong> against <strong>Survived</strong>. <code>pd.crosstab</code> builds it by counting.</p>
+<h2 id="3)-The-contingency-table:-marginal,-joint-&amp;-conditional-in-one-grid">3) The contingency table: marginal, joint &amp; conditional in one grid<a class="anchor-link" data-pagefind-ignore href="#3)-The-contingency-table:-marginal,-joint-&amp;-conditional-in-one-grid">¶</a></h2><p>Every probability we'll touch in this lesson lives inside one little table that cross-tabulates <strong>Sex</strong> against <strong>Survived</strong>. <code>pd.crosstab</code> builds it by counting.</p>
 </div>
 </div>
 </div>
@@ -8340,7 +8340,7 @@ Match? True   &lt;- the multiplication rule, confirmed by counting.
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="4)-Independence-%E2%80%94-when-knowing-$B$-tells-you-nothing">4) Independence — when knowing $B$ tells you <em>nothing</em><a class="anchor-link" href="#4)-Independence-%E2%80%94-when-knowing-$B$-tells-you-nothing">¶</a></h2><p>Two events are <strong>independent</strong> if conditioning on one doesn't move the other:</p>
+<h2 id="4)-Independence-%E2%80%94-when-knowing-$B$-tells-you-nothing">4) Independence — when knowing $B$ tells you <em>nothing</em><a class="anchor-link" data-pagefind-ignore href="#4)-Independence-%E2%80%94-when-knowing-$B$-tells-you-nothing">¶</a></h2><p>Two events are <strong>independent</strong> if conditioning on one doesn't move the other:</p>
 <p>$$P(A \mid B) = P(A) \quad\Longleftrightarrow\quad P(A \text{ and } B) = P(A)\,P(B).$$</p>
 <ul>
 <li><strong>Meaning:</strong> "independent" = <em>no information leaks</em> between the two. Learning $B$ leaves your bet on $A$ exactly where it was.</li>
@@ -8410,7 +8410,7 @@ Sex MOVES the survival rate a lot; a coin flip barely nudges it.
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="5)-A-conditional-gradient:-survival-by-passenger-class">5) A conditional <em>gradient</em>: survival by passenger class<a class="anchor-link" href="#5)-A-conditional-gradient:-survival-by-passenger-class">¶</a></h2><p>Conditioning isn't limited to two groups. Splitting survival by ticket <strong>class</strong> (1st, 2nd, 3rd) gives three conditional probabilities — and a stark gradient.</p>
+<h2 id="5)-A-conditional-gradient:-survival-by-passenger-class">5) A conditional <em>gradient</em>: survival by passenger class<a class="anchor-link" data-pagefind-ignore href="#5)-A-conditional-gradient:-survival-by-passenger-class">¶</a></h2><p>Conditioning isn't limited to two groups. Splitting survival by ticket <strong>class</strong> (1st, 2nd, 3rd) gives three conditional probabilities — and a stark gradient.</p>
 </div>
 </div>
 </div>
@@ -8475,7 +8475,7 @@ P(survived | Pclass=3) = 0.2444
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="6)-A-first-taste-of-Bayes-%E2%80%94-flipping-the-conditional">6) A first taste of Bayes — flipping the conditional<a class="anchor-link" href="#6)-A-first-taste-of-Bayes-%E2%80%94-flipping-the-conditional">¶</a></h2><p>Here is the subtle trap that fools experts. We found $P(\text{survived} \mid \text{female}) = 0.742$. Does that mean a survivor was probably a woman, $P(\text{female} \mid \text{survived})$? <strong>These are different questions</strong>, and in general</p>
+<h2 id="6)-A-first-taste-of-Bayes-%E2%80%94-flipping-the-conditional">6) A first taste of Bayes — flipping the conditional<a class="anchor-link" data-pagefind-ignore href="#6)-A-first-taste-of-Bayes-%E2%80%94-flipping-the-conditional">¶</a></h2><p>Here is the subtle trap that fools experts. We found $P(\text{survived} \mid \text{female}) = 0.742$. Does that mean a survivor was probably a woman, $P(\text{female} \mid \text{survived})$? <strong>These are different questions</strong>, and in general</p>
 <p>$$P(A \mid B) \ne P(B \mid A).$$</p>
 <p><strong>Bayes' theorem</strong> is the exact recipe for turning one around into the other:</p>
 <p>$$P(\text{female} \mid \text{survived}) = \frac{P(\text{survived} \mid \text{female})\; P(\text{female})}{P(\text{survived})}.$$</p>
@@ -8546,7 +8546,7 @@ Same two events, opposite condition, DIFFERENT numbers. Order matters!
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="7)-Watching-a-probability-happen:-the-long-run-frequency">7) Watching a probability <em>happen</em>: the long-run frequency<a class="anchor-link" href="#7)-Watching-a-probability-happen:-the-long-run-frequency">¶</a></h2><p>We <em>defined</em> probability as a fraction of the whole group. But there's a second, deeper meaning: a probability is the value a relative frequency <strong>settles toward</strong> as you repeat a random draw more and more. This is the <strong>law of large numbers</strong>, and we can literally watch it.</p>
+<h2 id="7)-Watching-a-probability-happen:-the-long-run-frequency">7) Watching a probability <em>happen</em>: the long-run frequency<a class="anchor-link" data-pagefind-ignore href="#7)-Watching-a-probability-happen:-the-long-run-frequency">¶</a></h2><p>We <em>defined</em> probability as a fraction of the whole group. But there's a second, deeper meaning: a probability is the value a relative frequency <strong>settles toward</strong> as you repeat a random draw more and more. This is the <strong>law of large numbers</strong>, and we can literally watch it.</p>
 <p>The experiment: draw passengers one at a time <strong>at random with replacement</strong> (put each back so the deck is always full), and after each draw recompute "fraction of survivors so far." Early on it lurches; with enough draws it homes in on the true $P(\text{survived}) = 0.386$.</p>
 </div>
 </div>
@@ -8617,7 +8617,7 @@ True (whole-group) P(survived)           = 0.3856
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Now-you-try">Now you try<a class="anchor-link" href="#Now-you-try">¶</a></h2><p>Predict the answer first, then change one thing and re-run:</p>
+<h2 id="Now-you-try">Now you try<a class="anchor-link" data-pagefind-ignore href="#Now-you-try">¶</a></h2><p>Predict the answer first, then change one thing and re-run:</p>
 <ol>
 <li><p><strong>First-class women.</strong> Add a new cell (the <strong>+</strong> button in the toolbar), paste this line, and run it with Shift+Enter:</p>
 <pre><code>titanic[(titanic['Sex'] == 'female') &amp; (titanic['Pclass'] == 1)]['Survived'].mean()</code></pre>
@@ -8628,7 +8628,7 @@ True (whole-group) P(survived)           = 0.3856
 <li><p><strong>A real conditional, not a coin.</strong> Repeat §4 but condition on having family aboard: compare <code>titanic[titanic['Siblings/Spouses Aboard'] &gt; 0]['Survived'].mean()</code> to the overall rate. Independent like the coin, or dependent like sex?</p>
 </li>
 </ol>
-<h2 id="What-you-learned">What you learned<a class="anchor-link" href="#What-you-learned">¶</a></h2><ul>
+<h2 id="What-you-learned">What you learned<a class="anchor-link" data-pagefind-ignore href="#What-you-learned">¶</a></h2><ul>
 <li><strong>Probability is favorable ÷ total</strong> — a fraction of a group between 0 and 1. For a 0/1 column it's just the <code>.mean()</code>.</li>
 <li><strong>Conditional probability $P(A\mid B)$</strong> shrinks the world to the subgroup $B$; compute it by restricting-and-counting <em>or</em> as $P(A\text{ and }B)/P(B)$ — same answer.</li>
 <li>A <strong>contingency table</strong> holds <strong>marginal</strong> (edge), <strong>joint</strong> (inner box), and <strong>conditional</strong> (box ÷ margin) probabilities, tied together by the <strong>multiplication rule</strong> $P(A\text{ and }B)=P(A\mid B)P(B)$.</li>

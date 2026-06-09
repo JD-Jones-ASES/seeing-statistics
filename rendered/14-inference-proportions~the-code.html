@@ -7823,7 +7823,7 @@ a.anchor-link {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h1 id="The-code-behind-it:-proportion-inference-from-counts">The code behind it: proportion inference from counts<a class="anchor-link" href="#The-code-behind-it:-proportion-inference-from-counts">¶</a></h1><p><em>Part 2 · Lesson 14 · the code behind it  ·  data: US Births 2014 (same as Lesson 14)</em></p>
+<h1 id="The-code-behind-it:-proportion-inference-from-counts">The code behind it: proportion inference from counts<a class="anchor-link" data-pagefind-ignore href="#The-code-behind-it:-proportion-inference-from-counts">¶</a></h1><p><em>Part 2 · Lesson 14 · the code behind it  ·  data: US Births 2014 (same as Lesson 14)</em></p>
 <p><em>↩ A companion to <a href="14-inference-proportions.html">Lesson 14: Inference for proportions (one &amp; two)</a>.</em></p>
 <p><strong>↩ Back:</strong> <a href="14-inference-proportions.html">Lesson 14: Inference for proportions (one &amp; two)</a>  ·  <a href="index.html">↑ Course map</a>  ·  <strong>Also:</strong> <a href="14-inference-proportions~another-dataset.html">Another dataset →</a></p>
 <p><strong>In Lesson 14 you estimated proportions, wrapped them in confidence intervals, and ran z-tests</strong> — and you
@@ -7865,7 +7865,7 @@ programmer actually works:</p>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="1)-The-goal">1) The goal<a class="anchor-link" href="#1)-The-goal">¶</a></h2><p>By the end of this notebook you'll have written, from the formulas, the whole proportion-inference toolkit the
+<h2 id="1)-The-goal">1) The goal<a class="anchor-link" data-pagefind-ignore href="#1)-The-goal">¶</a></h2><p>By the end of this notebook you'll have written, from the formulas, the whole proportion-inference toolkit the
 core lesson handed you: a sample proportion $\hat{p}$, its <strong>standard error</strong>, a 95% <strong>confidence interval</strong>, a
 <strong>one-proportion z-test</strong> against a benchmark, and the <strong>two-proportion</strong> difference, CI and z-test — each one
 checked against <code>statsmodels</code> so you <em>see</em> your hand calculation land on the library's answer. Nothing here
@@ -7956,7 +7956,7 @@ low-birth-weight baby), and once we turn that into a column of <strong>1s and 0s
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="2)-The-data-in-code">2) The data in code<a class="anchor-link" href="#2)-The-data-in-code">¶</a></h2><p>Before any inference, a programmer <em>interrogates the object</em>: how big is it, what columns matter, what exact
+<h2 id="2)-The-data-in-code">2) The data in code<a class="anchor-link" data-pagefind-ignore href="#2)-The-data-in-code">¶</a></h2><p>Before any inference, a programmer <em>interrogates the object</em>: how big is it, what columns matter, what exact
 labels do they hold? We'll lean on two columns: <strong><code>lowbirthweight</code></strong> (the text label <code>'low'</code> / <code>'not low'</code>)
 and <strong><code>habit</code></strong> (the mother's smoking status). Check the label strings <em>first</em> — your whole count depends on
 matching them exactly.</p>
@@ -8067,7 +8067,7 @@ habit labels         : ['nonsmoker', 'smoker']
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="Counting-successes-with-a-boolean-mask">Counting successes with a boolean mask<a class="anchor-link" href="#Counting-successes-with-a-boolean-mask">¶</a></h3><p>Here is the move the whole lesson rests on. A <strong>"success"</strong> is simply <em>the event we're counting</em> — here, a
+<h3 id="Counting-successes-with-a-boolean-mask">Counting successes with a boolean mask<a class="anchor-link" data-pagefind-ignore href="#Counting-successes-with-a-boolean-mask">¶</a></h3><p>Here is the move the whole lesson rests on. A <strong>"success"</strong> is simply <em>the event we're counting</em> — here, a
 baby labelled <code>'low'</code> (no value judgement implied). The comparison <code>births['lowbirthweight'] == 'low'</code> makes a
 column of <code>True</code>/<code>False</code> — a <strong>boolean mask</strong>. Two facts about that mask do all the work:</p>
 <ul>
@@ -8125,10 +8125,10 @@ So "count the successes" is .sum(), and "what fraction are successes" is .mean()
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="3)-Build-it-step-by-step">3) Build it step by step<a class="anchor-link" href="#3)-Build-it-step-by-step">¶</a></h2><p>Now the heart of it. Each quantity is a short formula; we'll write the formula in NumPy and then check it
+<h2 id="3)-Build-it-step-by-step">3) Build it step by step<a class="anchor-link" data-pagefind-ignore href="#3)-Build-it-step-by-step">¶</a></h2><p>Now the heart of it. Each quantity is a short formula; we'll write the formula in NumPy and then check it
 against <code>statsmodels</code> with <code>np.isclose</code>, printing <strong>match?</strong>. Once you've built it, the library call is no
 longer a mystery box.</p>
-<h3 id="The-standard-error-of-$%5Chat%7Bp%7D$">The standard error of $\hat{p}$<a class="anchor-link" href="#The-standard-error-of-$%5Chat%7Bp%7D$">¶</a></h3><p>The wobble of $\hat{p}$ from sample to sample is the <strong>standard error</strong>:</p>
+<h3 id="The-standard-error-of-$%5Chat%7Bp%7D$">The standard error of $\hat{p}$<a class="anchor-link" data-pagefind-ignore href="#The-standard-error-of-$%5Chat%7Bp%7D$">¶</a></h3><p>The wobble of $\hat{p}$ from sample to sample is the <strong>standard error</strong>:</p>
 <p>$$\text{SE}(\hat{p}) = \sqrt{\dfrac{\hat{p}\,(1-\hat{p})}{n}}.$$</p>
 <p>In code that is one line — <code>np.sqrt(phat * (1 - phat) / n)</code>. (The core lesson <em>proved</em> this formula by
 simulating the sampling distribution; here we just take it and build on it.)</p>
@@ -8171,7 +8171,7 @@ n*p-hat = 81  and  n*(1-p-hat) = 919  -&gt; both &gt;= 10, normal recipe is safe
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="A-95%25-confidence-interval-(the-Wald-interval)">A 95% confidence interval (the Wald interval)<a class="anchor-link" href="#A-95%25-confidence-interval-(the-Wald-interval)">¶</a></h3><p>Because $\hat{p}$ is approximately normal, the interval is the familiar <strong>estimate ± margin</strong>:</p>
+<h3 id="A-95%25-confidence-interval-(the-Wald-interval)">A 95% confidence interval (the Wald interval)<a class="anchor-link" data-pagefind-ignore href="#A-95%25-confidence-interval-(the-Wald-interval)">¶</a></h3><p>Because $\hat{p}$ is approximately normal, the interval is the familiar <strong>estimate ± margin</strong>:</p>
 <p>$$\hat{p} \;\pm\; z^{*}\,\text{SE}, \qquad z^{*} = \texttt{stats.norm.ppf(0.975)} \approx 1.96 \text{ for 95\%}.$$</p>
 <p><code>stats.norm.ppf(0.975)</code> is the <strong>inverse normal</strong> — "the z below which 97.5% of the curve sits" — which leaves
 2.5% in each tail for a 95% interval. Build it, then check it against <code>proportion_confint</code> from statsmodels.</p>
@@ -8229,7 +8229,7 @@ successes are scarce it can be a touch too optimistic, so sturdier variants — 
 <strong>Agresti–Coull</strong> — exist (<code>proportion_confint(..., method='wilson')</code>). With 81 successes here they barely
 differ, but it's good to know the safer tool is one keyword away.</p>
 </blockquote>
-<h3 id="A-one-proportion-z-test-against-a-benchmark">A one-proportion z-test against a benchmark<a class="anchor-link" href="#A-one-proportion-z-test-against-a-benchmark">¶</a></h3><p>Suppose a report claims the national low-birth-weight rate is $p_0 = 0.08$. The test asks whether our sample is
+<h3 id="A-one-proportion-z-test-against-a-benchmark">A one-proportion z-test against a benchmark<a class="anchor-link" data-pagefind-ignore href="#A-one-proportion-z-test-against-a-benchmark">¶</a></h3><p>Suppose a report claims the national low-birth-weight rate is $p_0 = 0.08$. The test asks whether our sample is
 consistent with that. The twist: we <strong>assume the null is true</strong> while testing it, so the SE is built from
 $p_0$, <strong>not</strong> from $\hat{p}$:</p>
 <p>$$z = \dfrac{\hat{p} - p_0}{\sqrt{p_0(1-p_0)/n}}, \qquad
@@ -8286,7 +8286,7 @@ match? True
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="Two-proportions:-smokers-vs.-nonsmokers">Two proportions: smokers vs. nonsmokers<a class="anchor-link" href="#Two-proportions:-smokers-vs.-nonsmokers">¶</a></h3><p>Now the real question — is the low-birth-weight rate different for mothers who smoke? Start, as always, by
+<h3 id="Two-proportions:-smokers-vs.-nonsmokers">Two proportions: smokers vs. nonsmokers<a class="anchor-link" data-pagefind-ignore href="#Two-proportions:-smokers-vs.-nonsmokers">¶</a></h3><p>Now the real question — is the low-birth-weight rate different for mothers who smoke? Start, as always, by
 <em>counting</em>. A boolean mask works per-group too: slice the table by <code>habit</code>, then take <code>.sum()</code> and <code>len(...)</code>
 in each group. We drop the few rows with unknown smoking status first, exactly as the core lesson does.</p>
 </div>
@@ -8339,7 +8339,7 @@ observed difference  p1 - p2 = 0.1482   (14.8 percentage points)
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="Unpooled-SE-for-the-CI;-pooled-SE-for-the-test">Unpooled SE for the CI; pooled SE for the test<a class="anchor-link" href="#Unpooled-SE-for-the-CI;-pooled-SE-for-the-test">¶</a></h3><p>This is the one genuinely subtle point — and it's a <em>coding</em> point as much as a statistics one: the CI and the
+<h3 id="Unpooled-SE-for-the-CI;-pooled-SE-for-the-test">Unpooled SE for the CI; pooled SE for the test<a class="anchor-link" data-pagefind-ignore href="#Unpooled-SE-for-the-CI;-pooled-SE-for-the-test">¶</a></h3><p>This is the one genuinely subtle point — and it's a <em>coding</em> point as much as a statistics one: the CI and the
 test use <strong>different standard errors</strong>.</p>
 <ul>
 <li><strong>Confidence interval</strong> — there is no assumption that the rates are equal, so each group contributes its
@@ -8450,8 +8450,8 @@ match? True
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="4)-The-idiom">4) The idiom<a class="anchor-link" href="#4)-The-idiom">¶</a></h2><p>Three small habits carried this whole notebook. Worth stating plainly, because you'll reuse them constantly.</p>
-<h3 id="Boolean-mask-counting-%E2%80%94-.sum()-and-.mean()">Boolean-mask counting — <code>.sum()</code> and <code>.mean()</code><a class="anchor-link" href="#Boolean-mask-counting-%E2%80%94-.sum()-and-.mean()">¶</a></h3><p>A <code>True</code>/<code>False</code> column is secretly a column of <code>1</code>s and <code>0</code>s. So:</p>
+<h2 id="4)-The-idiom">4) The idiom<a class="anchor-link" data-pagefind-ignore href="#4)-The-idiom">¶</a></h2><p>Three small habits carried this whole notebook. Worth stating plainly, because you'll reuse them constantly.</p>
+<h3 id="Boolean-mask-counting-%E2%80%94-.sum()-and-.mean()">Boolean-mask counting — <code>.sum()</code> and <code>.mean()</code><a class="anchor-link" data-pagefind-ignore href="#Boolean-mask-counting-%E2%80%94-.sum()-and-.mean()">¶</a></h3><p>A <code>True</code>/<code>False</code> column is secretly a column of <code>1</code>s and <code>0</code>s. So:</p>
 <ul>
 <li><strong><code>mask.sum()</code></strong> = how many are <code>True</code> = the <strong>count of successes</strong> ($x$).</li>
 <li><strong><code>mask.mean()</code></strong> = the fraction that are <code>True</code> = the <strong>proportion</strong> ($\hat{p}$).</li>
@@ -8501,7 +8501,7 @@ That is the entire trick behind x, n and p-hat above.
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="Building-a-standard-error-from-its-formula,-and-pooled-vs.-unpooled">Building a standard error from its formula, and pooled vs. unpooled<a class="anchor-link" href="#Building-a-standard-error-from-its-formula,-and-pooled-vs.-unpooled">¶</a></h3><p>Every SE in this lesson is the <em>same shape</em>: a variance term under a <code>np.sqrt</code>. The only choice is <strong>which
+<h3 id="Building-a-standard-error-from-its-formula,-and-pooled-vs.-unpooled">Building a standard error from its formula, and pooled vs. unpooled<a class="anchor-link" data-pagefind-ignore href="#Building-a-standard-error-from-its-formula,-and-pooled-vs.-unpooled">¶</a></h3><p>Every SE in this lesson is the <em>same shape</em>: a variance term under a <code>np.sqrt</code>. The only choice is <strong>which
 variance</strong>:</p>
 <ul>
 <li><strong>one proportion:</strong> <code>phat*(1-phat)/n</code></li>
@@ -8554,7 +8554,7 @@ Same sqrt-of-a-variance shape every time; only the variance inside changes.
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="5)-Refactor-into-reusable-functions">5) Refactor into reusable functions<a class="anchor-link" href="#5)-Refactor-into-reusable-functions">¶</a></h2><p>You've now written the CI math and the two-proportion test math once each. The programmer's reflex is to
+<h2 id="5)-Refactor-into-reusable-functions">5) Refactor into reusable functions<a class="anchor-link" data-pagefind-ignore href="#5)-Refactor-into-reusable-functions">¶</a></h2><p>You've now written the CI math and the two-proportion test math once each. The programmer's reflex is to
 <strong>wrap repeated work in a function</strong>: name it, give it inputs, <code>return</code> the result. Then "confidence interval
 for a proportion" and "two-proportion z-test" are each one call you can reuse on <em>any</em> counts — these births,
 a different split, a different dataset entirely.</p>
@@ -8636,7 +8636,7 @@ already ships these; the point was to <em>build</em> them so you know what's ins
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="6)-Now-you-code">6) Now you code<a class="anchor-link" href="#6)-Now-you-code">¶</a></h2><p>Write the code yourself. Add a new cell (the <strong>+</strong> button in the toolbar) and try each — predict the answer
+<h2 id="6)-Now-you-code">6) Now you code<a class="anchor-link" data-pagefind-ignore href="#6)-Now-you-code">¶</a></h2><p>Write the code yourself. Add a new cell (the <strong>+</strong> button in the toolbar) and try each — predict the answer
 before you run it.</p>
 <ol>
 <li><p><strong>Count from a mask.</strong> Without using <code>proportion_confint</code>, recompute $x$, $n$ and $\hat{p}$ for the
@@ -8660,7 +8660,7 @@ low-birth-weight rate significantly different for mature vs. younger mothers? Ve
 grow?</p>
 </li>
 </ol>
-<h2 id="What-you-learned">What you learned<a class="anchor-link" href="#What-you-learned">¶</a></h2><p><strong>Coding</strong></p>
+<h2 id="What-you-learned">What you learned<a class="anchor-link" data-pagefind-ignore href="#What-you-learned">¶</a></h2><p><strong>Coding</strong></p>
 <ul>
 <li>A <strong>boolean mask</strong> (<code>col == value</code>) is a column of <code>True</code>/<code>False</code>; because <code>True == 1</code>, <strong><code>mask.sum()</code> counts
 successes</strong> and <strong><code>mask.mean()</code> <em>is</em> the proportion</strong> — no loop, no counter. It composes across groups:

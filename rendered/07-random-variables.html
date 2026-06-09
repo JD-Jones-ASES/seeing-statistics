@@ -7823,7 +7823,7 @@ a.anchor-link {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h1 id="Lesson-7-%E2%80%94-Random-variables,-expectation-&amp;-variance">Lesson 7 — Random variables, expectation &amp; variance<a class="anchor-link" href="#Lesson-7-%E2%80%94-Random-variables,-expectation-&amp;-variance">¶</a></h1><p><em>Part 1 · Lesson 7 of 20  ·  data: dice simulation · US Births 2014</em></p>
+<h1 id="Lesson-7-%E2%80%94-Random-variables,-expectation-&amp;-variance">Lesson 7 — Random variables, expectation &amp; variance<a class="anchor-link" data-pagefind-ignore href="#Lesson-7-%E2%80%94-Random-variables,-expectation-&amp;-variance">¶</a></h1><p><em>Part 1 · Lesson 7 of 20  ·  data: dice simulation · US Births 2014</em></p>
 <p><strong>←</strong> <a href="06-counting.html">Lesson 6: Counting: permutations &amp; combinations</a>  ·  <a href="index.html">↑ Course map</a>  ·  <a href="08-binomial-poisson.html">Lesson 8: Binomial &amp; Poisson — counting events</a> <strong>→</strong></p>
 <p><strong>Same idea, another way:</strong> <a href="07-random-variables~another-dataset.html">Another dataset →</a>  ·  <a href="07-random-variables~the-code.html">The code behind it →</a></p>
 <p><strong>Welcome.</strong> A <em>random variable</em> is just a rule that turns the outcome of a chancy
@@ -7891,7 +7891,7 @@ average glide toward its expected value (the famous <em>law of large numbers</em
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="1)-What-is-a-random-variable?">1) What is a random variable?<a class="anchor-link" href="#1)-What-is-a-random-variable?">¶</a></h2><p>A <strong>random variable</strong> (RV) is a rule that assigns a <em>number</em> to each outcome of a random
+<h2 id="1)-What-is-a-random-variable?">1) What is a random variable?<a class="anchor-link" data-pagefind-ignore href="#1)-What-is-a-random-variable?">¶</a></h2><p>A <strong>random variable</strong> (RV) is a rule that assigns a <em>number</em> to each outcome of a random
 experiment. We write it with a capital letter, usually $X$.</p>
 <ul>
 <li>Roll a die: the outcome "the face showing" <em>is already</em> a number, $X \in \{1,2,3,4,5,6\}$.</li>
@@ -7914,7 +7914,7 @@ written $P(X=x)$ or just $P(x)$. The probabilities are each between 0 and 1, and
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="2)-A-fair-six-sided-die-%E2%80%94-a-distribution-we-know-exactly">2) A fair six-sided die — a distribution we know exactly<a class="anchor-link" href="#2)-A-fair-six-sided-die-%E2%80%94-a-distribution-we-know-exactly">¶</a></h2><p>For a fair die, each face is equally likely, so $P(X=x) = \tfrac{1}{6}$ for every
+<h2 id="2)-A-fair-six-sided-die-%E2%80%94-a-distribution-we-know-exactly">2) A fair six-sided die — a distribution we know exactly<a class="anchor-link" data-pagefind-ignore href="#2)-A-fair-six-sided-die-%E2%80%94-a-distribution-we-know-exactly">¶</a></h2><p>For a fair die, each face is equally likely, so $P(X=x) = \tfrac{1}{6}$ for every
 $x \in \{1,2,3,4,5,6\}$. This is the simplest non-trivial distribution: flat, six bars of equal height.
 Because we <em>know</em> it exactly, we can compute the true answers by hand and then check them by simulation.</p>
 </div>
@@ -7977,7 +7977,7 @@ Probabilities sum to 1.0000  (must be 1).
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="3)-Expected-value-E%5BX%5D-%E2%80%94-the-%22center-of-gravity%22">3) Expected value E[X] — the "center of gravity"<a class="anchor-link" href="#3)-Expected-value-E%5BX%5D-%E2%80%94-the-%22center-of-gravity%22">¶</a></h2><p>The <strong>expected value</strong> is the probability-weighted average of all the values:</p>
+<h2 id="3)-Expected-value-E%5BX%5D-%E2%80%94-the-%22center-of-gravity%22">3) Expected value E[X] — the "center of gravity"<a class="anchor-link" data-pagefind-ignore href="#3)-Expected-value-E%5BX%5D-%E2%80%94-the-%22center-of-gravity%22">¶</a></h2><p>The <strong>expected value</strong> is the probability-weighted average of all the values:</p>
 <p>$$E[X] = \sum_x x \, P(x).$$</p>
 <ul>
 <li><strong>The math:</strong> multiply each value by its probability and add them up.</li>
@@ -8022,7 +8022,7 @@ a seesaw. It is the long-run <em>average</em> you'd get over many, many trials.<
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="4)-Variance-Var%5BX%5D-and-standard-deviation-%E2%80%94-how-spread-out-is-it?">4) Variance Var[X] and standard deviation — how spread out is it?<a class="anchor-link" href="#4)-Variance-Var%5BX%5D-and-standard-deviation-%E2%80%94-how-spread-out-is-it?">¶</a></h2><p>The <strong>variance</strong> measures how far, on average, the values land from the expected value —
+<h2 id="4)-Variance-Var%5BX%5D-and-standard-deviation-%E2%80%94-how-spread-out-is-it?">4) Variance Var[X] and standard deviation — how spread out is it?<a class="anchor-link" data-pagefind-ignore href="#4)-Variance-Var%5BX%5D-and-standard-deviation-%E2%80%94-how-spread-out-is-it?">¶</a></h2><p>The <strong>variance</strong> measures how far, on average, the values land from the expected value —
 using <em>squared</em> distances so that overshoots and undershoots don't cancel:</p>
 <p>$$\operatorname{Var}[X] = \sum_x (x - \mu)^2 \, P(x), \qquad \mu = E[X].$$</p>
 <p>The <strong>standard deviation</strong> is its square root, $\operatorname{SD}[X] = \sqrt{\operatorname{Var}[X]}$,
@@ -8071,7 +8071,7 @@ SD[X]  = 1.7078   (textbook 1.7078)
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="5)-The-law-of-large-numbers-%E2%80%94-watch-the-average-converge">5) The law of large numbers — watch the average converge<a class="anchor-link" href="#5)-The-law-of-large-numbers-%E2%80%94-watch-the-average-converge">¶</a></h2><p>We <em>defined</em> $E[X]$ as the long-run average. The <strong>law of large numbers</strong> makes that precise:
+<h2 id="5)-The-law-of-large-numbers-%E2%80%94-watch-the-average-converge">5) The law of large numbers — watch the average converge<a class="anchor-link" data-pagefind-ignore href="#5)-The-law-of-large-numbers-%E2%80%94-watch-the-average-converge">¶</a></h2><p>We <em>defined</em> $E[X]$ as the long-run average. The <strong>law of large numbers</strong> makes that precise:
 as the number of trials grows, the <strong>sample mean</strong> (the average of the rolls so far) settles down
 toward the true expected value $E[X]$.</p>
 <p>Below we roll the die thousands of times and plot the <strong>running average</strong> after each roll. Early on it
@@ -8170,7 +8170,7 @@ Exact Var[X] for a fair die:        2.9167
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="6)-Expected-value-of-a-bet-%E2%80%94-is-the-game-fair?">6) Expected value of a bet — is the game fair?<a class="anchor-link" href="#6)-Expected-value-of-a-bet-%E2%80%94-is-the-game-fair?">¶</a></h2><p>Expected value shines when the numbers are <strong>dollars</strong>. Consider a game tied to one die roll:</p>
+<h2 id="6)-Expected-value-of-a-bet-%E2%80%94-is-the-game-fair?">6) Expected value of a bet — is the game fair?<a class="anchor-link" data-pagefind-ignore href="#6)-Expected-value-of-a-bet-%E2%80%94-is-the-game-fair?">¶</a></h2><p>Expected value shines when the numbers are <strong>dollars</strong>. Consider a game tied to one die roll:</p>
 <blockquote>
 <p><strong>Win 10 dollars if the die shows a 6; otherwise lose 2 dollars.</strong></p>
 </blockquote>
@@ -8228,7 +8228,7 @@ Average payoff over 100,000 plays: $-0.019  (heading to $0.00)
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="7)-A-REAL-random-variable-%E2%80%94-number-of-prenatal-visits">7) A REAL random variable — number of prenatal visits<a class="anchor-link" href="#7)-A-REAL-random-variable-%E2%80%94-number-of-prenatal-visits">¶</a></h2><p>Now a distribution we do <strong>not</strong> know in advance — we have to <em>estimate</em> it from data. The
+<h2 id="7)-A-REAL-random-variable-%E2%80%94-number-of-prenatal-visits">7) A REAL random variable — number of prenatal visits<a class="anchor-link" data-pagefind-ignore href="#7)-A-REAL-random-variable-%E2%80%94-number-of-prenatal-visits">¶</a></h2><p>Now a distribution we do <strong>not</strong> know in advance — we have to <em>estimate</em> it from data. The
 <strong>US Births 2014</strong> dataset records, for each birth, the mother's number of prenatal (<code>visits</code>)
 doctor appointments. Let the random variable be</p>
 <p>$$X = \text{number of prenatal visits for a randomly chosen birth}.$$</p>
@@ -8280,7 +8280,7 @@ min = 0   max = 30
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="8)-Build-the-empirical-distribution:-P(X-=-k)-=-count-of-k-%C3%B7-n">8) Build the empirical distribution: P(X = k) = count of k ÷ n<a class="anchor-link" href="#8)-Build-the-empirical-distribution:-P(X-=-k)-=-count-of-k-%C3%B7-n">¶</a></h2><p>We do not <em>know</em> the true probabilities, so we estimate each from the data: the probability of
+<h2 id="8)-Build-the-empirical-distribution:-P(X-=-k)-=-count-of-k-%C3%B7-n">8) Build the empirical distribution: P(X = k) = count of k ÷ n<a class="anchor-link" data-pagefind-ignore href="#8)-Build-the-empirical-distribution:-P(X-=-k)-=-count-of-k-%C3%B7-n">¶</a></h2><p>We do not <em>know</em> the true probabilities, so we estimate each from the data: the probability of
 exactly $k$ visits is the <strong>fraction of births</strong> that had $k$ visits,</p>
 <p>$$P(X = k) = \frac{\text{number of births with exactly } k \text{ visits}}{n}.$$</p>
 <p>This is the <strong>empirical</strong> (data-driven) probability distribution. Because every birth lands in
@@ -8377,7 +8377,7 @@ A few rows of the empirical distribution:
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="9)-Compute-E%5BX%5D-and-Var%5BX%5D-FROM-the-distribution">9) Compute E[X] and Var[X] FROM the distribution<a class="anchor-link" href="#9)-Compute-E%5BX%5D-and-Var%5BX%5D-FROM-the-distribution">¶</a></h2><p>The die formulas work on <em>any</em> distribution — including this real one. Using the empirical
+<h2 id="9)-Compute-E%5BX%5D-and-Var%5BX%5D-FROM-the-distribution">9) Compute E[X] and Var[X] FROM the distribution<a class="anchor-link" data-pagefind-ignore href="#9)-Compute-E%5BX%5D-and-Var%5BX%5D-FROM-the-distribution">¶</a></h2><p>The die formulas work on <em>any</em> distribution — including this real one. Using the empirical
 probabilities $P(k)$:</p>
 <p>$$E[X] = \sum_k k\,P(k), \qquad \operatorname{Var}[X] = \sum_k (k - E[X])^2\,P(k).$$</p>
 <p>Two satisfying checks should fall out:</p>
@@ -8456,7 +8456,7 @@ above and below the mean.</p>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="10)-Law-of-large-numbers-again-%E2%80%94-but-on-real-data">10) Law of large numbers again — but on real data<a class="anchor-link" href="#10)-Law-of-large-numbers-again-%E2%80%94-but-on-real-data">¶</a></h2><p>The die showed the sample mean converging to a <em>known</em> $E[X]$. Here we do the same with the <strong>real</strong>
+<h2 id="10)-Law-of-large-numbers-again-%E2%80%94-but-on-real-data">10) Law of large numbers again — but on real data<a class="anchor-link" data-pagefind-ignore href="#10)-Law-of-large-numbers-again-%E2%80%94-but-on-real-data">¶</a></h2><p>The die showed the sample mean converging to a <em>known</em> $E[X]$. Here we do the same with the <strong>real</strong>
 distribution: draw many random births (<strong>with replacement</strong> — meaning the same birth can be picked more
 than once, like rolling the same die again) and watch the running average of their visit counts settle
 toward $E[X] \approx 11.35$ — the very number we computed from the full distribution.</p>
@@ -8514,7 +8514,7 @@ Average of all 4000 draws: 11.31   (target E[X] = 11.35)
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Now-you-try">Now you try<a class="anchor-link" href="#Now-you-try">¶</a></h2><p>Predict first, then change one thing and re-run:</p>
+<h2 id="Now-you-try">Now you try<a class="anchor-link" data-pagefind-ignore href="#Now-you-try">¶</a></h2><p>Predict first, then change one thing and re-run:</p>
 <ol>
 <li>In the <strong>die</strong> convergence cell, set <code>n_rolls = 200</code>. Does the running average still hug 3.5, or
 does it wander? Now try <code>n_rolls = 50000</code>. What does that say about how <em>fast</em> the law of large
@@ -8524,7 +8524,7 @@ numbers works?</li>
 <li>In the <strong>real-data</strong> convergence cell, set <code>n_draws = 100</code>. Run it a few times. How far can the
 final average stray from 11.35 with only 100 births — and why does that matter for small samples?</li>
 </ol>
-<h2 id="What-you-learned">What you learned<a class="anchor-link" href="#What-you-learned">¶</a></h2><ul>
+<h2 id="What-you-learned">What you learned<a class="anchor-link" data-pagefind-ignore href="#What-you-learned">¶</a></h2><ul>
 <li>A <strong>random variable</strong> turns chancy outcomes into numbers; its <strong>probability distribution</strong> lists
 every value and how likely it is (probabilities sum to 1).</li>
 <li><strong>Expected value</strong> $E[X]=\sum_x x\,P(x)$ is the long-run average / balance point — it need not be an

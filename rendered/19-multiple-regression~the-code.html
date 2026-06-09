@@ -7823,7 +7823,7 @@ a.anchor-link {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h1 id="The-code-behind-it:-multiple-regression-with-linear-algebra">The code behind it: multiple regression with linear algebra<a class="anchor-link" href="#The-code-behind-it:-multiple-regression-with-linear-algebra">¶</a></h1><p><em>Part 2 · Lesson 19 · the code behind it  ·  data: Ames housing (same as Lesson 19)</em></p>
+<h1 id="The-code-behind-it:-multiple-regression-with-linear-algebra">The code behind it: multiple regression with linear algebra<a class="anchor-link" data-pagefind-ignore href="#The-code-behind-it:-multiple-regression-with-linear-algebra">¶</a></h1><p><em>Part 2 · Lesson 19 · the code behind it  ·  data: Ames housing (same as Lesson 19)</em></p>
 <p><em>↩ A companion to <a href="19-multiple-regression.html">Lesson 19: Multiple regression (intro)</a>.</em></p>
 <p><strong>↩ Back:</strong> <a href="19-multiple-regression.html">Lesson 19: Multiple regression (intro)</a>  ·  <a href="index.html">↑ Course map</a>  ·  <strong>Also:</strong> <a href="19-multiple-regression~another-dataset.html">Another dataset →</a></p>
 <p><strong>In Lesson 19 you fit several predictors at once with one tidy line</strong> — <code>smf.ols('price ~ area + quality + year_built', data=ames).fit()</code> — and read the coefficients off a table. It worked like a
@@ -7863,7 +7863,7 @@ coefficients mean</em> to <strong>how you compute them</strong>. We'll go in the
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="1)-The-goal">1) The goal<a class="anchor-link" href="#1)-The-goal">¶</a></h2><p>By the end of this notebook you'll have written a function that takes a table of predictors and a column
+<h2 id="1)-The-goal">1) The goal<a class="anchor-link" data-pagefind-ignore href="#1)-The-goal">¶</a></h2><p>By the end of this notebook you'll have written a function that takes a table of predictors and a column
 of outcomes and returns the regression coefficients — the same numbers <code>statsmodels</code> hands you for free —
 plus the model's $R^2$ and <strong>adjusted</strong> $R^2$. Nothing here needs new statistics; everything is the linear
 algebra <em>underneath</em> the one-line <code>smf.ols(...)</code> call.</p>
@@ -8023,7 +8023,7 @@ with <code>np.linalg.lstsq</code>, which does the same least-squares fit <strong
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="2)-The-data-in-code-%E2%80%94-build-the-design-matrix">2) The data in code — build the design matrix<a class="anchor-link" href="#2)-The-data-in-code-%E2%80%94-build-the-design-matrix">¶</a></h2><p>A regression solver doesn't want a tidy <code>DataFrame</code>; it wants two plain NumPy arrays:</p>
+<h2 id="2)-The-data-in-code-%E2%80%94-build-the-design-matrix">2) The data in code — build the design matrix<a class="anchor-link" data-pagefind-ignore href="#2)-The-data-in-code-%E2%80%94-build-the-design-matrix">¶</a></h2><p>A regression solver doesn't want a tidy <code>DataFrame</code>; it wants two plain NumPy arrays:</p>
 <ul>
 <li><strong><code>y</code></strong> — the response, a 1-D array of the values we're predicting (<code>price</code>).</li>
 <li><strong><code>X</code></strong> — the <strong>design matrix</strong>, one row per home and one column per predictor, <em>plus a leading column
@@ -8093,7 +8093,7 @@ first 3 rows of X (note the leading 1s = the intercept column):
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="3)-Build-it-step-by-step-%E2%80%94-solve-OLS-(ordinary-least-squares)-with-linear-algebra">3) Build it step by step — solve OLS (ordinary least squares) with linear algebra<a class="anchor-link" href="#3)-Build-it-step-by-step-%E2%80%94-solve-OLS-(ordinary-least-squares)-with-linear-algebra">¶</a></h2><p>Now the heart of it. We hand <code>X</code> and <code>y</code> to <code>np.linalg.lstsq</code>, which returns the coefficient vector
+<h2 id="3)-Build-it-step-by-step-%E2%80%94-solve-OLS-(ordinary-least-squares)-with-linear-algebra">3) Build it step by step — solve OLS (ordinary least squares) with linear algebra<a class="anchor-link" data-pagefind-ignore href="#3)-Build-it-step-by-step-%E2%80%94-solve-OLS-(ordinary-least-squares)-with-linear-algebra">¶</a></h2><p>Now the heart of it. We hand <code>X</code> and <code>y</code> to <code>np.linalg.lstsq</code>, which returns the coefficient vector
 $\beta$ that minimizes the sum of squared misses $\sum (y_i - \hat{y}_i)^2$ — the very same least-squares
 criterion the core lesson's <code>smf.ols(...)</code> uses. (<code>rcond=None</code> just opts into the modern default; the
 <code>[0]</code> plucks the coefficients out of the tuple it returns.)</p>
@@ -8150,7 +8150,7 @@ Reading it back as an equation:
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="Fit-quality:-residuals,-$R%5E2$,-and-adjusted-$R%5E2$">Fit quality: residuals, $R^2$, and adjusted $R^2$<a class="anchor-link" href="#Fit-quality:-residuals,-$R%5E2$,-and-adjusted-$R%5E2$">¶</a></h3><p>How well does the flat sheet fit? First the <strong>predictions</strong> $\hat{y} = X\beta$ — one matrix multiply gives
+<h3 id="Fit-quality:-residuals,-$R%5E2$,-and-adjusted-$R%5E2$">Fit quality: residuals, $R^2$, and adjusted $R^2$<a class="anchor-link" data-pagefind-ignore href="#Fit-quality:-residuals,-$R%5E2$,-and-adjusted-$R%5E2$">¶</a></h3><p>How well does the flat sheet fit? First the <strong>predictions</strong> $\hat{y} = X\beta$ — one matrix multiply gives
 all 2,930 fitted prices at once. The <strong>residuals</strong> are what's left over, $y - \hat{y}$.</p>
 <p>$R^2$ is the share of price's variation the model explains: 1 minus the ratio of <em>leftover</em> spread to
 <em>total</em> spread. <strong>Adjusted</strong> $R^2$ then charges a penalty for each predictor (so junk columns can't inflate
@@ -8205,7 +8205,7 @@ adjusted R-squared : 0.753937
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="Verify-against-statsmodels-%E2%80%94-same-X,-same-answer">Verify against statsmodels — same <code>X</code>, same answer<a class="anchor-link" href="#Verify-against-statsmodels-%E2%80%94-same-X,-same-answer">¶</a></h3><p>The real test: do our hand-built numbers match the trusted library? We fit <code>sm.OLS(y, X)</code> — note we pass
+<h3 id="Verify-against-statsmodels-%E2%80%94-same-X,-same-answer">Verify against statsmodels — same <code>X</code>, same answer<a class="anchor-link" data-pagefind-ignore href="#Verify-against-statsmodels-%E2%80%94-same-X,-same-answer">¶</a></h3><p>The real test: do our hand-built numbers match the trusted library? We fit <code>sm.OLS(y, X)</code> — note we pass
 <strong>the same <code>X</code> that already contains the ones-column</strong>, so we do <em>not</em> call <code>sm.add_constant</code> (that would
 add a <em>second</em> intercept column and break the match). Then we compare coefficients, $R^2$, and adjusted
 $R^2$ with <code>np.allclose</code>.</p>
@@ -8264,7 +8264,7 @@ match? (adjusted R^2) : True
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="%22Holding-the-others-constant%22-%E2%80%94-watch-a-slope-change">"Holding the others constant" — watch a slope change<a class="anchor-link" href="#%22Holding-the-others-constant%22-%E2%80%94-watch-a-slope-change">¶</a></h3><p>The core lesson's punchline was that area's value-per-square-foot <strong>drops by roughly half</strong> the moment the
+<h3 id="%22Holding-the-others-constant%22-%E2%80%94-watch-a-slope-change">"Holding the others constant" — watch a slope change<a class="anchor-link" data-pagefind-ignore href="#%22Holding-the-others-constant%22-%E2%80%94-watch-a-slope-change">¶</a></h3><p>The core lesson's punchline was that area's value-per-square-foot <strong>drops by roughly half</strong> the moment the
 model also sees quality — that's <strong>confounding</strong> (bigger homes tend to be higher quality, so the simple
 slope was secretly paid for both). We can reproduce that with our own machinery: fit the <strong>simple</strong> model
 <code>price ~ area</code> (a design matrix with just ones and area), then compare area's slope to the <strong>multiple</strong>
@@ -8321,7 +8321,7 @@ year_built claim their own share, what is left for area is its value among compa
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="4)-The-idiom-%E2%80%94-matrix-operations-and-np.linalg.lstsq">4) The idiom — matrix operations and <code>np.linalg.lstsq</code><a class="anchor-link" href="#4)-The-idiom-%E2%80%94-matrix-operations-and-np.linalg.lstsq">¶</a></h2><h3 id="@-is-matrix-multiplication"><code>@</code> is matrix multiplication<a class="anchor-link" href="#@-is-matrix-multiplication">¶</a></h3><p>Three pieces of NumPy did all the work, and they're the idioms to remember:</p>
+<h2 id="4)-The-idiom-%E2%80%94-matrix-operations-and-np.linalg.lstsq">4) The idiom — matrix operations and <code>np.linalg.lstsq</code><a class="anchor-link" data-pagefind-ignore href="#4)-The-idiom-%E2%80%94-matrix-operations-and-np.linalg.lstsq">¶</a></h2><h3 id="@-is-matrix-multiplication"><code>@</code> is matrix multiplication<a class="anchor-link" data-pagefind-ignore href="#@-is-matrix-multiplication">¶</a></h3><p>Three pieces of NumPy did all the work, and they're the idioms to remember:</p>
 <ul>
 <li><strong>Build the design matrix</strong> with <code>np.column_stack([...])</code> — glue 1-D arrays together as columns. The
 leading <code>np.ones(n)</code> <em>is</em> the intercept.</li>
@@ -8385,7 +8385,7 @@ lstsq vs. the explicit (X^T X)^{-1} X^T y formula match? True
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="5)-Refactor-into-a-reusable-function">5) Refactor into a reusable function<a class="anchor-link" href="#5)-Refactor-into-a-reusable-function">¶</a></h2><p>You've now assembled a design matrix and called <code>lstsq</code> a couple of times. The programmer's reflex is to
+<h2 id="5)-Refactor-into-a-reusable-function">5) Refactor into a reusable function<a class="anchor-link" data-pagefind-ignore href="#5)-Refactor-into-a-reusable-function">¶</a></h2><p>You've now assembled a design matrix and called <code>lstsq</code> a couple of times. The programmer's reflex is to
 <strong>wrap the repeated work in a function</strong>: name it, give it inputs, <code>return</code> the results. Then "fit a
 regression" is one call you can reuse on <em>any</em> set of predictors — three columns, one column, a different
 outcome entirely.</p>
@@ -8473,7 +8473,7 @@ in code." (And yes, <code>smf.ols</code> exists; the point was to <em>build</em>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="6)-Now-you-code">6) Now you code<a class="anchor-link" href="#6)-Now-you-code">¶</a></h2><p>Write the code yourself. Add a new cell (the <strong>+</strong> button in the toolbar) and try each — predict the answer
+<h2 id="6)-Now-you-code">6) Now you code<a class="anchor-link" data-pagefind-ignore href="#6)-Now-you-code">¶</a></h2><p>Write the code yourself. Add a new cell (the <strong>+</strong> button in the toolbar) and try each — predict the answer
 before you run it.</p>
 <ol>
 <li><p><strong>Fit with two predictors.</strong> Call <code>ols_fit(ames, 'price', ['area', 'quality'])</code> and read off area's
@@ -8495,7 +8495,7 @@ the prediction to that home's actual <code>price</code> (the difference is its r
 does), but does <strong>adjusted</strong> $R^2$ go <em>down</em>? (It should — the penalty sees through the useless column.)</p>
 </li>
 </ol>
-<h2 id="What-you-learned">What you learned<a class="anchor-link" href="#What-you-learned">¶</a></h2><p><strong>Coding</strong></p>
+<h2 id="What-you-learned">What you learned<a class="anchor-link" data-pagefind-ignore href="#What-you-learned">¶</a></h2><p><strong>Coding</strong></p>
 <ul>
 <li>A <strong>design matrix</strong> <code>X</code> is how a regression sees your data: one row per observation, one column per
 predictor, plus a leading <strong>column of ones</strong> that becomes the intercept.</li>

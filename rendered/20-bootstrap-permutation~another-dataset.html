@@ -7823,7 +7823,7 @@ a.anchor-link {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h1 id="Bootstrap-&amp;-permutation-on-different-data:-wetsuits">Bootstrap &amp; permutation on different data: wetsuits<a class="anchor-link" href="#Bootstrap-&amp;-permutation-on-different-data:-wetsuits">¶</a></h1><p><em>Part 2 · Lesson 20 · another dataset  ·  data: Swim velocities (paired, n=12)</em></p>
+<h1 id="Bootstrap-&amp;-permutation-on-different-data:-wetsuits">Bootstrap &amp; permutation on different data: wetsuits<a class="anchor-link" data-pagefind-ignore href="#Bootstrap-&amp;-permutation-on-different-data:-wetsuits">¶</a></h1><p><em>Part 2 · Lesson 20 · another dataset  ·  data: Swim velocities (paired, n=12)</em></p>
 <p><em>↩ A companion to <a href="20-bootstrap-permutation.html">Lesson 20: The bootstrap &amp; permutation tests</a>.</em></p>
 <p><strong>↩ Back:</strong> <a href="20-bootstrap-permutation.html">Lesson 20: The bootstrap &amp; permutation tests</a>  ·  <a href="index.html">↑ Course map</a>  ·  <strong>Also:</strong> <a href="20-bootstrap-permutation~the-code.html">The code behind it →</a></p>
 <p>The core lesson used resampling on roomy datasets — <strong>272</strong> Old Faithful eruptions and <strong>60</strong> guinea
@@ -8021,7 +8021,7 @@ each grey cell with <strong>Shift+Enter</strong>, then tinker.</p>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="1)-A-paired-design-%E2%80%94-each-swimmer-is-their-own-control">1) A <em>paired</em> design — each swimmer is their own control<a class="anchor-link" href="#1)-A-paired-design-%E2%80%94-each-swimmer-is-their-own-control">¶</a></h2><p>Before any resampling, notice the shape of this experiment. We did <strong>not</strong> put 12 swimmers in wetsuits
+<h2 id="1)-A-paired-design-%E2%80%94-each-swimmer-is-their-own-control">1) A <em>paired</em> design — each swimmer is their own control<a class="anchor-link" data-pagefind-ignore href="#1)-A-paired-design-%E2%80%94-each-swimmer-is-their-own-control">¶</a></h2><p>Before any resampling, notice the shape of this experiment. We did <strong>not</strong> put 12 swimmers in wetsuits
 and a <em>different</em> 12 in swimsuits. The <strong>same</strong> swimmer swam both ways. That is a <strong>paired design</strong>: the
 two measurements come in matched couples, one per swimmer.</p>
 <p>Pairing is a gift, because swimmers differ enormously — an Olympic sprinter is faster than a club
@@ -8139,7 +8139,7 @@ one-directional. The job of the next two sections is to say how SURE we can be o
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="2)-A-bootstrap-confidence-interval-for-the-mean-boost">2) A bootstrap confidence interval for the mean boost<a class="anchor-link" href="#2)-A-bootstrap-confidence-interval-for-the-mean-boost">¶</a></h2><p>We want a 95% confidence interval for the <strong>true mean wetsuit boost</strong> — how much faster the wetsuit
+<h2 id="2)-A-bootstrap-confidence-interval-for-the-mean-boost">2) A bootstrap confidence interval for the mean boost<a class="anchor-link" data-pagefind-ignore href="#2)-A-bootstrap-confidence-interval-for-the-mean-boost">¶</a></h2><p>We want a 95% confidence interval for the <strong>true mean wetsuit boost</strong> — how much faster the wetsuit
 makes swimmers <em>on average</em>. In the core lesson the recipe was identical, so we reuse the very same
 helper:</p>
 <blockquote>
@@ -8260,7 +8260,7 @@ formula and no assumption that the 12 differences are normal.</strong></li>
 range between the dashed red lines — a small but unmistakably <strong>positive</strong> edge, since the whole
 interval lies above zero.</li>
 </ul>
-<h2 id="3)-Sanity-check:-does-the-bootstrap-agree-with-the-textbook-t-interval?">3) Sanity check: does the bootstrap agree with the textbook t-interval?<a class="anchor-link" href="#3)-Sanity-check:-does-the-bootstrap-agree-with-the-textbook-t-interval?">¶</a></h2><p>A new method earns trust by <strong>matching the old one where the old one applies.</strong> The classical tool for
+<h2 id="3)-Sanity-check:-does-the-bootstrap-agree-with-the-textbook-t-interval?">3) Sanity check: does the bootstrap agree with the textbook t-interval?<a class="anchor-link" data-pagefind-ignore href="#3)-Sanity-check:-does-the-bootstrap-agree-with-the-textbook-t-interval?">¶</a></h2><p>A new method earns trust by <strong>matching the old one where the old one applies.</strong> The classical tool for
 the mean of paired differences is the <strong>one-sample $t$ interval</strong> on the 12 $d_i$ values:
 $\bar d \pm t^{*}\, s/\sqrt{n}$. That formula <em>does</em> assume the differences are roughly normal — a leap
 of faith with only 12 of them — but if the bootstrap (which assumes nothing of the sort) lands in the
@@ -8318,7 +8318,7 @@ reached that interval WITHOUT betting on normality, which matters most when n is
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="4)-A-permutation-test:-could-the-boost-be-pure-luck?">4) A permutation test: could the boost be pure luck?<a class="anchor-link" href="#4)-A-permutation-test:-could-the-boost-be-pure-luck?">¶</a></h2><p>The interval already tells us a lot, but let's pose the question as a formal hypothesis test, the way
+<h2 id="4)-A-permutation-test:-could-the-boost-be-pure-luck?">4) A permutation test: could the boost be pure luck?<a class="anchor-link" data-pagefind-ignore href="#4)-A-permutation-test:-could-the-boost-be-pure-luck?">¶</a></h2><p>The interval already tells us a lot, but let's pose the question as a formal hypothesis test, the way
 the core lesson did. Here the natural null hypothesis is:</p>
 <blockquote>
 <p><strong>$H_0$: the wetsuit makes no difference at all.</strong></p>
@@ -8431,7 +8431,7 @@ boost (red line) sits far beyond almost every sign-flip, so chance alone is a po
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="5)-Cross-check,-and-the-big-picture">5) Cross-check, and the big picture<a class="anchor-link" href="#5)-Cross-check,-and-the-big-picture">¶</a></h2><p>The classical partner of the sign-flip test is the <strong>paired (one-sample) $t$-test</strong> on the 12
+<h2 id="5)-Cross-check,-and-the-big-picture">5) Cross-check, and the big picture<a class="anchor-link" data-pagefind-ignore href="#5)-Cross-check,-and-the-big-picture">¶</a></h2><p>The classical partner of the sign-flip test is the <strong>paired (one-sample) $t$-test</strong> on the 12
 differences — the t-tests lesson covers it in full. If the permutation p-value lands near <code>scipy</code>'s, we
 get the same verdict with <strong>fewer assumptions</strong> (the sign-flip test never assumed the differences were
 normal).</p>
@@ -8510,7 +8510,7 @@ interval), all from twelve swimmers and not one normality assumption.</p>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Now-you-try">Now you try<a class="anchor-link" href="#Now-you-try">¶</a></h2><p>Predict first, then change a number and re-run:</p>
+<h2 id="Now-you-try">Now you try<a class="anchor-link" data-pagefind-ignore href="#Now-you-try">¶</a></h2><p>Predict first, then change a number and re-run:</p>
 <ol>
 <li><p><strong>A different statistic, same machine.</strong> The <code>bootstrap_statistic</code> helper takes <em>any</em> function. In a
 new cell, bootstrap the <strong>median</strong> boost instead of the mean:</p>
@@ -8534,7 +8534,7 @@ shuffle. The swimmer-to-swimmer spread is huge, so the effect gets buried. Try i
 weaker the signal looks — that is the payoff of pairing.</p>
 </li>
 </ol>
-<h2 id="What-you-learned">What you learned<a class="anchor-link" href="#What-you-learned">¶</a></h2><ul>
+<h2 id="What-you-learned">What you learned<a class="anchor-link" data-pagefind-ignore href="#What-you-learned">¶</a></h2><ul>
 <li><strong>Pairing isolates the effect:</strong> because each swimmer swam both ways, we work with <strong>one difference
 per swimmer</strong>, cancelling out how fast each person simply <em>is</em> — leaving a clean view of the wetsuit's
 effect from just 12 numbers.</li>

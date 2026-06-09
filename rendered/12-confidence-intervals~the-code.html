@@ -7823,7 +7823,7 @@ a.anchor-link {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h1 id="The-code-behind-it:-build-the-CI-&amp;-its-coverage-demo">The code behind it: build the CI &amp; its coverage demo<a class="anchor-link" href="#The-code-behind-it:-build-the-CI-&amp;-its-coverage-demo">¶</a></h1><p><em>Part 2 · Lesson 12 · the code behind it  ·  data: Ames, Iowa housing (same as Lesson 12)</em></p>
+<h1 id="The-code-behind-it:-build-the-CI-&amp;-its-coverage-demo">The code behind it: build the CI &amp; its coverage demo<a class="anchor-link" data-pagefind-ignore href="#The-code-behind-it:-build-the-CI-&amp;-its-coverage-demo">¶</a></h1><p><em>Part 2 · Lesson 12 · the code behind it  ·  data: Ames, Iowa housing (same as Lesson 12)</em></p>
 <p><em>↩ A companion to <a href="12-confidence-intervals.html">Lesson 12: What a 95% confidence interval really means</a>.</em></p>
 <p><strong>↩ Back:</strong> <a href="12-confidence-intervals.html">Flagship — Confidence intervals</a>  ·  <a href="index.html">↑ Course map</a>  ·  <strong>Also:</strong> <a href="12-confidence-intervals~another-dataset.html">Another dataset →</a></p>
 <p><strong>The flagship lesson <em>proved</em> what "95% confidence" means</strong> by simulation: it treated the whole Ames file as
@@ -7867,7 +7867,7 @@ compute it in Python</strong>. We'll go in the order a programmer actually works
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="1)-The-goal">1) The goal<a class="anchor-link" href="#1)-The-goal">¶</a></h2><p>By the end of this notebook you'll have written two functions:</p>
+<h2 id="1)-The-goal">1) The goal<a class="anchor-link" data-pagefind-ignore href="#1)-The-goal">¶</a></h2><p>By the end of this notebook you'll have written two functions:</p>
 <ul>
 <li><code>ci(sample, conf=0.95)</code> → the low and high ends of a confidence interval, built straight from the formula.</li>
 <li><code>coverage(pop, n, reps, conf, rng)</code> → the fraction of <code>reps</code> intervals that capture the true mean.</li>
@@ -7960,7 +7960,7 @@ choice — it models the data as one draw from an i.i.d. "super-population" of h
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="2)-The-data-in-code">2) The data in code<a class="anchor-link" href="#2)-The-data-in-code">¶</a></h2><p>The flagship's variable is <strong>living area (sq ft)</strong> — deliberately right-skewed, to show the magic works even
+<h2 id="2)-The-data-in-code">2) The data in code<a class="anchor-link" data-pagefind-ignore href="#2)-The-data-in-code">¶</a></h2><p>The flagship's variable is <strong>living area (sq ft)</strong> — deliberately right-skewed, to show the magic works even
 when the data is <em>not</em> a tidy bell curve. We mirror it exactly: pull out the <code>area</code> column, drop any holes,
 and turn it into a plain NumPy array.</p>
 <p>The crucial move is the next one: <strong>the whole column <em>is</em> the population.</strong> So its mean is the <em>true</em> mean μ —
@@ -8011,7 +8011,7 @@ first 5 areas: [1656  896 1329 2110 1629]
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="Sampling-with-replacement">Sampling with replacement<a class="anchor-link" href="#Sampling-with-replacement">¶</a></h3><p>When we draw a sample, we'll use <code>rng.choice(population, size=n, replace=True)</code> — drawing <strong>with
+<h3 id="Sampling-with-replacement">Sampling with replacement<a class="anchor-link" data-pagefind-ignore href="#Sampling-with-replacement">¶</a></h3><p>When we draw a sample, we'll use <code>rng.choice(population, size=n, replace=True)</code> — drawing <strong>with
 replacement</strong>. That treats the file as an i.i.d. super-population (each draw is independent, the same home
 <em>could</em> in principle come up twice), which is the clean textbook setting the t-interval is built for. Because
 <code>n</code> is tiny next to <code>N_POP</code>, it barely differs from sampling without replacement anyway.</p>
@@ -8063,7 +8063,7 @@ true mean MU  = 1499.7 sq ft   &lt;- the sample mean misses it a little; that wo
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="3)-Build-it-step-by-step">3) Build it step by step<a class="anchor-link" href="#3)-Build-it-step-by-step">¶</a></h2><p>Now the heart of it. The 95% confidence interval for a mean is one formula:</p>
+<h2 id="3)-Build-it-step-by-step">3) Build it step by step<a class="anchor-link" data-pagefind-ignore href="#3)-Build-it-step-by-step">¶</a></h2><p>Now the heart of it. The 95% confidence interval for a mean is one formula:</p>
 <p>$$\bar{x} \;\pm\; t^{*}\cdot \frac{s}{\sqrt{n}}$$</p>
 <ul>
 <li>$\bar{x}$ — the <strong>sample</strong> mean (our estimate of μ): <code>sample.mean()</code>.</li>
@@ -8170,10 +8170,10 @@ match? True
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="4)-The-idiom-%E2%80%94-the-coverage-simulation,-loop-then-vectorized">4) The idiom — the coverage simulation, loop then vectorized<a class="anchor-link" href="#4)-The-idiom-%E2%80%94-the-coverage-simulation,-loop-then-vectorized">¶</a></h2><p>One interval either catches μ or it doesn't — that's luck. The real claim of "95% confidence" is about the
+<h2 id="4)-The-idiom-%E2%80%94-the-coverage-simulation,-loop-then-vectorized">4) The idiom — the coverage simulation, loop then vectorized<a class="anchor-link" data-pagefind-ignore href="#4)-The-idiom-%E2%80%94-the-coverage-simulation,-loop-then-vectorized">¶</a></h2><p>One interval either catches μ or it doesn't — that's luck. The real claim of "95% confidence" is about the
 <strong>long run</strong>: if you repeated the whole process many times, about 95% of the intervals would contain μ.</p>
 <p>So the simulation is: <strong>draw a sample, build its CI, ask "did it catch μ?", repeat — and count.</strong></p>
-<h3 id="First,-the-clear-way:-an-explicit-loop">First, the clear way: an explicit loop<a class="anchor-link" href="#First,-the-clear-way:-an-explicit-loop">¶</a></h3><p>Easiest to read: loop <code>reps</code> times, build one CI per pass, tally the hits. We keep <code>reps</code> at 10,000 so it
+<h3 id="First,-the-clear-way:-an-explicit-loop">First, the clear way: an explicit loop<a class="anchor-link" data-pagefind-ignore href="#First,-the-clear-way:-an-explicit-loop">¶</a></h3><p>Easiest to read: loop <code>reps</code> times, build one CI per pass, tally the hits. We keep <code>reps</code> at 10,000 so it
 runs in a blink.</p>
 </div>
 </div>
@@ -8227,7 +8227,7 @@ Coverage (loop) = 94.9%   &lt;- the headline: the theory predicts ~95%
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="Now-the-idiom:-vectorize-over-a-(reps,-n)-array">Now the idiom: vectorize over a <code>(reps, n)</code> array<a class="anchor-link" href="#Now-the-idiom:-vectorize-over-a-(reps,-n)-array">¶</a></h3><p>The loop is clear but does one sample at a time. NumPy's idiom is to draw <strong>all</strong> the samples at once into a
+<h3 id="Now-the-idiom:-vectorize-over-a-(reps,-n)-array">Now the idiom: vectorize over a <code>(reps, n)</code> array<a class="anchor-link" data-pagefind-ignore href="#Now-the-idiom:-vectorize-over-a-(reps,-n)-array">¶</a></h3><p>The loop is clear but does one sample at a time. NumPy's idiom is to draw <strong>all</strong> the samples at once into a
 <code>(reps, n)</code> array — <code>reps</code> rows, each row a sample of <code>n</code> homes — then compute every sample mean and SD in a
 single call with <code>axis=1</code> (meaning "across each row"). No Python loop, far faster, same answer.</p>
 </div>
@@ -8278,7 +8278,7 @@ Coverage (vectorized) = 94.9%   &lt;- matches the loop, computed in one shot
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="Picture-it-%E2%80%94-the-iconic-%22caterpillar%22-plot">Picture it — the iconic "caterpillar" plot<a class="anchor-link" href="#Picture-it-%E2%80%94-the-iconic-%22caterpillar%22-plot">¶</a></h3><p>Numbers are convincing; the picture is unforgettable. We draw a fresh batch of <strong>100</strong> intervals as horizontal
+<h3 id="Picture-it-%E2%80%94-the-iconic-%22caterpillar%22-plot">Picture it — the iconic "caterpillar" plot<a class="anchor-link" data-pagefind-ignore href="#Picture-it-%E2%80%94-the-iconic-%22caterpillar%22-plot">¶</a></h3><p>Numbers are convincing; the picture is unforgettable. We draw a fresh batch of <strong>100</strong> intervals as horizontal
 lines with <code>ax.hlines</code> — <strong>solid teal</strong> when they catch μ, <strong>dashed orange-red (✕)</strong> when they miss — plus a
 vertical line at the true mean μ. Encoding the misses by shape <em>and</em> colour keeps them visible in grayscale and
 for colourblind readers; those ~5% that fail aren't bugs, just the expected price of sampling.</p>
@@ -8345,7 +8345,7 @@ for colourblind readers; those ~5% that fail aren't bugs, just the expected pric
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="The-confidence-level-sweep-%E2%80%94-coverage-tracks-the-promise,-width-grows">The confidence-level sweep — coverage tracks the promise, width grows<a class="anchor-link" href="#The-confidence-level-sweep-%E2%80%94-coverage-tracks-the-promise,-width-grows">¶</a></h3><p>Crank the confidence level up and two things should happen together: the <strong>empirical coverage</strong> climbs toward
+<h3 id="The-confidence-level-sweep-%E2%80%94-coverage-tracks-the-promise,-width-grows">The confidence-level sweep — coverage tracks the promise, width grows<a class="anchor-link" data-pagefind-ignore href="#The-confidence-level-sweep-%E2%80%94-coverage-tracks-the-promise,-width-grows">¶</a></h3><p>Crank the confidence level up and two things should happen together: the <strong>empirical coverage</strong> climbs toward
 the higher promise (80% method covers ~80%, 99% method covers ~99%), <em>and</em> the interval gets <strong>wider</strong> —
 being more sure costs precision. We measure both at each level on the same vectorized batch of samples.</p>
 </div>
@@ -8435,7 +8435,7 @@ Coverage tracks the nominal level (left to right ~80/90/95/99), and width grows 
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="z-vs-t-%E2%80%94-why-the-multiplier-isn't-just-1.96">z vs t — why the multiplier isn't just <code>1.96</code><a class="anchor-link" href="#z-vs-t-%E2%80%94-why-the-multiplier-isn't-just-1.96">¶</a></h3><p>You may have seen <code>1.96</code> as "the" 95% multiplier. That's the <strong>z</strong> value, from the normal curve — correct only
+<h3 id="z-vs-t-%E2%80%94-why-the-multiplier-isn't-just-1.96">z vs t — why the multiplier isn't just <code>1.96</code><a class="anchor-link" data-pagefind-ignore href="#z-vs-t-%E2%80%94-why-the-multiplier-isn't-just-1.96">¶</a></h3><p>You may have seen <code>1.96</code> as "the" 95% multiplier. That's the <strong>z</strong> value, from the normal curve — correct only
 if you <em>knew</em> the true SD. We estimate it from the sample with <code>s</code>, which adds a little extra uncertainty, so
 the honest multiplier comes from the <strong>t-distribution</strong> and is slightly <em>bigger</em> — making the interval a touch
 <strong>wider</strong>. That extra width is exactly what keeps coverage honest, and it matters most at <strong>small <code>n</code></strong>, where
@@ -8500,7 +8500,7 @@ How much wider is t* than z*, as n shrinks?
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="5)-Refactor-into-reusable-functions">5) Refactor into reusable functions<a class="anchor-link" href="#5)-Refactor-into-reusable-functions">¶</a></h2><p>We've now written the CI formula and the coverage loop a few times. The programmer's reflex is to <strong>wrap
+<h2 id="5)-Refactor-into-reusable-functions">5) Refactor into reusable functions<a class="anchor-link" data-pagefind-ignore href="#5)-Refactor-into-reusable-functions">¶</a></h2><p>We've now written the CI formula and the coverage loop a few times. The programmer's reflex is to <strong>wrap
 repeated work in a function</strong>. Two functions capture everything:</p>
 <ul>
 <li><code>ci(sample, conf=0.95)</code> → <code>(lo, hi)</code> — the interval from one sample.</li>
@@ -8596,7 +8596,7 @@ in code." (And yes, <code>scipy.stats.t.interval</code> exists; the point was to
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="6)-Now-you-code">6) Now you code<a class="anchor-link" href="#6)-Now-you-code">¶</a></h2><p>Write the code yourself. Add a new cell (the <strong>+</strong> button in the toolbar) and try each — <strong>predict the answer
+<h2 id="6)-Now-you-code">6) Now you code<a class="anchor-link" data-pagefind-ignore href="#6)-Now-you-code">¶</a></h2><p>Write the code yourself. Add a new cell (the <strong>+</strong> button in the toolbar) and try each — <strong>predict the answer
 before you run it.</strong></p>
 <ol>
 <li><p><strong>Bigger sample, narrower net.</strong> Call <code>coverage(population, n=200, reps=10_000, conf=0.95, rng=rng)</code>.
@@ -8618,7 +8618,7 @@ widths. Which is wider? By how many sq ft? (The t one should be a touch wider �
 Theorem at work.)</p>
 </li>
 </ol>
-<h2 id="What-you-learned">What you learned<a class="anchor-link" href="#What-you-learned">¶</a></h2><p><strong>Coding</strong></p>
+<h2 id="What-you-learned">What you learned<a class="anchor-link" data-pagefind-ignore href="#What-you-learned">¶</a></h2><p><strong>Coding</strong></p>
 <ul>
 <li>The 95% CI is four short lines: <code>xbar</code>, <code>s = sample.std(ddof=1)</code>, <code>se = s/np.sqrt(n)</code>, and
 <code>tstar = stats.t.ppf(0.975, df=n-1)</code>, then <code>xbar ± tstar*se</code>. You checked it against <code>stats.t.interval</code> —

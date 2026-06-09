@@ -7823,7 +7823,7 @@ a.anchor-link {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h1 id="Estimation-on-a-different-population:-adult-heights">Estimation on a different population: adult heights<a class="anchor-link" href="#Estimation-on-a-different-population:-adult-heights">¶</a></h1><p><em>Part 2 · Lesson 11 · another dataset  ·  data: NHANES adult-male heights</em></p>
+<h1 id="Estimation-on-a-different-population:-adult-heights">Estimation on a different population: adult heights<a class="anchor-link" data-pagefind-ignore href="#Estimation-on-a-different-population:-adult-heights">¶</a></h1><p><em>Part 2 · Lesson 11 · another dataset  ·  data: NHANES adult-male heights</em></p>
 <p><em>↩ A companion to <a href="11-estimation.html">Lesson 11: Estimation &amp; standard error</a>.</em></p>
 <p><strong>↩ Back:</strong> <a href="11-estimation.html">Lesson 11: Estimation &amp; standard error</a>  ·  <a href="index.html">↑ Course map</a>  ·  <strong>Also:</strong> <a href="11-estimation~the-code.html">The code behind it →</a></p>
 <p>The core lesson learned the standard error on a <strong>strongly right-skewed</strong> population: the living areas of
@@ -7916,7 +7916,7 @@ population skew              = -0.071   (near 0 -&gt; nearly normal)
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="0)-A-note-on-units-%E2%80%94-millimetres-to-centimetres">0) A note on units — millimetres to centimetres<a class="anchor-link" href="#0)-A-note-on-units-%E2%80%94-millimetres-to-centimetres">¶</a></h2><p>Real datasets rarely arrive in the units you'd reach for. NHANES stores standing height as <strong><code>BMXHT</code> in
+<h2 id="0)-A-note-on-units-%E2%80%94-millimetres-to-centimetres">0) A note on units — millimetres to centimetres<a class="anchor-link" data-pagefind-ignore href="#0)-A-note-on-units-%E2%80%94-millimetres-to-centimetres">¶</a></h2><p>Real datasets rarely arrive in the units you'd reach for. NHANES stores standing height as <strong><code>BMXHT</code> in
 millimetres</strong>, so a stored value of <code>1845.0</code> means <strong>1845 mm</strong>. Dividing by 10 turns that into the
 friendlier <strong>184.5 cm</strong> (a hair over six feet), which is why the setup did
 <code>height_cm = nh['BMXHT'].dropna() / 10.0</code> once, up front. Always check a dataset's units before you trust
@@ -7934,7 +7934,7 @@ core, <em>this</em> population is already a near-perfect bell before we ever tak
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="1)-Parameter-vs.-statistic-%E2%80%94-the-two-kinds-of-number">1) Parameter vs. statistic — the two kinds of number<a class="anchor-link" href="#1)-Parameter-vs.-statistic-%E2%80%94-the-two-kinds-of-number">¶</a></h2><p>The whole game of inference rests on telling apart two numbers that look similar but mean very
+<h2 id="1)-Parameter-vs.-statistic-%E2%80%94-the-two-kinds-of-number">1) Parameter vs. statistic — the two kinds of number<a class="anchor-link" data-pagefind-ignore href="#1)-Parameter-vs.-statistic-%E2%80%94-the-two-kinds-of-number">¶</a></h2><p>The whole game of inference rests on telling apart two numbers that look similar but mean very
 different things.</p>
 <ul>
 <li>A <strong>parameter</strong> is a number that describes the <strong>whole population</strong>. It is <strong>fixed</strong> but usually
@@ -8001,7 +8001,7 @@ guess. Here we know it so we can <em>check</em> whether our methods actually wor
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="2)-A-statistic-is-an-estimator">2) A statistic is an <em>estimator</em><a class="anchor-link" href="#2)-A-statistic-is-an-estimator">¶</a></h2><p>When we use the sample mean $\bar{x}$ to <em>stand in for</em> the unknown population mean $\mu$, we are using
+<h2 id="2)-A-statistic-is-an-estimator">2) A statistic is an <em>estimator</em><a class="anchor-link" data-pagefind-ignore href="#2)-A-statistic-is-an-estimator">¶</a></h2><p>When we use the sample mean $\bar{x}$ to <em>stand in for</em> the unknown population mean $\mu$, we are using
 it as an <strong>estimator</strong> — a recipe that turns sample data into a guess about a parameter. The single
 number it produces (like the ~173 cm above) is a <strong>point estimate</strong>: one best guess, a single point on
 the number line.</p>
@@ -8078,7 +8078,7 @@ Both x-bar-&gt;mu and p-hat-&gt;p are point estimates: one number guessing a par
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="3)-Bias-vs.-precision-%E2%80%94-the-dartboard">3) Bias vs. precision — the dartboard<a class="anchor-link" href="#3)-Bias-vs.-precision-%E2%80%94-the-dartboard">¶</a></h2><p>A single estimate is one dart thrown at a board whose bullseye is the true parameter $\mu$. To judge an
+<h2 id="3)-Bias-vs.-precision-%E2%80%94-the-dartboard">3) Bias vs. precision — the dartboard<a class="anchor-link" data-pagefind-ignore href="#3)-Bias-vs.-precision-%E2%80%94-the-dartboard">¶</a></h2><p>A single estimate is one dart thrown at a board whose bullseye is the true parameter $\mu$. To judge an
 estimator we throw <em>many</em> darts (take many samples) and ask two separate questions:</p>
 <ul>
 <li><strong>Bias (accuracy):</strong> do the darts <em>center</em> on the bullseye, or are they systematically pulled to one
@@ -8206,7 +8206,7 @@ quantify next.</p>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="4)-The-standard-error-%E2%80%94-the-typical-miss">4) The standard error — the typical miss<a class="anchor-link" href="#4)-The-standard-error-%E2%80%94-the-typical-miss">¶</a></h2><p>The <strong>standard error (SE)</strong> of an estimator is just the <strong>standard deviation of its sampling
+<h2 id="4)-The-standard-error-%E2%80%94-the-typical-miss">4) The standard error — the typical miss<a class="anchor-link" data-pagefind-ignore href="#4)-The-standard-error-%E2%80%94-the-typical-miss">¶</a></h2><p>The <strong>standard error (SE)</strong> of an estimator is just the <strong>standard deviation of its sampling
 distribution</strong> — that cloud of estimates we just drew. In plain words:</p>
 <blockquote>
 <p><strong>The standard error is the typical distance between one sample's estimate and the true parameter.</strong></p>
@@ -8317,7 +8317,7 @@ Report it as:  mu is about 173.5 cm, give or take ~1.1 cm.
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="Standard-deviation-vs.-standard-error-%E2%80%94-don't-mix-them-up">Standard deviation vs. standard error — don't mix them up<a class="anchor-link" href="#Standard-deviation-vs.-standard-error-%E2%80%94-don't-mix-them-up">¶</a></h3><p>This trips up almost everyone, so let's nail it:</p>
+<h3 id="Standard-deviation-vs.-standard-error-%E2%80%94-don't-mix-them-up">Standard deviation vs. standard error — don't mix them up<a class="anchor-link" data-pagefind-ignore href="#Standard-deviation-vs.-standard-error-%E2%80%94-don't-mix-them-up">¶</a></h3><p>This trips up almost everyone, so let's nail it:</p>
 <ul>
 <li><strong>Standard deviation ($s$ or $\sigma$)</strong> describes the spread of the <strong>individual data points</strong> — how
 much one <em>man's</em> height differs from another. It does <strong>not</strong> shrink as you collect more data; men are
@@ -8367,7 +8367,7 @@ The SE is smaller than s by a factor of sqrt(n) = sqrt(50) = 7.1.
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="5)-The-$%5Csqrt%7Bn%7D$-law-%E2%80%94-quadruple-the-sample,-halve-the-error">5) The $\sqrt{n}$ law — quadruple the sample, halve the error<a class="anchor-link" href="#5)-The-$%5Csqrt%7Bn%7D$-law-%E2%80%94-quadruple-the-sample,-halve-the-error">¶</a></h2><p>Look hard at $\text{SE} = \sigma/\sqrt{n}$. The sample size sits under a <strong>square root</strong>. That single
+<h2 id="5)-The-$%5Csqrt%7Bn%7D$-law-%E2%80%94-quadruple-the-sample,-halve-the-error">5) The $\sqrt{n}$ law — quadruple the sample, halve the error<a class="anchor-link" data-pagefind-ignore href="#5)-The-$%5Csqrt%7Bn%7D$-law-%E2%80%94-quadruple-the-sample,-halve-the-error">¶</a></h2><p>Look hard at $\text{SE} = \sigma/\sqrt{n}$. The sample size sits under a <strong>square root</strong>. That single
 detail governs the entire economics of data collection:</p>
 <ul>
 <li>To make your estimate <strong>twice as precise</strong> (cut the SE in half), you don't need <em>twice</em> the data — you
@@ -8484,7 +8484,7 @@ data.</p>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="6)-From-standard-error-to-the-margin-of-error-(a-bridge)">6) From standard error to the margin of error (a bridge)<a class="anchor-link" href="#6)-From-standard-error-to-the-margin-of-error-(a-bridge)">¶</a></h2><p>The standard error is the engine; the <strong>margin of error</strong> is what gets <em>reported</em>. A point estimate
+<h2 id="6)-From-standard-error-to-the-margin-of-error-(a-bridge)">6) From standard error to the margin of error (a bridge)<a class="anchor-link" data-pagefind-ignore href="#6)-From-standard-error-to-the-margin-of-error-(a-bridge)">¶</a></h2><p>The standard error is the engine; the <strong>margin of error</strong> is what gets <em>reported</em>. A point estimate
 alone is overconfident — it pretends we hit the bullseye exactly. Instead we surround it with a cushion:</p>
 <p>$$\text{estimate} \;\pm\; (\text{a multiplier}) \times \text{SE}.$$</p>
 <p>That "$\text{multiplier} \times \text{SE}$" piece is the <strong>margin of error</strong>. For roughly 95%
@@ -8541,7 +8541,7 @@ Next lesson: what "95% confidence" really means, and why the multiplier is ~2.
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Now-you-try">Now you try<a class="anchor-link" href="#Now-you-try">¶</a></h2><p>Predict what will happen <em>before</em> you run each change:</p>
+<h2 id="Now-you-try">Now you try<a class="anchor-link" data-pagefind-ignore href="#Now-you-try">¶</a></h2><p>Predict what will happen <em>before</em> you run each change:</p>
 <ol>
 <li><p><strong>Shrink the sample.</strong> In the section-3/4 cells, set <code>n = 10</code> and re-run. Does the histogram of
 estimates get <strong>wider</strong> or narrower? Does the empirical SE still match $\sigma/\sqrt{n}$? (It should —
@@ -8561,7 +8561,7 @@ to $\sqrt{p(1-p)/n}$ — the proportion's own SE formula.)</p>
 moves, but does the <em>standard error</em> (the typical miss) change much? Why or why not?</p>
 </li>
 </ol>
-<h2 id="What-you-learned">What you learned<a class="anchor-link" href="#What-you-learned">¶</a></h2><ul>
+<h2 id="What-you-learned">What you learned<a class="anchor-link" data-pagefind-ignore href="#What-you-learned">¶</a></h2><ul>
 <li>A <strong>parameter</strong> describes the whole population (fixed, unknown, Greek: $\mu$, $\sigma$, $p$); a
 <strong>statistic</strong> is computed from a sample (random, known, Roman: $\bar{x}$, $s$, $\hat{p}$).</li>
 <li>A statistic used to guess a parameter is an <strong>estimator</strong>; the single number it gives is a <strong>point

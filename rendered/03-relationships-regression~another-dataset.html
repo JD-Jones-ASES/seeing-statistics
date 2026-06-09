@@ -7823,7 +7823,7 @@ a.anchor-link {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h1 id="Relationships-on-a-different-dataset:-wealth-&amp;-life-expectancy">Relationships on a different dataset: wealth &amp; life expectancy<a class="anchor-link" href="#Relationships-on-a-different-dataset:-wealth-&amp;-life-expectancy">¶</a></h1><p><em>Part 1 · Lesson 3 · another dataset  ·  data: Gapminder GDP vs life expectancy, 2007</em></p>
+<h1 id="Relationships-on-a-different-dataset:-wealth-&amp;-life-expectancy">Relationships on a different dataset: wealth &amp; life expectancy<a class="anchor-link" data-pagefind-ignore href="#Relationships-on-a-different-dataset:-wealth-&amp;-life-expectancy">¶</a></h1><p><em>Part 1 · Lesson 3 · another dataset  ·  data: Gapminder GDP vs life expectancy, 2007</em></p>
 <p><em>↩ A companion to <a href="03-relationships-regression.html">Lesson 3: Relationships: correlation &amp; the regression line</a>.</em></p>
 <p><strong>↩ Back:</strong> <a href="03-relationships-regression.html">Lesson 3: Relationships: correlation &amp; the regression line</a>  ·  <a href="index.html">↑ Course map</a>  ·  <strong>Also:</strong> <a href="03-relationships-regression~the-code.html">The code behind it →</a></p>
 <p>In the core lesson we used the <strong>correlation r</strong> and the <strong>least-squares line</strong> on Ames houses, where
@@ -7973,7 +7973,7 @@ life expectancy ranges from 39.6 to 82.6 years
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="1)-The-first-move-(always):-a-scatterplot">1) The first move (always): a scatterplot<a class="anchor-link" href="#1)-The-first-move-(always):-a-scatterplot">¶</a></h2><p>Each country gives us <strong>two numbers</strong>: <code>gdpPercap</code> (GDP per person, in USD — a rough measure of how
+<h2 id="1)-The-first-move-(always):-a-scatterplot">1) The first move (always): a scatterplot<a class="anchor-link" data-pagefind-ignore href="#1)-The-first-move-(always):-a-scatterplot">¶</a></h2><p>Each country gives us <strong>two numbers</strong>: <code>gdpPercap</code> (GDP per person, in USD — a rough measure of how
 rich the country is) and <code>lifeExp</code> (average life expectancy, in years). With two numbers per item, the
 picture to draw first is a <strong>scatterplot</strong>: one dot per country, wealth across, lifespan up. Before
 computing anything, ask the three questions from the core lesson:</p>
@@ -8039,7 +8039,7 @@ about to try to summarize a bent reality.</p>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="2)-The-correlation-r-%E2%80%94-and-why-it-understates-a-curve">2) The correlation r — and why it <em>understates</em> a curve<a class="anchor-link" href="#2)-The-correlation-r-%E2%80%94-and-why-it-understates-a-curve">¶</a></h2><p>The <strong>correlation $r$</strong> is the average product of the two variables' <strong>z-scores</strong> (each value rewritten
+<h2 id="2)-The-correlation-r-%E2%80%94-and-why-it-understates-a-curve">2) The correlation r — and why it <em>understates</em> a curve<a class="anchor-link" data-pagefind-ignore href="#2)-The-correlation-r-%E2%80%94-and-why-it-understates-a-curve">¶</a></h2><p>The <strong>correlation $r$</strong> is the average product of the two variables' <strong>z-scores</strong> (each value rewritten
 as "how many SDs from its own mean"):</p>
 <p>$$r = \frac{1}{n-1}\sum_{i=1}^{n} \left(\frac{x_i-\bar{x}}{s_x}\right)\left(\frac{y_i-\bar{y}}{s_y}\right)$$</p>
 <p>It runs from $-1$ to $+1$ and measures the <strong>strength and direction of a <em>straight-line</em> trend</strong> — and
@@ -8094,7 +8094,7 @@ for the curvature and <strong>understates</strong> the real association.</p>
 relationship."</em> Here $r$ isn't small, but it's <strong>smaller than the truth deserves</strong> — same blind spot,
 milder symptom. Always look at the scatter before trusting a single number.</p>
 </blockquote>
-<h2 id="3)-Fit-the-least-squares-line-anyway-%E2%80%94-and-let-it-betray-itself">3) Fit the least-squares line anyway — and let it betray itself<a class="anchor-link" href="#3)-Fit-the-least-squares-line-anyway-%E2%80%94-and-let-it-betray-itself">¶</a></h2><p>Let's fit the straight line the formulas give us, exactly as we did for Ames:</p>
+<h2 id="3)-Fit-the-least-squares-line-anyway-%E2%80%94-and-let-it-betray-itself">3) Fit the least-squares line anyway — and let it betray itself<a class="anchor-link" data-pagefind-ignore href="#3)-Fit-the-least-squares-line-anyway-%E2%80%94-and-let-it-betray-itself">¶</a></h2><p>Let's fit the straight line the formulas give us, exactly as we did for Ames:</p>
 <p>$$\hat{y} = b_0 + b_1 x, \qquad b_1 = r\,\frac{s_y}{s_x}, \qquad b_0 = \bar{y} - b_1\bar{x}.$$</p>
 <p>The math will dutifully hand back <em>a</em> line — the best straight line possible. The question is whether
 the best <em>straight</em> line is any good when the truth is <em>curved</em>.</p>
@@ -8161,7 +8161,7 @@ random sloppiness — it's a <strong>systematic, patterned</strong> miss, the un
 straight line to a curve. The slope is also nearly impossible to interpret usefully: "0.0006 extra years
 per extra USD" averages a steep effect among the poor with almost no effect among the rich into one
 number that describes <strong>neither</strong> group.</p>
-<h2 id="4)-Residuals-%E2%80%94-the-diagnostic-that-names-the-problem">4) Residuals — the diagnostic that <em>names</em> the problem<a class="anchor-link" href="#4)-Residuals-%E2%80%94-the-diagnostic-that-names-the-problem">¶</a></h2><p>A single picture can hide a misfit; the <strong>residual plot</strong> exposes it. The <strong>residual</strong> for each country
+<h2 id="4)-Residuals-%E2%80%94-the-diagnostic-that-names-the-problem">4) Residuals — the diagnostic that <em>names</em> the problem<a class="anchor-link" data-pagefind-ignore href="#4)-Residuals-%E2%80%94-the-diagnostic-that-names-the-problem">¶</a></h2><p>A single picture can hide a misfit; the <strong>residual plot</strong> exposes it. The <strong>residual</strong> for each country
 is what the line missed:</p>
 <p>$$e_i = y_i - \hat{y}_i = (\text{actual lifespan}) - (\text{predicted lifespan}).$$</p>
 <p>A <strong>residual plot</strong> puts the predicted value on $x$ and the residual on $y$. What you <em>want</em> — what
@@ -8231,7 +8231,7 @@ model."</em> On Ames the residual band was basically flat (it only fanned a litt
 <p><strong>How to read a residual plot, in one line:</strong> <em>flat shapeless band → the line fits; a curve → you fit
 the wrong shape; a funnel (fanning) → the spread isn't constant.</em> A residual plot turns "my line looks
 off" into a specific, named diagnosis.</p>
-<h2 id="5)-The-fix:-a-log-transform-straightens-the-curve">5) The fix: a log transform straightens the curve<a class="anchor-link" href="#5)-The-fix:-a-log-transform-straightens-the-curve">¶</a></h2><p>So the relationship is real but <strong>bent</strong> — what now? We don't abandon the line; we <strong>change the ruler</strong>
+<h2 id="5)-The-fix:-a-log-transform-straightens-the-curve">5) The fix: a log transform straightens the curve<a class="anchor-link" data-pagefind-ignore href="#5)-The-fix:-a-log-transform-straightens-the-curve">¶</a></h2><p>So the relationship is real but <strong>bent</strong> — what now? We don't abandon the line; we <strong>change the ruler</strong>
 we measure wealth on. The standard fix for a predictor that is <strong>right-skewed</strong> and acts
 <strong>multiplicatively</strong> is to take its <strong>logarithm</strong>.</p>
 <p>Why a log? Two reasons that are really one:</p>
@@ -8436,7 +8436,7 @@ the <strong>after</strong> residuals are a shapeless cloud hovering around 0 —
 <em>want</em>. That flat band is your evidence that the straight line, <strong>on log wealth</strong>, is now the right
 model. This is the everyday workflow of a working analyst: <em>fit, look at the residuals, and if they
 show a pattern, transform and refit.</em></p>
-<h2 id="6)-The-contrast-with-Ames-%E2%80%94-and-why-r-and-the-line-have-a-blind-spot">6) The contrast with Ames — and why r and the line have a blind spot<a class="anchor-link" href="#6)-The-contrast-with-Ames-%E2%80%94-and-why-r-and-the-line-have-a-blind-spot">¶</a></h2><p>Step back and compare the two relationships, because the difference <em>is</em> the lesson:</p>
+<h2 id="6)-The-contrast-with-Ames-%E2%80%94-and-why-r-and-the-line-have-a-blind-spot">6) The contrast with Ames — and why r and the line have a blind spot<a class="anchor-link" data-pagefind-ignore href="#6)-The-contrast-with-Ames-%E2%80%94-and-why-r-and-the-line-have-a-blind-spot">¶</a></h2><p>Step back and compare the two relationships, because the difference <em>is</em> the lesson:</p>
 <table>
 <thead>
 <tr>
@@ -8488,7 +8488,7 @@ and reshape the data when a straight line is the wrong question.</p>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="7)-And-still:-correlation-is-not-causation">7) And still: correlation is not causation<a class="anchor-link" href="#7)-And-still:-correlation-is-not-causation">¶</a></h2><p>Even with a beautiful straight fit on log wealth, we must repeat the core lesson's hardest rule. A high
+<h2 id="7)-And-still:-correlation-is-not-causation">7) And still: correlation is not causation<a class="anchor-link" data-pagefind-ignore href="#7)-And-still:-correlation-is-not-causation">¶</a></h2><p>Even with a beautiful straight fit on log wealth, we must repeat the core lesson's hardest rule. A high
 $r$ — even $0.81$ — does <strong>not</strong> prove that getting richer <em>causes</em> people to live longer. Wealth and
 longevity are tangled up with a web of <strong>shared causes</strong>: richer countries tend to have better
 <strong>health systems</strong>, cleaner <strong>water and sanitation</strong>, more <strong>education</strong>, more <strong>vaccination</strong>, safer
@@ -8508,7 +8508,7 @@ longer life — not proven to <strong>cause</strong> it.</p>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Now-you-try">Now you try<a class="anchor-link" href="#Now-you-try">¶</a></h2><p>Predict what will happen <em>before</em> you run each change:</p>
+<h2 id="Now-you-try">Now you try<a class="anchor-link" data-pagefind-ignore href="#Now-you-try">¶</a></h2><p>Predict what will happen <em>before</em> you run each change:</p>
 <ol>
 <li><p><strong>Try a natural log instead of log10.</strong> In section 5, replace <code>np.log10(g07['gdpPercap'])</code> with
 <code>np.log(g07['gdpPercap'])</code> in a new cell and recompute the correlation. Predict first: does the
@@ -8528,7 +8528,7 @@ countries the curve is closer to straight — is the raw-GDP fit there better th
 wealth-vs-lifespan relationship still curved? Does the log transform still help? (Tip: <code>gap['year'] .unique()</code> lists the available years.)</p>
 </li>
 </ol>
-<h2 id="What-you-learned">What you learned<a class="anchor-link" href="#What-you-learned">¶</a></h2><ul>
+<h2 id="What-you-learned">What you learned<a class="anchor-link" data-pagefind-ignore href="#What-you-learned">¶</a></h2><ul>
 <li>The <strong>scatterplot comes first</strong>: read <strong>direction, form, and strength</strong>. Here the <strong>form</strong> was the
 whole story — a <strong>curved</strong> (concave) rise that flattens, not the near-straight Ames band.</li>
 <li>The <strong>correlation $r$</strong> and the <strong>least-squares line</strong> are <strong>linear</strong> tools: they score only how well

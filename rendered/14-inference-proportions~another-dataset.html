@@ -7823,7 +7823,7 @@ a.anchor-link {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h1 id="Inference-for-proportions-on-different-data:-who-survived?">Inference for proportions on different data: who survived?<a class="anchor-link" href="#Inference-for-proportions-on-different-data:-who-survived?">¶</a></h1><p><em>Part 2 · Lesson 14 · another dataset  ·  data: Titanic</em></p>
+<h1 id="Inference-for-proportions-on-different-data:-who-survived?">Inference for proportions on different data: who survived?<a class="anchor-link" data-pagefind-ignore href="#Inference-for-proportions-on-different-data:-who-survived?">¶</a></h1><p><em>Part 2 · Lesson 14 · another dataset  ·  data: Titanic</em></p>
 <p><em>↩ A companion to <a href="14-inference-proportions.html">Lesson 14: Inference for proportions (one &amp; two)</a>.</em></p>
 <p><strong>↩ Back:</strong> <a href="14-inference-proportions.html">Lesson 14: Inference for proportions (one &amp; two)</a>  ·  <a href="index.html">↑ Course map</a>  ·  <strong>Also:</strong> <a href="14-inference-proportions~the-code.html">The code behind it →</a></p>
 <p>In the core lesson we asked whether the low-birth-weight <strong>rate</strong> differed for smokers and nonsmokers —
@@ -7972,7 +7972,7 @@ Sex values:      ['male', 'female']
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="What-is-a-proportion,-and-what-are-we-inferring?">What is a proportion, and what are we inferring?<a class="anchor-link" href="#What-is-a-proportion,-and-what-are-we-inferring?">¶</a></h2><p>A <strong>proportion</strong> is just the fraction of items in a category — here, the fraction of passengers who
+<h2 id="What-is-a-proportion,-and-what-are-we-inferring?">What is a proportion, and what are we inferring?<a class="anchor-link" data-pagefind-ignore href="#What-is-a-proportion,-and-what-are-we-inferring?">¶</a></h2><p>A <strong>proportion</strong> is just the fraction of items in a category — here, the fraction of passengers who
 <strong>survived</strong>. Handily, the <code>Survived</code> column is already a <strong>1/0 indicator</strong>: 1 means survived, 0 means
 did not. A "success" in statistics just means "the event we're counting" — here, surviving — with no
 cheerfulness implied.</p>
@@ -8030,7 +8030,7 @@ So only about 2 in 5 aboard survived -- the disaster was, overall, deadly.
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="1)-How-much-does-$%5Chat%7Bp%7D$-wobble?-The-standard-error">1) How much does $\hat{p}$ wobble? The standard error<a class="anchor-link" href="#1)-How-much-does-$%5Chat%7Bp%7D$-wobble?-The-standard-error">¶</a></h2><p>If we could re-run "a voyage like this" over and over, each would hand back a slightly different
+<h2 id="1)-How-much-does-$%5Chat%7Bp%7D$-wobble?-The-standard-error">1) How much does $\hat{p}$ wobble? The standard error<a class="anchor-link" data-pagefind-ignore href="#1)-How-much-does-$%5Chat%7Bp%7D$-wobble?-The-standard-error">¶</a></h2><p>If we could re-run "a voyage like this" over and over, each would hand back a slightly different
 $\hat{p}$. The typical size of that wobble is the <strong>standard error (SE)</strong> of the proportion:</p>
 <p>$$\text{SE}(\hat{p}) = \sqrt{\dfrac{\hat{p}\,(1-\hat{p})}{n}}.$$</p>
 <ul>
@@ -8077,7 +8077,7 @@ quadruple the sample, halve the wobble.</li>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="Simulate-the-sampling-distribution-of-$%5Chat%7Bp%7D$">Simulate the sampling distribution of $\hat{p}$<a class="anchor-link" href="#Simulate-the-sampling-distribution-of-$%5Chat%7Bp%7D$">¶</a></h3><p>Here's the trick that makes the formula believable. We'll <strong>pretend the true survival rate is exactly our
+<h3 id="Simulate-the-sampling-distribution-of-$%5Chat%7Bp%7D$">Simulate the sampling distribution of $\hat{p}$<a class="anchor-link" data-pagefind-ignore href="#Simulate-the-sampling-distribution-of-$%5Chat%7Bp%7D$">¶</a></h3><p>Here's the trick that makes the formula believable. We'll <strong>pretend the true survival rate is exactly our
 $\hat{p}$</strong> and let the computer re-run the "load 887 passengers and count the survivors" experiment
 thousands of times. Each repeat is a coin weighted to $\hat{p}$, flipped $n$ times. The spread of all
 those simulated $\hat{p}$ values <em>is</em> the standard error — no formula required.</p>
@@ -8165,7 +8165,7 @@ Formula  SE             = 0.0163   &lt;- the simulation confirms the formula
 from the <em>formula</em> lands right on top of it. That's the <strong>Central Limit Theorem</strong> working for counts:
 even though each passenger is a yes/no outcome, the <strong>proportion</strong> of yeses across many people is
 approximately <strong>normal</strong>. This is exactly why the z-based recipes below work.</p>
-<h3 id="When-is-the-normal-approximation-safe?-The-success/failure-conditions">When is the normal approximation safe? The success/failure conditions<a class="anchor-link" href="#When-is-the-normal-approximation-safe?-The-success/failure-conditions">¶</a></h3><p>The bell-curve shortcut needs <strong>enough of both</strong> categories. The standard rule of thumb is</p>
+<h3 id="When-is-the-normal-approximation-safe?-The-success/failure-conditions">When is the normal approximation safe? The success/failure conditions<a class="anchor-link" data-pagefind-ignore href="#When-is-the-normal-approximation-safe?-The-success/failure-conditions">¶</a></h3><p>The bell-curve shortcut needs <strong>enough of both</strong> categories. The standard rule of thumb is</p>
 <p>$$n\hat{p} \ge 10 \quad\text{and}\quad n(1-\hat{p}) \ge 10$$</p>
 <p>— at least about 10 expected "successes" <em>and</em> 10 "failures." With very few of either, the sampling
 distribution gets lopsided (it can't go below 0 or above 1), and the normal recipe misbehaves. With 342
@@ -8209,7 +8209,7 @@ Both clear 10 by a mile, so the normal-based CI and z-test below are trustworthy
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="2)-A-95%25-confidence-interval-for-one-proportion">2) A 95% confidence interval for one proportion<a class="anchor-link" href="#2)-A-95%25-confidence-interval-for-one-proportion">¶</a></h2><p>Because $\hat{p}$ is approximately normal, a confidence interval is the familiar <strong>estimate ± margin</strong>:</p>
+<h2 id="2)-A-95%25-confidence-interval-for-one-proportion">2) A 95% confidence interval for one proportion<a class="anchor-link" data-pagefind-ignore href="#2)-A-95%25-confidence-interval-for-one-proportion">¶</a></h2><p>Because $\hat{p}$ is approximately normal, a confidence interval is the familiar <strong>estimate ± margin</strong>:</p>
 <p>$$\hat{p} \;\pm\; z^{*}\,\sqrt{\dfrac{\hat{p}(1-\hat{p})}{n}}$$</p>
 <p>where $z^{*}$ is the normal multiplier — about <strong>1.96</strong> for 95% (compare the <em>t</em>-based intervals for
 means; for proportions we use the normal $z$ because there's no separate spread to estimate). Read it as
@@ -8275,7 +8275,7 @@ passengers we have pinned the rate down tightly.</p>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="3)-A-one-proportion-z-test:-was-survival-a-coin-flip?">3) A one-proportion z-test: was survival a coin flip?<a class="anchor-link" href="#3)-A-one-proportion-z-test:-was-survival-a-coin-flip?">¶</a></h2><p>Here is a benchmark with real meaning. If being aboard were like a fair coin toss — survive or perish,
+<h2 id="3)-A-one-proportion-z-test:-was-survival-a-coin-flip?">3) A one-proportion z-test: was survival a coin flip?<a class="anchor-link" data-pagefind-ignore href="#3)-A-one-proportion-z-test:-was-survival-a-coin-flip?">¶</a></h2><p>Here is a benchmark with real meaning. If being aboard were like a fair coin toss — survive or perish,
 50/50 — the true survival rate would be exactly <strong>0.5</strong>. Our $\hat{p}$ came in at 0.386, well under half.
 Could that shortfall be chance? This is a <strong>hypothesis test</strong>:</p>
 <ul>
@@ -8295,7 +8295,7 @@ $\hat{p}$:</p>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="First,-see-the-p-value-as-an-area-%E2%80%94-by-simulating-the-null-world">First, see the p-value as an area — by simulating the null world<a class="anchor-link" href="#First,-see-the-p-value-as-an-area-%E2%80%94-by-simulating-the-null-world">¶</a></h3><p>Let's build the <strong>null distribution</strong> directly: simulate thousands of voyages in a world where survival
+<h3 id="First,-see-the-p-value-as-an-area-%E2%80%94-by-simulating-the-null-world">First, see the p-value as an area — by simulating the null world<a class="anchor-link" data-pagefind-ignore href="#First,-see-the-p-value-as-an-area-%E2%80%94-by-simulating-the-null-world">¶</a></h3><p>Let's build the <strong>null distribution</strong> directly: simulate thousands of voyages in a world where survival
 really is a fair coin ($p_0 = 0.5$), and see how often a sample lands as far from 0.5 as ours did. The
 p-value is just the <strong>share of that null world</strong> at least as extreme as what we observed.</p>
 </div>
@@ -8445,7 +8445,7 @@ same story:</strong> values inside the interval survive the test; values far out
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="4)-Two-proportions:-did-women-and-men-survive-at-different-rates?">4) Two proportions: did women and men survive at different rates?<a class="anchor-link" href="#4)-Two-proportions:-did-women-and-men-survive-at-different-rates?">¶</a></h2><p>Now the question this disaster is remembered for: was a woman's chance of survival different from a
+<h2 id="4)-Two-proportions:-did-women-and-men-survive-at-different-rates?">4) Two proportions: did women and men survive at different rates?<a class="anchor-link" data-pagefind-ignore href="#4)-Two-proportions:-did-women-and-men-survive-at-different-rates?">¶</a></h2><p>Now the question this disaster is remembered for: was a woman's chance of survival different from a
 man's? This compares <strong>two</strong> proportions. Start, as always, by <em>counting</em> — build the 2×2 table.</p>
 </div>
 </div>
@@ -8562,7 +8562,7 @@ roughly <strong>55 percentage points</strong>. The error bars (each group's own 
 and come nowhere close to overlapping. Compare the births lesson, where the two bars were close enough
 that you genuinely needed a test to be sure. <strong>Here, the eyes have already decided</strong> — but let's quantify
 the gap properly anyway, because the <em>size</em> of it is now the interesting quantity.</p>
-<h3 id="A-confidence-interval-for-the-difference-$p_1---p_2$">A confidence interval for the difference $p_1 - p_2$<a class="anchor-link" href="#A-confidence-interval-for-the-difference-$p_1---p_2$">¶</a></h3><p>For a CI we estimate each group's wobble from its <strong>own</strong> $\hat{p}$ and add the variances (independent
+<h3 id="A-confidence-interval-for-the-difference-$p_1---p_2$">A confidence interval for the difference $p_1 - p_2$<a class="anchor-link" data-pagefind-ignore href="#A-confidence-interval-for-the-difference-$p_1---p_2$">¶</a></h3><p>For a CI we estimate each group's wobble from its <strong>own</strong> $\hat{p}$ and add the variances (independent
 groups):</p>
 <p>$$(\hat{p}_1 - \hat{p}_2) \;\pm\; z^{*}\sqrt{\dfrac{\hat{p}_1(1-\hat{p}_1)}{n_1} + \dfrac{\hat{p}_2(1-\hat{p}_2)}{n_2}}.$$</p>
 </div>
@@ -8615,7 +8615,7 @@ Even the LOW end of the interval is a ~49-point advantage for women.
 "7 to 22 points" — clearly above 0, but you had to look. Here it is roughly <strong>49 to 61 percentage
 points</strong>. The interval isn't doing the job of "is there an effect?" (obviously yes); it's answering
 <strong>"how big, and how precisely do we know it?"</strong> Answer: a huge gap, pinned to within about ±6 points.</p>
-<h3 id="A-two-proportion-z-test">A two-proportion z-test<a class="anchor-link" href="#A-two-proportion-z-test">¶</a></h3><p>For the <strong>test</strong>, $H_0$ says the two rates are <strong>equal</strong> ($p_1 = p_2$, i.e. their difference is 0). If
+<h3 id="A-two-proportion-z-test">A two-proportion z-test<a class="anchor-link" data-pagefind-ignore href="#A-two-proportion-z-test">¶</a></h3><p>For the <strong>test</strong>, $H_0$ says the two rates are <strong>equal</strong> ($p_1 = p_2$, i.e. their difference is 0). If
 they're truly equal, the best estimate of that common rate <strong>pools</strong> both groups together:</p>
 <p>$$\hat{p}_{\text{pool}} = \dfrac{x_1 + x_2}{n_1 + n_2}, \qquad
 z = \dfrac{\hat{p}_1 - \hat{p}_2}{\sqrt{\hat{p}_{\text{pool}}(1-\hat{p}_{\text{pool}})\left(\frac{1}{n_1}+\frac{1}{n_2}\right)}}.$$</p>
@@ -8759,7 +8759,7 @@ statsmodels: z = 16.15, p = 1.20e-58   &lt;- agrees
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="Statistical-vs.-practical-significance-%E2%80%94-the-mirror-image-of-a-borderline-case">Statistical vs. practical significance — the mirror image of a borderline case<a class="anchor-link" href="#Statistical-vs.-practical-significance-%E2%80%94-the-mirror-image-of-a-borderline-case">¶</a></h3><p>A $z$ around <strong>16</strong> is gigantic (recall that $z$ past about 2 already clears the usual 5% bar), and the
+<h3 id="Statistical-vs.-practical-significance-%E2%80%94-the-mirror-image-of-a-borderline-case">Statistical vs. practical significance — the mirror image of a borderline case<a class="anchor-link" data-pagefind-ignore href="#Statistical-vs.-practical-significance-%E2%80%94-the-mirror-image-of-a-borderline-case">¶</a></h3><p>A $z$ around <strong>16</strong> is gigantic (recall that $z$ past about 2 already clears the usual 5% bar), and the
 p-value is something like $10^{-58}$ — a 1 followed by 58 zeros in the denominator. But fixating on that
 p-value here would miss the point. Two ideas often get tangled together:</p>
 <ul>
@@ -8771,7 +8771,7 @@ the news. <strong>Titanic is the mirror image:</strong> both kinds of significan
 a foregone conclusion and the <strong>informative</strong> number is the <strong>size of the gap and its CI</strong>. The lesson:
 when an effect is this large, don't report "p &lt; 0.001" as if it were the discovery — report <em>"women
 survived at roughly 74% versus 19% for men, a gap of about 55 percentage points (95% CI: 49 to 61)."</em></p>
-<h3 id="What-this-does-and-does-not-prove">What this does and does <strong>not</strong> prove<a class="anchor-link" href="#What-this-does-and-does-not-prove">¶</a></h3><ul>
+<h3 id="What-this-does-and-does-not-prove">What this does and does <strong>not</strong> prove<a class="anchor-link" data-pagefind-ignore href="#What-this-does-and-does-not-prove">¶</a></h3><ul>
 <li>✅ The female–male survival difference is <strong>statistically significant</strong> and <strong>practically enormous</strong> —
 not a fluke of who happened to be aboard.</li>
 <li>❌ It does <strong>not</strong> prove that being female <em>by itself</em> caused survival. The Titanic was not a randomized
@@ -8789,7 +8789,7 @@ sex is strongly associated with survival,"</em> and the historical reason is the
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Now-you-try">Now you try<a class="anchor-link" href="#Now-you-try">¶</a></h2><p>Predict first, then change a number and re-run:</p>
+<h2 id="Now-you-try">Now you try<a class="anchor-link" data-pagefind-ignore href="#Now-you-try">¶</a></h2><p>Predict first, then change a number and re-run:</p>
 <ol>
 <li><p><strong>Test a different benchmark.</strong> In section 3, change <code>p0 = 0.5</code> to <code>p0 = 0.40</code>. Now the benchmark is
 close to our $\hat{p}$ of 0.386 — does the test still reject? Is 0.40 inside or outside the 95% CI from
@@ -8809,7 +8809,7 @@ p-values barely move? (They should — that's the point of 20,000 repeats.)</p>
 Does the conclusion (survival was not a coin flip) still hold with so few people?</p>
 </li>
 </ol>
-<h2 id="What-you-learned">What you learned<a class="anchor-link" href="#What-you-learned">¶</a></h2><ul>
+<h2 id="What-you-learned">What you learned<a class="anchor-link" data-pagefind-ignore href="#What-you-learned">¶</a></h2><ul>
 <li>A <strong>proportion</strong> $\hat{p} = x/n$ estimates the unknown true rate $p$; its wobble is the <strong>standard
 error</strong> $\sqrt{\hat{p}(1-\hat{p})/n}$, which you <em>saw</em> by simulating the sampling distribution.</li>
 <li>Because $\hat{p}$ is approximately <strong>normal</strong> (CLT for counts) when $n\hat{p}\ge 10$ and

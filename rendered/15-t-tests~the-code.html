@@ -7823,7 +7823,7 @@ a.anchor-link {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h1 id="The-code-behind-it:-build-the-t-statistic-from-scratch">The code behind it: build the t-statistic from scratch<a class="anchor-link" href="#The-code-behind-it:-build-the-t-statistic-from-scratch">¶</a></h1><p><em>Part 2 · Lesson 15 · the code behind it  ·  data: ToothGrowth · Swim (paired) (same as Lesson 15)</em></p>
+<h1 id="The-code-behind-it:-build-the-t-statistic-from-scratch">The code behind it: build the t-statistic from scratch<a class="anchor-link" data-pagefind-ignore href="#The-code-behind-it:-build-the-t-statistic-from-scratch">¶</a></h1><p><em>Part 2 · Lesson 15 · the code behind it  ·  data: ToothGrowth · Swim (paired) (same as Lesson 15)</em></p>
 <p><em>↩ A companion to <a href="15-t-tests.html">Lesson 15: t-tests: one-sample, two-sample &amp; paired</a>.</em></p>
 <p><strong>↩ Back:</strong> <a href="15-t-tests.html">Lesson 15: t-tests: one-sample, two-sample &amp; paired</a>  ·  <a href="index.html">↑ Course map</a>  ·  <strong>Also:</strong> <a href="15-t-tests~another-dataset.html">Another dataset →</a></p>
 <p><strong>In Lesson 15 you ran three t-tests with one-line library calls</strong> — <code>stats.ttest_1samp</code>,
@@ -7865,7 +7865,7 @@ each checked against <code>scipy.stats.ttest_*</code> (print <code>match? True</
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="1)-The-goal">1) The goal<a class="anchor-link" href="#1)-The-goal">¶</a></h2><p>By the end of this notebook you'll have written the t-statistic three ways — for a single group against a
+<h2 id="1)-The-goal">1) The goal<a class="anchor-link" data-pagefind-ignore href="#1)-The-goal">¶</a></h2><p>By the end of this notebook you'll have written the t-statistic three ways — for a single group against a
 target, for two independent groups (Welch's version), and for matched pairs — and confirmed each one
 reproduces <code>scipy.stats.ttest_*</code> to the last decimal. Nothing here needs new statistics; everything is the
 Python <em>underneath</em> the one-line calls you already ran.</p>
@@ -7957,7 +7957,7 @@ Swim:        DataFrame with shape (12, 4)
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="2)-The-data-in-code">2) The data in code<a class="anchor-link" href="#2)-The-data-in-code">¶</a></h2><p>Before any formula, a programmer <em>interrogates the object</em>: how big is it, what are the columns, what do the
+<h2 id="2)-The-data-in-code">2) The data in code<a class="anchor-link" data-pagefind-ignore href="#2)-The-data-in-code">¶</a></h2><p>Before any formula, a programmer <em>interrogates the object</em>: how big is it, what are the columns, what do the
 first rows look like? Then we pull out exactly the arrays we'll compute on.</p>
 <ul>
 <li><strong>ToothGrowth</strong> — 60 guinea pigs, each given vitamin C as orange juice (<code>OJ</code>) or ascorbic acid (<code>VC</code>);
@@ -8021,10 +8021,10 @@ Swim: 12 swimmers   first 3 wetsuit speeds: [1.57 1.47 1.42]   swimsuit: [1.49 1
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="3)-Build-it-step-by-step">3) Build it step by step<a class="anchor-link" href="#3)-Build-it-step-by-step">¶</a></h2><p>Now the heart of it. Each test is a one-line <code>scipy</code> call <em>and</em> a short formula — we'll write the formula in
+<h2 id="3)-Build-it-step-by-step">3) Build it step by step<a class="anchor-link" data-pagefind-ignore href="#3)-Build-it-step-by-step">¶</a></h2><p>Now the heart of it. Each test is a one-line <code>scipy</code> call <em>and</em> a short formula — we'll write the formula in
 NumPy and check the two agree to the last decimal. Once you've built it, the library call is no longer a
 mystery box.</p>
-<h3 id="One-sample-t-%E2%80%94-a-mean-against-a-target">One-sample t — a mean against a target<a class="anchor-link" href="#One-sample-t-%E2%80%94-a-mean-against-a-target">¶</a></h3><p>The question from the core lesson: is the <strong>OJ</strong> group's mean tooth growth different from a benchmark of
+<h3 id="One-sample-t-%E2%80%94-a-mean-against-a-target">One-sample t — a mean against a target<a class="anchor-link" data-pagefind-ignore href="#One-sample-t-%E2%80%94-a-mean-against-a-target">¶</a></h3><p>The question from the core lesson: is the <strong>OJ</strong> group's mean tooth growth different from a benchmark of
 <strong>18 units</strong>? The formula is a z-score with the <em>sample</em> spread in the denominator:</p>
 <p>$$t = \frac{\bar{x} - \mu_0}{s/\sqrt{n}}, \qquad df = n - 1.$$</p>
 <p>The two-sided p-value is the area in <em>both</em> tails beyond $|t|$: <code>2 * stats.t.sf(abs(t), df)</code>, where <code>sf</code> is
@@ -8085,7 +8085,7 @@ match? True True
 <p>$t = 2.21$ on $df = 29$, giving $p = 0.0353$ — and our from-scratch numbers match SciPy exactly. The
 denominator <code>s/sqrt(n)</code> is the only subtle part: it uses the <strong>sample</strong> SD (<code>ddof=1</code>), because in real life
 we never know the true population spread.</p>
-<h3 id="Two-sample-Welch-t-%E2%80%94-two-independent-groups">Two-sample Welch t — two independent groups<a class="anchor-link" href="#Two-sample-Welch-t-%E2%80%94-two-independent-groups">¶</a></h3><p>Now compare <strong>OJ</strong> against <strong>VC</strong> (different guinea pigs, so <em>independent</em> groups). <strong>Welch's</strong> t-test does
+<h3 id="Two-sample-Welch-t-%E2%80%94-two-independent-groups">Two-sample Welch t — two independent groups<a class="anchor-link" data-pagefind-ignore href="#Two-sample-Welch-t-%E2%80%94-two-independent-groups">¶</a></h3><p>Now compare <strong>OJ</strong> against <strong>VC</strong> (different guinea pigs, so <em>independent</em> groups). <strong>Welch's</strong> t-test does
 <strong>not</strong> assume the two groups share a variance, so each group keeps its own $s$ and $n$:</p>
 <p>$$t = \frac{\bar{x}_1 - \bar{x}_2}{\sqrt{\dfrac{s_1^2}{n_1} + \dfrac{s_2^2}{n_2}}}.$$</p>
 <p>The degrees of freedom are <em>not</em> simply $n_1+n_2-2$; Welch uses the <strong>Welch–Satterthwaite</strong> approximation,
@@ -8155,7 +8155,7 @@ match? True True True
 giving $p = 0.0606$ — all three numbers match SciPy. Note the p-value is just <em>above</em> 0.05: a sizable
 sample gap that the test still calls <em>non-significant</em>. "Not significant" means "couldn't rule out zero,"
 not "no effect."</p>
-<h3 id="Paired-t-%E2%80%94-the-key-trick:-reduce-each-pair-to-one-difference">Paired t — the key trick: reduce each pair to one difference<a class="anchor-link" href="#Paired-t-%E2%80%94-the-key-trick:-reduce-each-pair-to-one-difference">¶</a></h3><p>The swim data has the <strong>same</strong> swimmer in two columns. The paired t-test is <strong>not</strong> a new formula — it is
+<h3 id="Paired-t-%E2%80%94-the-key-trick:-reduce-each-pair-to-one-difference">Paired t — the key trick: reduce each pair to one difference<a class="anchor-link" data-pagefind-ignore href="#Paired-t-%E2%80%94-the-key-trick:-reduce-each-pair-to-one-difference">¶</a></h3><p>The swim data has the <strong>same</strong> swimmer in two columns. The paired t-test is <strong>not</strong> a new formula — it is
 the one-sample test applied to the <strong>differences</strong> $d_i = \text{wet}_i - \text{suit}_i$, tested against 0.
 Collapse the 12 pairs to 12 differences, then it's exactly the Section-3.1 recipe with $\mu_0 = 0$.</p>
 </div>
@@ -8215,7 +8215,7 @@ match? True True
 <p>$t = 12.32$ on $df = 11$, $p \approx 8.9\times10^{-8}$ — a thunderingly significant wetsuit effect, and our
 from-scratch <code>t</code> matches both <code>ttest_rel</code> and <code>ttest_1samp</code> on the differences. That equality <em>is</em> the whole
 idea: <strong>a paired test is a one-sample test on the differences.</strong></p>
-<h3 id="Why-pairing-helps-%E2%80%94-the-headline-contrast">Why pairing helps — the headline contrast<a class="anchor-link" href="#Why-pairing-helps-%E2%80%94-the-headline-contrast">¶</a></h3><p>Now the punchline from the core lesson. What if we <em>ignore</em> the pairing and (wrongly) run a two-sample test
+<h3 id="Why-pairing-helps-%E2%80%94-the-headline-contrast">Why pairing helps — the headline contrast<a class="anchor-link" data-pagefind-ignore href="#Why-pairing-helps-%E2%80%94-the-headline-contrast">¶</a></h3><p>Now the punchline from the core lesson. What if we <em>ignore</em> the pairing and (wrongly) run a two-sample test
 on the same two columns, pretending the 12 wetsuit times and 12 swimsuit times are unrelated groups?</p>
 </div>
 </div>
@@ -8269,7 +8269,7 @@ a fast swimmer is fast in BOTH suits, and pairing subtracts that swimmer-to-swim
 one gives $p \approx 0.185$. Pairing subtracts away the large <em>between-swimmer</em> variation (the speeds are
 correlated $r = 0.99$), shrinking the standard error so the same gap looks decisive. <strong>If your two numbers
 come from the same unit, pair them.</strong></p>
-<h2 id="4)-The-idiom-%E2%80%94-vectorized-differences,-and-building-the-Welch-df">4) The idiom — vectorized differences, and building the Welch df<a class="anchor-link" href="#4)-The-idiom-%E2%80%94-vectorized-differences,-and-building-the-Welch-df">¶</a></h2><h3 id="Vectorized-differences-vs.-a-loop">Vectorized differences vs. a loop<a class="anchor-link" href="#Vectorized-differences-vs.-a-loop">¶</a></h3><p>The paired test hinges on <code>d = wet - suit</code>. NumPy subtracts the two arrays <strong>element by element in one
+<h2 id="4)-The-idiom-%E2%80%94-vectorized-differences,-and-building-the-Welch-df">4) The idiom — vectorized differences, and building the Welch df<a class="anchor-link" data-pagefind-ignore href="#4)-The-idiom-%E2%80%94-vectorized-differences,-and-building-the-Welch-df">¶</a></h2><h3 id="Vectorized-differences-vs.-a-loop">Vectorized differences vs. a loop<a class="anchor-link" data-pagefind-ignore href="#Vectorized-differences-vs.-a-loop">¶</a></h3><p>The paired test hinges on <code>d = wet - suit</code>. NumPy subtracts the two arrays <strong>element by element in one
 expression</strong> — no loop over swimmers. You <em>could</em> write the loop; it gives the same numbers but is slower
 and noisier to read. Compare them.</p>
 </div>
@@ -8321,7 +8321,7 @@ The vectorized form is one line, reads as the math (after - before), and runs fa
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="Reading-the-Welch-df-formula">Reading the Welch df formula<a class="anchor-link" href="#Reading-the-Welch-df-formula">¶</a></h3><p>The scariest line in Section 3 was the Welch–Satterthwaite degrees of freedom. It is just a weighted
+<h3 id="Reading-the-Welch-df-formula">Reading the Welch df formula<a class="anchor-link" data-pagefind-ignore href="#Reading-the-Welch-df-formula">¶</a></h3><p>The scariest line in Section 3 was the Welch–Satterthwaite degrees of freedom. It is just a weighted
 combination of the two groups' variance contributions:</p>
 <p>$$df = \frac{\left(\dfrac{s_1^2}{n_1} + \dfrac{s_2^2}{n_2}\right)^2}
             {\dfrac{(s_1^2/n_1)^2}{n_1-1} + \dfrac{(s_2^2/n_2)^2}{n_2-1}}.$$</p>
@@ -8373,7 +8373,7 @@ Welch df sits between those bounds — it is the equal-variance df discounted fo
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="5)-Refactor-into-reusable-functions">5) Refactor into reusable functions<a class="anchor-link" href="#5)-Refactor-into-reusable-functions">¶</a></h2><p>You've now written the same handful of lines a few times. The programmer's reflex is to <strong>wrap repeated work
+<h2 id="5)-Refactor-into-reusable-functions">5) Refactor into reusable functions<a class="anchor-link" data-pagefind-ignore href="#5)-Refactor-into-reusable-functions">¶</a></h2><p>You've now written the same handful of lines a few times. The programmer's reflex is to <strong>wrap repeated work
 in a function</strong>: name it, give it inputs, <code>return</code> the result. Then "run a one-sample t-test" or "run a
 Welch test" is one call you can reuse on <em>any</em> data — and a paired test is just <code>t_test_one_sample</code> on the
 differences, with no new code at all.</p>
@@ -8489,7 +8489,7 @@ what it's doing.)</p>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="6)-Now-you-code">6) Now you code<a class="anchor-link" href="#6)-Now-you-code">¶</a></h2><p>Write the code yourself. Add a new cell (the <strong>+</strong> button in the toolbar) and try each — predict the answer
+<h2 id="6)-Now-you-code">6) Now you code<a class="anchor-link" data-pagefind-ignore href="#6)-Now-you-code">¶</a></h2><p>Write the code yourself. Add a new cell (the <strong>+</strong> button in the toolbar) and try each — predict the answer
 before you run it.</p>
 <ol>
 <li><p><strong>A one-sided p-value.</strong> Our <code>t_test_one_sample</code> returns a <em>two-sided</em> p (it doubled the tail). For the OJ
@@ -8513,7 +8513,7 @@ the p-value. Check it equals <code>stats.ttest_rel(wet, suit)</code>.</p>
 does your from-scratch <code>t</code> come out near zero?</p>
 </li>
 </ol>
-<h2 id="What-you-learned">What you learned<a class="anchor-link" href="#What-you-learned">¶</a></h2><p><strong>Coding</strong></p>
+<h2 id="What-you-learned">What you learned<a class="anchor-link" data-pagefind-ignore href="#What-you-learned">¶</a></h2><p><strong>Coding</strong></p>
 <ul>
 <li>The t-statistic is <strong>one formula</strong> — <code>(estimate - null) / standard_error</code> — and the only moving parts are
 what you put in the numerator and denominator. You wrote all three tests from it.</li>

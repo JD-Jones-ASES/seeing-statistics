@@ -7823,7 +7823,7 @@ a.anchor-link {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h1 id="Lesson-2-%E2%80%94-Distributions:-shape,-skew-&amp;-outliers">Lesson 2 — Distributions: shape, skew &amp; outliers<a class="anchor-link" href="#Lesson-2-%E2%80%94-Distributions:-shape,-skew-&amp;-outliers">¶</a></h1><p><em>Part 1 · Lesson 2 of 20  ·  data: Old Faithful · Lending Club</em></p>
+<h1 id="Lesson-2-%E2%80%94-Distributions:-shape,-skew-&amp;-outliers">Lesson 2 — Distributions: shape, skew &amp; outliers<a class="anchor-link" data-pagefind-ignore href="#Lesson-2-%E2%80%94-Distributions:-shape,-skew-&amp;-outliers">¶</a></h1><p><em>Part 1 · Lesson 2 of 20  ·  data: Old Faithful · Lending Club</em></p>
 <p><strong>←</strong> <a href="01-describing-data.html">Lesson 1: Describing a real dataset</a>  ·  <a href="index.html">↑ Course map</a>  ·  <a href="03-relationships-regression.html">Lesson 3: Relationships: correlation &amp; the regression line</a> <strong>→</strong></p>
 <p><strong>Same idea, another way:</strong> <a href="02-distributions-shape-outliers~another-dataset.html">Another dataset →</a>  ·  <a href="02-distributions-shape-outliers~the-code.html">The code behind it →</a></p>
 <p>In Lesson 1 we summarized penguins with a few numbers. Now we'll see those same numbers <strong>lie</strong> — gently, and sometimes spectacularly. We'll watch a geyser whose "average eruption" almost never happens, and meet incomes so lopsided that the mean and the median tell different stories. Along the way: histograms, skew, the outlier rule, and which statistics survive a billionaire.</p>
@@ -7956,7 +7956,7 @@ Lending Club: 10,000 loans
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="1)-A-frequency-table-%E2%80%94-counting-by-bins">1) A frequency table — counting by bins<a class="anchor-link" href="#1)-A-frequency-table-%E2%80%94-counting-by-bins">¶</a></h2><p>The simplest way to <em>see</em> a distribution is to chop the number line into equal slices ("bins") and count how many values fall in each. That count is a <strong>frequency table</strong>, and it is exactly what a histogram draws.</p>
+<h2 id="1)-A-frequency-table-%E2%80%94-counting-by-bins">1) A frequency table — counting by bins<a class="anchor-link" data-pagefind-ignore href="#1)-A-frequency-table-%E2%80%94-counting-by-bins">¶</a></h2><p>The simplest way to <em>see</em> a distribution is to chop the number line into equal slices ("bins") and count how many values fall in each. That count is a <strong>frequency table</strong>, and it is exactly what a histogram draws.</p>
 <ul>
 <li><strong>The math:</strong> pick bin edges, then for each bin count $f_k = $ (number of values $x$ with edge$_k \le x &lt; $ edge$_{k+1}$).</li>
 <li><strong>The meaning:</strong> each $f_k$ is a tally — how <em>crowded</em> that slice of the number line is.</li>
@@ -8025,7 +8025,7 @@ Total eruptions: 272
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="2)-The-histogram-%E2%80%94-and-where-the-%22average%22-lands">2) The histogram — and where the "average" lands<a class="anchor-link" href="#2)-The-histogram-%E2%80%94-and-where-the-%22average%22-lands">¶</a></h2><p>A <strong>histogram</strong> is the frequency table drawn as bars. Let's draw it with finer bins and mark the <strong>mean</strong> and <strong>median</strong>.</p>
+<h2 id="2)-The-histogram-%E2%80%94-and-where-the-%22average%22-lands">2) The histogram — and where the "average" lands<a class="anchor-link" data-pagefind-ignore href="#2)-The-histogram-%E2%80%94-and-where-the-%22average%22-lands">¶</a></h2><p>A <strong>histogram</strong> is the frequency table drawn as bars. Let's draw it with finer bins and mark the <strong>mean</strong> and <strong>median</strong>.</p>
 <ul>
 <li><strong>Mean</strong> $\displaystyle \bar{x} = \frac{1}{n}\sum_{i=1}^{n} x_i$ — the balance point.</li>
 <li><strong>Median</strong> — the middle value when sorted.</li>
@@ -8102,7 +8102,7 @@ Eruptions within +/-0.3 min of the MEDIAN (4.00):  64 of 272  &lt;- up on the lo
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="3)-Symmetric-vs-skewed-%E2%80%94-and-the-mean-vs-median-signal">3) Symmetric vs skewed — and the mean-vs-median signal<a class="anchor-link" href="#3)-Symmetric-vs-skewed-%E2%80%94-and-the-mean-vs-median-signal">¶</a></h2><p>Now switch datasets. <strong>Lending Club</strong> (a peer-to-peer lending company) records each borrower's <code>annual_income</code> (self-reported, in dollars) — a textbook case of <strong>right skew</strong>: most people cluster low, but a long tail of high earners stretches far to the right.</p>
+<h2 id="3)-Symmetric-vs-skewed-%E2%80%94-and-the-mean-vs-median-signal">3) Symmetric vs skewed — and the mean-vs-median signal<a class="anchor-link" data-pagefind-ignore href="#3)-Symmetric-vs-skewed-%E2%80%94-and-the-mean-vs-median-signal">¶</a></h2><p>Now switch datasets. <strong>Lending Club</strong> (a peer-to-peer lending company) records each borrower's <code>annual_income</code> (self-reported, in dollars) — a textbook case of <strong>right skew</strong>: most people cluster low, but a long tail of high earners stretches far to the right.</p>
 <ul>
 <li><strong>The math:</strong> <em>skewness</em> measures lopsidedness; $0$ is symmetric, positive means a longer <strong>right</strong> tail.</li>
 <li><strong>The meaning:</strong> the long tail of big values <strong>drags the mean toward it</strong>, while the median (just the middle person) barely budges.</li>
@@ -8219,7 +8219,7 @@ mean &gt; median  -&gt;  RIGHT-skewed
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="4)-Outliers-and-the-1.5-%C3%97-IQR-rule">4) Outliers and the 1.5 × IQR rule<a class="anchor-link" href="#4)-Outliers-and-the-1.5-%C3%97-IQR-rule">¶</a></h2><p>How far is "too far" out in the tail? A standard, automatic flag uses the <strong>IQR</strong> (interquartile range, the width of the middle 50%) from Lesson 1.</p>
+<h2 id="4)-Outliers-and-the-1.5-%C3%97-IQR-rule">4) Outliers and the 1.5 × IQR rule<a class="anchor-link" data-pagefind-ignore href="#4)-Outliers-and-the-1.5-%C3%97-IQR-rule">¶</a></h2><p>How far is "too far" out in the tail? A standard, automatic flag uses the <strong>IQR</strong> (interquartile range, the width of the middle 50%) from Lesson 1.</p>
 <ul>
 <li><strong>The math:</strong> with quartiles $Q_1$ (25th pct) and $Q_3$ (75th pct), let $\text{IQR} = Q_3 - Q_1$. A value is flagged as a high outlier if it exceeds the <strong>upper fence</strong>
 $$Q_3 + 1.5 \times \text{IQR}.$$</li>
@@ -8293,7 +8293,7 @@ Incomes above the fence: 508 of 10,000  (5.1%)
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="5)-Robust-vs-non-robust-%E2%80%94-the-billionaire-test">5) Robust vs non-robust — the billionaire test<a class="anchor-link" href="#5)-Robust-vs-non-robust-%E2%80%94-the-billionaire-test">¶</a></h2><p>A statistic is <strong>robust</strong> if a few extreme values barely move it, and <strong>non-robust</strong> if they yank it around.</p>
+<h2 id="5)-Robust-vs-non-robust-%E2%80%94-the-billionaire-test">5) Robust vs non-robust — the billionaire test<a class="anchor-link" data-pagefind-ignore href="#5)-Robust-vs-non-robust-%E2%80%94-the-billionaire-test">¶</a></h2><p>A statistic is <strong>robust</strong> if a few extreme values barely move it, and <strong>non-robust</strong> if they yank it around.</p>
 <p>Let's run the cleanest possible experiment: remove the <strong>single highest earner</strong> (2.3 million dollars) and recompute. Predict first — which moves more, the mean or the median?</p>
 </div>
 </div>
@@ -8362,7 +8362,7 @@ median    $      65,000$       65,000$            0
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="6)-z-scores-on-non-normal-data-%E2%80%94-a-ruler,-not-a-probability">6) z-scores on non-normal data — a ruler, not a probability<a class="anchor-link" href="#6)-z-scores-on-non-normal-data-%E2%80%94-a-ruler,-not-a-probability">¶</a></h2><p>A <strong>z-score</strong> rescales a value into "how many standard deviations from the mean":</p>
+<h2 id="6)-z-scores-on-non-normal-data-%E2%80%94-a-ruler,-not-a-probability">6) z-scores on non-normal data — a ruler, not a probability<a class="anchor-link" data-pagefind-ignore href="#6)-z-scores-on-non-normal-data-%E2%80%94-a-ruler,-not-a-probability">¶</a></h2><p>A <strong>z-score</strong> rescales a value into "how many standard deviations from the mean":</p>
 <p>$$z = \frac{x - \bar{x}}{s}.$$</p>
 <p>This is <em>just arithmetic</em> — subtract the mean, divide by the SD. It works on <strong>any</strong> numbers, bell-shaped or not. Let's standardize income and find the z-score of the 2.3-million-dollar earner.</p>
 </div>
@@ -8420,13 +8420,13 @@ Share of incomes with z &gt; 3: 1.4%
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Now-you-try">Now you try<a class="anchor-link" href="#Now-you-try">¶</a></h2><p>Predict the result, change one thing, then re-run:</p>
+<h2 id="Now-you-try">Now you try<a class="anchor-link" data-pagefind-ignore href="#Now-you-try">¶</a></h2><p>Predict the result, change one thing, then re-run:</p>
 <ol>
 <li><strong>Bins change the story.</strong> In the Old Faithful histogram (Section 2), set <code>bins = 8</code>, then <code>bins = 50</code>. Does the data still look bimodal with very few bins? Predict first, then check your answer against the frequency table from Section 1.</li>
 <li><strong>Where to clip.</strong> In Section 3, change <code>clip = income.quantile(0.99)</code> to <code>0.95</code>, then <code>0.999</code>. How does the visible shape — and the apparent size of the tail — change? You're only changing the <em>view</em>; the mean and median printed don't move.</li>
 <li><strong>Robustness, dialed up.</strong> In Section 5, drop the <strong>top 50</strong> earners instead of one (<code>without_top = income.drop(income.nlargest(50).index)</code>) and recompute. How much does the mean move now versus the median?</li>
 </ol>
-<h2 id="What-you-learned">What you learned<a class="anchor-link" href="#What-you-learned">¶</a></h2><ul>
+<h2 id="What-you-learned">What you learned<a class="anchor-link" data-pagefind-ignore href="#What-you-learned">¶</a></h2><ul>
 <li>A <strong>frequency table / histogram</strong> reveals shape; Old Faithful is <strong>bimodal</strong>, so its <strong>mean</strong> is stranded in the near-empty valley (the "average" eruption barely happens) while the <strong>median</strong> can only sit on one of the two peaks — no single number captures two crowds. <strong>Always plot.</strong></li>
 <li><strong>Right skew</strong> = a long right tail; it pulls the <strong>mean above the median</strong>, giving the rule of thumb $\text{mean} &gt; \text{median} \Rightarrow$ right-skewed.</li>
 <li>The <strong>1.5 × IQR rule</strong> flags points past $Q_3 + 1.5\,\text{IQR}$ as outliers — a "look here" flag, not proof of an error; ~508 real high earners got flagged.</li>

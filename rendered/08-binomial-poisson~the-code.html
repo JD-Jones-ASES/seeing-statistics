@@ -7823,7 +7823,7 @@ a.anchor-link {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h1 id="The-code-behind-it:-build-the-binomial-&amp;-Poisson-in-NumPy">The code behind it: build the binomial &amp; Poisson in NumPy<a class="anchor-link" href="#The-code-behind-it:-build-the-binomial-&amp;-Poisson-in-NumPy">¶</a></h1><p><em>Part 1 · Lesson 8 · the code behind it  ·  data: US Births 2014 · USGS earthquakes (same as Lesson 8)</em></p>
+<h1 id="The-code-behind-it:-build-the-binomial-&amp;-Poisson-in-NumPy">The code behind it: build the binomial &amp; Poisson in NumPy<a class="anchor-link" data-pagefind-ignore href="#The-code-behind-it:-build-the-binomial-&amp;-Poisson-in-NumPy">¶</a></h1><p><em>Part 1 · Lesson 8 · the code behind it  ·  data: US Births 2014 · USGS earthquakes (same as Lesson 8)</em></p>
 <p><em>↩ A companion to <a href="08-binomial-poisson.html">Lesson 8: Binomial &amp; Poisson — counting events</a>.</em></p>
 <p><strong>↩ Back:</strong> <a href="08-binomial-poisson.html">Lesson 8: Binomial &amp; Poisson — counting events</a>  ·  <a href="index.html">↑ Course map</a>  ·  <strong>Also:</strong> <a href="08-binomial-poisson~another-dataset.html">Another dataset →</a></p>
 <p><strong>In Lesson 8 you trusted two formulas</strong> — the Binomial $\binom{n}{k}p^k(1-p)^{n-k}$ and the Poisson
@@ -7864,7 +7864,7 @@ understand.</p>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="1)-The-goal">1) The goal<a class="anchor-link" href="#1)-The-goal">¶</a></h2><p>By the end of this notebook you'll have written two small functions — <code>binom_pmf(k, n, p)</code> and
+<h2 id="1)-The-goal">1) The goal<a class="anchor-link" data-pagefind-ignore href="#1)-The-goal">¶</a></h2><p>By the end of this notebook you'll have written two small functions — <code>binom_pmf(k, n, p)</code> and
 <code>pois_pmf(k, lam)</code> — that return a probability <em>from the formula alone</em>, no library doing the work for you.
 You'll simulate both processes with a random generator, pile the results into a histogram, and overlay your
 formula on top to watch them agree. Then you'll reuse the very same two functions to see the famous
@@ -8017,9 +8017,9 @@ is exactly what a Python function is, so building one is a perfect fit.</p>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="2)-The-data-in-code">2) The data in code<a class="anchor-link" href="#2)-The-data-in-code">¶</a></h2><p>The two models each need one number read off the data: the Binomial needs a success probability $p$, and
+<h2 id="2)-The-data-in-code">2) The data in code<a class="anchor-link" data-pagefind-ignore href="#2)-The-data-in-code">¶</a></h2><p>The two models each need one number read off the data: the Binomial needs a success probability $p$, and
 the Poisson needs a rate $\lambda$. A programmer pulls those out <em>before</em> touching any formula.</p>
-<h3 id="The-Binomial's-$p$-%E2%80%94-a-proportion-is-the-mean-of-a-True/False-column">The Binomial's $p$ — a proportion is the mean of a True/False column<a class="anchor-link" href="#The-Binomial's-$p$-%E2%80%94-a-proportion-is-the-mean-of-a-True/False-column">¶</a></h3><p>"Success" here is a <strong>low-birthweight</strong> baby (under 2500 g). The <code>lowbirthweight</code> column is text, so we make
+<h3 id="The-Binomial's-$p$-%E2%80%94-a-proportion-is-the-mean-of-a-True/False-column">The Binomial's $p$ — a proportion is the mean of a True/False column<a class="anchor-link" data-pagefind-ignore href="#The-Binomial's-$p$-%E2%80%94-a-proportion-is-the-mean-of-a-True/False-column">¶</a></h3><p>"Success" here is a <strong>low-birthweight</strong> baby (under 2500 g). The <code>lowbirthweight</code> column is text, so we make
 a boolean column <code>is_low</code> (<code>True</code>/<code>False</code>), and the single most useful pandas idiom — <strong>the mean of a
 True/False column is the proportion that are True</strong> — hands us $p$ directly.</p>
 </div>
@@ -8072,7 +8072,7 @@ We will study X ~ Binomial(n=30, p=0.081).
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="The-Poisson's-$%5Clambda$-%E2%80%94-an-average-count-per-interval">The Poisson's $\lambda$ — an average count per interval<a class="anchor-link" href="#The-Poisson's-$%5Clambda$-%E2%80%94-an-average-count-per-interval">¶</a></h3><p>For the Poisson we load every magnitude-4.5+ earthquake worldwide in June 2024, tally how many struck each
+<h3 id="The-Poisson's-$%5Clambda$-%E2%80%94-an-average-count-per-interval">The Poisson's $\lambda$ — an average count per interval<a class="anchor-link" data-pagefind-ignore href="#The-Poisson's-$%5Clambda$-%E2%80%94-an-average-count-per-interval">¶</a></h3><p>For the Poisson we load every magnitude-4.5+ earthquake worldwide in June 2024, tally how many struck each
 calendar day, and take the <strong>mean per day</strong>. That average <em>is</em> the rate $\lambda$. (We <code>reindex</code> onto all 30
 June days so that any quiet day still counts as a row — though in this busy month every day had quakes.)</p>
 </div>
@@ -8129,10 +8129,10 @@ busiest day   = 28 quakes
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="3)-Build-it-step-by-step">3) Build it step by step<a class="anchor-link" href="#3)-Build-it-step-by-step">¶</a></h2><p>Now the heart of it. Each model is a one-line <code>scipy.stats</code> call <em>and</em> a short formula — we'll write the
+<h2 id="3)-Build-it-step-by-step">3) Build it step by step<a class="anchor-link" data-pagefind-ignore href="#3)-Build-it-step-by-step">¶</a></h2><p>Now the heart of it. Each model is a one-line <code>scipy.stats</code> call <em>and</em> a short formula — we'll write the
 formula ourselves and check the two agree across the <strong>whole</strong> range of counts. Once you've built it, the
 library call is no longer a mystery box.</p>
-<h3 id="The-Binomial-pmf,-straight-from-the-formula">The Binomial pmf, straight from the formula<a class="anchor-link" href="#The-Binomial-pmf,-straight-from-the-formula">¶</a></h3><p>$$P(X=k) = \binom{n}{k}\,p^{k}\,(1-p)^{\,n-k} \qquad\text{— pattern probability } p^k(1-p)^{n-k}\text{, times how many patterns } \binom{n}{k}.$$</p>
+<h3 id="The-Binomial-pmf,-straight-from-the-formula">The Binomial pmf, straight from the formula<a class="anchor-link" data-pagefind-ignore href="#The-Binomial-pmf,-straight-from-the-formula">¶</a></h3><p>$$P(X=k) = \binom{n}{k}\,p^{k}\,(1-p)^{\,n-k} \qquad\text{— pattern probability } p^k(1-p)^{n-k}\text{, times how many patterns } \binom{n}{k}.$$</p>
 <p>In Python that is one line. <code>math.comb(n, k)</code> is exactly $\binom{n}{k}$ (the number of ways to choose $k$
 successes out of $n$), and <code>**</code> is "to the power of". We write it, then check it against <code>stats.binom.pmf</code>
 over <strong>every</strong> $k$ from 0 to $n$ at once with <code>np.allclose</code> — which is True only if all the probabilities
@@ -8187,7 +8187,7 @@ largest gap to scipy = 5.00e-16  (essentially zero)
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="Simulate-it,-and-build-the-empirical-pmf-with-np.bincount">Simulate it, and build the <em>empirical</em> pmf with <code>np.bincount</code><a class="anchor-link" href="#Simulate-it,-and-build-the-empirical-pmf-with-np.bincount">¶</a></h3><p>Instead of trusting either formula, we can <em>run the experiment</em>: draw thousands of random groups of 30
+<h3 id="Simulate-it,-and-build-the-empirical-pmf-with-np.bincount">Simulate it, and build the <em>empirical</em> pmf with <code>np.bincount</code><a class="anchor-link" data-pagefind-ignore href="#Simulate-it,-and-build-the-empirical-pmf-with-np.bincount">¶</a></h3><p>Instead of trusting either formula, we can <em>run the experiment</em>: draw thousands of random groups of 30
 births and count the low-birthweight babies in each. <code>rng.binomial(n, p, size=reps)</code> does all <code>reps</code> groups
 in one vectorized call. Then <strong><code>np.bincount(sims)</code> tallies how many groups had 0, 1, 2, ... successes</strong>, and
 dividing by <code>reps</code> turns those tallies into an <em>empirical</em> pmf we can compare to the formula.</p>
@@ -8255,7 +8255,7 @@ P(exactly 2) — simulated 0.2695  vs formula 0.2681
 <p><strong>Read it.</strong> The red dots (our formula) sit right on the blue bars (the experiment), and our <code>binom_pmf</code>
 matched SciPy exactly. The simulated mean and variance landed on $np$ and $np(1-p)$ — we never plugged those
 formulas in; the simulation produced them.</p>
-<h3 id="The-Poisson-pmf,-straight-from-the-formula">The Poisson pmf, straight from the formula<a class="anchor-link" href="#The-Poisson-pmf,-straight-from-the-formula">¶</a></h3><p>$$P(X=k) = \frac{\lambda^{k}\,e^{-\lambda}}{k!}, \qquad k = 0, 1, 2, \dots$$</p>
+<h3 id="The-Poisson-pmf,-straight-from-the-formula">The Poisson pmf, straight from the formula<a class="anchor-link" data-pagefind-ignore href="#The-Poisson-pmf,-straight-from-the-formula">¶</a></h3><p>$$P(X=k) = \frac{\lambda^{k}\,e^{-\lambda}}{k!}, \qquad k = 0, 1, 2, \dots$$</p>
 <p>Again one line: <code>lam**k * math.exp(-lam) / math.factorial(k)</code>. We write it, simulate daily quake counts with
 <code>rng.poisson</code>, and check our formula against <code>stats.poisson.pmf</code> over the whole plausible range with
 <code>np.allclose</code>.</p>
@@ -8340,7 +8340,7 @@ two functions, both verified against the library.</p>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="4)-The-idiom-%E2%80%94-vectorized-simulation-vs.-a-loop,-and-two-ways-to-a-pmf">4) The idiom — vectorized simulation vs. a loop, and two ways to a pmf<a class="anchor-link" href="#4)-The-idiom-%E2%80%94-vectorized-simulation-vs.-a-loop,-and-two-ways-to-a-pmf">¶</a></h2><h3 id="Why-we-let-NumPy-do-the-simulating">Why we let NumPy do the simulating<a class="anchor-link" href="#Why-we-let-NumPy-do-the-simulating">¶</a></h3><p>You <em>could</em> simulate the binomial with a Python <code>for</code> loop over the groups. It gives the same answer but is
+<h2 id="4)-The-idiom-%E2%80%94-vectorized-simulation-vs.-a-loop,-and-two-ways-to-a-pmf">4) The idiom — vectorized simulation vs. a loop, and two ways to a pmf<a class="anchor-link" data-pagefind-ignore href="#4)-The-idiom-%E2%80%94-vectorized-simulation-vs.-a-loop,-and-two-ways-to-a-pmf">¶</a></h2><h3 id="Why-we-let-NumPy-do-the-simulating">Why we let NumPy do the simulating<a class="anchor-link" data-pagefind-ignore href="#Why-we-let-NumPy-do-the-simulating">¶</a></h3><p>You <em>could</em> simulate the binomial with a Python <code>for</code> loop over the groups. It gives the same answer but is
 slower and noisier to read. Compare the loop with the single vectorized <code>rng.binomial(...)</code> call.</p>
 </div>
 </div>
@@ -8403,7 +8403,7 @@ Simulating 100,000 groups:
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="Two-ways-to-build-the-pmf-array-across-a-range-of-counts">Two ways to build the pmf <em>array</em> across a range of counts<a class="anchor-link" href="#Two-ways-to-build-the-pmf-array-across-a-range-of-counts">¶</a></h3><p>We built our formula pmf with a <strong>list comprehension</strong>, <code>[binom_pmf(k, n, p) for k in ks]</code> — readable, one
+<h3 id="Two-ways-to-build-the-pmf-array-across-a-range-of-counts">Two ways to build the pmf <em>array</em> across a range of counts<a class="anchor-link" data-pagefind-ignore href="#Two-ways-to-build-the-pmf-array-across-a-range-of-counts">¶</a></h3><p>We built our formula pmf with a <strong>list comprehension</strong>, <code>[binom_pmf(k, n, p) for k in ks]</code> — readable, one
 <code>k</code> at a time. SciPy instead takes the whole array <code>ks</code> in <strong>one vectorized call</strong>, <code>stats.binom.pmf(ks, n, p)</code>. Same numbers; the comprehension shows the formula, the vectorized call is the production idiom.</p>
 </div>
 </div>
@@ -8449,7 +8449,7 @@ The comprehension makes the formula visible; the vectorized call is what you rea
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="5)-Refactor-into-a-reusable-function">5) Refactor into a reusable function<a class="anchor-link" href="#5)-Refactor-into-a-reusable-function">¶</a></h2><p>Here the refactor is already done: <strong>the two pmf functions you wrote in Section 3 <em>are</em> the reusable
+<h2 id="5)-Refactor-into-a-reusable-function">5) Refactor into a reusable function<a class="anchor-link" data-pagefind-ignore href="#5)-Refactor-into-a-reusable-function">¶</a></h2><p>Here the refactor is already done: <strong>the two pmf functions you wrote in Section 3 <em>are</em> the reusable
 artifacts.</strong> Once validated against SciPy, you can call them anywhere — including to demonstrate the
 Binomial→Poisson bridge with no new code at all.</p>
 <p>The bridge: slice a day into a <em>huge</em> number $n$ of tiny instants, each a Bernoulli trial with a <em>tiny</em>
@@ -8529,7 +8529,7 @@ pmf so you know what it is doing.)</p>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="6)-Now-you-code">6) Now you code<a class="anchor-link" href="#6)-Now-you-code">¶</a></h2><p>Write the code yourself. Add a new cell (the <strong>+</strong> button in the toolbar) and try each — predict the answer
+<h2 id="6)-Now-you-code">6) Now you code<a class="anchor-link" data-pagefind-ignore href="#6)-Now-you-code">¶</a></h2><p>Write the code yourself. Add a new cell (the <strong>+</strong> button in the toolbar) and try each — predict the answer
 before you run it.</p>
 <ol>
 <li><p><strong>A cdf from your pmf.</strong> Write <code>binom_cdf(k, n, p)</code> that returns $P(X \le k)$ by summing your <code>binom_pmf</code>:
@@ -8548,7 +8548,7 @@ the Binomial still hug the Poisson, or does the gap grow? What does that tell yo
 must be for the shortcut to work?</p>
 </li>
 </ol>
-<h2 id="What-you-learned">What you learned<a class="anchor-link" href="#What-you-learned">¶</a></h2><p><strong>Coding</strong></p>
+<h2 id="What-you-learned">What you learned<a class="anchor-link" data-pagefind-ignore href="#What-you-learned">¶</a></h2><p><strong>Coding</strong></p>
 <ul>
 <li>A <strong>pmf is just a function</strong>: <code>binom_pmf(k, n, p)</code> and <code>pois_pmf(k, lam)</code> each turn the math formula into
 one line, using <code>math.comb</code> / <code>math.factorial</code> / <code>math.exp</code>.</li>
