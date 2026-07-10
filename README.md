@@ -25,8 +25,11 @@ hundreds of times so ideas like the Central Limit Theorem and the 95% confidence
    ```bash
    python -m venv .venv && . .venv/Scripts/activate   # Windows; use .venv/bin/activate on macOS/Linux
    pip install -r requirements.txt
+   python -m ipykernel install --user --name stats-course   # register the kernel the notebooks expect
    jupyter lab            # open the lessons/ folder
    ```
+   The committed notebooks name a `stats-course` kernelspec; without that third line Jupyter will prompt
+   for a kernel on every notebook (and the `tools/` build scripts can't re-execute at all).
 
 ## What makes it more than a slideshow
 
